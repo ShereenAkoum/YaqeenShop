@@ -742,3 +742,7 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .permission-action-toggle{position:relative;display:block!important;flex:0 0 30px;width:30px;height:18px;border-radius:999px;background:#bbb7ae;transition:background .15s ease}.permission-action-toggle>span{position:absolute;top:3px;left:3px;width:12px;height:12px;border-radius:50%;background:#fff;transition:left .15s ease}
 .permission-action:has(input:checked) .permission-action-toggle{background:var(--primary)}.permission-action:has(input:checked) .permission-action-toggle>span{left:15px}.permission-action:has(input:checked){background:color-mix(in srgb,var(--primary) 4%,var(--surface))}
 @media(max-width:760px){.role-editor-modern .permission-groups{margin-left:0;max-height:none}.permission-module-head{padding:11px 12px}.permission-actions{grid-template-columns:repeat(2,minmax(0,1fr))}.permission-action{border-bottom:1px solid var(--border)}.permission-action:nth-child(2n){border-right:0}.permission-action:nth-last-child(-n+2){border-bottom:0}}
+
+/* Keep module Select all aligned to the far right */
+.permission-module-head .permission-select-all{margin-left:auto!important;justify-content:flex-end!important;flex-direction:row-reverse!important;white-space:nowrap}
+@media(max-width:760px){.permission-module-head{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important}.permission-module-head .permission-select-all{margin-left:0!important;justify-self:end!important}}
