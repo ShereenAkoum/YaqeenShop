@@ -695,3 +695,17 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .product-modern-form .simple-inventory-section input{background:#fffefa!important}
 .product-modern-form .simple-inventory-section small{display:block;margin-top:3px;color:var(--muted);font-size:10px;font-weight:400;line-height:1.4}
 @media(max-width:760px){.product-modern-form .simple-inventory-section{padding:16px}}
+
+/* Users & Roles */
+.users-tabs{display:flex;gap:6px;margin:0 0 22px;padding:4px;width:max-content;border:1px solid var(--border);border-radius:9px;background:var(--surface-2)}
+.users-tabs button{display:flex;align-items:center;gap:7px;min-height:38px;padding:8px 14px;border:0;border-radius:6px;background:transparent;color:var(--muted);font-weight:700;cursor:pointer}
+.users-tabs button.active{background:var(--surface);color:var(--text);box-shadow:0 1px 4px #00000012}
+.roles-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.role-card{padding:20px;border:1px solid var(--border);border-radius:12px;background:var(--surface)}
+.role-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}.role-card h3{margin:4px 0 5px;font-size:19px}.role-card p{margin:0;color:var(--muted);font-size:12px}
+.permission-summary{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}.permission-summary>span{padding:6px 9px;border:1px solid var(--border);border-radius:999px;background:var(--surface-2);font-size:10px}
+.role-permissions{display:grid;gap:12px}.role-permissions p{margin:3px 0 0}.permission-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;max-height:390px;overflow:auto;padding:2px}
+.permission-check{display:flex!important;align-items:flex-start!important;gap:10px;padding:11px!important;border:1px solid var(--border);border-radius:8px;background:var(--surface)}
+.permission-check input{width:17px!important;height:17px!important;min-height:0!important;margin-top:2px}.permission-check span{display:grid;gap:2px}.permission-check strong{font-size:11px}.permission-check small{font-size:9px;color:var(--muted);font-weight:400}
+.staff-editor .nested-toggle-card{margin:0!important}
+@media(max-width:760px){.roles-grid{grid-template-columns:1fr}.permission-grid{grid-template-columns:1fr}.users-tabs{width:100%}.users-tabs button{flex:1;justify-content:center}.users-roles-page>.table-wrap{overflow-x:auto}.users-roles-page>.table-wrap table{min-width:760px}}
