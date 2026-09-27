@@ -569,3 +569,38 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .product-edit-shell .table-section>.table-wrap::-webkit-scrollbar{height:9px}
 .product-edit-shell .table-section>.table-wrap::-webkit-scrollbar-thumb{background:#cbc6bb;border-radius:999px;border:2px solid #f8f6f1}
 .product-edit-shell .table-section>.table-wrap::-webkit-scrollbar-track{background:#f4f2ed}
+
+/* Modern product variants + image management */
+.product-subsection{padding-top:26px;margin-top:8px;border-top:1px solid #ebe7df}
+.product-subsection-head{align-items:flex-end!important;margin-bottom:14px}
+.product-subsection-head>div:first-child{display:grid;gap:4px}
+.product-subsection-head h3{margin:0;font-size:19px;font-weight:600}
+.product-subsection-head p{margin:0;color:var(--muted);font-size:11px}
+.section-kicker{font-size:9px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#74806b}
+.product-subsection .table-wrap{border-radius:12px!important;border-color:#e4e0d8!important;box-shadow:none!important}
+.product-subsection .table-thumb{width:64px;height:48px;object-fit:cover;border-radius:7px;border:1px solid #e5e0d7;background:#f4f2ed}
+.modal:has(.modern-nested-form){width:min(720px,calc(100vw - 32px));padding:0;overflow:hidden}
+.modal:has(.modern-nested-form) .modal-head{margin:0;padding:20px 22px;border-bottom:1px solid #ebe7df}
+.modern-nested-form{display:grid!important;gap:18px!important;padding:22px}
+.nested-form-intro{display:flex;align-items:center;gap:12px;padding-bottom:17px;border-bottom:1px solid #eee9e1}
+.nested-form-icon{display:grid;place-items:center;width:42px;height:42px;flex:0 0 42px;border-radius:11px;background:#edf0e9;color:#44513b}
+.nested-form-intro h3{margin:0 0 3px;font-size:14px}.nested-form-intro p{margin:0;color:var(--muted);font-size:11px}
+.nested-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.nested-form-grid label{display:grid;gap:7px;font-size:12px;font-weight:700}
+.nested-form-grid label.full{grid-column:1/-1}
+.nested-form-grid input,.nested-form-grid select{width:100%;min-height:44px;border:1px solid #ddd8ce!important;border-radius:9px!important;background:#fffefa!important;padding:9px 11px!important}
+.nested-form-grid small{font-size:10px;color:var(--muted);font-weight:400;line-height:1.4}
+.nested-toggle-card{display:flex!important;align-items:center;justify-content:space-between;gap:16px;padding:13px 14px;border:1px solid #e4e0d8;border-radius:11px;background:#faf9f5}
+.nested-toggle-card>div{display:grid;gap:3px}.nested-toggle-card strong{font-size:12px}.nested-toggle-card small{font-size:10px;color:var(--muted);font-weight:400}
+.image-editor-preview{display:grid;place-items:center;min-height:150px;padding:12px;border:1px solid #e5e0d7;border-radius:11px;background:#f7f5f0}
+.image-editor-preview img{display:block;max-width:100%;max-height:220px;object-fit:contain;border-radius:8px}
+.file-control{padding:7px!important}
+.modern-nested-form .product-form-actions{padding-top:17px;border-top:1px solid #eee9e1}
+@media(max-width:760px){
+ .product-subsection-head{align-items:flex-start!important;gap:12px}
+ .product-subsection-head .add-record-button{width:auto}
+ .modal:has(.modern-nested-form){width:calc(100vw - 16px)}
+ .modern-nested-form{padding:16px}
+ .nested-form-grid{grid-template-columns:1fr}
+ .nested-form-grid label.full{grid-column:auto}
+}
