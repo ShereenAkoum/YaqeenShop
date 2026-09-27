@@ -30,3 +30,5 @@
 .sidebar-collapsed .sidebar nav a span{display:none}
 .sidebar-collapsed .sidebar-toggle{right:-18px}
 @media(max-width:760px){.admin,.sidebar-collapsed{display:block}.sidebar-toggle{display:none}.sidebar .brand{display:none}.admin-main{padding:20px 14px}.admin .page-title{padding:30px 0 22px}.admin .page-title h1{font-size:36px}}
+
+.table-actions{display:flex;flex-wrap:nowrap;align-items:center;gap:0;width:max-content;margin-left:auto}.table-actions .icon-button{flex:0 0 36px;min-width:36px;min-height:36px;padding:0;color:var(--primary)}.table-actions .icon-button.error{color:var(--danger)}.actions-cell{width:1%;text-align:right;white-space:nowrap}.status-toggle{position:relative;width:44px;height:26px;padding:0;border:0;border-radius:999px;background:#b7b1a7;vertical-align:middle}.status-toggle span{position:absolute;top:4px;left:4px;width:18px;height:18px;border-radius:50%;background:var(--surface);transition:transform .16s ease}.status-toggle.on{background:var(--primary)}.status-toggle.on span{transform:translateX(18px)}.status-toggle:disabled{opacity:.65;cursor:default}
