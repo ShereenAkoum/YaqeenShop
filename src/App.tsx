@@ -8,7 +8,7 @@ import { ProductsAdmin } from './admin/Products';
 import { InventoryAdmin } from './admin/Inventory';
 
 type P={id:string;title:string;slug:string;price:number|null};
-type Staff={user:User;profile:{full_name?:string|null};permissions:string[]};
+type Staff={user:User;profile:{full_name?:string|null};permissions:string[];role:string};
 
 function Products(){const[x,setX]=useState<P[]>([]);useEffect(()=>{supabase?.from('products').select('id,title,slug,price').eq('status','Active').limit(12).then(({data})=>setX((data||[])as P[]))},[]);if(!configured)return <section className="section"><h2>Store setup is in progress</h2></section>;return <section className="section"><small>SHOP</small><h2>Meaningful pieces</h2><div className="grid">{x.map(item=><article key={item.id}><div className="image"/><h3>{item.title}</h3>{item.price!=null&&<p>{'$'+(item.price/100).toFixed(2)}</p>}</article>)}</div></section>}
 function Brand(){return <Link className="brand" to="/"><span className="arabic" lang="ar" dir="rtl">يقين</span><span>YAQEEN</span><small>A MORE MEANINGFUL LIFE</small></Link>}
