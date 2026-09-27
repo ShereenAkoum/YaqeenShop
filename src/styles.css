@@ -50,3 +50,10 @@
   .modal .editor-form>label:has(.form-toggle){display:flex;align-items:center;gap:14px;min-height:44px}
   .modal .editor-form>label:has(.form-toggle) .form-toggle{margin-top:0;flex:0 0 44px}
 }
+
+@media(min-width:761px){
+  .modal .category-editor{grid-template-columns:minmax(0,1fr) auto;align-items:end}
+  .modal .category-editor .category-name{min-width:0}
+  .modal .category-editor .category-active{min-width:120px;min-height:44px;margin-bottom:0}
+  .modal .category-editor .form-error,.modal .category-editor>button{grid-column:1/-1}
+}
