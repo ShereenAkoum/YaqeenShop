@@ -139,3 +139,27 @@
  .admin-header>.row>*{max-width:100%}
  .admin .table-wrap{max-width:calc(100vw - 32px)!important}
 }
+
+/* Phone CRM refinements */
+@media(max-width:760px){
+ .admin-mobile-menu{position:absolute!important;top:14px!important;left:16px!important}
+ .admin-main{padding-top:68px!important}
+ .admin-header{gap:10px!important}
+ .admin-header>div:first-child{padding-left:0}
+ .admin-header>.row{justify-content:flex-start!important;gap:8px 14px!important}
+ .admin-header>.row .small:first-child{display:none!important}
+ .admin-header>.row .small:nth-child(2){order:1}
+ .admin-header>.row>span{order:2}
+ .admin-header>.row>.button{order:3}
+ .admin .page-title{padding-top:16px!important}
+ .admin .page-title h1{font-size:38px!important}
+ .admin .table-wrap{width:100%!important;max-width:100%!important;overflow-x:auto!important}
+ .admin .table-wrap table{min-width:680px!important}
+}
+@media(max-width:430px){
+ .admin-main{padding:66px 12px 24px!important}
+ .admin .page-title{display:grid!important;grid-template-columns:minmax(0,1fr) auto;align-items:end!important;gap:10px!important}
+ .admin .page-title .primary-button{width:auto!important;white-space:nowrap}
+ .admin .page-title h1{font-size:36px!important}
+ .admin .table-wrap{max-width:calc(100vw - 24px)!important}
+}
