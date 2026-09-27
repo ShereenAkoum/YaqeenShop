@@ -615,3 +615,18 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .remove-image-control{display:flex!important;align-items:center!important;gap:8px!important;font-size:11px!important;font-weight:600!important;color:#8d302b!important;cursor:pointer}
 .remove-image-control input{width:16px!important;height:16px!important;min-height:16px!important}
 @media(max-width:760px){.modal:has(.modern-nested-form){max-height:calc(100dvh - 16px)}.variant-image-editor{align-items:flex-start;flex-direction:column}}
+
+/* Lock parent product modal while nested editors are open */
+body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.modal,
+.modal-backdrop:has(.modal-backdrop)>.modal{width:min(980px,calc(100vw - 32px))!important;height:min(870px,calc(100dvh - 24px))!important;max-width:none!important;max-height:calc(100dvh - 24px)!important;min-width:0!important;transform:none!important}
+.modal-backdrop:has(.modal-backdrop)>.modal>.product-edit-shell{width:100%!important;min-width:0!important}
+.modal-backdrop .modal-backdrop{position:fixed!important;inset:0!important;width:100vw!important;height:100dvh!important;z-index:1300!important}
+.modal-backdrop .modal-backdrop>.modal:has(.modern-nested-form){width:min(720px,calc(100vw - 32px))!important;height:auto!important;max-height:calc(100dvh - 32px)!important;min-width:0!important;flex:none!important;margin:auto!important}
+.variant-status-toggle{display:inline-flex!important;position:relative;width:40px!important;height:24px!important;min-width:40px;background:#bbb7ae;border-radius:999px;vertical-align:middle}
+.variant-status-toggle>span{position:absolute;top:4px;left:4px;width:16px!important;height:16px!important;border-radius:50%;background:#fff;box-shadow:0 1px 3px #0002;transition:left .15s ease}
+.variant-status-toggle.on{background:#3f4d36!important}
+.variant-status-toggle.on>span{left:20px!important}
+@media(max-width:760px){
+ .modal-backdrop:has(.modal-backdrop)>.modal{width:calc(100vw - 16px)!important;height:calc(100dvh - 16px)!important;max-height:calc(100dvh - 16px)!important}
+ .modal-backdrop .modal-backdrop>.modal:has(.modern-nested-form){width:calc(100vw - 16px)!important;max-height:calc(100dvh - 16px)!important}
+}
