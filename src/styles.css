@@ -565,7 +565,6 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .product-edit-shell .table-section>.table-wrap{display:block;width:100%;max-width:100%;overflow-x:auto!important;overflow-y:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
 .product-edit-shell .table-section>.table-wrap table{width:max-content!important;min-width:100%}
 .product-edit-shell .table-section:first-of-type>.table-wrap table{min-width:980px}
-.product-edit-shell .table-section:nth-of-type(2)>.table-wrap table{min-width:720px}
 .product-edit-shell .table-section>.table-wrap::-webkit-scrollbar{height:9px}
 .product-edit-shell .table-section>.table-wrap::-webkit-scrollbar-thumb{background:#cbc6bb;border-radius:999px;border:2px solid #f8f6f1}
 .product-edit-shell .table-section>.table-wrap::-webkit-scrollbar-track{background:#f4f2ed}
