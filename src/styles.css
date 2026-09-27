@@ -44,3 +44,9 @@
 @media(min-width:761px) and (max-width:1000px){.sidebar-toggle{left:187px}}
 @media(min-width:761px){.sidebar-toggle[aria-expanded='false']{left:76px}.sidebar-collapsed{grid-template-columns:84px minmax(0,1fr)}}
 @media(max-width:760px){.sidebar-toggle{display:none}}
+
+/* Desktop modal boolean fields: label + toggle inline */
+@media(min-width:761px){
+  .modal .editor-form>label:has(.form-toggle){display:flex;align-items:center;gap:14px;min-height:44px}
+  .modal .editor-form>label:has(.form-toggle) .form-toggle{margin-top:0;flex:0 0 44px}
+}
