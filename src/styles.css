@@ -277,3 +277,13 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
  .admin .sidebar nav a svg{width:18px!important;height:18px!important}
  .admin .sidebar>.sidebar-toggle{display:none!important}
 }
+
+/* Prevent iOS Safari login autofill/focus zoom from carrying into CRM */
+.login-wrap input,
+.login-card input,
+.login-wrap select,
+.login-wrap textarea{font-size:16px!important;line-height:1.4!important}
+@media(max-width:760px){
+ .login-wrap{min-height:100dvh;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+ .login-card input{font-size:16px!important;min-height:48px}
+}
