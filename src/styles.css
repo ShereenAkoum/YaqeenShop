@@ -62,3 +62,16 @@
   .modal .category-editor .category-active{display:grid;align-content:end;align-items:initial;gap:6px;min-height:0}
   .modal .category-editor .category-active .form-toggle{display:block;margin:0}
 }
+
+/* Category modal parity: Name and Active are two aligned desktop fields */
+@media(min-width:761px){
+  .modal .category-editor{grid-template-columns:minmax(0,1fr) 104px;align-items:end;column-gap:16px}
+  .modal .category-editor .category-name{display:grid;gap:6px}
+  .modal .category-editor .category-active{display:grid!important;grid-template-rows:auto 46px;align-items:start!important;align-content:end;gap:6px;min-width:104px;min-height:0}
+  .modal .category-editor .category-active .form-toggle,
+  .modal .category-editor .category-active .status-toggle{margin:0;align-self:center}
+  .modal .category-editor.category-view .category-active .status-toggle{display:inline-block}
+  .modal .category-editor .form-error,
+  .modal .category-editor>button,
+  .modal .category-editor>.modal-actions{grid-column:1/-1}
+}
