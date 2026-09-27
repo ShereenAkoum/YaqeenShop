@@ -57,3 +57,8 @@
   .modal .category-editor .category-active{min-width:120px;min-height:44px;margin-bottom:0}
   .modal .category-editor .form-error,.modal .category-editor>button{grid-column:1/-1}
 }
+
+@media(min-width:761px){
+  .modal .category-editor .category-active{display:grid;align-content:end;align-items:initial;gap:6px;min-height:0}
+  .modal .category-editor .category-active .form-toggle{display:block;margin:0}
+}
