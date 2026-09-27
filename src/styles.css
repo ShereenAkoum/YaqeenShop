@@ -323,3 +323,22 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
  .admin .editor-form label,.modal .editor-form label{width:100%;min-width:0}
  .admin .editor-form.two-col,.modal .editor-form.two-col{grid-template-columns:minmax(0,1fr)!important}
 }
+
+/* Staff identity and workspace actions live in navigation on every viewport */
+.sidebar-account{display:grid;gap:7px;padding:14px 10px;margin:10px 0 8px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);font-size:12px}
+.sidebar-user{display:grid;gap:2px;margin-bottom:4px;min-width:0}
+.sidebar-user strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px;font-weight:600}
+.sidebar-user span{color:var(--muted);font-size:11px}
+.sidebar-account>a{display:flex!important;align-items:center!important;min-height:32px!important;padding:5px 0!important;background:transparent!important;color:var(--text)!important}
+.sidebar-account>a:hover{color:var(--primary)!important}
+.sidebar-account .secondary-button{width:100%;min-height:36px;padding:6px 10px;font-size:12px}
+.sidebar-collapsed .sidebar-account{padding-inline:2px}
+.sidebar-collapsed .sidebar-account .sidebar-user,.sidebar-collapsed .sidebar-account>a,.sidebar-collapsed .sidebar-account .secondary-button{overflow:hidden}
+@media(max-width:760px){
+ .sidebar-account{gap:8px;padding:14px 4px;margin:0 0 8px}
+ .sidebar-user strong{font-size:14px}
+ .sidebar-user span{font-size:12px}
+ .sidebar-account>a{min-height:36px!important}
+ .sidebar-account .secondary-button{width:auto;justify-self:start;padding:8px 16px;min-height:40px}
+ .admin-header{display:block!important}
+}
