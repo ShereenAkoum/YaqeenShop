@@ -124,3 +124,18 @@
  .image-admin-grid{grid-template-columns:1fr}
  .modal{padding:15px}
 }
+
+/* Final CRM mobile overrides: drawer replaces legacy horizontal sidebar */
+@media(max-width:760px){
+ .admin .admin-mobile-menu{display:flex!important}
+ .admin .admin-nav-backdrop{display:block!important}
+ .admin:not(.mobile-nav-open) .admin-nav-backdrop{display:none!important}
+ .admin .sidebar{display:block!important;position:fixed!important;top:0!important;bottom:0!important;left:0!important;right:auto!important;width:min(84vw,310px)!important;height:100dvh!important;padding:18px 14px!important;border:0!important;border-right:1px solid var(--border)!important;overflow-y:auto!important;overflow-x:hidden!important;transform:translate3d(-105%,0,0)!important;transition:transform .2s ease!important;z-index:70!important;background:var(--surface)!important}
+ .admin.mobile-nav-open .sidebar{transform:translate3d(0,0,0)!important}
+ .admin .sidebar nav{display:grid!important;overflow:visible!important;width:100%!important}
+ .admin .sidebar nav a{display:flex!important;width:100%!important;white-space:normal!important}
+ .admin-main{margin:0!important;width:100%!important;max-width:100vw!important;padding:72px 16px 28px!important}
+ .admin-header>.row{display:flex!important;flex-wrap:wrap!important}
+ .admin-header>.row>*{max-width:100%}
+ .admin .table-wrap{max-width:calc(100vw - 32px)!important}
+}
