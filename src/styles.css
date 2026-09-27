@@ -213,3 +213,51 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
  .detail-stack .section-head{align-items:flex-start}
  .detail-stack .section-head h3{font-size:18px}
 }
+
+/* YAQEEN CRM design system — shared component primitives */
+:root{--crm-space-1:4px;--crm-space-2:8px;--crm-space-3:12px;--crm-space-4:16px;--crm-space-5:24px;--crm-space-6:32px;--crm-radius-sm:6px;--crm-radius-md:9px;--crm-radius-lg:12px;--crm-control-h:44px;--crm-shadow:0 8px 28px #2f2b2412;--crm-focus:0 0 0 3px #3b4b3230}
+.admin *{box-sizing:border-box}
+.admin button,.admin a,.admin input,.admin select,.admin textarea{transition:border-color .15s ease,background .15s ease,color .15s ease,box-shadow .15s ease,transform .15s ease}
+.admin button:focus-visible,.admin a:focus-visible,.admin input:focus-visible,.admin select:focus-visible,.admin textarea:focus-visible{outline:0;box-shadow:var(--crm-focus)}
+.admin .primary-button,.admin .secondary-button,.admin .danger-button,.admin .button{min-height:var(--crm-control-h);border-radius:var(--crm-radius-sm);display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600}
+.admin .icon-button{display:inline-flex;align-items:center;justify-content:center;min-width:36px;min-height:36px;border-radius:var(--crm-radius-sm)}
+.admin .editor-form{gap:var(--crm-space-4)}
+.admin .editor-form label{gap:6px;font-size:13px;font-weight:600}
+.admin .editor-form input,.admin .editor-form select,.admin .editor-form textarea{width:100%;min-height:var(--crm-control-h);border-radius:var(--crm-radius-sm);padding:10px 12px;font:inherit;font-weight:400}
+.admin .page-title{gap:var(--crm-space-4)}
+.admin .page-title h1{line-height:1.05}
+.admin .table-wrap{border-radius:var(--crm-radius-md);background:var(--surface)}
+.admin table{width:100%;border-collapse:collapse}
+.admin th{white-space:nowrap}
+.admin td{vertical-align:middle}
+.admin .table-actions{display:flex;align-items:center;justify-content:flex-end;gap:4px}
+.admin .status-toggle,.admin .form-toggle{flex:0 0 auto}
+.modal{border-radius:var(--crm-radius-lg);box-shadow:var(--crm-shadow)}
+.modal-head{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.modal-head h2{margin:0;line-height:1.2}
+.modal-head .icon-button,.modal-head button{width:38px;height:38px;min-width:38px;min-height:38px;border-radius:50%!important}
+.confirm-body{text-align:left}
+.form-error{padding:10px 12px;border-radius:var(--crm-radius-sm);background:#b4231810;color:#9b1c1c}
+.sidebar nav a{border-radius:var(--crm-radius-sm);min-height:40px}
+.sidebar nav a[aria-current=page]{font-weight:600}
+.mobile-sidebar-account a{font-weight:600}
+@media(max-width:760px){
+ .admin-main{width:100%;overflow:hidden}
+ .admin-page{width:100%;min-width:0}
+ .admin .page-title{margin-bottom:var(--crm-space-4)}
+ .admin .page-title .primary-button{flex:0 0 auto}
+ .admin .table-wrap{overscroll-behavior-x:contain;scrollbar-width:thin}
+ .admin .table-wrap:after{content:'';display:block;width:1px;height:1px}
+ .modal{overflow-y:auto;overscroll-behavior:contain}
+ .modal-head{position:sticky;top:-14px;z-index:5}
+ .admin .editor-form{gap:var(--crm-space-3)}
+ .admin .primary-button,.admin .secondary-button,.admin .danger-button,.admin .button{min-height:44px}
+ .admin .icon-button{min-width:40px;min-height:40px}
+}
+@media(max-width:430px){
+ .admin .page-title{gap:8px}
+ .admin .page-title h1{font-size:34px!important}
+ .admin .page-title .primary-button{padding-inline:12px}
+ .modal-actions{display:grid;grid-template-columns:1fr 1fr;width:100%}
+ .modal-actions>*{width:100%}
+}
