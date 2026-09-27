@@ -287,3 +287,12 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
  .login-wrap{min-height:100dvh;-webkit-text-size-adjust:100%;text-size-adjust:100%}
  .login-card input{font-size:16px!important;min-height:48px}
 }
+
+/* Compact confirmation dialogs across CRM */
+.modal.modal-confirm{width:min(520px,calc(100vw - 32px))}
+.modal.modal-confirm .confirm-body{display:grid;gap:20px}
+.modal.modal-confirm .modal-actions{margin-top:2px}
+@media(max-width:430px){
+ .modal.modal-confirm{width:calc(100vw - 24px);padding:16px}
+ .modal.modal-confirm .confirm-body{gap:16px}
+}
