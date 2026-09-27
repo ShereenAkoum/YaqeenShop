@@ -754,3 +754,11 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .role-editor-modern .permission-groups{min-height:0;max-height:none!important;overflow-y:auto!important;overscroll-behavior:contain;padding-bottom:8px}
 .role-editor-actions{position:relative!important;bottom:auto!important;z-index:3;padding:14px 0 0!important;margin:0!important;background:var(--surface)!important}
 @media(max-width:760px){.modal:has(.role-editor-modern){height:calc(100dvh - 40px)!important;max-height:calc(100dvh - 40px)!important}.role-editor-modern{overflow:hidden!important}.role-editor-actions{padding-bottom:max(4px,env(safe-area-inset-bottom))!important}}
+
+/* Role editor mobile: scroll the complete form, never squeeze permission cards */
+.modal:has(.role-editor-modern) .modal-body{overflow-y:auto!important;-webkit-overflow-scrolling:touch}
+.role-editor-modern{height:auto!important;min-height:auto!important;display:flex!important;flex-direction:column!important;overflow:visible!important}
+.role-editor-modern .role-access-section{min-height:auto!important;overflow:visible!important}
+.role-editor-modern .permission-groups{min-height:auto!important;max-height:none!important;overflow:visible!important}
+.role-editor-actions{position:sticky!important;bottom:0!important;z-index:5;padding:14px 0 max(4px,env(safe-area-inset-bottom))!important;background:var(--surface)!important}
+@media(min-width:761px){.modal:has(.role-editor-modern) .modal-body{overflow:hidden!important}.role-editor-modern{height:100%!important;min-height:0!important;display:grid!important;grid-template-rows:auto auto minmax(0,1fr) auto!important;overflow:hidden!important}.role-editor-modern .role-access-section{min-height:0!important;overflow:hidden!important}.role-editor-modern .permission-groups{min-height:0!important;max-height:none!important;overflow-y:auto!important}.role-editor-actions{position:relative!important;bottom:auto!important}}
