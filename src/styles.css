@@ -372,3 +372,52 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
  .admin .table-wrap{overflow-x:auto}
  .category-pagination{grid-template-columns:1fr auto 1fr;min-width:680px}
 }
+
+/* Modern CRM visual refresh */
+.admin{background:#f8f7f3;grid-template-columns:248px minmax(0,1fr)}
+.admin .sidebar{background:#fffefa;border-right:1px solid #e7e2d8;padding:24px 16px;box-shadow:1px 0 0 #ffffff}
+.admin .sidebar .brand{margin-bottom:22px}
+.admin .sidebar nav{gap:4px}
+.admin .sidebar nav a{min-height:42px;padding:9px 11px;border-radius:9px;color:#5f6259;font-size:13px}
+.admin .sidebar nav a:hover{background:#f3f4ef;color:var(--text);transform:translateX(1px)}
+.admin .sidebar nav a[aria-current=page]{background:#38452f;color:#fff;box-shadow:0 4px 12px #38452f20}
+.admin .sidebar nav a[aria-current=page] svg{color:#fff}
+.admin .sidebar-account{border-color:#ece7de;margin-top:4px;padding:14px 8px 16px}
+.admin-main{padding:38px 48px 48px;background:#f8f7f3}
+.admin-page{max-width:1360px}
+.admin .page-title{align-items:flex-end;margin-bottom:28px}
+.admin .page-title .eyebrow{margin-bottom:6px;color:#77766d;letter-spacing:.16em}
+.admin .page-title h1{font-family:Georgia,'Times New Roman',serif;font-size:42px;font-weight:400;letter-spacing:-.035em;margin:0}
+.admin .primary-button{border-radius:9px;padding-inline:18px;box-shadow:0 3px 10px #38452f1c}
+.admin .secondary-button{border-color:#d9d3c8;border-radius:9px;background:#fffefa}
+.admin .secondary-button:hover{background:#f2f1ec}
+.category-search{display:flex;max-width:560px;gap:10px;margin-bottom:20px}
+.category-search .control{height:44px;border:1px solid #d9d3c8!important;border-radius:9px!important;background:#fffefa!important;padding:0 14px!important;box-shadow:0 1px 2px #25282008}
+.category-search .control:focus{border-color:#77806f!important;box-shadow:0 0 0 3px #3b4b3212!important;outline:0}
+.admin .table-wrap{border:1px solid #e1ddd4;border-radius:12px;background:#fffefa;box-shadow:0 5px 22px #38342c0b;overflow:hidden}
+.admin .table-wrap table{background:#fffefa}
+.admin .table-wrap th{height:46px;padding:0 18px;background:#f3f1eb;border-bottom:1px solid #e1ddd4;color:#6e6b62;font-size:10px;letter-spacing:.12em;font-weight:700}
+.admin .table-wrap td{height:58px;padding:10px 18px;border-bottom:1px solid #eeeae2;font-size:13px}
+.admin .table-wrap tbody tr{transition:background .15s ease}
+.admin .table-wrap tbody tr:hover{background:#faf9f5}
+.admin .table-actions{gap:2px}
+.admin .table-actions .icon-button{width:34px;height:34px;min-width:34px;min-height:34px;border-radius:8px}
+.admin .table-actions .icon-button:hover{background:#f0f0ea}
+.admin .status-toggle{transform:scale(.92)}
+.admin .table-wrap tfoot td{height:auto;background:#f8f6f1;border:0}
+.category-pagination{min-height:48px;padding:7px 16px}
+.category-pagination .small{font-size:11px;color:#77736a}
+.category-pagination .text-button{font-size:12px;font-weight:600;color:#48523f}
+.modal{border:1px solid #e4dfd5;border-radius:16px;box-shadow:0 24px 70px #201d1830}
+.modal-head h2{font-size:28px}
+.admin .editor-form input,.admin .editor-form select,.admin .editor-form textarea,.modal .editor-form input,.modal .editor-form select,.modal .editor-form textarea{border-color:#ddd8ce;border-radius:9px;background:#fffefa}
+@media(max-width:1000px) and (min-width:761px){.admin{grid-template-columns:220px minmax(0,1fr)}.admin-main{padding:32px}}
+@media(max-width:760px){
+ .admin{background:#f8f7f3}
+ .admin-main{background:#f8f7f3;padding-left:16px!important;padding-right:16px!important}
+ .admin .page-title{margin-bottom:22px}
+ .admin .page-title h1{font-size:34px!important}
+ .admin .table-wrap{border-radius:11px}
+ .category-search{max-width:none}
+ .admin .sidebar{background:#fffefa}
+}
