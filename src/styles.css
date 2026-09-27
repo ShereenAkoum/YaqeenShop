@@ -296,3 +296,17 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
  .modal.modal-confirm{width:calc(100vw - 24px);padding:16px}
  .modal.modal-confirm .confirm-body{gap:16px}
 }
+
+/* Product detail mobile: only tables scroll horizontally, never the modal */
+@media(max-width:760px){
+ .modal:has(.detail-stack){overflow-x:hidden!important;max-width:calc(100vw - 20px)}
+ .modal:has(.detail-stack) .detail-stack,
+ .modal:has(.detail-stack) .table-section{width:100%;min-width:0;max-width:100%;overflow:visible}
+ .modal:has(.detail-stack) .table-wrap{display:block;width:100%!important;max-width:100%!important;min-width:0!important;overflow-x:auto!important;overflow-y:hidden!important;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;touch-action:pan-x pan-y}
+ .modal:has(.detail-stack) .table-wrap table{width:max-content!important;min-width:760px!important;max-width:none!important}
+ .modal:has(.detail-stack) .table-wrap th,
+ .modal:has(.detail-stack) .table-wrap td{white-space:nowrap}
+}
+@media(max-width:430px){
+ .modal:has(.detail-stack){max-width:calc(100vw - 12px)}
+}
