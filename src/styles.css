@@ -634,3 +634,7 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .admin .crm-display-toggle.on{background:var(--primary)!important}
 .admin .crm-display-toggle>span{display:block!important;position:absolute!important;box-sizing:border-box!important;top:3px!important;left:3px!important;width:18px!important;height:18px!important;min-width:18px!important;min-height:18px!important;margin:0!important;padding:0!important;border:0!important;border-radius:50%!important;background:#fff!important;transform:none!important;opacity:1!important;visibility:visible!important}
 .admin .crm-display-toggle.on>span{left:21px!important;transform:none!important}
+
+.admin button.crm-display-toggle{cursor:pointer!important;-webkit-appearance:none;appearance:none}
+.admin button.crm-display-toggle:disabled{cursor:not-allowed!important;opacity:.55}
+.admin button.crm-display-toggle:focus-visible{outline:2px solid #77846d!important;outline-offset:3px!important}
