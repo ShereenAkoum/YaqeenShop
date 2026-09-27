@@ -746,3 +746,11 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 /* Keep module Select all aligned to the far right */
 .permission-module-head .permission-select-all{margin-left:auto!important;justify-content:flex-end!important;flex-direction:row-reverse!important;white-space:nowrap}
 @media(max-width:760px){.permission-module-head{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important}.permission-module-head .permission-select-all{margin-left:0!important;justify-self:end!important}}
+
+/* Role editor: keep footer outside the scrolling permission content */
+.modal:has(.role-editor-modern) .modal-body{overflow:hidden!important}
+.role-editor-modern{height:100%;min-height:0;display:grid!important;grid-template-rows:auto auto minmax(0,1fr) auto!important}
+.role-editor-modern .role-access-section{min-height:0!important;overflow:hidden!important}
+.role-editor-modern .permission-groups{min-height:0;max-height:none!important;overflow-y:auto!important;overscroll-behavior:contain;padding-bottom:8px}
+.role-editor-actions{position:relative!important;bottom:auto!important;z-index:3;padding:14px 0 0!important;margin:0!important;background:var(--surface)!important}
+@media(max-width:760px){.modal:has(.role-editor-modern){height:calc(100dvh - 40px)!important;max-height:calc(100dvh - 40px)!important}.role-editor-modern{overflow:hidden!important}.role-editor-actions{padding-bottom:max(4px,env(safe-area-inset-bottom))!important}}
