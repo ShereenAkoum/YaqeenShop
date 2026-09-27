@@ -488,3 +488,20 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
  .category-view-modern{grid-template-columns:44px 1fr}
  .category-view-modern>div:last-child{grid-column:2}
 }
+
+/* Category modal rhythm + modern primary add action */
+.add-record-button{height:44px;padding:0 15px 0 8px!important;gap:9px!important;border-radius:11px!important;font-size:12px!important;letter-spacing:.01em;box-shadow:0 5px 14px #38452f20!important}
+.add-record-button .add-record-icon{display:grid;place-items:center;width:29px;height:29px;border-radius:8px;background:#ffffff18}
+.add-record-button:hover{transform:translateY(-1px);box-shadow:0 7px 18px #38452f26!important}
+.category-editor-modern{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;column-gap:18px!important;row-gap:18px!important;align-items:start}
+.category-editor-modern>label{display:grid!important;grid-template-rows:18px 32px 44px!important;gap:0!important;align-content:start}
+.category-editor-modern .field-help{display:flex;align-items:flex-start;height:32px;margin:0;line-height:1.35}
+.category-editor-modern input{height:44px!important}
+.category-editor-modern .toggle-row{height:44px;min-height:44px}
+.category-editor-modern .modal-actions{margin-top:0;padding-top:18px;min-height:63px}
+@media(max-width:760px){
+ .add-record-button{height:42px}
+ .category-editor-modern{grid-template-columns:1fr!important;gap:16px!important}
+ .category-editor-modern>label{grid-template-rows:auto auto 44px!important;gap:5px!important}
+ .category-editor-modern .field-help{height:auto;min-height:16px}
+}
