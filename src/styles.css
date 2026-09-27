@@ -163,3 +163,19 @@
  .admin .page-title h1{font-size:36px!important}
  .admin .table-wrap{max-width:calc(100vw - 24px)!important}
 }
+
+/* Keep CRM typography/control scale consistent on iOS and small screens */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+@media(max-width:760px){
+ .admin{font-size:15px}
+ .admin button,.admin input,.admin select,.admin textarea{font-size:16px}
+ .admin .small{font-size:12px}
+ .admin .eyebrow{font-size:11px}
+ .admin-header{font-size:15px}
+ .admin-header .button{font-size:13px}
+ .admin .page-title h1{font-size:36px!important}
+ .admin .table-wrap th{font-size:11px}
+ .admin .table-wrap td{font-size:13px}
+ .admin .primary-button,.admin .secondary-button,.admin .danger-button{font-size:13px}
+ .admin .icon-button{font-size:15px}
+}
