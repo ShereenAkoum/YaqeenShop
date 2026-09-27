@@ -356,3 +356,19 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
  .category-pagination{grid-template-columns:1fr;justify-items:center;text-align:center}
  .category-pagination .pagination-actions:last-child{text-align:center}
 }
+
+/* CRM layout refresh: content starts immediately below mobile/desktop navigation */
+.admin-main{padding-top:32px}
+.admin-page{max-width:1440px;margin:0 auto}
+.admin .page-title{padding-top:0}
+.admin .table-wrap{border:1px solid var(--border);box-shadow:0 2px 12px #2f2b2408;overflow:hidden}
+.admin .table-wrap thead{background:var(--surface-2)}
+.admin .table-wrap tfoot td{padding:0;border-top:1px solid var(--border);background:var(--surface-2)}
+.category-pagination{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;min-height:54px;margin:0;padding:8px 14px}
+.category-pagination .pagination-actions:last-child{text-align:right}
+.category-search{max-width:520px}
+@media(max-width:760px){
+ .admin-main{padding-top:72px!important}
+ .admin .table-wrap{overflow-x:auto}
+ .category-pagination{grid-template-columns:1fr auto 1fr;min-width:680px}
+}
