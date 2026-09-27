@@ -638,3 +638,11 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .admin button.crm-display-toggle{cursor:pointer!important;-webkit-appearance:none;appearance:none}
 .admin button.crm-display-toggle:disabled{cursor:not-allowed!important;opacity:.55}
 .admin button.crm-display-toggle:focus-visible{outline:2px solid #77846d!important;outline-offset:3px!important}
+
+/* Product images table: keep the same CRM table surface across the full width */
+.product-images-section>.table-wrap{background:var(--surface)!important}
+.product-images-section>.table-wrap table{width:100%!important;min-width:100%!important;background:var(--surface)!important}
+.product-images-section>.table-wrap thead,.product-images-section>.table-wrap thead tr,.product-images-section>.table-wrap th{background:var(--surface-2)!important}
+.product-images-section>.table-wrap tbody,.product-images-section>.table-wrap tbody tr,.product-images-section>.table-wrap td{background:var(--surface)!important}
+.product-images-section>.table-wrap tbody tr:hover td{background:#faf9f5!important}
+@media(max-width:760px){.product-images-section>.table-wrap table{min-width:720px!important;width:max-content!important}}
