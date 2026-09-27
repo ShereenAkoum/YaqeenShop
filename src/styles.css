@@ -685,3 +685,13 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .store-product-copy details{padding:15px 0;border-top:1px solid var(--border)}.store-product-copy details:last-child{border-bottom:1px solid var(--border)}.store-product-copy summary{font-weight:700;cursor:pointer}.store-product-copy details p{color:var(--muted);line-height:1.6}
 .product-loading{margin-top:60px;margin-bottom:60px}
 @media(max-width:760px){.store-product-detail{grid-template-columns:1fr;gap:30px;padding:28px 0 54px}.store-product-copy{padding-top:0}.store-product-copy h1{font-size:38px}.product-actions{display:grid;grid-template-columns:1fr 1fr}.store-field select,.store-field input{font-size:16px}.store-thumbnails button{width:64px;height:64px;flex-basis:64px}}
+
+/* Simple product inventory section */
+.product-modern-form .simple-inventory-section{background:#f8f7f2;border:1px solid #e6e2d9;border-radius:14px;padding:20px}
+.product-modern-form .simple-inventory-section .product-form-section-head{align-self:start}
+.product-modern-form .simple-inventory-section .product-form-grid{align-items:start}
+.product-modern-form .simple-inventory-section label{min-width:0}
+.product-modern-form .simple-inventory-section select,
+.product-modern-form .simple-inventory-section input{background:#fffefa!important}
+.product-modern-form .simple-inventory-section small{display:block;margin-top:3px;color:var(--muted);font-size:10px;font-weight:400;line-height:1.4}
+@media(max-width:760px){.product-modern-form .simple-inventory-section{padding:16px}}
