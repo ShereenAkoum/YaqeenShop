@@ -782,3 +782,8 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .inventory-modern-form .nested-form-grid .full{grid-column:1/-1}
 .inventory-modern-form label small{display:block;margin-top:6px;line-height:1.45}
 @media(max-width:760px){.inventory-modern-form .nested-form-grid{grid-template-columns:1fr}.inventory-modern-form .nested-form-grid .full{grid-column:auto}}
+
+.inventory-adjust-summary{padding:14px 16px;border:1px solid var(--border);border-radius:12px;background:var(--surface-soft,#faf9f5);display:grid;gap:3px}
+.inventory-adjust-summary>span{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.inventory-adjust-summary>strong{font-size:15px}
+.inventory-adjust-summary>small{margin:0!important}
