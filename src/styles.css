@@ -1100,3 +1100,6 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 
 /* CRM table refresh */
 .refresh-button{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}.spin{animation:crm-spin .8s linear infinite}@keyframes crm-spin{to{transform:rotate(360deg)}}
+
+/* Manual and editable orders */
+.order-edit-form{display:grid;grid-template-columns:1fr 1fr;gap:14px}.order-edit-form label{display:grid;gap:6px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}.order-edit-form .wide{grid-column:1/-1}.order-edit-form textarea{min-height:80px;resize:vertical}.manual-items{display:grid;gap:10px}.manual-item{display:grid;grid-template-columns:1fr 90px auto;gap:8px}@media(max-width:650px){.order-edit-form{grid-template-columns:1fr}.order-edit-form .wide{grid-column:auto}.manual-item{grid-template-columns:1fr}}
