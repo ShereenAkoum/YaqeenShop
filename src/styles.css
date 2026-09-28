@@ -799,3 +799,8 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .inventory-adjust-fields{margin-top:0}
 .inventory-adjust-form .product-form-actions{margin-top:2px;padding-top:18px;border-top:1px solid var(--border)}
 @media(max-width:760px){.inventory-adjust-form{max-width:none}.inventory-adjust-form .inventory-adjust-summary{padding:14px}.inventory-adjust-form .product-form-actions{display:grid;grid-template-columns:1fr 1fr}.inventory-adjust-form .product-form-actions button{width:100%}}
+
+/* Keep the stock adjustment dialog compact on desktop */
+.modal:has(.inventory-adjust-form),.modal-card:has(.inventory-adjust-form),.modal-content:has(.inventory-adjust-form){width:min(680px,calc(100vw - 32px));max-width:680px}
+.inventory-adjust-form{width:100%;max-width:none}
+@media(max-width:760px){.modal:has(.inventory-adjust-form),.modal-card:has(.inventory-adjust-form),.modal-content:has(.inventory-adjust-form){width:calc(100vw - 24px);max-width:none}}
