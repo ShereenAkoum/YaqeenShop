@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ChevronLeft, ChevronRight, Eye, Search, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Eye, RefreshCw, Search, X } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { Modal } from './Modal';
 
