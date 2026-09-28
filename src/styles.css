@@ -1694,3 +1694,17 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
  .admin-page .table-wrap .actions-heading{display:flex!important;align-items:center!important;justify-content:center!important;gap:7px!important;white-space:nowrap!important}
  .admin-page .table-wrap .table-refresh-icon{position:static!important;display:inline-grid!important;place-items:center!important;flex:0 0 auto!important}
 }
+
+
+/* Mobile sticky Actions fix: keep the fixed column contained and fully visible. */
+@media(max-width:760px){
+ .admin-page .table-wrap{isolation:isolate!important}
+ .admin-page .table-wrap th.actions-cell,
+ .admin-page .table-wrap td.actions-cell{box-sizing:border-box!important;width:132px!important;min-width:132px!important;max-width:132px!important;overflow:visible!important}
+ .admin-page .table-wrap td.actions-cell .table-actions{display:flex!important;align-items:center!important;justify-content:center!important;gap:8px!important;width:100%!important;min-width:0!important;flex-wrap:nowrap!important}
+ .admin-page .table-wrap td.actions-cell .icon-button{flex:0 0 34px!important;width:34px!important;height:34px!important;padding:0!important}
+ .admin-page .table-wrap th.actions-cell{padding-left:10px!important;padding-right:10px!important}
+ .admin-page .table-wrap td.actions-cell{padding-left:8px!important;padding-right:8px!important}
+ .admin-page .table-wrap th.actions-cell::after,
+ .admin-page .table-wrap td.actions-cell::after{content:'';position:absolute;inset:0;z-index:-1;background:inherit}
+}
