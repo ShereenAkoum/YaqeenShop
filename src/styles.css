@@ -1496,3 +1496,16 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .admin-page .website-doc-grid .website-doc-card:nth-child(7){background:#f4eff7!important;border-color:#e1d8e7!important}
 .admin-page .website-doc-grid .website-doc-card .section-kicker{background:rgba(255,255,255,.62)!important;color:#56614d!important}
 .admin-page .website-doc-grid .website-doc-card .icon-button,.admin-page .website-doc-grid .website-doc-card .website-unpublish{background:rgba(255,255,255,.72)!important}
+
+
+/* Website media modal — match CRM editor modal system */
+.website-media-modal{position:fixed;inset:0;z-index:1200;display:grid;place-items:center;padding:20px;background:#0008;backdrop-filter:none}
+.website-media-modal-card{width:min(620px,calc(100vw - 32px));max-height:calc(100dvh - 40px);overflow:auto;border:1px solid var(--border);border-radius:12px;background:var(--surface);color:var(--text);box-shadow:none}
+.website-media-modal-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;margin:0;border-bottom:1px solid var(--border);background:var(--surface)}
+.website-media-modal-head h3{margin:0 0 4px;font:600 18px/1.25 Arial,sans-serif;letter-spacing:0}.website-media-modal-head p{margin:0;color:var(--muted);font-size:11px}
+.website-media-modal .modal-close{display:inline-flex;align-items:center;justify-content:center;min-width:44px;width:44px;height:44px;border:0;border-radius:0;background:transparent;color:var(--text);font-size:26px;cursor:pointer}
+.website-media-modal .website-media-add{margin:0;padding:24px;display:grid;grid-template-columns:1fr;gap:16px;border:0;border-radius:0;background:var(--surface)}
+.website-media-modal .website-media-add label{display:grid;gap:7px;font-size:12px;font-weight:600}.website-media-modal .website-media-add input[type=text],.website-media-modal .website-media-add input:not([type]){width:100%;min-height:44px;border:1px solid var(--border);border-radius:9px;padding:9px 11px;background:var(--surface);color:var(--text);font-size:14px}.website-media-modal .website-media-add input[type=file]{width:100%;min-height:44px;border:1px solid var(--border);border-radius:9px;padding:7px 9px;background:var(--surface);font-size:12px}
+.website-media-modal .website-media-add .primary-button{justify-self:end;min-height:44px;border-radius:5px;padding:10px 22px;background:var(--primary);color:var(--on-primary)}
+.website-media-modal .website-media-add .primary-button:disabled{opacity:.5;cursor:not-allowed}
+@media(max-width:760px){.website-media-modal{padding:16px}.website-media-modal-head,.website-media-modal .website-media-add{padding:18px}.website-media-modal .website-media-add input{font-size:16px}.website-media-modal .website-media-add .primary-button{width:100%}}
