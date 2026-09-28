@@ -3,7 +3,7 @@ import { ErrorPopup } from './ErrorPopup';
 import { CalendarDays, ChevronLeft, ChevronRight } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
-const money=(v:any)=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:2}).format(Number(v||0));
+const money=(v:any)=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:2}).format(Number(v||0)/100);
 const iso=(d:Date)=>d.toISOString().slice(0,10);
 function ReportTable({title,rows,columns,moneyColumns=[]}:{title:string;rows:any[];columns:{key:string;label:string}[];moneyColumns?:string[]}){
  const[page,setPage]=useState(1),[pageSize,setPageSize]=useState(10);useEffect(()=>setPage(1),[rows,pageSize]);const count=rows.length,pages=Math.max(1,Math.ceil(count/pageSize)),safePage=Math.min(page,pages),visible=rows.slice((safePage-1)*pageSize,safePage*pageSize);
