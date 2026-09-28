@@ -922,3 +922,15 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
  .admin .sidebar nav{flex:1 1 auto!important}
  .admin .sidebar-account{flex:0 0 auto!important;margin-top:auto!important;margin-bottom:0!important}
 }
+
+
+/* Sidebar overflow + collapsed brand refinement */
+@media(min-width:761px){
+ .admin .sidebar{overflow:visible!important}
+ .admin .sidebar nav{scrollbar-width:none!important;-ms-overflow-style:none!important}
+ .admin .sidebar nav::-webkit-scrollbar{display:none!important}
+ .sidebar-collapsed .sidebar>.brand{display:flex!important;width:52px!important;height:52px!important;margin:0 auto 12px!important;padding:0!important;border:0!important;align-items:center!important;justify-content:center!important;overflow:visible!important}
+ .sidebar-collapsed .sidebar>.brand .arabic,.sidebar-collapsed .sidebar>.brand span:not(.arabic),.sidebar-collapsed .sidebar>.brand small{display:none!important}
+ .sidebar-collapsed .sidebar>.brand::after{content:'Y';display:grid!important;place-items:center;width:40px;height:40px;border:1px solid #e2ded4;border-radius:11px;background:#fffefa;color:var(--primary);font-family:Georgia,'Times New Roman',serif;font-size:21px;font-weight:600;line-height:1;box-shadow:0 3px 10px rgba(53,67,46,.05)}
+ .sidebar-collapsed .sidebar nav{padding-top:2px!important}
+}
