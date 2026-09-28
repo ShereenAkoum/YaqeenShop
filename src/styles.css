@@ -916,3 +916,9 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .admin .sidebar nav a svg{color:var(--primary)!important}
 .admin .sidebar nav a:hover svg{color:var(--primary)!important}
 .admin .sidebar nav a[aria-current=page] svg{color:#fff!important}
+
+/* Navigation first, account anchored at sidebar bottom */
+@media(min-width:761px){
+ .admin .sidebar nav{flex:1 1 auto!important}
+ .admin .sidebar-account{flex:0 0 auto!important;margin-top:auto!important;margin-bottom:0!important}
+}
