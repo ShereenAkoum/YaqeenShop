@@ -1126,3 +1126,5 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 
 /* Order items use the same table language as Product variants */
 .manual-order-items-section{padding:0;border:0;background:transparent}.manual-order-items-section .product-subsection-head{margin-bottom:12px}.manual-order-items-section .table-wrap{margin:0}.manual-order-items-section table{min-width:0}.manual-order-items-section th:nth-child(4){width:90px}.manual-order-items-section th:last-child{width:80px}.manual-items-empty{padding:28px!important;text-align:center;color:var(--muted)}
+
+.manual-items-toolbar{display:flex;justify-content:flex-end;margin:0 0 10px}.manual-items-toolbar .add-record-button{flex:0 0 auto}
