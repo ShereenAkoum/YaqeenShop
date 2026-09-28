@@ -758,3 +758,6 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .staff-access-grid .nested-toggle-card{min-height:66px;margin:0!important}.staff-access-grid .nested-toggle-card.is-protected{background:var(--surface-2)}
 .staff-editor-actions{margin-top:0!important;padding-top:14px;border-top:1px solid var(--border)}
 @media(max-width:760px){.modal:has(.staff-editor-modern){width:calc(100vw - 20px)!important}.staff-editor-modern .nested-form-grid,.staff-access-grid{grid-template-columns:1fr}.staff-editor-intro{padding:13px}.staff-editor-section{padding:14px}.staff-editor-actions{display:grid!important;grid-template-columns:1fr 1fr}.staff-editor-actions button{width:100%}}
+
+.add-staff-editor .optional-label{margin-left:5px;color:var(--muted);font-size:8px;font-weight:500;text-transform:uppercase;letter-spacing:.05em}
+.add-staff-editor input::placeholder{color:#aaa69d}
