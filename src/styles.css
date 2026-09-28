@@ -1287,3 +1287,6 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .cart-checkout-button,.cart-continue-link{align-items:center!important}.cart-checkout-button svg,.cart-continue-link svg{align-self:center!important}
 .gallery-arrow{align-items:center!important;justify-items:center!important}
 }
+
+/* Required checkout fields */
+.checkout-page-modern .required-mark{color:#b3262d;font:inherit;font-weight:800;margin-left:2px}
