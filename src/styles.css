@@ -792,3 +792,10 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .inventory-status.available{color:#38603f;background:#edf5ec;border-color:#d7e8d4}
 .inventory-status.low{color:#a33b3b;background:#fff0ee;border-color:#f2d2cd}
 .inventory-status.allocated{color:#84621f;background:#fbf3dc;border-color:#eadcae}
+
+.inventory-adjust-form{max-width:720px}
+.inventory-adjust-form .nested-form-intro{padding-bottom:16px;border-bottom:1px solid var(--border)}
+.inventory-adjust-form .inventory-adjust-summary{margin:0;padding:16px 18px}
+.inventory-adjust-fields{margin-top:0}
+.inventory-adjust-form .product-form-actions{margin-top:2px;padding-top:18px;border-top:1px solid var(--border)}
+@media(max-width:760px){.inventory-adjust-form{max-width:none}.inventory-adjust-form .inventory-adjust-summary{padding:14px}.inventory-adjust-form .product-form-actions{display:grid;grid-template-columns:1fr 1fr}.inventory-adjust-form .product-form-actions button{width:100%}}
