@@ -1035,3 +1035,7 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .nav-link-row>label{align-self:center!important}
 .nav-delete-link{align-self:center!important}
 @media(max-width:760px){.nav-link-row{grid-template-columns:92px 1fr 40px!important}.nav-link-leading{grid-column:1!important;grid-row:1!important}.nav-delete-link{grid-column:3!important;grid-row:1!important}.nav-link-row>label{grid-column:1/-1!important}}
+
+/* Variant stock + active share one form row */
+.admin .variant-active-inline{align-self:start!important;min-height:66px!important;margin:0!important}
+@media(max-width:760px){.admin .variant-active-inline{grid-column:1/-1}}
