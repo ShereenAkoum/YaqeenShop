@@ -870,3 +870,36 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
   .sidebar-toggle{left:212px!important}
   .sidebar-collapsed .sidebar-toggle{left:76px!important}
 }
+
+
+/* Modern CRM navigation */
+@media(min-width:761px){
+ .admin .sidebar{background:linear-gradient(180deg,#fffefa 0%,#faf9f4 100%)!important;border-right:1px solid #e8e4da!important;box-shadow:8px 0 30px rgba(49,57,43,.035)!important;padding:18px 12px!important}
+ .admin .sidebar>.brand{padding:5px 10px 16px!important;margin:0 0 8px!important;border-bottom:1px solid #ece8df}
+ .admin .sidebar>.brand span:not(.arabic){font-size:14px;font-weight:700;letter-spacing:.16em}.admin .sidebar>.brand small{font-size:6px;letter-spacing:.16em;color:#8c8d84}
+ .admin .sidebar-account{background:#f3f3ed;border:1px solid #e7e5dc!important;border-radius:12px;margin:2px 2px 12px!important;padding:11px!important;gap:7px!important}
+ .admin .sidebar-user strong{font-size:13px}.admin .sidebar-user span{font-size:10px;text-transform:uppercase;letter-spacing:.08em}
+ .admin .sidebar-account>a{font-size:11px!important;color:#596151!important}.admin .sidebar-account .secondary-button{border-radius:8px!important;background:#fffefa!important;border-color:#ddd9cf!important}
+ .admin .sidebar nav{gap:3px!important;padding:0 2px 14px!important}
+ .admin .sidebar nav a{position:relative;min-height:40px!important;border-radius:9px!important;padding:9px 10px!important;gap:11px!important;color:#686b63!important;font-weight:500;transition:background .15s ease,color .15s ease,transform .15s ease!important}
+ .admin .sidebar nav a svg{width:17px;height:17px;stroke-width:1.8;flex:0 0 auto;color:#7b7f74}
+ .admin .sidebar nav a:hover{background:#f0f1eb!important;color:#31392b!important;transform:none!important}
+ .admin .sidebar nav a[aria-current=page]{background:#35432e!important;color:#fff!important;font-weight:600;box-shadow:0 5px 14px rgba(53,67,46,.16)!important}
+ .admin .sidebar nav a[aria-current=page]::before{content:'';position:absolute;left:-5px;top:11px;bottom:11px;width:3px;border-radius:4px;background:#9ead8f}
+ .admin .sidebar nav a[aria-current=page] svg{color:#fff!important}
+ .sidebar-toggle{width:30px!important;height:30px!important;min-width:30px!important;min-height:30px!important;top:28px!important;border:1px solid #ddd9cf!important;border-radius:9px!important;background:#fffefa!important;box-shadow:0 4px 12px rgba(43,48,38,.08)!important}
+ .sidebar-toggle:hover{background:#f2f3ed!important}
+ .sidebar-collapsed .sidebar-account{background:transparent;border:0!important;padding:5px 0!important}
+ .sidebar-collapsed .sidebar-account .sidebar-user,.sidebar-collapsed .sidebar-account>a{display:none!important}
+ .sidebar-collapsed .sidebar-account .secondary-button{font-size:0!important;width:40px!important;height:40px!important;padding:0!important;margin:auto}
+ .sidebar-collapsed .sidebar-account .secondary-button::after{content:'↪';font-size:17px}
+ .sidebar-collapsed .sidebar nav a{width:44px!important;height:42px!important;margin:auto!important;padding:0!important;justify-content:center!important}
+ .sidebar-collapsed .sidebar nav a[aria-current=page]::before{left:-7px}
+}
+@media(max-width:760px){
+ .admin .sidebar{background:linear-gradient(180deg,#fffefa,#faf9f4)!important}
+ .mobile-sidebar-head{background:#fffefa!important}
+ .mobile-sidebar-account{background:#f3f3ed;border:1px solid #e7e5dc!important;border-radius:12px!important;margin:12px 0!important;padding:12px!important}
+ .admin .sidebar nav a{border-radius:10px!important;min-height:46px!important}
+ .admin .sidebar nav a[aria-current=page]{box-shadow:0 5px 14px rgba(53,67,46,.14)!important}
+}
