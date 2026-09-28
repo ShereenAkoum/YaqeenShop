@@ -1484,3 +1484,15 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .admin-page .website-doc-card .icon-button{background:#fffdf6!important;border-color:#deded3!important;color:#34452e!important}.admin-page .website-doc-card .icon-button:hover{background:#e9ecdf!important}
 .admin-page .website-unpublish{background:#f0f1e8!important;border-color:#d9ddcf!important;color:#34452e!important}
 .website-editor .website-nav-editor-head{background:#e9ecdf!important;border-color:#d9ddcf!important}.website-editor .website-nav-editor-head .section-kicker{color:#56614d!important}.website-editor-grid>label,.website-editor-grid>.full:not(.website-nav-editor-head):not(.website-contact-note){background:#fafaf6!important;border-color:#deded3!important}.website-editor input,.website-editor textarea,.website-editor select{background:#fffdf6!important;border-color:#bcc3b1!important;color:#293426!important}.website-editor input:focus,.website-editor textarea:focus,.website-editor select:focus{border-color:#718160!important;box-shadow:0 0 0 3px rgba(113,129,96,.14)!important}.website-contact-note{background:#f0f1e8!important;border-color:#d9ddcf!important}.homepage-section-card,.homepage-section-card:nth-child(n){background:#fafaf6!important;border-color:#deded3!important}.homepage-section-card[open] summary{background:#f0f1e8!important}.homepage-section-number{background:#e9ecdf!important;color:#34452e!important}.homepage-visible-control{background:#f0f1e8!important;border-color:#d9ddcf!important}.homepage-visibility.is-visible{background:#e9ecdf!important;color:#34452e!important}
+
+
+/* Website overview — production-style pastel section cards */
+.admin-page .website-doc-grid .website-doc-card:nth-child(1){background:#eef5f8!important;border-color:#d6e4e9!important}
+.admin-page .website-doc-grid .website-doc-card:nth-child(2){background:#f2eef8!important;border-color:#dfd7ec!important}
+.admin-page .website-doc-grid .website-doc-card:nth-child(3){background:#fbf6dc!important;border-color:#e9dfb8!important}
+.admin-page .website-doc-grid .website-doc-card:nth-child(4){background:#edf6f0!important;border-color:#d5e5da!important}
+.admin-page .website-doc-grid .website-doc-card:nth-child(5){background:#f8eee8!important;border-color:#ead9ce!important}
+.admin-page .website-doc-grid .website-doc-card:nth-child(6){background:#edf2e8!important;border-color:#d7dfcf!important}
+.admin-page .website-doc-grid .website-doc-card:nth-child(7){background:#f4eff7!important;border-color:#e1d8e7!important}
+.admin-page .website-doc-grid .website-doc-card .section-kicker{background:rgba(255,255,255,.62)!important;color:#56614d!important}
+.admin-page .website-doc-grid .website-doc-card .icon-button,.admin-page .website-doc-grid .website-doc-card .website-unpublish{background:rgba(255,255,255,.72)!important}
