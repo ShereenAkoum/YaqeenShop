@@ -1757,3 +1757,32 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
  .permission-action{min-height:72px!important;border-right:0!important;border-bottom:1px solid var(--border)!important}
  .permission-action:last-child{border-bottom:0!important}
 }
+
+
+/* Mobile Website: compact two-card layout. */
+@media(max-width:760px){
+ .admin-page .website-doc-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
+ .admin-page .website-doc-grid .website-doc-card{box-sizing:border-box!important;min-width:0!important;min-height:210px!important;padding:16px!important;border-radius:16px!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;gap:10px!important}
+ .admin-page .website-doc-grid .website-doc-card>div:first-child{min-width:0!important;padding-right:0!important}
+ .admin-page .website-doc-grid .website-doc-card h2{font-size:22px!important;line-height:1.05!important;overflow-wrap:anywhere}
+ .admin-page .website-doc-grid .website-doc-card p{font-size:11px!important;line-height:1.35!important}
+ .admin-page .website-doc-grid .website-doc-card>.table-actions{position:absolute!important;top:12px!important;right:12px!important;display:flex!important;gap:4px!important}
+ .admin-page .website-doc-grid .website-doc-card>.table-actions .icon-button{width:34px!important;height:34px!important;min-width:34px!important}
+ .admin-page .website-doc-grid .website-doc-card .website-unpublish{margin-top:auto!important;width:100%!important;min-width:0!important;padding:9px 7px!important;font-size:11px!important}
+}
+
+/* Mobile tables: Actions is a true pinned rail, including Refresh. */
+@media(max-width:760px){
+ .admin-page .table-wrap{position:relative!important;width:100%!important;max-width:100%!important;overflow-x:auto!important;overflow-y:visible!important;-webkit-overflow-scrolling:touch!important;isolation:isolate!important}
+ .admin-page .table-wrap table{width:max-content!important;min-width:100%!important;border-collapse:separate!important;border-spacing:0!important}
+ .admin-page .table-wrap th.actions-cell,
+ .admin-page .table-wrap td.actions-cell{position:sticky!important;right:0!important;box-sizing:border-box!important;width:150px!important;min-width:150px!important;max-width:150px!important;padding-left:8px!important;padding-right:8px!important;background:var(--surface)!important;overflow:hidden!important}
+ .admin-page .table-wrap thead th.actions-cell{z-index:20!important;background:var(--surface-2)!important}
+ .admin-page .table-wrap tbody td.actions-cell{z-index:15!important}
+ .admin-page .table-wrap th.actions-cell,
+ .admin-page .table-wrap td.actions-cell{box-shadow:-10px 0 14px -14px rgba(30,34,26,.6)!important}
+ .admin-page .table-wrap .actions-heading{display:flex!important;width:100%!important;align-items:center!important;justify-content:space-between!important;gap:6px!important;white-space:nowrap!important}
+ .admin-page .table-wrap .table-refresh-icon{position:static!important;display:inline-grid!important;place-items:center!important;flex:0 0 34px!important;width:34px!important;height:34px!important;min-width:34px!important;margin:0!important}
+ .admin-page .table-wrap td.actions-cell .table-actions{display:flex!important;width:100%!important;align-items:center!important;justify-content:space-evenly!important;gap:4px!important;flex-wrap:nowrap!important}
+ .admin-page .table-wrap td.actions-cell .icon-button{flex:0 0 30px!important;width:30px!important;height:30px!important;min-width:30px!important;padding:0!important}
+}
