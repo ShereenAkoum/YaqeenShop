@@ -1022,3 +1022,16 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .admin .nested-toggle-card .toggle-track>span{position:absolute!important;top:4px!important;left:4px!important;width:18px!important;height:18px!important;border-radius:50%!important;background:#fff!important;transform:none!important}
 .admin .nested-toggle-card .form-toggle>input:checked+.toggle-track{background:var(--primary)!important}
 .admin .nested-toggle-card .form-toggle>input:checked+.toggle-track>span{transform:translateX(18px)!important}
+
+/* Nav Bar ordering controls — fixed compact left control rail */
+.nav-link-row{grid-template-columns:92px minmax(140px,.75fr) minmax(180px,1fr) 40px!important;align-items:center!important}
+.nav-link-leading{width:92px!important;min-width:92px!important;display:grid!important;grid-template-columns:28px 56px!important;gap:8px!important;align-items:center!important}
+.nav-sort-actions{width:56px!important;display:grid!important;grid-template-columns:28px 28px!important;gap:0!important;align-items:center!important}
+.nav-sort-button{width:28px!important;height:28px!important;min-width:28px!important;min-height:28px!important;margin:0!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
+.nav-sort-button svg{display:block!important;width:15px!important;height:15px!important;margin:auto!important}
+.nav-sort-button:not(:disabled):hover{background:#e8ece2!important;border-radius:7px!important}
+.nav-sort-button:disabled{visibility:visible!important;opacity:.22!important}
+.nav-link-number{margin:0!important;align-self:center!important}
+.nav-link-row>label{align-self:center!important}
+.nav-delete-link{align-self:center!important}
+@media(max-width:760px){.nav-link-row{grid-template-columns:92px 1fr 40px!important}.nav-link-leading{grid-column:1!important;grid-row:1!important}.nav-delete-link{grid-column:3!important;grid-row:1!important}.nav-link-row>label{grid-column:1/-1!important}}
