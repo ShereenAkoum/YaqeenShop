@@ -98,3 +98,20 @@ body:has(.home-redesign) .modern-footer{background:#eeeee5;padding-top:56px}body
 .home-redesign .home-product-info>strong{grid-area:price;display:inline-flex;align-items:center;justify-content:center;min-height:34px;padding:6px 11px;border:1px solid #d8dfce;border-radius:999px;background:#f1f5ea;color:#2f432c;font-size:13px;font-weight:700;letter-spacing:.02em}
 .home-redesign .home-section-head{margin-bottom:38px}
 @media(max-width:700px){.home-redesign .home-products{padding-block:50px 58px}.home-redesign .store-product-grid{gap:34px 14px}.home-redesign .store-product-image{border-radius:14px}.home-redesign .store-product-image img{padding:10px}.home-redesign .home-product-info{grid-template-columns:1fr;grid-template-areas:'title' 'price';gap:8px;margin-top:13px}.home-redesign .home-product-info h3{font-size:14px}.home-redesign .home-product-info>strong{justify-self:start;min-height:30px;padding:5px 9px;font-size:12px}}
+
+
+/* Homepage product cards — clearer interactive ecommerce treatment */
+.home-redesign .store-product-card{padding:12px 12px 14px;border:1px solid #e3e1d7;border-radius:22px;background:#fff;box-shadow:0 8px 28px rgba(44,58,39,.055);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.home-redesign .store-product-card:hover{transform:translateY(-5px);border-color:#cfd6c6;box-shadow:0 18px 44px rgba(44,58,39,.11)}
+.home-redesign .store-product-image{aspect-ratio:1/1;border-radius:14px;background:#f1efe7;box-shadow:none}
+.home-redesign .store-product-card:hover .store-product-image{transform:none;box-shadow:none}
+.home-redesign .store-product-image img{padding:12px}
+.home-redesign .home-product-info{margin-top:15px;padding:0 4px;align-items:start}
+.home-product-copy{min-width:0;display:grid;gap:5px}
+.home-redesign .home-product-info h3{font-size:16px;line-height:1.45;font-weight:600;color:#263225}
+.home-product-meta{font-size:11px;line-height:1.4;color:#85897f;text-transform:capitalize}
+.home-redesign .home-product-info>strong{background:transparent;border:0;border-radius:0;padding:1px 0;min-height:0;font-size:14px;color:#34452e}
+.home-product-action{display:flex;align-items:center;justify-content:space-between;margin:14px 4px 0;padding-top:12px;border-top:1px solid #eceae1;color:#566747;font-size:11px;font-weight:650;letter-spacing:.035em;text-transform:uppercase;transition:color .2s ease}
+.home-redesign .store-product-card:hover .home-product-action{color:#263b25}
+.home-product-action svg{transition:transform .2s ease}.home-redesign .store-product-card:hover .home-product-action svg{transform:translateX(3px)}
+@media(max-width:700px){.home-redesign .store-product-card{padding:8px 8px 11px;border-radius:16px}.home-redesign .store-product-image{border-radius:11px}.home-redesign .home-product-info{grid-template-columns:1fr;grid-template-areas:'title' 'price';padding:0 2px}.home-redesign .home-product-info h3{font-size:14px}.home-product-action{margin:11px 2px 0;padding-top:10px;font-size:10px}}
