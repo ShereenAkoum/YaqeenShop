@@ -1549,3 +1549,20 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .order-detail .order-detail-grid>section{width:100%;max-width:100%;min-width:0;overflow-x:hidden!important}
 .order-detail .production-history-scroll{display:block;width:100%;max-width:100%;min-width:0;overflow-x:auto!important;overflow-y:hidden!important;-webkit-overflow-scrolling:touch}
 .order-detail .production-history-scroll>.production-history{display:flex!important;width:max-content!important;min-width:max-content!important;max-width:none!important;overflow:visible!important}
+
+
+/* Polished order-detail history layout */
+.order-detail .order-detail-grid{grid-template-columns:minmax(0,1fr) minmax(280px,.95fr)!important;gap:28px!important;align-items:start!important}
+.order-detail .order-detail-grid>section:first-child{min-width:0!important}
+.order-detail .order-history:not(.production-history){display:block!important;overflow:visible!important;padding:8px 4px 4px!important}
+.order-detail .order-history:not(.production-history)>div{display:grid!important;grid-template-columns:12px minmax(0,1fr)!important;min-width:0!important;padding:0 0 16px!important;gap:10px!important}
+.order-detail .order-history:not(.production-history)>div:not(:last-child)::after{left:5px!important;right:auto!important;top:14px!important;bottom:0!important;width:1px!important;height:auto!important}
+.order-detail .production-history-title{margin:8px 0 8px!important;padding-top:18px!important}
+.order-detail .production-history-scroll{box-sizing:border-box!important;width:100%!important;max-width:100%!important;padding:2px 0 8px!important;overflow-x:auto!important;overflow-y:hidden!important;overscroll-behavior-x:contain!important;scrollbar-width:thin}
+.order-detail .production-history-scroll>.production-history{box-sizing:border-box!important;display:flex!important;align-items:flex-start!important;width:max-content!important;min-width:100%!important;max-width:none!important;padding:8px 4px 12px!important;overflow:visible!important}
+.order-detail .production-history>div{flex:0 0 190px!important;min-width:190px!important;padding-right:20px!important}
+.order-detail .production-history strong{white-space:normal!important;line-height:1.35!important}
+.order-detail .production-history small{margin-top:6px!important}
+.order-detail .order-notes-section{min-width:0!important}
+.order-detail .order-notes-section .order-notes{width:100%!important;min-height:96px!important;box-sizing:border-box!important}
+@media(max-width:760px){.order-detail .order-detail-grid{grid-template-columns:1fr!important;gap:22px!important}.order-detail .production-history>div{flex-basis:165px!important;min-width:165px!important}}
