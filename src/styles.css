@@ -1895,3 +1895,29 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
   padding:12px 16px max(12px,env(safe-area-inset-bottom))!important;
  }
 }
+
+
+/* CRM modal actions: always present actions as a clean 2-column grid. */
+.admin .modal:not(.modal-confirm) .modal-actions,
+.admin .modal:not(.modal-confirm) .product-form-actions,
+.admin .modal:not(.modal-confirm) .staff-editor-actions,
+.admin .modal:not(.modal-confirm) .role-editor-actions{
+ display:grid!important;
+ grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ gap:12px!important;
+ width:100%!important;
+ align-items:stretch!important;
+}
+.admin .modal:not(.modal-confirm) .modal-actions>button,
+.admin .modal:not(.modal-confirm) .modal-actions>a,
+.admin .modal:not(.modal-confirm) .product-form-actions>button,
+.admin .modal:not(.modal-confirm) .product-form-actions>a,
+.admin .modal:not(.modal-confirm) .staff-editor-actions>button,
+.admin .modal:not(.modal-confirm) .staff-editor-actions>a,
+.admin .modal:not(.modal-confirm) .role-editor-actions>button,
+.admin .modal:not(.modal-confirm) .role-editor-actions>a{
+ width:100%!important;
+ min-width:0!important;
+ margin:0!important;
+ justify-content:center!important;
+}
