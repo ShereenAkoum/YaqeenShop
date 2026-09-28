@@ -1517,3 +1517,8 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .admin-page .website-doc-card .icon-button[data-tooltip]::before{content:'';position:absolute;left:50%;top:auto;bottom:calc(100% + 3px);transform:translateX(-50%);z-index:2000;border:5px solid transparent;border-top-color:#34452e;opacity:0;pointer-events:none}
 .admin-page .website-doc-card .icon-button[data-tooltip]:hover::before,.admin-page .website-doc-card .icon-button[data-tooltip]:focus-visible::before{opacity:1}
 .admin-page .website-doc-card{overflow:visible!important}
+
+
+/* Responsive product-card media: desktop slideshow, mobile single resolved image */
+.card-mobile-image{display:none}.card-desktop-slides{display:contents}
+@media(max-width:700px){.card-variant-strip.card-slideshow>.card-desktop-slides{display:none!important}.card-variant-strip.card-slideshow>.card-mobile-image{display:block!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important}.card-variant-strip.card-slideshow>.card-mobile-image>img{display:block!important;position:static!important;width:100%!important;height:100%!important;opacity:1!important;animation:none!important;object-fit:contain!important}}
