@@ -115,3 +115,15 @@ body:has(.home-redesign) .modern-footer{background:#eeeee5;padding-top:56px}body
 .home-redesign .store-product-card:hover .home-product-action{color:#263b25}
 .home-product-action svg{transition:transform .2s ease}.home-redesign .store-product-card:hover .home-product-action svg{transform:translateX(3px)}
 @media(max-width:700px){.home-redesign .store-product-card{padding:8px 8px 11px;border-radius:16px}.home-redesign .store-product-image{border-radius:11px}.home-redesign .home-product-info{grid-template-columns:1fr;grid-template-areas:'title' 'price';padding:0 2px}.home-redesign .home-product-info h3{font-size:14px}.home-product-action{margin:11px 2px 0;padding-top:10px;font-size:10px}}
+
+
+/* Mobile homepage polish: stack product title/price and contain story media */
+@media(max-width:600px){
+ .home-redesign .home-products .home-product-info{display:flex!important;flex-direction:column!important;direction:initial!important;align-items:stretch!important;justify-content:flex-start!important;gap:7px!important}
+ .home-redesign .home-products .home-product-copy{width:100%;display:block}
+ .home-redesign .home-products .home-product-info h3{width:100%;text-align:start!important;font-size:15px!important;line-height:1.55!important}
+ .home-redesign .home-products .home-product-info>.home-product-price{align-self:flex-start!important;padding:5px 9px!important;font-size:13px!important}
+ .home-redesign .home-cms-story{overflow:hidden}
+ .home-redesign .home-story-symbol{width:100%;height:auto;aspect-ratio:1.45!important;border-radius:8px;overflow:hidden;background:#eeeee4}
+ .home-redesign .home-story-symbol img{display:block;width:100%!important;height:100%!important;max-width:100%;object-fit:contain!important;object-position:center!important;padding:0!important}
+}
