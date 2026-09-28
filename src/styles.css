@@ -1456,3 +1456,9 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .site-header .store-nav-shell>.brand.brand-has-logo{display:flex!important;width:132px!important;height:62px!important;min-width:0!important;max-width:132px!important;align-items:center!important;justify-content:flex-start!important;align-content:normal!important;overflow:hidden!important}
 .site-header .store-nav-shell>.brand.brand-has-logo>.brand-logo{display:block!important;width:auto!important;height:auto!important;max-width:100%!important;max-height:56px!important;object-fit:contain!important;object-position:left center!important;flex:none!important}
 @media(max-width:760px){.site-header .store-nav-shell>.brand.brand-has-logo{width:105px!important;height:50px!important;max-width:105px!important}.site-header .store-nav-shell>.brand.brand-has-logo>.brand-logo{max-height:46px!important}}
+
+
+/* Contrast panel for transparent/light navbar logos */
+.site-header .store-nav-shell>.brand.brand-has-logo{box-sizing:border-box!important;padding:7px 12px!important;border:1px solid rgba(52,69,46,.10)!important;border-radius:12px!important;background:#34452e!important;box-shadow:0 3px 12px rgba(35,47,31,.08)!important}
+.site-header .store-nav-shell>.brand.brand-has-logo>.brand-logo{max-height:46px!important;object-position:center!important;margin:auto!important}
+@media(max-width:760px){.site-header .store-nav-shell>.brand.brand-has-logo{padding:6px 9px!important;border-radius:10px!important}.site-header .store-nav-shell>.brand.brand-has-logo>.brand-logo{max-height:38px!important}}
