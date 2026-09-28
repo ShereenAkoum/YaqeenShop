@@ -4,8 +4,8 @@ import { supabase } from '../lib/supabase';
 import { Modal } from './Modal';
 
 type Message={id:string;full_name:string;email:string;message:string;created_at:string};
-type Subscriber={id:string;email:string;consent_at:string};
-function when(value:string){return new Intl.DateTimeFormat(undefined,{dateStyle:'medium',timeStyle:'short'}).format(new Date(value))}
+type Subscriber={id:string;email:string;consent_at:string|null};
+function when(value:string|null|undefined){if(!value)return '—';const date=new Date(value);if(Number.isNaN(date.getTime()))return '—';try{return new Intl.DateTimeFormat(undefined,{dateStyle:'medium',timeStyle:'short'}).format(date)}catch{return '—'}}
 
 export function InboxAdmin(){
  const[tab,setTab]=useState<'messages'|'subscribers'>('messages'),[rows,setRows]=useState<(Message|Subscriber)[]>([]),[selected,setSelected]=useState<Message|null>(null),[q,setQ]=useState(''),[page,setPage]=useState(1),[pageSize,setPageSize]=useState(25),[count,setCount]=useState(0),[messageCount,setMessageCount]=useState(0),[subscriberCount,setSubscriberCount]=useState(0),[loading,setLoading]=useState(true),[error,setError]=useState('');
