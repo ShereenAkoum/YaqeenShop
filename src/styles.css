@@ -793,3 +793,14 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
  .role-editor-modern .permission-module-head{min-height:54px!important}
  .role-editor-modern .permission-actions{min-height:58px!important}
 }
+
+/* Definitive role permission layout: grid children must not stretch/collapse */
+.role-editor-modern .permission-groups{align-content:start!important;grid-auto-rows:max-content!important}
+.role-editor-modern .permission-module{align-self:start!important;min-height:max-content!important;height:max-content!important}
+.role-editor-modern .permission-module-head{height:auto!important;min-height:54px!important}
+.role-editor-modern .permission-actions{height:auto!important;min-height:58px!important}
+.role-editor-modern .permission-action{height:auto!important;min-height:58px!important}
+@media(min-width:761px){
+ .role-editor-modern .permission-groups{display:flex!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;gap:10px!important;overflow-y:auto!important}
+ .role-editor-modern .permission-module{display:block!important;flex:0 0 auto!important;width:100%!important;height:auto!important;min-height:112px!important}
+}
