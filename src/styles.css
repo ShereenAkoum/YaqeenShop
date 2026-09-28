@@ -1246,3 +1246,6 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 
 /* Keep image ordering as the right-most table control */
 .product-images-section th.order-cell,.product-images-section td.order-cell{width:96px;text-align:right}.product-images-section td.order-cell .order-controls{justify-content:flex-end}
+
+/* Product image ordering is the left-most column */
+.product-images-section th.order-cell,.product-images-section td.order-cell{width:96px;text-align:left}.product-images-section td.order-cell .order-controls{justify-content:flex-start}
