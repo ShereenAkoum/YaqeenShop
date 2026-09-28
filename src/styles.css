@@ -1172,3 +1172,8 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 
 /* Keep the mobile navigation trigger visible regardless of header action count */
 @media(max-width:760px){.header-actions .mobile-menu-button{display:grid!important}}
+
+/* Stock-limit alert uses the same centered toast treatment in red */
+.bag-limit-pop{border-color:#efc9c9!important;background:#fff8f7!important;box-shadow:0 14px 38px rgba(130,35,35,.18)!important}
+.bag-limit-pop>span{background:#f9dddd!important;color:#a22e31!important;font-size:22px;font-weight:800}
+.bag-limit-pop strong{color:#8f292d!important}
