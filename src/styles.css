@@ -1591,3 +1591,14 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .modal:has(> .order-detail-scroll)>.order-detail-scroll{display:block;flex:1 1 auto;min-height:0;width:auto!important;max-width:none!important;padding:0 24px 24px;overflow-y:auto!important;overflow-x:hidden!important;scrollbar-gutter:stable}
 .modal:has(> .order-detail-scroll)>.order-detail-scroll>.order-detail-head{padding-top:24px}
 @media(max-width:760px){.modal:has(> .order-detail-scroll){width:calc(100vw - 16px);height:calc(100dvh - 16px);max-height:calc(100dvh - 16px)}.modal:has(> .order-detail-scroll) .modal-head{padding:16px}.modal:has(> .order-detail-scroll)>.order-detail-scroll{padding:0 16px 20px}}
+
+
+/* Production board mobile: preserve real horizontal lanes instead of squeezing all stages. */
+@media(max-width:560px){
+ .production-page{min-width:0!important;overflow-x:hidden!important}
+ .production-board-help{font-size:13px!important;line-height:1.5!important;margin:18px 0 12px!important}
+ .production-board{display:flex!important;grid-template-columns:none!important;gap:12px!important;width:100%!important;max-width:100%!important;min-width:0!important;padding:2px 2px 14px!important;overflow-x:auto!important;overflow-y:visible!important;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+ .production-board>.production-lane{display:block!important;flex:0 0 min(84vw,340px)!important;width:min(84vw,340px)!important;min-width:min(84vw,340px)!important;max-width:min(84vw,340px)!important;min-height:360px!important;box-sizing:border-box!important;scroll-snap-align:start}
+ .production-lane-head{width:100%!important;box-sizing:border-box!important}
+ .production-card{width:100%!important;max-width:100%!important;box-sizing:border-box!important}
+}
