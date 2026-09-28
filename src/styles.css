@@ -1264,3 +1264,7 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .cart-item-bottom>strong{justify-self:end;font-size:18px;white-space:nowrap}
 }
 @media(max-width:380px){.cart-item-modern{grid-template-columns:88px minmax(0,1fr)}.cart-item-image{width:88px;height:88px}.cart-item-bottom{grid-template-columns:118px 1fr}.cart-item-title{font-size:16px}}
+
+/* Bag variant details */
+.cart-item-meta{display:flex;flex-wrap:wrap;gap:5px 14px;margin-top:7px;color:var(--muted);font-size:10px;line-height:1.45}.cart-item-meta span{display:inline-flex;gap:4px}.cart-item-meta b{color:var(--text);font-weight:700}
+@media(max-width:600px){.cart-item-meta{display:grid;gap:3px;margin-top:6px;font-size:10px}}
