@@ -72,3 +72,13 @@ body:has(.home-redesign) .modern-footer{background:#eeeee5;padding-top:56px}body
  .home-redesign .home-products .home-product-discover{font-size:12px;gap:6px}
 }
 @media(max-width:360px){.home-redesign .home-products .store-product-grid{grid-template-columns:1fr}}
+
+/* Product name on the right, price on the left at every screen size. */
+.home-redesign .home-products .home-product-info{display:flex;flex-direction:row;direction:ltr;align-items:center;justify-content:space-between;gap:12px;margin-top:16px}
+.home-redesign .home-products .home-product-info h3{flex:1;min-width:0;text-align:right;margin:0;font-size:18px;line-height:1.6;overflow-wrap:anywhere}
+.home-redesign .home-products .home-product-info>.home-product-price{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;padding:7px 12px;border:1px solid #d6dfcc;border-radius:999px;background:#eaf0e3;color:#34452e;font-size:16px;font-weight:700;line-height:1.5;font-variant-numeric:tabular-nums;letter-spacing:.01em}
+@media(max-width:600px){
+ .home-redesign .home-products .home-product-info{gap:8px;flex-wrap:wrap}
+ .home-redesign .home-products .home-product-info h3{font-size:16px;flex-basis:80px}
+ .home-redesign .home-products .home-product-info>.home-product-price{padding:5px 9px;font-size:14px}
+}
