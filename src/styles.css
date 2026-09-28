@@ -804,3 +804,11 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .modal:has(.inventory-adjust-form),.modal-card:has(.inventory-adjust-form),.modal-content:has(.inventory-adjust-form){width:min(680px,calc(100vw - 32px));max-width:680px}
 .inventory-adjust-form{width:100%;max-width:none}
 @media(max-width:760px){.modal:has(.inventory-adjust-form),.modal-card:has(.inventory-adjust-form),.modal-content:has(.inventory-adjust-form){width:calc(100vw - 24px);max-width:none}}
+
+
+/* CRM form helper text: reserve a consistent helper row so fields align */
+.admin .editor-form label,.admin .nested-form-grid label,.admin .product-form-grid label,.admin .staff-editor-section label{display:flex;flex-direction:column;min-width:0}
+.admin .editor-form label>small,.admin .nested-form-grid label>small,.admin .product-form-grid label>small,.admin .staff-editor-section label>small{display:block;min-height:15px;margin:6px 0 0;color:var(--muted);font-size:10px;font-weight:400;line-height:1.35}
+.admin .editor-form label:not(:has(>small))::after,.admin .nested-form-grid label:not(:has(>small))::after,.admin .product-form-grid label:not(:has(>small))::after,.admin .staff-editor-section label:not(:has(>small))::after{content:"";display:block;min-height:15px;margin-top:6px}
+.admin .editor-form .check::after,.admin .nested-toggle-card::after,.admin label.no-helper::after{display:none!important;content:none!important}
+@media(max-width:760px){.admin .editor-form label>small,.admin .nested-form-grid label>small,.admin .product-form-grid label>small,.admin .staff-editor-section label>small,.admin .editor-form label:not(:has(>small))::after,.admin .nested-form-grid label:not(:has(>small))::after,.admin .product-form-grid label:not(:has(>small))::after,.admin .staff-editor-section label:not(:has(>small))::after{min-height:0}}
