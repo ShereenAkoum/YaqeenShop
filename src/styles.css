@@ -1602,3 +1602,22 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
  .production-lane-head{width:100%!important;box-sizing:border-box!important}
  .production-card{width:100%!important;max-width:100%!important;box-sizing:border-box!important}
 }
+
+
+/* Audit Log mobile: compact filters and keep the table inside its own horizontal scroller. */
+@media(max-width:600px){
+ .audit-page{min-width:0!important;overflow-x:hidden!important}
+ .audit-page .page-title{margin-bottom:22px!important}
+ .audit-filters{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:10px!important;width:100%!important;min-width:0!important}
+ .audit-filters .category-search,.audit-filters>select,.audit-filters>input{grid-column:1/-1!important;min-width:0!important}
+ .audit-filters label{min-width:0!important}
+ .audit-filters label input{box-sizing:border-box!important;min-width:0!important;width:100%!important}
+ .audit-count{margin:18px 0 10px!important}
+ .audit-page>.table-wrap{display:block!important;width:100%!important;max-width:100%!important;min-width:0!important;overflow-x:auto!important;overflow-y:hidden!important;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+ .audit-page>.table-wrap>table{width:max-content!important;min-width:760px!important;table-layout:auto!important}
+ .audit-page>.table-wrap th,.audit-page>.table-wrap td{white-space:nowrap!important}
+ .audit-page>.table-wrap th:first-child,.audit-page>.table-wrap td:first-child{min-width:190px!important}
+ .audit-page>.table-wrap th:nth-child(2),.audit-page>.table-wrap td:nth-child(2){min-width:155px!important}
+ .audit-page>.table-wrap tfoot td{white-space:normal!important}
+ .audit-page .category-pagination{min-width:700px!important}
+}
