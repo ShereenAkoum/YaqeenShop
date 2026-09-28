@@ -903,3 +903,11 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
  .admin .sidebar nav a{border-radius:10px!important;min-height:46px!important}
  .admin .sidebar nav a[aria-current=page]{box-shadow:0 5px 14px rgba(53,67,46,.14)!important}
 }
+
+/* Refined View store action */
+.admin .sidebar-account .sidebar-store-link{display:flex!important;align-items:center!important;gap:8px!important;width:100%;min-height:38px!important;padding:8px 10px!important;border:1px solid #dde2d8!important;border-radius:8px!important;background:#fffefa!important;color:#3d4936!important;font-size:12px!important;font-weight:600!important;transition:background .15s ease,border-color .15s ease,box-shadow .15s ease!important}
+.admin .sidebar-account .sidebar-store-link svg{color:#66765c;stroke-width:1.8}
+.admin .sidebar-account .sidebar-store-link:hover{background:#eef1e9!important;border-color:#cfd6c8!important;color:#30402b!important;box-shadow:0 3px 9px rgba(53,67,46,.06)!important}
+.sidebar-collapsed .sidebar-account .sidebar-store-link{display:flex!important;width:40px!important;height:40px!important;min-height:40px!important;padding:0!important;justify-content:center!important;margin:auto!important}
+.sidebar-collapsed .sidebar-account .sidebar-store-link span{display:none!important}
+@media(max-width:760px){.mobile-sidebar-account .sidebar-store-link{width:100%!important;justify-content:flex-start!important}}
