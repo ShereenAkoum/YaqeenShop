@@ -1450,3 +1450,9 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 
 /* Storefront logo sizing — keep uploaded artwork clear and readable in navigation */
 .site-header .brand.brand-has-logo{width:150px;height:64px;justify-content:flex-start;overflow:visible}.site-header .brand-logo{width:100%;height:100%;max-width:none;max-height:none;object-fit:contain;object-position:left center}.store-nav-shell{min-height:64px}.mobile-drawer-brand .brand.brand-has-logo{width:130px;height:58px}.mobile-drawer-brand .brand-logo{width:100%;height:100%;max-width:none;max-height:none;object-fit:contain;object-position:left center}@media(max-width:760px){.site-header{padding:12px 0}.site-header .brand.brand-has-logo{width:120px;height:52px}.store-nav-shell{min-height:52px}}
+
+
+/* Correct uploaded navbar logo geometry */
+.site-header .store-nav-shell>.brand.brand-has-logo{display:flex!important;width:132px!important;height:62px!important;min-width:0!important;max-width:132px!important;align-items:center!important;justify-content:flex-start!important;align-content:normal!important;overflow:hidden!important}
+.site-header .store-nav-shell>.brand.brand-has-logo>.brand-logo{display:block!important;width:auto!important;height:auto!important;max-width:100%!important;max-height:56px!important;object-fit:contain!important;object-position:left center!important;flex:none!important}
+@media(max-width:760px){.site-header .store-nav-shell>.brand.brand-has-logo{width:105px!important;height:50px!important;max-width:105px!important}.site-header .store-nav-shell>.brand.brand-has-logo>.brand-logo{max-height:46px!important}}
