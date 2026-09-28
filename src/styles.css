@@ -1566,3 +1566,20 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .order-detail .order-notes-section{min-width:0!important}
 .order-detail .order-notes-section .order-notes{width:100%!important;min-height:96px!important;box-sizing:border-box!important}
 @media(max-width:760px){.order-detail .order-detail-grid{grid-template-columns:1fr!important;gap:22px!important}.order-detail .production-history>div{flex-basis:165px!important;min-width:165px!important}}
+
+
+/* Order detail final layout: histories use full rows; notes live at the bottom. */
+.order-detail .order-history-sections{display:block!important;width:100%!important;min-width:0!important;margin-top:22px!important}
+.order-detail .order-history-section{display:block!important;width:100%!important;min-width:0!important;margin:0!important;padding:0!important;overflow:hidden!important}
+.order-detail .order-history-section>h3{margin:0 0 10px!important}
+.order-detail .production-history-section{margin-top:18px!important;padding-top:18px!important;border-top:1px solid var(--border)!important}
+.order-detail .status-history{display:flex!important;width:100%!important;max-width:100%!important;overflow-x:auto!important;overflow-y:hidden!important;padding:8px 4px 12px!important}
+.order-detail .status-history>div{flex:0 0 190px!important;min-width:190px!important;padding:0 20px 0 0!important}
+.order-detail .status-history>div:not(:last-child)::after{left:10px!important;right:0!important;top:9px!important;width:auto!important;height:1px!important;bottom:auto!important}
+.order-detail .production-history-scroll{width:100%!important;max-width:100%!important;padding:0 0 8px!important}
+.order-detail .production-history-scroll>.production-history{min-width:100%!important;padding:8px 4px 12px!important}
+.order-detail .order-notes-bottom{display:block!important;width:100%!important;max-width:100%!important;box-sizing:border-box!important;margin-top:20px!important;padding-top:18px!important;border-top:1px solid var(--border)!important}
+.order-detail .order-notes-bottom h3{margin:0 0 10px!important}
+.order-detail .order-notes-bottom .order-notes{display:block!important;width:100%!important;min-height:90px!important}
+.order-detail .order-notes-actions{display:flex!important;justify-content:flex-end!important;margin-top:10px!important}
+@media(max-width:760px){.order-detail .status-history>div,.order-detail .production-history>div{flex-basis:165px!important;min-width:165px!important}}
