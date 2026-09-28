@@ -1235,3 +1235,8 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 
 /* Image ordering controls */
 .order-controls{display:flex;align-items:center;gap:4px}.order-controls .icon-button:disabled{opacity:.25;cursor:not-allowed}.variant-image-order{position:absolute;left:7px;bottom:7px;display:flex;gap:4px;z-index:2}.variant-image-order button{position:static!important;display:grid!important;place-items:center;width:28px!important;height:28px!important;padding:0!important;border:1px solid rgba(255,255,255,.8)!important;border-radius:7px!important;background:rgba(255,253,249,.94)!important;color:var(--text)!important;box-shadow:0 2px 8px rgba(0,0,0,.08);cursor:pointer}.variant-image-order button:disabled{opacity:.35;cursor:not-allowed}.variant-image-tile>.variant-image-remove{top:7px!important;right:7px!important}
+
+/* Keep table tooltips visible outside scroll containers */
+.product-subsection>.table-wrap{overflow-x:auto!important;overflow-y:visible!important;padding-bottom:42px!important;margin-bottom:-42px!important}
+.product-subsection>.table-wrap tbody tr:last-child td{position:relative}
+.product-subsection>.table-wrap .icon-button[data-tooltip]::after{z-index:1200!important}
