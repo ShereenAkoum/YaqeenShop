@@ -21,7 +21,7 @@ import { UsersRoles } from './admin/UsersRoles';
 
 type StoreCategory={id:string;title:string;slug:string};
 type StoreImage={id:string;url:string;alt:string|null;position:number};
-type StoreVariant={id:string;active:boolean;sku?:string;color?:string|null;price_override?:number|null;image_url?:string|null;stock_allocation?:number};
+type StoreVariant={id:string;active:boolean;sku?:string;color?:string|null;price_override?:number|null;image_url?:string|null;stock_allocation?:number;inventory_item_id?:string|null;inventory_items?:{title?:string|null;sku?:string|null}|null};
 type P={id:string;title:string;slug:string;price:number|null;shape?:string|null;bestseller?:boolean;arabic_title?:string|null;category_id?:string|null;inventory_item_id?:string|null;stock_allocation?:number;product_images?:StoreImage[];product_variants?:StoreVariant[]};
 type Staff={user:User;profile:{full_name?:string|null};permissions:string[];role:string};
 type HeaderCartItem={price:number;quantity:number};
