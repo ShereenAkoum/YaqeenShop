@@ -687,7 +687,6 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 @media(max-width:760px){.store-product-detail{grid-template-columns:1fr;gap:30px;padding:28px 0 54px}.store-product-copy{padding-top:0}.store-product-copy h1{font-size:38px}.product-actions{display:grid;grid-template-columns:1fr 1fr}.store-field select,.store-field input{font-size:16px}.store-thumbnails button{width:64px;height:64px;flex-basis:64px}}
 
 /* Simple product inventory section */
-.product-modern-form .simple-inventory-section{background:transparent;border:0;border-radius:0;padding:0}
 .product-modern-form .simple-inventory-section .product-form-section-head{align-self:start}
 .product-modern-form .simple-inventory-section .product-form-grid{align-items:start}
 .product-modern-form .simple-inventory-section label{min-width:0}
