@@ -1621,3 +1621,17 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
  .audit-page>.table-wrap tfoot td{white-space:normal!important}
  .audit-page .category-pagination{min-width:700px!important}
 }
+
+
+/* Audit filter control consistency and visible calendar affordance. */
+.audit-filters>select,.audit-filters>input{box-sizing:border-box!important;width:100%!important;max-width:none!important}
+.audit-date-filter{min-width:0!important}
+.audit-date-control{position:relative;width:100%;min-width:0}
+.audit-date-control input{box-sizing:border-box!important;width:100%!important;padding-right:38px!important}
+.audit-date-control>svg{position:absolute;right:12px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--muted)}
+.audit-date-control input::-webkit-calendar-picker-indicator{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+@media(max-width:600px){
+ .audit-filters>select,.audit-filters>input{display:block!important;width:100%!important;min-width:0!important;max-width:none!important;box-sizing:border-box!important}
+ .audit-date-filter{width:100%!important}
+ .audit-date-control,.audit-date-control input{width:100%!important;max-width:100%!important}
+}
