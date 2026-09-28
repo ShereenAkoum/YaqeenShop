@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
-import { CalendarDays } from 'lucide-react';
+import { CalendarDays, ChevronLeft, ChevronRight } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
 const money=(v:any)=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:2}).format(Number(v||0));
 const iso=(d:Date)=>d.toISOString().slice(0,10);
 function ReportTable({title,rows,columns,moneyColumns=[]}:{title:string;rows:any[];columns:{key:string;label:string}[];moneyColumns?:string[]}){
- return <section className="report-section"><div className="section-head"><h2>{title}</h2></div><div className="table-wrap"><table><thead><tr>{columns.map(c=><th key={c.key}>{c.label}</th>)}</tr></thead><tbody>{rows.map((r,i)=><tr key={i}>{columns.map(c=><td key={c.key}>{moneyColumns.includes(c.key)?money(r[c.key]):r[c.key]??'—'}</td>)}</tr>)}{!rows.length&&<tr><td colSpan={columns.length}>No data for this period.</td></tr>}</tbody></table></div></section>
+ const[page,setPage]=useState(1),[pageSize,setPageSize]=useState(10);useEffect(()=>setPage(1),[rows,pageSize]);const count=rows.length,pages=Math.max(1,Math.ceil(count/pageSize)),safePage=Math.min(page,pages),visible=rows.slice((safePage-1)*pageSize,safePage*pageSize);
+ return <section className="report-section"><div className="section-head"><h2>{title}</h2></div><div className="table-wrap"><table><thead><tr>{columns.map(c=><th key={c.key}>{c.label}</th>)}</tr></thead><tbody>{visible.map((r,i)=><tr key={(safePage-1)*pageSize+i}>{columns.map(c=><td key={c.key}>{moneyColumns.includes(c.key)?money(r[c.key]):r[c.key]??'—'}</td>)}</tr>)}{!visible.length&&<tr><td colSpan={columns.length}>No data for this period.</td></tr>}</tbody><tfoot><tr><td colSpan={columns.length}><div className="category-pagination"><div className="table-size"><span>Rows per page</span><select value={pageSize} onChange={e=>setPageSize(Number(e.target.value))}><option>10</option><option>25</option><option>50</option><option>100</option></select></div><span className="pagination-range">{count?Math.min((safePage-1)*pageSize+1,count):0}–{Math.min(safePage*pageSize,count)} of {count}</span><div className="pagination-controls"><button className="pagination-button" disabled={safePage<=1} onClick={()=>setPage(p=>Math.max(1,p-1))}><ChevronLeft size={17}/></button><span>Page {safePage} of {pages}</span><button className="pagination-button" disabled={safePage>=pages} onClick={()=>setPage(p=>Math.min(pages,p+1))}><ChevronRight size={17}/></button></div></div></td></tr></tfoot></table></div></section>
 }
 export function Reports(){
  const today=new Date(),past=new Date(today.getTime()-30*86400000);const[from,setFrom]=useState(iso(past)),[to,setTo]=useState(iso(today)),[applied,setApplied]=useState({from:iso(past),to:iso(today)}),[data,setData]=useState<any|null>(null),[error,setError]=useState(''),[loading,setLoading]=useState(true);
