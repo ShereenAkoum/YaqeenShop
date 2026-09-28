@@ -1786,3 +1786,27 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
  .admin-page .table-wrap td.actions-cell .table-actions{display:flex!important;width:100%!important;align-items:center!important;justify-content:space-evenly!important;gap:4px!important;flex-wrap:nowrap!important}
  .admin-page .table-wrap td.actions-cell .icon-button{flex:0 0 30px!important;width:30px!important;height:30px!important;min-width:30px!important;padding:0!important}
 }
+
+
+/* Role modal final layout fix: one scroll owner, stable footer, compact real toggles. */
+.modal:has(.role-editor-modern){display:flex!important;flex-direction:column!important;overflow:hidden!important}
+.modal:has(.role-editor-modern)>.modal-head{flex:0 0 auto!important}
+.modal:has(.role-editor-modern)>.modal-body{display:flex!important;flex:1 1 auto!important;min-height:0!important;height:auto!important;overflow:hidden!important;padding-bottom:0!important}
+.modal:has(.role-editor-modern) .role-editor-modern{display:flex!important;flex:1 1 auto!important;flex-direction:column!important;width:100%!important;height:100%!important;min-height:0!important;overflow-y:auto!important;overflow-x:hidden!important;-webkit-overflow-scrolling:touch!important;overscroll-behavior:contain!important;padding-bottom:0!important}
+.modal:has(.role-editor-modern) .role-access-section{display:block!important;flex:0 0 auto!important;min-height:0!important;overflow:visible!important}
+.modal:has(.role-editor-modern) .permission-groups{display:flex!important;flex:none!important;flex-direction:column!important;height:auto!important;max-height:none!important;overflow:visible!important}
+.modal:has(.role-editor-modern) .role-editor-actions{position:sticky!important;bottom:0!important;z-index:30!important;flex:0 0 auto!important;margin-top:16px!important;padding:14px 0 max(12px,env(safe-area-inset-bottom))!important;background:var(--surface)!important;border-top:1px solid var(--border)!important;box-shadow:0 -10px 18px var(--surface)!important}
+.modal:has(.role-editor-modern) .permission-action{align-items:center!important}
+.modal:has(.role-editor-modern) .permission-action-toggle{display:block!important;position:relative!important;flex:0 0 36px!important;width:36px!important;height:22px!important;min-width:36px!important;min-height:22px!important;border-radius:999px!important;background:#b8b4ab!important;overflow:hidden!important}
+.modal:has(.role-editor-modern) .permission-action-toggle>span{position:absolute!important;display:block!important;top:3px!important;left:3px!important;width:16px!important;height:16px!important;min-width:16px!important;min-height:16px!important;border-radius:50%!important;background:#fff!important;transform:none!important}
+.modal:has(.role-editor-modern) .permission-action:has(input:checked) .permission-action-toggle{background:var(--primary)!important}
+.modal:has(.role-editor-modern) .permission-action:has(input:checked) .permission-action-toggle>span{left:17px!important}
+@media(max-width:760px){
+ .modal:has(.role-editor-modern){height:calc(100dvh - 24px)!important;max-height:calc(100dvh - 24px)!important}
+ .modal:has(.role-editor-modern) .role-editor-modern{padding-left:16px!important;padding-right:16px!important}
+ .modal:has(.role-editor-modern) .role-name-field{margin-left:0!important;max-width:none!important}
+ .modal:has(.role-editor-modern) .permission-groups{margin-left:0!important}
+ .modal:has(.role-editor-modern) .permission-actions{grid-template-columns:1fr!important}
+ .modal:has(.role-editor-modern) .permission-action{min-height:64px!important;padding:12px!important;border-right:0!important;border-bottom:1px solid var(--border)!important}
+ .modal:has(.role-editor-modern) .permission-action:last-child{border-bottom:0!important}
+}
