@@ -1012,3 +1012,13 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 
 /* Stable Nav Bar row markers and disabled sort controls */
 .nav-link-leading{min-width:78px;justify-content:flex-start}.nav-link-number{flex:0 0 28px;width:28px!important;height:28px!important;min-width:28px!important;min-height:28px!important;padding:0!important;line-height:28px!important;text-align:center;border-radius:50%!important;font-size:11px!important;font-weight:700!important;background:#e8ece2!important;color:var(--primary)!important}.nav-sort-actions{align-items:center}.nav-sort-button{position:relative;display:grid!important;place-items:center;width:28px!important;height:28px!important;min-width:28px!important;min-height:28px!important;padding:0!important;border-radius:7px!important}.nav-sort-button:disabled{opacity:.28!important;pointer-events:none!important;background:transparent!important;border-color:transparent!important;box-shadow:none!important}.nav-sort-button:disabled::before,.nav-sort-button:disabled::after{display:none!important;content:none!important}.nav-sort-button:not(:disabled):hover{background:#eef1e9!important}
+
+/* Restore compact variant form toggle after global CRM toggle styles */
+.admin .nested-toggle-card{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:16px!important;min-height:66px!important;padding:13px 14px!important}
+.admin .nested-toggle-card>div{display:grid!important;gap:3px!important;text-align:left!important}
+.admin .nested-toggle-card .form-toggle{position:relative!important;display:inline-block!important;flex:0 0 44px!important;width:44px!important;height:26px!important;min-height:26px!important;margin:0!important;padding:0!important}
+.admin .nested-toggle-card .form-toggle>input{position:absolute!important;width:1px!important;height:1px!important;min-width:1px!important;min-height:1px!important;margin:0!important;padding:0!important;opacity:0!important}
+.admin .nested-toggle-card .toggle-track{position:absolute!important;inset:0!important;width:44px!important;height:26px!important;border-radius:999px!important;background:#b7b1a7!important}
+.admin .nested-toggle-card .toggle-track>span{position:absolute!important;top:4px!important;left:4px!important;width:18px!important;height:18px!important;border-radius:50%!important;background:#fff!important;transform:none!important}
+.admin .nested-toggle-card .form-toggle>input:checked+.toggle-track{background:var(--primary)!important}
+.admin .nested-toggle-card .form-toggle>input:checked+.toggle-track>span{transform:translateX(18px)!important}
