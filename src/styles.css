@@ -1103,3 +1103,6 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 
 /* Manual and editable orders */
 .order-edit-form{display:grid;grid-template-columns:1fr 1fr;gap:14px}.order-edit-form label{display:grid;gap:6px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}.order-edit-form .wide{grid-column:1/-1}.order-edit-form textarea{min-height:80px;resize:vertical}.manual-items{display:grid;gap:10px}.manual-item{display:grid;grid-template-columns:1fr 90px auto;gap:8px}@media(max-width:650px){.order-edit-form{grid-template-columns:1fr}.order-edit-form .wide{grid-column:auto}.manual-item{grid-template-columns:1fr}}
+
+/* Compact table-header refresh */
+.actions-heading{display:inline-flex;align-items:center;justify-content:flex-end;gap:9px;width:100%}.table-refresh-icon{display:inline-grid;place-items:center;width:27px;height:27px;padding:0;border:1px solid var(--border);border-radius:7px;background:var(--surface);color:var(--muted);cursor:pointer}.table-refresh-icon:hover{color:var(--text);background:#f4f5ef}.table-refresh-icon:active svg{transform:rotate(90deg)}
