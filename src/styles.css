@@ -1147,3 +1147,12 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .modal:has(.manual-order-form) .product-modern-form>.manual-order-items-section>.table-wrap{grid-column:2!important;grid-row:2!important;justify-self:stretch!important;align-self:start!important;box-sizing:border-box!important;width:100%!important;min-width:0!important;max-width:100%!important}
 .modal:has(.manual-order-form) .product-modern-form>.manual-order-items-section>.table-wrap>table{box-sizing:border-box!important;width:100%!important;min-width:620px!important}
 @media(max-width:760px){.modal:has(.manual-order-form) .product-modern-form>.manual-order-items-section{grid-template-columns:1fr!important;grid-template-rows:auto auto auto!important;gap:12px!important}.modal:has(.manual-order-form) .product-modern-form>.manual-order-items-section>.product-subsection-head,.modal:has(.manual-order-form) .product-modern-form>.manual-order-items-section>.manual-items-toolbar,.modal:has(.manual-order-form) .product-modern-form>.manual-order-items-section>.table-wrap{grid-column:1!important;grid-row:auto!important}}
+
+/* Order items content wrapper — same DOM/grid contract as every Product form section */
+.modal:has(> .product-modern-form) .manual-order-items-section{grid-template-columns:180px minmax(0,1fr)!important;gap:28px!important}
+.modal:has(> .product-modern-form) .manual-order-items-section>.product-form-section-head{grid-column:1!important}
+.modal:has(> .product-modern-form) .manual-order-items-section>.manual-items-content{grid-column:2!important;min-width:0!important;width:100%!important}
+.manual-items-content .manual-items-toolbar{display:flex;justify-content:flex-end;width:100%;margin:0 0 12px}
+.manual-items-content>.table-wrap{display:block!important;width:100%!important;max-width:100%!important;min-width:0!important;overflow-x:auto!important}
+.manual-items-content>.table-wrap table{width:100%!important;min-width:620px!important}
+@media(max-width:760px){.modal:has(> .product-modern-form) .manual-order-items-section{grid-template-columns:1fr!important;gap:14px!important}.modal:has(> .product-modern-form) .manual-order-items-section>.product-form-section-head,.modal:has(> .product-modern-form) .manual-order-items-section>.manual-items-content{grid-column:1!important}}
