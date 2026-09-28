@@ -1324,3 +1324,8 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .checkout-section-heading p{font-size:10px!important}
 .checkout-payment-section .checkout-method-group+.checkout-method-group{margin-top:20px!important}
 }
+
+/* Keep checkout section content aligned to its numbered heading */
+.checkout-payment-section>.checkout-method-group{margin-left:52px!important;width:calc(100% - 52px)!important}
+@media(max-width:760px){.checkout-payment-section>.checkout-method-group{margin-left:45px!important;width:calc(100% - 45px)!important}}
+@media(max-width:520px){.checkout-payment-section>.checkout-method-group{margin-left:0!important;width:100%!important}}
