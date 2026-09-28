@@ -11,7 +11,7 @@ import { SettingsAdmin } from './admin/Settings';
 import { Reports } from './admin/Reports';
 import { AuditLog } from './admin/AuditLog';
 import { Link, Navigate, Route, Routes, useLocation, useNavigate, useParams } from 'react-router-dom';
-import { BarChart3, ChevronLeft, ChevronRight, ClipboardList, Globe, Layers, LayoutDashboard, Menu, Package, Search, Settings, Shield, ShoppingBag, Truck, Users, Wallet } from 'lucide-react';
+import { BarChart3, Check, ChevronLeft, ChevronRight, ClipboardList, Globe, Layers, LayoutDashboard, Menu, Package, Search, Settings, Shield, ShoppingBag, Truck, Users, Wallet } from 'lucide-react';
 import type { User } from '@supabase/supabase-js';
 import { configured, supabase } from './lib/supabase';
 import { Categories } from './admin/Categories';
