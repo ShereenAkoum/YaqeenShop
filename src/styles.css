@@ -812,3 +812,10 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .admin .editor-form label:not(:has(>small))::after,.admin .nested-form-grid label:not(:has(>small))::after,.admin .product-form-grid label:not(:has(>small))::after,.admin .staff-editor-section label:not(:has(>small))::after{content:"";display:block;min-height:15px;margin-top:6px}
 .admin .editor-form .check::after,.admin .nested-toggle-card::after,.admin label.no-helper::after{display:none!important;content:none!important}
 @media(max-width:760px){.admin .editor-form label>small,.admin .nested-form-grid label>small,.admin .product-form-grid label>small,.admin .staff-editor-section label>small,.admin .editor-form label:not(:has(>small))::after,.admin .nested-form-grid label:not(:has(>small))::after,.admin .product-form-grid label:not(:has(>small))::after,.admin .staff-editor-section label:not(:has(>small))::after{min-height:0}}
+
+.inventory-image-empty{color:var(--muted)}
+.inventory-view-image,.inventory-image-editor{display:flex;align-items:center;gap:14px}
+.inventory-view-image img,.inventory-image-editor img{width:110px;height:86px;object-fit:contain;border:1px solid var(--border);border-radius:10px;background:var(--surface-2)}
+.inventory-image-editor .remove-image-control{display:flex!important;flex-direction:row!important;align-items:center;gap:8px;margin:0}
+.inventory-image-editor .remove-image-control::after{display:none!important}
+.inventory-image-editor .remove-image-control input{width:18px;min-height:18px}
