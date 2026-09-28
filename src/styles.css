@@ -2008,3 +2008,34 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
 .permission-select-all>input[type="checkbox"]:checked+.permission-select-all-toggle>span{
  transform:translateX(14px)!important;
 }
+
+
+/* Final select-all switch normalization: no native checkbox, one switch only. */
+.permission-module-head .permission-select-all{
+ display:flex!important;flex-direction:row!important;align-items:center!important;
+ justify-content:flex-end!important;gap:9px!important;margin-left:auto!important;
+}
+.permission-module-head .permission-select-all>input[type="checkbox"]{
+ position:absolute!important;opacity:0!important;visibility:hidden!important;
+ width:1px!important;height:1px!important;min-width:1px!important;min-height:1px!important;
+ margin:0!important;padding:0!important;border:0!important;
+ appearance:none!important;-webkit-appearance:none!important;pointer-events:none!important;
+}
+.permission-module-head .permission-select-all>.permission-select-all-toggle{
+ display:block!important;position:relative!important;box-sizing:border-box!important;
+ order:2!important;flex:0 0 34px!important;width:34px!important;height:20px!important;
+ min-width:34px!important;min-height:20px!important;margin:0!important;padding:0!important;
+ border:0!important;border-radius:999px!important;background:#b8b4ab!important;overflow:hidden!important;
+}
+.permission-module-head .permission-select-all>span:first-child{order:1!important}
+.permission-module-head .permission-select-all>.permission-select-all-toggle>span{
+ position:absolute!important;display:block!important;top:3px!important;left:3px!important;
+ width:14px!important;height:14px!important;border-radius:50%!important;background:#fff!important;
+ transform:none!important;transition:left .15s ease!important;
+}
+.permission-module-head .permission-select-all>input[type="checkbox"]:checked~.permission-select-all-toggle{
+ background:var(--primary)!important;
+}
+.permission-module-head .permission-select-all>input[type="checkbox"]:checked~.permission-select-all-toggle>span{
+ left:17px!important;transform:none!important;
+}
