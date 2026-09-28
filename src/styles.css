@@ -1583,3 +1583,11 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .order-detail .order-notes-bottom .order-notes{display:block!important;width:100%!important;min-height:90px!important}
 .order-detail .order-notes-actions{display:flex!important;justify-content:flex-end!important;margin-top:10px!important}
 @media(max-width:760px){.order-detail .status-history>div,.order-detail .production-history>div{flex-basis:165px!important;min-width:165px!important}}
+
+
+/* Match order-detail modal scrolling to the product editor. */
+.modal:has(> .order-detail-scroll){width:min(980px,calc(100vw - 32px));height:min(870px,calc(100dvh - 24px));max-height:calc(100dvh - 24px);padding:0;overflow:hidden!important;display:flex;flex-direction:column}
+.modal:has(> .order-detail-scroll) .modal-head{position:sticky;top:0;z-index:4;flex:0 0 auto;margin:0;padding:20px 24px;border-bottom:1px solid #ebe7df;background:#fffefa}
+.modal:has(> .order-detail-scroll)>.order-detail-scroll{display:block;flex:1 1 auto;min-height:0;width:auto!important;max-width:none!important;padding:0 24px 24px;overflow-y:auto!important;overflow-x:hidden!important;scrollbar-gutter:stable}
+.modal:has(> .order-detail-scroll)>.order-detail-scroll>.order-detail-head{padding-top:24px}
+@media(max-width:760px){.modal:has(> .order-detail-scroll){width:calc(100vw - 16px);height:calc(100dvh - 16px);max-height:calc(100dvh - 16px)}.modal:has(> .order-detail-scroll) .modal-head{padding:16px}.modal:has(> .order-detail-scroll)>.order-detail-scroll{padding:0 16px 20px}}
