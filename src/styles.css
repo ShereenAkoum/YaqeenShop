@@ -1391,3 +1391,6 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .production-page{--stage-new:#edf4f8;--stage-design:#f2eef8;--stage-approved:#faf6df;--stage-uv:#fbf1e8;--stage-applied:#f4efe9;--stage-qc:#faf6df;--stage-packed:#f2eef8;--stage-delivery:#f9eeee;--stage-completed:#edf6ef}
 .production-lane.production-stage-new-order{background:var(--stage-new)!important}.production-lane.production-stage-design{background:var(--stage-design)!important}.production-lane.production-stage-approved{background:var(--stage-approved)!important}.production-lane.production-stage-uv-dtf{background:var(--stage-uv)!important}.production-lane.production-stage-applied{background:var(--stage-applied)!important}.production-lane.production-stage-qc{background:var(--stage-qc)!important}.production-lane.production-stage-packed{background:var(--stage-packed)!important}.production-lane.production-stage-out-for-delivery{background:var(--stage-delivery)!important}.production-lane.production-stage-completed{background:var(--stage-completed)!important}
 .production-stat.stat-new{background:var(--stage-new)!important}.production-stat.stat-qc{background:var(--stage-qc)!important}.production-stat.stat-completed{background:var(--stage-completed)!important}
+
+/* Status pill readability */
+.dashboard-order-status,.order-status-pill{font-size:10px!important}
