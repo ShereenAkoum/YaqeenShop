@@ -1290,3 +1290,10 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 
 /* Required checkout fields */
 .checkout-page-modern .required-mark{color:#b3262d;font:inherit;font-weight:800;margin-left:2px}
+
+/* Checkout/contact field label and textarea consistency */
+.checkout-fields label>.field-label{display:flex;align-items:center;gap:4px}
+.checkout-page-modern .required-mark{display:inline!important;margin:0 0 0 2px!important;line-height:1!important;vertical-align:baseline}
+.checkout-fields textarea,.contact-form-modern textarea{box-sizing:border-box;width:100%;resize:vertical;line-height:1.55}
+.checkout-fields textarea{min-height:96px}
+.contact-form-modern textarea{min-height:130px}
