@@ -1164,3 +1164,8 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 
 /* Keep the mobile navigation trigger visible regardless of header action count */
 @media(max-width:760px){.header-actions .mobile-menu-button{display:grid!important}}
+
+/* Add-to-bag confirmation toast */
+.bag-success-pop{position:fixed!important;z-index:1200;top:92px;left:50%;transform:translateX(-50%);margin:0!important;min-width:220px;max-width:calc(100vw - 32px);pointer-events:none;box-shadow:0 14px 38px rgba(38,48,30,.18)!important;animation:bagToastPop .2s ease-out!important}
+@keyframes bagToastPop{from{opacity:0;transform:translate(-50%,-10px) scale(.97)}to{opacity:1;transform:translate(-50%,0) scale(1)}}
+@media(max-width:760px){.bag-success-pop{top:78px;min-width:210px}}
