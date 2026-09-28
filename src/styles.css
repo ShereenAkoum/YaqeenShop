@@ -1355,3 +1355,6 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .modal:has(.order-edit-modern){background:var(--surface)!important}
 .order-edit-modern .product-form-section{background:transparent}
 .order-edit-modern .product-form-actions{margin-top:0}
+
+/* Editable order item quantity */
+.order-edit-modern .order-item-qty{width:70px!important;min-height:36px!important;padding:7px 9px!important;text-align:center}
