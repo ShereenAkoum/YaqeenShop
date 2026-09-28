@@ -781,3 +781,15 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 
 .protected-owner-badge{display:inline-flex;align-items:center;gap:5px;margin-right:7px;padding:5px 8px;border:1px solid var(--border);border-radius:999px;background:var(--surface-2);color:var(--muted);font-size:9px;font-weight:800;white-space:nowrap;vertical-align:middle}
 @media(max-width:760px){.staff-actions{min-width:190px!important}.protected-owner-badge{font-size:8px;padding:5px 7px}}
+
+/* Desktop role editor: prevent permission modules from collapsing */
+@media(min-width:761px){
+ .modal:has(.role-editor-modern){height:min(860px,calc(100dvh - 40px))!important}
+ .modal:has(.role-editor-modern) .modal-body{height:calc(100% - 70px)!important;min-height:0!important}
+ .role-editor-modern{height:100%!important;min-height:0!important;display:grid!important;grid-template-rows:auto auto minmax(260px,1fr) auto!important}
+ .role-editor-modern .role-access-section{display:flex!important;flex-direction:column!important;min-height:260px!important;overflow:hidden!important}
+ .role-editor-modern .permission-groups{display:grid!important;gap:10px!important;flex:1 1 auto!important;min-height:0!important;overflow-y:auto!important;overflow-x:hidden!important}
+ .role-editor-modern .permission-module{display:block!important;flex:none!important;min-height:0!important;height:auto!important;margin:0!important}
+ .role-editor-modern .permission-module-head{min-height:54px!important}
+ .role-editor-modern .permission-actions{min-height:58px!important}
+}
