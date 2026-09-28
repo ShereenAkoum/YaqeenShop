@@ -710,9 +710,10 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .staff-editor .nested-toggle-card{margin:0!important}
 @media(max-width:760px){.roles-grid{grid-template-columns:1fr}.permission-grid{grid-template-columns:1fr}.users-tabs{width:100%}.users-tabs button{flex:1;justify-content:center}.users-roles-page>.table-wrap{overflow-x:auto}.users-roles-page>.table-wrap table{min-width:760px}}
 
-/* Modern role editor */
-.modal:has(.role-editor-modern){width:min(760px,calc(100vw - 32px))!important;max-height:min(860px,calc(100dvh - 24px))!important}
-.role-editor-modern{gap:18px!important}
+/* Users & Roles — role editor */
+.modal:has(.role-editor-modern){width:min(760px,calc(100vw - 32px))!important;height:min(860px,calc(100dvh - 40px))!important;max-height:calc(100dvh - 40px)!important}
+.modal:has(.role-editor-modern) .modal-body{height:calc(100% - 70px);min-height:0;overflow:hidden}
+.role-editor-modern{display:grid!important;grid-template-rows:auto auto minmax(260px,1fr) auto;height:100%;min-height:0;gap:18px!important;overflow:hidden}
 .role-editor-intro{display:flex;align-items:flex-start;gap:13px;padding:16px 18px;border:1px solid var(--border);border-radius:12px;background:var(--surface-2)}
 .role-editor-icon{display:grid;place-items:center;flex:0 0 40px;width:40px;height:40px;border-radius:10px;background:var(--primary);color:var(--on-primary)}
 .role-editor-intro h3{margin:1px 0 4px;font-size:15px}.role-editor-intro p{margin:0;max-width:570px;color:var(--muted);font-size:11px;line-height:1.55}
@@ -720,87 +721,30 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .role-editor-section-head{display:flex;align-items:flex-start;gap:10px}.role-editor-section-head>span{display:grid;place-items:center;width:28px;height:28px;flex:0 0 28px;border-radius:8px;background:var(--surface-2);color:var(--primary);font-size:10px;font-weight:800}
 .role-editor-section-head>div{display:grid;gap:2px}.role-editor-section-head strong{font-size:12px}.role-editor-section-head small{color:var(--muted);font-size:10px;font-weight:400}
 .role-name-field{margin-left:38px!important;max-width:470px}
-.role-editor-modern .permission-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;max-height:360px;padding:1px 3px 3px 38px}
-.role-editor-modern .permission-check{position:relative;min-height:64px;padding:11px 38px 11px 12px!important;align-items:center!important;cursor:pointer;transition:border-color .15s ease,background .15s ease,box-shadow .15s ease}
-.role-editor-modern .permission-check:hover{border-color:#b7b1a5;box-shadow:0 2px 8px #0000000a}
-.role-editor-modern .permission-check input{position:absolute!important;opacity:0!important;pointer-events:none;width:1px!important;height:1px!important}
-.permission-check-copy{display:grid;gap:3px}.permission-check-copy strong{line-height:1.25}.permission-check-mark{position:absolute;right:12px;display:grid!important;place-items:center;width:22px;height:22px;border:1px solid var(--border);border-radius:7px;color:transparent;background:var(--surface-2);font-size:12px;font-weight:900}
-.role-editor-modern .permission-check:has(input:checked){border-color:#7c8971;background:color-mix(in srgb,var(--primary) 6%,var(--surface))}
-.role-editor-modern .permission-check:has(input:checked) .permission-check-mark{border-color:var(--primary);background:var(--primary);color:var(--on-primary)}
-.role-editor-actions{position:sticky;bottom:0;margin:0!important;padding-top:14px;border-top:1px solid var(--border);background:var(--surface)}
-@media(max-width:760px){.modal:has(.role-editor-modern){width:calc(100vw - 20px)!important}.role-editor-intro{padding:14px}.role-editor-section{padding:14px}.role-name-field{margin-left:0!important;max-width:none}.role-editor-modern .permission-grid{grid-template-columns:1fr;max-height:none;padding-left:0}.role-editor-modern .permission-check{min-height:60px}.role-editor-actions{display:grid!important;grid-template-columns:1fr 1fr}.role-editor-actions button{width:100%}}
-
-/* Grouped role permissions */
-.role-editor-modern .permission-groups{display:grid;gap:10px;margin-left:38px;max-height:430px;overflow:auto;padding:1px 4px 4px 1px}
-.permission-module{border:1px solid var(--border);border-radius:10px;background:var(--surface);overflow:hidden}
-.permission-module-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 14px;background:var(--surface-2);border-bottom:1px solid var(--border)}
+.role-access-section{display:flex!important;flex-direction:column;min-height:260px!important;overflow:hidden}
+.permission-groups{display:flex!important;flex:1 1 auto;flex-direction:column;gap:10px;margin-left:38px;min-height:0;overflow-y:auto;overflow-x:hidden;padding:1px 4px 8px 1px;overscroll-behavior:contain}
+.permission-module{display:block!important;flex:0 0 auto!important;width:100%;min-height:112px;border:1px solid var(--border);border-radius:10px;background:var(--surface);overflow:hidden}
+.permission-module-head{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:54px;padding:12px 14px;background:var(--surface-2);border-bottom:1px solid var(--border)}
 .permission-module-head>div{display:grid;gap:2px}.permission-module-head>div>strong{font-size:12px}.permission-module-head>div>small{font-size:9px;color:var(--muted)}
-.permission-select-all{display:flex!important;align-items:center!important;gap:7px!important;padding:0!important;font-size:10px!important;font-weight:700!important;cursor:pointer}.permission-select-all input{width:16px!important;height:16px!important;min-height:0!important}
-.permission-actions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
-.permission-action{position:relative;display:flex!important;align-items:center!important;gap:9px!important;min-width:0;padding:12px!important;border-right:1px solid var(--border);cursor:pointer}.permission-action:last-child{border-right:0}.permission-action input{position:absolute!important;opacity:0!important;width:1px!important;height:1px!important;pointer-events:none}
+.permission-select-all{display:flex!important;align-items:center!important;flex-direction:row-reverse!important;justify-content:flex-end!important;gap:7px!important;margin-left:auto!important;padding:0!important;font-size:10px!important;font-weight:700!important;white-space:nowrap;cursor:pointer}.permission-select-all input{width:16px!important;height:16px!important;min-height:0!important}
+.permission-actions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));min-height:58px}
+.permission-action{position:relative;display:flex!important;align-items:center!important;gap:9px!important;min-width:0;min-height:58px;padding:12px!important;border-right:1px solid var(--border);cursor:pointer}.permission-action:last-child{border-right:0}.permission-action input{position:absolute!important;opacity:0!important;width:1px!important;height:1px!important;pointer-events:none}
 .permission-action>span:last-child{display:grid;min-width:0;gap:2px}.permission-action strong{font-size:10px}.permission-action small{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted);font-size:8px;font-weight:400}
 .permission-action-toggle{position:relative;display:block!important;flex:0 0 30px;width:30px;height:18px;border-radius:999px;background:#bbb7ae;transition:background .15s ease}.permission-action-toggle>span{position:absolute;top:3px;left:3px;width:12px;height:12px;border-radius:50%;background:#fff;transition:left .15s ease}
 .permission-action:has(input:checked) .permission-action-toggle{background:var(--primary)}.permission-action:has(input:checked) .permission-action-toggle>span{left:15px}.permission-action:has(input:checked){background:color-mix(in srgb,var(--primary) 4%,var(--surface))}
-@media(max-width:760px){.role-editor-modern .permission-groups{margin-left:0;max-height:none}.permission-module-head{padding:11px 12px}.permission-actions{grid-template-columns:repeat(2,minmax(0,1fr))}.permission-action{border-bottom:1px solid var(--border)}.permission-action:nth-child(2n){border-right:0}.permission-action:nth-last-child(-n+2){border-bottom:0}}
-
-/* Keep module Select all aligned to the far right */
-.permission-module-head .permission-select-all{margin-left:auto!important;justify-content:flex-end!important;flex-direction:row-reverse!important;white-space:nowrap}
-@media(max-width:760px){.permission-module-head{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important}.permission-module-head .permission-select-all{margin-left:0!important;justify-self:end!important}}
-
-/* Role editor: keep footer outside the scrolling permission content */
-.modal:has(.role-editor-modern) .modal-body{overflow:hidden!important}
-.role-editor-modern{height:100%;min-height:0;display:grid!important;grid-template-rows:auto auto minmax(0,1fr) auto!important}
-.role-editor-modern .role-access-section{min-height:0!important;overflow:hidden!important}
-.role-editor-modern .permission-groups{min-height:0;max-height:none!important;overflow-y:auto!important;overscroll-behavior:contain;padding-bottom:8px}
-.role-editor-actions{position:relative!important;bottom:auto!important;z-index:3;padding:14px 0 0!important;margin:0!important;background:var(--surface)!important}
-@media(max-width:760px){.modal:has(.role-editor-modern){height:calc(100dvh - 40px)!important;max-height:calc(100dvh - 40px)!important}.role-editor-modern{overflow:hidden!important}.role-editor-actions{padding-bottom:max(4px,env(safe-area-inset-bottom))!important}}
-
-/* Role editor mobile: scroll the complete form, never squeeze permission cards */
-.modal:has(.role-editor-modern) .modal-body{overflow-y:auto!important;-webkit-overflow-scrolling:touch}
-.role-editor-modern{height:auto!important;min-height:auto!important;display:flex!important;flex-direction:column!important;overflow:visible!important}
-.role-editor-modern .role-access-section{min-height:auto!important;overflow:visible!important}
-.role-editor-modern .permission-groups{min-height:auto!important;max-height:none!important;overflow:visible!important}
-.role-editor-actions{position:sticky!important;bottom:0!important;z-index:5;padding:14px 0 max(4px,env(safe-area-inset-bottom))!important;background:var(--surface)!important}
-@media(min-width:761px){.modal:has(.role-editor-modern) .modal-body{overflow:hidden!important}.role-editor-modern{height:100%!important;min-height:0!important;display:grid!important;grid-template-rows:auto auto minmax(0,1fr) auto!important;overflow:hidden!important}.role-editor-modern .role-access-section{min-height:0!important;overflow:hidden!important}.role-editor-modern .permission-groups{min-height:0!important;max-height:none!important;overflow-y:auto!important}.role-editor-actions{position:relative!important;bottom:auto!important}}
-
-/* Mobile role editor scrolling: one dedicated scroll container */
-@media(max-width:760px){
- .modal:has(.role-editor-modern){height:calc(100dvh - 40px)!important;max-height:calc(100dvh - 40px)!important;overflow:hidden!important}
- .modal:has(.role-editor-modern) .modal-body{height:calc(100% - 78px)!important;min-height:0!important;overflow-y:auto!important;overflow-x:hidden!important;-webkit-overflow-scrolling:touch!important;overscroll-behavior-y:contain;touch-action:pan-y}
- .role-editor-modern{display:flex!important;flex-direction:column!important;height:auto!important;min-height:max-content!important;overflow:visible!important;padding-bottom:0!important}
- .role-editor-modern .role-access-section,.role-editor-modern .permission-groups{display:block!important;height:auto!important;min-height:0!important;overflow:visible!important}
- .role-editor-modern .permission-module{margin-bottom:10px}
- .role-editor-actions{position:sticky!important;bottom:0!important;flex-shrink:0!important;margin-top:8px!important;padding:14px 0 max(10px,env(safe-area-inset-bottom))!important;background:var(--surface)!important;box-shadow:0 -8px 16px var(--surface)}
-}
-
-/* Staff actions: keep all controls visible */
-.staff-actions{white-space:nowrap!important;min-width:132px!important}
-.staff-actions .icon-button{display:inline-flex!important;vertical-align:middle}
-.staff-actions .staff-delete-button{color:var(--danger,#a83f36)!important}
-@media(max-width:760px){.users-roles-page>.table-wrap table{min-width:860px!important}.staff-actions{position:sticky;right:0;z-index:2;background:var(--surface);box-shadow:-8px 0 12px #00000008}.users-roles-page thead th:last-child{position:sticky;right:0;z-index:3;background:var(--surface-2)}}
-
+.role-editor-actions{position:relative!important;bottom:auto!important;z-index:3;margin:0!important;padding-top:14px!important;border-top:1px solid var(--border);background:var(--surface)!important}
 .protected-owner-badge{display:inline-flex;align-items:center;gap:5px;margin-right:7px;padding:5px 8px;border:1px solid var(--border);border-radius:999px;background:var(--surface-2);color:var(--muted);font-size:9px;font-weight:800;white-space:nowrap;vertical-align:middle}
-@media(max-width:760px){.staff-actions{min-width:190px!important}.protected-owner-badge{font-size:8px;padding:5px 7px}}
-
-/* Desktop role editor: prevent permission modules from collapsing */
-@media(min-width:761px){
- .modal:has(.role-editor-modern){height:min(860px,calc(100dvh - 40px))!important}
- .modal:has(.role-editor-modern) .modal-body{height:calc(100% - 70px)!important;min-height:0!important}
- .role-editor-modern{height:100%!important;min-height:0!important;display:grid!important;grid-template-rows:auto auto minmax(260px,1fr) auto!important}
- .role-editor-modern .role-access-section{display:flex!important;flex-direction:column!important;min-height:260px!important;overflow:hidden!important}
- .role-editor-modern .permission-groups{display:grid!important;gap:10px!important;flex:1 1 auto!important;min-height:0!important;overflow-y:auto!important;overflow-x:hidden!important}
- .role-editor-modern .permission-module{display:block!important;flex:none!important;min-height:0!important;height:auto!important;margin:0!important}
- .role-editor-modern .permission-module-head{min-height:54px!important}
- .role-editor-modern .permission-actions{min-height:58px!important}
-}
-
-/* Definitive role permission layout: grid children must not stretch/collapse */
-.role-editor-modern .permission-groups{align-content:start!important;grid-auto-rows:max-content!important}
-.role-editor-modern .permission-module{align-self:start!important;min-height:max-content!important;height:max-content!important}
-.role-editor-modern .permission-module-head{height:auto!important;min-height:54px!important}
-.role-editor-modern .permission-actions{height:auto!important;min-height:58px!important}
-.role-editor-modern .permission-action{height:auto!important;min-height:58px!important}
-@media(min-width:761px){
- .role-editor-modern .permission-groups{display:flex!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;gap:10px!important;overflow-y:auto!important}
- .role-editor-modern .permission-module{display:block!important;flex:0 0 auto!important;width:100%!important;height:auto!important;min-height:112px!important}
+.staff-actions{white-space:nowrap!important;min-width:132px!important}.staff-actions .icon-button{display:inline-flex!important;vertical-align:middle}.staff-actions .staff-delete-button{color:var(--danger,#a83f36)!important}
+@media(max-width:760px){
+ .modal:has(.role-editor-modern){width:calc(100vw - 20px)!important;height:calc(100dvh - 40px)!important}
+ .modal:has(.role-editor-modern) .modal-body{height:calc(100% - 78px)!important;min-height:0;overflow-y:auto!important;overflow-x:hidden!important;-webkit-overflow-scrolling:touch;overscroll-behavior-y:contain;touch-action:pan-y}
+ .role-editor-modern{display:flex!important;flex-direction:column;height:auto!important;min-height:max-content!important;overflow:visible!important}
+ .role-editor-intro{padding:14px}.role-editor-section{padding:14px}.role-name-field{margin-left:0!important;max-width:none}
+ .role-access-section{display:block!important;min-height:0!important;overflow:visible!important}
+ .permission-groups{display:block!important;margin-left:0;overflow:visible!important;padding:0}.permission-module{min-height:0;margin-bottom:10px}
+ .permission-module-head{display:grid!important;grid-template-columns:minmax(0,1fr) auto;padding:11px 12px}.permission-module-head .permission-select-all{margin-left:0!important;justify-self:end!important}
+ .permission-actions{grid-template-columns:repeat(2,minmax(0,1fr))}.permission-action{border-bottom:1px solid var(--border)}.permission-action:nth-child(2n){border-right:0}.permission-action:nth-last-child(-n+2){border-bottom:0}
+ .role-editor-actions{position:sticky!important;bottom:0!important;display:grid!important;grid-template-columns:1fr 1fr;flex-shrink:0;margin-top:8px!important;padding:14px 0 max(10px,env(safe-area-inset-bottom))!important;background:var(--surface)!important;box-shadow:0 -8px 16px var(--surface)}.role-editor-actions button{width:100%}
+ .users-roles-page>.table-wrap table{min-width:860px!important}.staff-actions{position:sticky;right:0;z-index:2;min-width:190px!important;background:var(--surface);box-shadow:-8px 0 12px #00000008}.users-roles-page thead th:last-child{position:sticky;right:0;z-index:3;background:var(--surface-2)}
+ .protected-owner-badge{font-size:8px;padding:5px 7px}
 }
