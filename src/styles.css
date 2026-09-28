@@ -1541,3 +1541,11 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .production-history-scroll{width:100%;max-width:100%;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
 .production-history-scroll .production-history{width:max-content;min-width:100%;overflow:visible}
 .order-detail,.order-detail-grid,.order-detail-grid>section{min-width:0;max-width:100%}
+
+
+/* Order detail: only the Production history div may scroll horizontally. */
+.order-detail{width:100%;max-width:100%;min-width:0;overflow-x:hidden!important}
+.order-detail .order-detail-grid{width:100%;max-width:100%;min-width:0;overflow-x:hidden!important}
+.order-detail .order-detail-grid>section{width:100%;max-width:100%;min-width:0;overflow-x:hidden!important}
+.order-detail .production-history-scroll{display:block;width:100%;max-width:100%;min-width:0;overflow-x:auto!important;overflow-y:hidden!important;-webkit-overflow-scrolling:touch}
+.order-detail .production-history-scroll>.production-history{display:flex!important;width:max-content!important;min-width:max-content!important;max-width:none!important;overflow:visible!important}
