@@ -1681,3 +1681,16 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
  .report-date-card label input{box-sizing:border-box!important;min-width:0!important;width:100%!important;max-width:100%!important;font-size:14px!important;padding:9px 8px!important}
  .report-date-card .primary-button{grid-column:1/-1!important;width:100%!important}
 }
+
+
+/* Mobile admin tables: pin Actions (and its refresh control) to the right edge. */
+@media(max-width:760px){
+ .admin-page .table-wrap{position:relative!important;max-width:100%!important;overflow-x:auto!important;-webkit-overflow-scrolling:touch}
+ .admin-page .table-wrap table{border-collapse:separate!important;border-spacing:0!important}
+ .admin-page .table-wrap th.actions-cell,
+ .admin-page .table-wrap td.actions-cell{position:sticky!important;right:0!important;z-index:3!important;min-width:104px!important;max-width:132px!important;background:var(--surface)!important;box-shadow:-8px 0 12px -12px rgba(30,34,26,.38)}
+ .admin-page .table-wrap thead th.actions-cell{z-index:5!important;background:var(--surface-2)!important}
+ .admin-page .table-wrap tfoot td.actions-cell{z-index:4!important}
+ .admin-page .table-wrap .actions-heading{display:flex!important;align-items:center!important;justify-content:center!important;gap:7px!important;white-space:nowrap!important}
+ .admin-page .table-wrap .table-refresh-icon{position:static!important;display:inline-grid!important;place-items:center!important;flex:0 0 auto!important}
+}
