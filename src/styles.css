@@ -1177,3 +1177,12 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .bag-success-pop.bag-limit-pop{border-color:#d99b9e!important;background:#fff0f0!important;box-shadow:0 14px 38px rgba(130,35,35,.22)!important}
 .bag-success-pop.bag-limit-pop>span{background:#b3262d!important;color:#fff!important;font-size:22px;font-weight:800}
 .bag-success-pop.bag-limit-pop strong{color:#9f2027!important}
+
+/* Settings form controls */
+.settings-page .settings-fields textarea{width:100%;min-height:112px;resize:vertical;border:1px solid var(--border);border-radius:9px;padding:11px 12px;background:var(--surface);color:var(--text);font:inherit;font-size:14px;line-height:1.55;outline:0;transition:border-color .15s ease,box-shadow .15s ease,background .15s ease}
+.settings-page .settings-fields textarea:hover{border-color:#9f957f}
+.settings-page .settings-fields textarea:focus{border-color:var(--primary);box-shadow:var(--crm-focus)}
+.settings-page .settings-fields textarea:disabled{background:#f3f2ed;color:#73766d}
+.settings-page .settings-global-fields .full{grid-column:1/-1}
+.settings-page .settings-global-fields .full .settings-field-label{font-size:12px}
+@media(max-width:760px){.settings-page .settings-fields textarea{font-size:16px;min-height:120px}.settings-page .settings-global-fields .full{grid-column:auto}}
