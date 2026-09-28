@@ -1131,3 +1131,11 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 
 /* Manual order items must span the editor content column */
 .modal:has(.manual-order-form) .manual-order-items-section{display:block!important;grid-template-columns:none!important;width:100%;padding:25px 0}.modal:has(.manual-order-form) .manual-order-items-section .product-subsection-head{display:flex;align-items:flex-end;justify-content:space-between;width:100%}.modal:has(.manual-order-form) .manual-items-toolbar{width:100%}.modal:has(.manual-order-form) .manual-order-items-section .table-wrap{display:block;width:100%;max-width:none;overflow-x:auto}.modal:has(.manual-order-form) .manual-order-items-section table{width:100%;min-width:680px}
+
+/* Order items follows the same two-column section grid as the rest of the editor */
+.modal:has(.manual-order-form) .manual-order-items-section{display:grid!important;grid-template-columns:180px minmax(0,1fr)!important;gap:28px!important;width:auto!important;padding:25px 0!important}
+.modal:has(.manual-order-form) .manual-order-items-section .product-subsection-head{display:block!important;grid-column:1;grid-row:1 / span 2;width:auto!important;margin:0!important}
+.modal:has(.manual-order-form) .manual-order-items-section .product-subsection-head>div{display:block}
+.modal:has(.manual-order-form) .manual-order-items-section .manual-items-toolbar{grid-column:2;grid-row:1;display:flex;width:auto!important;justify-content:flex-end;align-items:flex-start;margin:0 0 10px}
+.modal:has(.manual-order-form) .manual-order-items-section .table-wrap{grid-column:2;grid-row:2;width:100%;min-width:0;max-width:none;margin:0;overflow-x:auto}
+.modal:has(.manual-order-form) .manual-order-items-section table{width:100%;min-width:620px}
