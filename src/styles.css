@@ -948,3 +948,12 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 @media(min-width:761px){
  .admin:not(.sidebar-collapsed) .sidebar nav a[data-tooltip]::after{display:none!important}
 }
+
+
+/* Tooltip correction: use one custom tooltip only */
+.admin .icon-button[data-tooltip]{position:relative}
+.admin .icon-button[data-tooltip]::after{bottom:calc(100% + 7px);left:50%;z-index:900}
+@media(min-width:761px){
+ .admin:not(.sidebar-collapsed) .sidebar nav a[data-tooltip]::after{content:none!important;display:none!important}
+ .admin.sidebar-collapsed .sidebar nav a[data-tooltip]::after{display:block!important;content:attr(data-tooltip)!important;position:fixed!important;left:66px!important;bottom:auto!important;top:auto;transform:none!important}
+}
