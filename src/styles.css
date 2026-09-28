@@ -1708,3 +1708,22 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
  .admin-page .table-wrap th.actions-cell::after,
  .admin-page .table-wrap td.actions-cell::after{content:'';position:absolute;inset:0;z-index:-1;background:inherit}
 }
+
+
+/* iOS modal stability: prevent add/edit forms from horizontally rubber-banding while typing/scrolling. */
+html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidden!important;overscroll-behavior:none!important}
+.admin .modal-backdrop{position:fixed!important;inset:0!important;width:100%!important;max-width:100vw!important;overflow:hidden!important;overscroll-behavior:none!important;touch-action:pan-y}
+.admin .modal-backdrop>.modal{box-sizing:border-box!important;max-width:calc(100vw - 16px)!important;overflow:hidden!important;overscroll-behavior:none!important}
+.admin .modal-backdrop>.modal>.product-modern-form,
+.admin .modal-backdrop>.modal>.product-edit-shell,
+.admin .modal-backdrop>.modal>.modern-form,
+.admin .modal-backdrop>.modal>form{box-sizing:border-box!important;width:100%!important;max-width:100%!important;min-width:0!important;overflow-x:hidden!important;overscroll-behavior-x:none!important}
+@media(max-width:760px){
+ .admin .modal-backdrop>.modal{width:calc(100vw - 16px)!important;max-width:calc(100vw - 16px)!important;margin:auto!important}
+ .admin .modal-backdrop>.modal input,
+ .admin .modal-backdrop>.modal textarea,
+ .admin .modal-backdrop>.modal select{box-sizing:border-box!important;max-width:100%!important}
+ .admin .modal-backdrop>.modal .product-form-section,
+ .admin .modal-backdrop>.modal .product-form-section-body,
+ .admin .modal-backdrop>.modal .product-form-grid{min-width:0!important;max-width:100%!important}
+}
