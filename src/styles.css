@@ -1672,3 +1672,12 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
  .dashboard-metric-link{position:absolute!important;top:10px!important;right:10px!important;grid-column:auto!important;margin:0!important;justify-self:auto!important}
  .dashboard-metric-icon{grid-row:auto!important}
 }
+
+
+/* Reports mobile: date range pickers side by side, action on its own row. */
+@media(max-width:760px){
+ .report-date-card{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important;align-items:end!important}
+ .report-date-card label{min-width:0!important;width:100%!important}
+ .report-date-card label input{box-sizing:border-box!important;min-width:0!important;width:100%!important;max-width:100%!important;font-size:14px!important;padding:9px 8px!important}
+ .report-date-card .primary-button{grid-column:1/-1!important;width:100%!important}
+}
