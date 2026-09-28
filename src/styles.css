@@ -1921,3 +1921,34 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
  margin:0!important;
  justify-content:center!important;
 }
+
+
+/* Role permission matrix: 2 permission cards per row on mobile. */
+@media(max-width:760px){
+ .modal:has(.role-editor-modern) .permission-actions{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  min-height:0!important;
+ }
+ .modal:has(.role-editor-modern) .permission-action{
+  display:grid!important;
+  grid-template-columns:40px minmax(0,1fr)!important;
+  align-items:center!important;
+  column-gap:8px!important;
+  min-width:0!important;
+  min-height:82px!important;
+  padding:10px!important;
+  border-right:1px solid var(--border)!important;
+  border-bottom:1px solid var(--border)!important;
+ }
+ .modal:has(.role-editor-modern) .permission-action:nth-child(2n){border-right:0!important}
+ .modal:has(.role-editor-modern) .permission-action:nth-last-child(-n+2){border-bottom:0!important}
+ .modal:has(.role-editor-modern) .permission-action>span:last-child{min-width:0!important}
+ .modal:has(.role-editor-modern) .permission-action strong{
+  display:block!important;font-size:11px!important;line-height:1.2!important;
+ }
+ .modal:has(.role-editor-modern) .permission-action small{
+  display:block!important;margin-top:4px!important;font-size:8px!important;line-height:1.25!important;
+  white-space:normal!important;overflow:visible!important;text-overflow:clip!important;
+ }
+}
