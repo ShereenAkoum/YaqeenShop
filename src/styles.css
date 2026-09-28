@@ -1982,3 +1982,29 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
   width:100%!important;min-width:0!important;max-width:none!important;margin:0!important;
  }
 }
+
+
+/* Select-all uses only the switch skin; hide the native checkbox completely. */
+.permission-select-all{
+ display:flex!important;align-items:center!important;gap:10px!important;
+ cursor:pointer!important;
+}
+.permission-select-all>input[type="checkbox"]{
+ position:absolute!important;
+ width:1px!important;height:1px!important;
+ opacity:0!important;pointer-events:none!important;
+ margin:0!important;padding:0!important;
+ appearance:none!important;-webkit-appearance:none!important;
+}
+.permission-select-all>.permission-select-all-toggle{
+ display:inline-flex!important;
+ flex:0 0 38px!important;
+ width:38px!important;height:24px!important;
+ margin:0!important;
+}
+.permission-select-all>input[type="checkbox"]:checked+.permission-select-all-toggle{
+ background:var(--primary)!important;
+}
+.permission-select-all>input[type="checkbox"]:checked+.permission-select-all-toggle>span{
+ transform:translateX(14px)!important;
+}
