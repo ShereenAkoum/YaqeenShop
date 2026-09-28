@@ -1657,3 +1657,10 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
  .admin-page:has(.table-wrap) .category-toolbar:has(.category-search) select{color:var(--text)!important;-webkit-text-fill-color:var(--text)!important;background-color:var(--surface)!important}
  .admin-page:has(.table-wrap) .category-toolbar:has(.category-search) select option{color:var(--text)!important}
 }
+
+
+/* Dashboard mobile: pin View action to the upper-right of each metric card. */
+@media(max-width:650px){
+ .dashboard-metric-card{position:relative!important;padding:14px!important;padding-right:58px!important}
+ .dashboard-metric-link{position:absolute!important;top:12px!important;right:12px!important;grid-column:auto!important;justify-self:auto!important;margin:0!important;padding:5px 7px!important}
+}
