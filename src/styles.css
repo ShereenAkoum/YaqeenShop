@@ -991,3 +991,10 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 
 /* Compact settings cards */
 .settings-page .settings-stack{grid-template-columns:repeat(2,minmax(0,1fr));max-width:1180px;align-items:start}.settings-page .settings-page-actions{grid-column:1/-1;max-width:none}.settings-page .settings-fields{grid-template-columns:1fr}.settings-whatsapp-toggle{align-content:start}.settings-whatsapp-toggle .crm-toggle{margin-top:2px}.crm-toggle{position:relative;width:42px;height:24px;border:0;border-radius:999px;background:#d5d8ce;padding:3px;cursor:pointer;transition:.2s}.crm-toggle>span{display:block;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:.2s}.crm-toggle.is-on{background:var(--primary)}.crm-toggle.is-on>span{transform:translateX(18px)}.crm-toggle:disabled{opacity:.5;cursor:not-allowed}@media(max-width:980px){.settings-page .settings-stack{grid-template-columns:1fr}}@media(max-width:760px){.settings-page .settings-stack{grid-template-columns:1fr}}
+
+/* Settings follows the same full-width CRM page shell as all other sections */
+.admin .settings-page{max-width:100%!important;width:100%;margin:0!important}
+.admin .settings-page .settings-stack{width:100%;max-width:none!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.admin .settings-page .settings-card{min-width:0}
+.admin .settings-page .settings-page-actions{width:100%;max-width:none!important;grid-column:1/-1}
+@media(max-width:980px){.admin .settings-page .settings-stack{grid-template-columns:1fr}}
