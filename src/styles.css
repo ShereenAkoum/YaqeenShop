@@ -1419,3 +1419,9 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
   .production-page .production-board { grid-template-columns: repeat(9, minmax(0, 82vw)) !important; gap: 14px !important; }
   .production-page .production-move { font-size: 16px !important; }
 }
+
+.production-stock-details { display: grid; gap: 8px; margin: 4px 0; padding: 14px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); font-size: 14px; line-height: 1.5; }
+.production-stock-details > div { display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 10px; }
+.production-stock-details dt { color: var(--muted); font-weight: 400; }
+.production-stock-details dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+.production-page .table-wrap .production-stock-details { min-width: 240px; border: 0; padding: 8px 0 0; }
