@@ -153,3 +153,11 @@ body:has(.home-redesign) .modern-footer{background:#eeeee5;padding-top:56px}body
  .home-redesign .home-products .home-product-info h3{text-align:start!important;width:100%!important;font-size:16px!important}
  .home-redesign .home-products .home-product-info>.home-product-price{align-self:flex-start!important}
 }
+
+
+/* Keep the exact desktop homepage canvas/background on mobile Safari */
+@media(max-width:700px){
+ html:has(.home-redesign),body:has(.home-redesign),body:has(.home-redesign) #root,.home-redesign{background:#fafaf6!important;background-color:#fafaf6!important}
+ .home-redesign .home-cms-story{background:#fafaf6!important}
+ .home-redesign .home-story-symbol{background:#34452e!important}
+}
