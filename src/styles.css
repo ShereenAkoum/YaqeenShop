@@ -787,3 +787,8 @@ body:has(.modal-backdrop .modal-backdrop)>.admin .modal-backdrop:first-of-type>.
 .inventory-adjust-summary>span{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
 .inventory-adjust-summary>strong{font-size:15px}
 .inventory-adjust-summary>small{margin:0!important}
+
+.inventory-status{display:inline-flex;align-items:center;justify-content:center;min-height:25px;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:650;line-height:1;border:1px solid transparent;white-space:nowrap}
+.inventory-status.available{color:#38603f;background:#edf5ec;border-color:#d7e8d4}
+.inventory-status.low{color:#a33b3b;background:#fff0ee;border-color:#f2d2cd}
+.inventory-status.allocated{color:#84621f;background:#fbf3dc;border-color:#eadcae}
