@@ -1952,3 +1952,33 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
   white-space:normal!important;overflow:visible!important;text-overflow:clip!important;
  }
 }
+
+
+/* Mobile CRM modal footers: actions span the full modal width. */
+@media(max-width:760px){
+ .admin .modal:not(.modal-confirm) .editor-form>.product-form-actions:last-child,
+ .admin .modal:not(.modal-confirm) .editor-form>.modal-actions:last-child,
+ .admin .modal:not(.modal-confirm) .editor-form>.staff-editor-actions:last-child,
+ .admin .modal:not(.modal-confirm) .editor-form>.role-editor-actions:last-child{
+  box-sizing:border-box!important;
+  width:calc(100% + 48px)!important;
+  max-width:none!important;
+  margin-left:-24px!important;
+  margin-right:-24px!important;
+  padding-left:24px!important;
+  padding-right:24px!important;
+ }
+ .admin .modal:not(.modal-confirm) .product-form-actions,
+ .admin .modal:not(.modal-confirm) .modal-actions,
+ .admin .modal:not(.modal-confirm) .staff-editor-actions,
+ .admin .modal:not(.modal-confirm) .role-editor-actions{
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  gap:12px!important;
+ }
+ .admin .modal:not(.modal-confirm) .product-form-actions>button,
+ .admin .modal:not(.modal-confirm) .modal-actions>button,
+ .admin .modal:not(.modal-confirm) .staff-editor-actions>button,
+ .admin .modal:not(.modal-confirm) .role-editor-actions>button{
+  width:100%!important;min-width:0!important;max-width:none!important;margin:0!important;
+ }
+}
