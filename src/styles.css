@@ -2838,3 +2838,38 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
     padding:12px 16px max(12px,env(safe-area-inset-bottom))!important;
   }
 }
+
+/* Payments and Delivery share the CRM detail and form treatments. */
+.admin .fulfillment-detail .category-view-head h3{
+  overflow-wrap:anywhere;
+}
+.admin .fulfillment-detail .category-view-details strong,
+.admin .fulfillment-detail-card strong,
+.admin .fulfillment-detail-card p{
+  overflow-wrap:anywhere;
+}
+.admin .fulfillment-detail-card{
+  display:grid;
+  gap:6px;
+  padding:16px 18px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:var(--surface);
+}
+.admin .fulfillment-detail-card span{
+  color:var(--muted);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.admin .fulfillment-detail-card strong{font-size:13px}
+.admin .fulfillment-detail-card small{color:var(--muted)}
+.admin .fulfillment-detail-card p{margin:0;white-space:pre-wrap;line-height:1.6}
+.admin .modal:has(>.fulfillment-form){
+  width:min(980px,calc(100vw - 32px))!important;
+}
+.admin .fulfillment-form .product-form-section:last-of-type{border-bottom:0}
+@media(max-width:760px){
+  .admin .modal:has(>.fulfillment-form){width:calc(100vw - 16px)!important}
+}
