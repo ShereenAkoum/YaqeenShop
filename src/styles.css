@@ -2145,3 +2145,88 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
   padding:12px 16px max(12px,env(safe-area-inset-bottom))!important;
  }
 }
+
+
+/* CRM-wide VIEW modal normalization.
+   Any direct modal body that is not a form gets the same scroll/padding treatment.
+   Existing specialized view classes keep their own content styling. */
+.admin .modal:not(.modal-confirm)>:not(.modal-head):not(form):not(.editor-form):not(.product-edit-shell){
+ box-sizing:border-box!important;
+ min-width:0!important;
+}
+.admin .modal:not(.modal-confirm)>.category-view,
+.admin .modal:not(.modal-confirm)>.product-detail,
+.admin .modal:not(.modal-confirm)>.order-detail,
+.admin .modal:not(.modal-confirm)>.inventory-detail,
+.admin .modal:not(.modal-confirm)>.customer-detail,
+.admin .modal:not(.modal-confirm)>.delivery-detail,
+.admin .modal:not(.modal-confirm)>.design-detail,
+.admin .modal:not(.modal-confirm)>.staff-detail,
+.admin .modal:not(.modal-confirm)>.role-detail,
+.admin .modal:not(.modal-confirm)>.detail-stack,
+.admin .modal:not(.modal-confirm)>.confirm-body:not(.modern-confirm){
+ flex:1 1 auto!important;
+ min-height:0!important;
+ width:100%!important;
+ overflow-y:auto!important;
+ overflow-x:hidden!important;
+ -webkit-overflow-scrolling:touch!important;
+ overscroll-behavior:contain!important;
+ padding:24px!important;
+ box-sizing:border-box!important;
+}
+.admin .modal:not(.modal-confirm)>.category-view>.modal-actions:last-child,
+.admin .modal:not(.modal-confirm)>.product-detail>.modal-actions:last-child,
+.admin .modal:not(.modal-confirm)>.order-detail>.modal-actions:last-child,
+.admin .modal:not(.modal-confirm)>.inventory-detail>.modal-actions:last-child,
+.admin .modal:not(.modal-confirm)>.customer-detail>.modal-actions:last-child,
+.admin .modal:not(.modal-confirm)>.delivery-detail>.modal-actions:last-child,
+.admin .modal:not(.modal-confirm)>.design-detail>.modal-actions:last-child,
+.admin .modal:not(.modal-confirm)>.staff-detail>.modal-actions:last-child,
+.admin .modal:not(.modal-confirm)>.role-detail>.modal-actions:last-child,
+.admin .modal:not(.modal-confirm)>.detail-stack>.modal-actions:last-child,
+.admin .modal:not(.modal-confirm)>.confirm-body:not(.modern-confirm)>.modal-actions:last-child{
+ position:sticky!important;
+ bottom:-24px!important;
+ z-index:30!important;
+ display:grid!important;
+ grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ gap:12px!important;
+ width:calc(100% + 48px)!important;
+ max-width:none!important;
+ margin:16px -24px -24px!important;
+ padding:14px 24px max(14px,env(safe-area-inset-bottom))!important;
+ box-sizing:border-box!important;
+ background:var(--surface)!important;
+ border-top:1px solid var(--border)!important;
+ box-shadow:0 -10px 22px var(--surface)!important;
+}
+@media(max-width:760px){
+ .admin .modal:not(.modal-confirm)>.category-view,
+ .admin .modal:not(.modal-confirm)>.product-detail,
+ .admin .modal:not(.modal-confirm)>.order-detail,
+ .admin .modal:not(.modal-confirm)>.inventory-detail,
+ .admin .modal:not(.modal-confirm)>.customer-detail,
+ .admin .modal:not(.modal-confirm)>.delivery-detail,
+ .admin .modal:not(.modal-confirm)>.design-detail,
+ .admin .modal:not(.modal-confirm)>.staff-detail,
+ .admin .modal:not(.modal-confirm)>.role-detail,
+ .admin .modal:not(.modal-confirm)>.detail-stack,
+ .admin .modal:not(.modal-confirm)>.confirm-body:not(.modern-confirm){padding:16px!important}
+ .admin .modal:not(.modal-confirm)>.category-view>.modal-actions:last-child,
+ .admin .modal:not(.modal-confirm)>.product-detail>.modal-actions:last-child,
+ .admin .modal:not(.modal-confirm)>.order-detail>.modal-actions:last-child,
+ .admin .modal:not(.modal-confirm)>.inventory-detail>.modal-actions:last-child,
+ .admin .modal:not(.modal-confirm)>.customer-detail>.modal-actions:last-child,
+ .admin .modal:not(.modal-confirm)>.delivery-detail>.modal-actions:last-child,
+ .admin .modal:not(.modal-confirm)>.design-detail>.modal-actions:last-child,
+ .admin .modal:not(.modal-confirm)>.staff-detail>.modal-actions:last-child,
+ .admin .modal:not(.modal-confirm)>.role-detail>.modal-actions:last-child,
+ .admin .modal:not(.modal-confirm)>.detail-stack>.modal-actions:last-child,
+ .admin .modal:not(.modal-confirm)>.confirm-body:not(.modern-confirm)>.modal-actions:last-child{
+  bottom:-16px!important;
+  width:calc(100% + 32px)!important;
+  margin:14px -16px -16px!important;
+  padding:12px 16px max(12px,env(safe-area-inset-bottom))!important;
+ }
+}
