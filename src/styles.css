@@ -2662,3 +2662,22 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
 .admin .modal:has(.customer-modern-form)>.customer-modern-form{flex:1 1 auto!important;min-height:0!important;overflow-y:auto!important;overflow-x:hidden!important}
 .admin .customer-modern-form.customer-order-style{padding:0!important}
 .admin .customer-modern-form .product-form-actions{position:sticky!important;bottom:0!important;z-index:5!important;background:var(--surface)!important}
+
+
+/* Inventory view — CRM modal parity */
+.admin .modal:has(>.inventory-view-modern){width:min(900px,calc(100vw - 48px))!important;max-width:900px!important;background:var(--surface)!important;overflow:hidden!important}
+.admin .inventory-view-modern{display:flex!important;flex-direction:column!important;background:var(--surface)!important}
+.admin .inventory-view-hero{display:flex!important;align-items:center!important;gap:18px!important;margin:0!important;padding:22px 28px!important;border:0!important;border-bottom:1px solid var(--border)!important;border-radius:0!important;background:var(--surface)!important}
+.admin .inventory-view-hero>img,.admin .inventory-view-placeholder{width:72px!important;height:72px!important;flex:0 0 72px!important;border-radius:10px!important;object-fit:cover!important;border:1px solid var(--border)!important}
+.admin .inventory-view-heading{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:4px!important}
+.admin .inventory-view-heading .inventory-status{font-size:10px!important;padding:4px 8px!important}
+.admin .inventory-view-heading h2{margin:0!important;font-size:19px!important;line-height:1.25!important;font-weight:600!important}
+.admin .inventory-view-heading p{margin:0!important;font-size:12px!important;color:var(--muted)!important}
+.admin .inventory-view-stats{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px!important;padding:22px 28px!important}
+.admin .inventory-view-stats>div{min-height:104px!important;padding:15px 16px!important;border:1px solid var(--border)!important;border-radius:10px!important;background:var(--surface)!important}
+.admin .inventory-view-stats span{display:block!important;margin-bottom:8px!important;font-size:10px!important;line-height:1.2!important;font-weight:800!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:var(--muted)!important}
+.admin .inventory-view-stats strong{display:block!important;font-size:22px!important;line-height:1.1!important;font-weight:700!important;color:var(--primary)!important}
+.admin .inventory-view-stats small{display:block!important;margin-top:7px!important;font-size:10px!important;line-height:1.35!important;color:var(--muted)!important}
+.admin .inventory-view-actions{display:grid!important;grid-template-columns:1fr 1fr!important;gap:12px!important;margin:0!important;padding:14px 28px!important;border-top:1px solid var(--border)!important;background:var(--surface)!important}
+.admin .inventory-view-actions button{width:100%!important;min-height:46px!important;justify-content:center!important;font-size:13px!important;border-radius:9px!important}
+@media(max-width:760px){.admin .modal:has(>.inventory-view-modern){width:calc(100vw - 24px)!important}.admin .inventory-view-hero{padding:18px 20px!important}.admin .inventory-view-stats{grid-template-columns:repeat(2,minmax(0,1fr))!important;padding:18px 20px!important}.admin .inventory-view-actions{padding:12px 20px!important}}
