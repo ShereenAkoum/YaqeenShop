@@ -2039,3 +2039,37 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
 .permission-module-head .permission-select-all>input[type="checkbox"]:checked~.permission-select-all-toggle>span{
  left:17px!important;transform:none!important;
 }
+
+
+/* CRM-wide modal footer: fill the complete available width on desktop and mobile. */
+.admin .modal:not(.modal-confirm) .modal-actions,
+.admin .modal:not(.modal-confirm) .product-form-actions,
+.admin .modal:not(.modal-confirm) .staff-editor-actions,
+.admin .modal:not(.modal-confirm) .role-editor-actions{
+ box-sizing:border-box!important;
+ display:grid!important;
+ grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ gap:12px!important;
+ width:100%!important;
+ max-width:none!important;
+ align-self:stretch!important;
+}
+.admin .modal:not(.modal-confirm) .modal-actions>button,
+.admin .modal:not(.modal-confirm) .modal-actions>a,
+.admin .modal:not(.modal-confirm) .product-form-actions>button,
+.admin .modal:not(.modal-confirm) .product-form-actions>a,
+.admin .modal:not(.modal-confirm) .staff-editor-actions>button,
+.admin .modal:not(.modal-confirm) .staff-editor-actions>a,
+.admin .modal:not(.modal-confirm) .role-editor-actions>button,
+.admin .modal:not(.modal-confirm) .role-editor-actions>a{
+ box-sizing:border-box!important;
+ display:flex!important;
+ width:100%!important;
+ max-width:none!important;
+ min-width:0!important;
+ margin:0!important;
+ justify-content:center!important;
+}
+.admin .modal:not(.modal-confirm)>.modal-actions{
+ margin-left:0!important;margin-right:0!important;
+}
