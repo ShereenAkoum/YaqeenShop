@@ -3191,3 +3191,10 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
 .confirmation-actions{display:grid;gap:0}.confirmation-signoff{margin:31px 0 0;padding-top:22px;border-top:1px solid #e5e0d6;color:#898579;font-family:Georgia,'Times New Roman',serif;font-size:12px;font-style:italic}.confirmation-signoff span{display:inline-block;margin-left:4px;color:var(--primary);font-size:18px;font-style:normal}
 .confirmation-summary-safe{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:15px;color:#55704e;font-size:9px;font-weight:700;letter-spacing:.04em}
 @media(max-width:600px){.confirmation-page:before{top:.2em;right:-.28em;font-size:12rem}.confirmation-celebration{display:none}.confirmation-layout{gap:16px}.confirmation-summary{padding:20px;border-radius:14px}.confirmation-layout .confirmation-modern{padding:38px 20px}.confirmation-steps{grid-template-columns:1fr}.confirmation-steps>i{width:1px;height:15px;margin-left:15px}.confirmation-steps>div>span{width:30px;height:30px}.confirmation-steps strong{font-size:10px}.confirmation-steps small{font-size:9px}.confirmation-journey{padding:16px}.confirmation-signoff{margin-top:25px}}
+
+/* Mobile product page: sticky bar is the single purchase action */
+@media(max-width:760px){
+ .store-product-copy>.product-price{display:none}
+ .store-product-copy>.product-buy-row{display:none}
+ .mobile-product-cta-button:disabled{opacity:.62}
+}
