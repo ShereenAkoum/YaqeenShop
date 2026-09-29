@@ -175,3 +175,11 @@ body:has(.home-redesign) .modern-footer{background:var(--primary);padding-top:56
  .home-redesign .home-products .home-product-info>.home-product-price{font-size:12px!important;padding:3px 6px!important}
  .home-redesign .home-products .home-product-action{margin-top:9px!important;padding-top:8px!important;font-size:9px!important}
 }
+
+
+/* Mobile product page: the sticky CTA is the single purchase action */
+@media(max-width:760px){
+ .store-product-copy>.product-price{display:none!important}
+ .store-product-copy>.product-buy-row{display:none!important}
+ .mobile-product-cta-button:disabled{opacity:.62}
+}
