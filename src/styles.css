@@ -3175,3 +3175,9 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
  .mobile-product-cta-button:disabled{box-shadow:none}
  .cookie-consent{bottom:calc(92px + env(safe-area-inset-bottom))}
 }
+
+/* Public form validation */
+.field-error{display:block;margin-top:6px;color:#9b3f35;font-size:12px;font-weight:600;line-height:1.35}
+.checkout-fields label:has([aria-invalid="true"]),.contact-form-modern label:has([aria-invalid="true"]){color:#7f332b}
+.checkout-fields [aria-invalid="true"],.contact-form-modern [aria-invalid="true"]{border-color:#a64b40!important;background:#fff9f7!important;box-shadow:0 0 0 3px rgba(166,75,64,.08)!important}
+.checkout-fields [aria-invalid="true"]:focus,.contact-form-modern [aria-invalid="true"]:focus{outline:2px solid rgba(166,75,64,.18);outline-offset:1px}
