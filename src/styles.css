@@ -2931,3 +2931,20 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
 
 .admin .crm-list-page > .page-title{align-items:flex-start}
 .admin .crm-list-page > .page-title .add-record-button{align-self:flex-start;margin-top:0}
+
+/* Design editor uses the same numbered, two-column rhythm as the product form. */
+.admin .modal:has(>.design-editor-modern){display:flex;flex-direction:column;padding:0!important;overflow:hidden!important;background:#fffefa}
+.admin .modal:has(>.design-editor-modern)>.modal-head{flex:0 0 auto;margin:0!important;padding:20px 24px!important;border-bottom:1px solid var(--border);background:#fffefa}
+.admin .modal:has(>.design-editor-modern)>.design-editor-modern{display:block!important;flex:1 1 auto;min-height:0;overflow-y:auto;padding:0 24px!important}
+.admin .design-editor-intro{margin:0;padding:18px 0;color:var(--muted);font-size:13px;line-height:1.5;border-bottom:1px solid var(--border)}
+.admin .design-editor-modern>section.design-existing{display:grid!important;grid-template-columns:180px minmax(0,1fr)!important;gap:28px!important;padding:28px 0!important;border-bottom:1px solid var(--border);min-width:0}
+.admin .design-step-heading{display:flex;align-items:flex-start;gap:12px}
+.admin .design-step-number{display:grid;place-items:center;flex:0 0 28px;height:28px;border-radius:8px;background:#edf0e9;color:var(--primary);font-size:11px;font-weight:800}
+.admin .design-step-heading h3{margin:2px 0 4px!important;font:700 14px Arial,sans-serif!important;color:var(--text)}
+.admin .design-step-heading p{margin:0;color:var(--muted);font-size:11px;line-height:1.5}
+.admin .design-step-content{min-width:0}
+.admin .design-step-content .design-section-heading{min-height:38px;margin:0 0 12px!important}
+.admin .design-step-content .design-section-heading>span{font-size:12px;color:var(--muted)}
+.admin .design-step-content .table-wrap{border-radius:10px}
+.admin .design-editor-modern>.modal-actions:last-child{position:sticky;bottom:0;z-index:3;display:flex!important;justify-content:flex-end!important;width:calc(100% + 48px)!important;margin:0 -24px!important;padding:14px 24px!important;border-top:1px solid var(--border);background:#fffefa}
+@media(max-width:760px){.admin .modal:has(>.design-editor-modern)>.design-editor-modern{padding:0 16px!important}.admin .design-editor-modern>section.design-existing{grid-template-columns:1fr!important;gap:12px!important;padding:22px 0!important}.admin .design-editor-modern>.modal-actions:last-child{width:calc(100% + 32px)!important;margin:0 -16px!important;padding:12px 16px!important}}
