@@ -2766,3 +2766,63 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
     min-width:0!important;
   }
 }
+
+/* Customer message dialog: inset content and keep long messages contained. */
+.admin .modal:has(>.message-detail){
+  width:min(760px,calc(100vw - 32px))!important;
+  max-width:760px!important;
+}
+.admin .modal:not(.modal-confirm)>.message-detail{
+  display:flex!important;
+  flex:1 1 auto!important;
+  flex-direction:column!important;
+  gap:0!important;
+  min-height:0!important;
+  width:100%!important;
+  padding:0!important;
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+  -webkit-overflow-scrolling:touch;
+}
+.admin .message-detail>.message-sender{
+  flex:0 0 auto;
+  gap:14px;
+  margin:0 24px;
+  padding:22px 0;
+}
+.admin .message-detail .message-avatar{flex:0 0 42px}
+.admin .message-detail>.message-body{
+  flex:0 1 auto;
+  width:auto;
+  max-height:none;
+  min-height:100px;
+  margin:22px 24px 24px;
+  padding:20px 22px;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+.admin .message-detail>.modal-actions:last-child{
+  position:sticky;
+  bottom:0;
+  z-index:1;
+  display:flex;
+  gap:12px;
+  margin-top:auto;
+  padding:14px 24px max(14px,env(safe-area-inset-bottom));
+  border-top:1px solid var(--border);
+  background:var(--surface);
+}
+.admin .message-detail>.modal-actions:last-child>*{
+  flex:1 1 0;
+  min-width:0;
+  min-height:44px;
+  justify-content:center;
+}
+@media(max-width:760px){
+  .admin .modal:has(>.message-detail){width:calc(100vw - 16px)!important}
+  .admin .message-detail>.message-sender{margin:0 16px;padding:18px 0}
+  .admin .message-detail>.message-body{margin:16px;padding:16px;min-height:100px}
+  .admin .message-detail>.modal-actions:last-child{
+    padding:12px 16px max(12px,env(safe-area-inset-bottom));
+  }
+}
