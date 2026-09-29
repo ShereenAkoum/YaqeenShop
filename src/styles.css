@@ -2655,3 +2655,11 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
 .admin .customer-detail .customer-address-form label{font-size:12px!important;font-weight:700!important}
 .admin .customer-detail .customer-address-form .control{min-height:46px!important;border-radius:9px!important;font-size:13px!important}
 @media(max-width:760px){.admin .customer-detail{padding:18px 20px 0!important}.admin .customer-detail .customer-profile-grid,.admin .customer-detail .customer-address-form{grid-template-columns:1fr!important}}
+
+
+/* Customer modal — inherit the exact Manual Order form system and keep body scrollable */
+.admin .modal:has(.customer-modern-form){overflow:hidden!important;display:flex!important;flex-direction:column!important;padding:0!important}
+.admin .modal:has(.customer-modern-form)>.modal-head{flex:0 0 auto!important;margin:0!important}
+.admin .modal:has(.customer-modern-form)>.customer-modern-form{flex:1 1 auto!important;min-height:0!important;overflow-y:auto!important;overflow-x:hidden!important}
+.admin .customer-modern-form.customer-order-style{padding:0!important}
+.admin .customer-modern-form .product-form-actions{position:sticky!important;bottom:0!important;z-index:5!important;background:var(--surface)!important}
