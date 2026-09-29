@@ -25,6 +25,6 @@ export function ProductsAdmin({permissions}:{permissions:string[]}){
    <div className="product-form-actions"><button type="button" className="secondary-button" onClick={()=>setAdding(false)}>Cancel</button><button className="primary-button">Create product</button></div>
   </form></Modal>}
   {details&&<ProductDetails product={details.product} mode={details.mode} permissions={permissions} onClose={()=>setDetails(null)} onSaved={()=>void load()}/>}
-  {deleting&&<Modal title="Delete product?" onClose={()=>setDeleting(null)}><div className="confirm-body"><p>Delete {deleting.title}? Products with order or inventory history cannot be deleted.</p><div className="modal-actions"><button className="secondary-button" onClick={()=>setDeleting(null)}>Cancel</button><button className="danger-button" onClick={remove}>Delete product</button></div></div></Modal>}
+  {deleting&&<Modal title="Delete product?" onClose={()=>setDeleting(null)}><div className="confirm-body modern-confirm"><div className="danger-icon"><Trash2 size={21}/></div><div><h3>Remove “{deleting.title}”?</h3><p>This product can only be deleted when it has no order or inventory history.</p></div><div className="modal-actions"><button className="secondary-button" onClick={()=>setDeleting(null)}>Cancel</button><button className="danger-button" onClick={remove}>Delete product</button></div></div></Modal>}
  {error&&<ErrorPopup message={error} onClose={()=>setError('')}/>} </section>
 }
