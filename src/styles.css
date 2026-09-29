@@ -2596,3 +2596,11 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
  .admin .customer-detail>section{padding:18px 16px!important}
  .admin .customer-create-form>.modal-actions{padding:12px 16px!important}
 }
+
+
+/* Customers list — same modern CRM rhythm as Products */
+.admin .admin-page .page-title:has(+ .category-toolbar) .add-record-button{align-self:flex-start}
+.admin .admin-page .category-toolbar + .table-wrap{margin-top:0}
+.admin .admin-page .table-wrap table tbody td{vertical-align:middle}
+.admin .admin-page .table-wrap .table-actions{display:flex;align-items:center;justify-content:flex-end;gap:8px}
+.admin .admin-page .table-wrap .table-actions .icon-button{flex:0 0 auto}
