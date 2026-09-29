@@ -2928,3 +2928,6 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
 /* Route transitions cover the viewport; table refreshes stay within their tables. */
 .admin-route-loader{position:fixed;inset:0;z-index:90;display:grid;place-items:center;background:#f8f7f3}
 .admin-route-loader .brand-loader{min-height:0}
+
+.admin .crm-list-page > .page-title{align-items:flex-start}
+.admin .crm-list-page > .page-title .add-record-button{align-self:flex-start;margin-top:0}
