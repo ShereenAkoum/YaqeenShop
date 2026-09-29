@@ -4,7 +4,7 @@ AS $function$
 begin
  if not public.has_permission('production.view') then raise exception 'Forbidden'; end if;
  return (select coalesce(jsonb_agg(x),'[]') from (
-  select j.id,j.stage,j.created_at,o.number order_number,i.title,i.sku,i.color,i.size,i.stand,i.quantity,i.image_url,d.code design_code,
+  select j.id,j.stage,j.created_at,o.number order_number,i.title,i.sku,i.color,i.size,i.stand,i.quantity,i.image_url,left(d.id::text,8) design_code,
    case when public.has_permission('customers.view') then o.customer_name end customer_name,
    case when public.has_permission('payments.view') then (select p.status from public.payments p where p.order_id=o.id order by p.created_at desc limit 1) end payment_status,
    public.has_permission('inventory.view') inventory_visible,
