@@ -2681,3 +2681,17 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
 .admin .inventory-view-actions{display:grid!important;grid-template-columns:1fr 1fr!important;gap:12px!important;margin:0!important;padding:14px 28px!important;border-top:1px solid var(--border)!important;background:var(--surface)!important}
 .admin .inventory-view-actions button{width:100%!important;min-height:46px!important;justify-content:center!important;font-size:13px!important;border-radius:9px!important}
 @media(max-width:760px){.admin .modal:has(>.inventory-view-modern){width:calc(100vw - 24px)!important}.admin .inventory-view-hero{padding:18px 20px!important}.admin .inventory-view-stats{grid-template-columns:repeat(2,minmax(0,1fr))!important;padding:18px 20px!important}.admin .inventory-view-actions{padding:12px 20px!important}}
+
+
+/* Restore horizontal scrolling for CRM data tables.
+   Border radius stays on the wrapper; wide tables scroll inside it. */
+.admin .admin-page .table-wrap{
+  overflow-x:auto!important;
+  overflow-y:hidden!important;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;
+}
+.admin .admin-page .table-wrap>table{
+  width:max-content!important;
+  min-width:100%!important;
+}
