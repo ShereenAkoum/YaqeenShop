@@ -2924,3 +2924,10 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
   .admin .website-editor>.modal-actions:last-child{bottom:-16px!important;margin:20px -16px -16px!important;padding:12px 16px max(12px,env(safe-area-inset-bottom))!important}
   .admin .website-editor>.modal-actions:last-child>button{flex:1 1 0!important;min-width:0!important}
 }
+
+/* Keep the CRM section covered until its initial data loader finishes. */
+.admin-main > main{position:relative;min-height:60vh}
+.admin-route-loader{display:none}
+.admin-main > main:has(.admin-page .brand-loader) > .admin-page{visibility:hidden}
+.admin-main > main:has(.admin-page .brand-loader) > .admin-route-loader{display:grid;place-items:center;position:absolute;inset:0;z-index:2;min-height:60vh;background:#f8f7f3}
+.admin-main > main:has(.admin-page .brand-loader) > .admin-route-loader .brand-loader{min-height:0}
