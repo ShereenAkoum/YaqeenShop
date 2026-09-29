@@ -3131,3 +3131,14 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
 .cookie-actions{display:flex;gap:10px;flex:0 0 auto}
 .cookie-actions button{white-space:nowrap}
 @media(max-width:760px){.legal-page{padding-top:44px;padding-bottom:72px}.footer-bottom{gap:14px;flex-wrap:wrap}.footer-legal-links{order:3;width:100%}.cookie-consent{left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));padding:18px;display:block}.cookie-actions{display:grid;grid-template-columns:1fr 1fr;margin-top:16px}.cookie-actions button{min-width:0;padding-left:10px;padding-right:10px}.not-found-page{min-height:56vh;padding-top:48px}}
+
+
+/* Temporary branded under-construction route */
+.construction-page{min-height:68vh;display:grid;place-items:center;padding-top:64px;padding-bottom:88px}
+.construction-card{width:min(760px,100%);text-align:center;padding:clamp(42px,7vw,82px) clamp(24px,7vw,72px);border:1px solid var(--border);border-radius:28px;background:#fffefa}
+.construction-mark{display:block;font-size:4.5rem;line-height:1;color:var(--olive,#4f5b45);margin-bottom:22px}
+.construction-card .eyebrow{margin-bottom:14px}
+.construction-card h1{font-size:clamp(2.4rem,6vw,4.8rem);line-height:1.02;margin:0 auto 20px;max-width:680px}
+.construction-card>p:not(.eyebrow){max-width:590px;margin:0 auto;color:var(--muted);font-size:1.05rem;line-height:1.7}
+.construction-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}
+@media(max-width:760px){.construction-page{min-height:62vh;padding:28px 16px 56px}.construction-card{padding:46px 20px;border-radius:22px}.construction-mark{font-size:3.8rem}.construction-actions{display:grid;grid-template-columns:1fr;width:100%}.construction-actions a{justify-content:center}}
