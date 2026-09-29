@@ -2973,3 +2973,10 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
 .admin .design-success-dialog svg{color:var(--primary)}
 .admin .design-success-dialog p{margin:0;font-size:15px;font-weight:600}
 .admin .design-success-dialog button{min-width:140px;justify-content:center}
+
+.admin .modal.modal-confirm>.design-success-confirm>.design-success-icon{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:#eaf1e6;color:var(--primary);grid-column:1;grid-row:1}
+.admin .modal.modal-confirm>.design-success-confirm>div:nth-child(2){grid-column:2;grid-row:1}
+.admin .modal.modal-confirm>.design-success-confirm h3{margin:2px 0 5px;font-size:16px}
+.admin .modal.modal-confirm>.design-success-confirm p{margin:0;color:var(--muted);font-size:13px}
+.admin .modal.modal-confirm>.design-success-confirm>.modal-actions{grid-column:1/-1;grid-row:2;display:flex!important;justify-content:flex-end!important;width:100%!important;max-width:none!important}
+.admin .modal.modal-confirm>.design-success-confirm>.modal-actions button{width:140px!important;flex:0 0 auto}
