@@ -2948,3 +2948,12 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
 .admin .design-step-content .table-wrap{border-radius:10px}
 .admin .design-editor-modern>.modal-actions:last-child{position:sticky;bottom:0;z-index:3;display:flex!important;justify-content:flex-end!important;width:calc(100% + 48px)!important;margin:0 -24px!important;padding:14px 24px!important;border-top:1px solid var(--border);background:#fffefa}
 @media(max-width:760px){.admin .modal:has(>.design-editor-modern)>.design-editor-modern{padding:0 16px!important}.admin .design-editor-modern>section.design-existing{grid-template-columns:1fr!important;gap:12px!important;padding:22px 0!important}.admin .design-editor-modern>.modal-actions:last-child{width:calc(100% + 32px)!important;margin:0 -16px!important;padding:12px 16px!important}}
+
+.admin .design-editor-modern>section.design-identity{border-bottom:1px solid var(--border)}
+.admin .design-identity-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.admin .design-identity-fields label{display:grid;gap:8px;font-size:13px;font-weight:700;color:var(--text)}
+.admin .design-identity-fields input{width:100%;min-height:44px;padding:10px 12px;border:1px solid var(--border);border-radius:9px;background:#fffefa;font:inherit;font-size:14px}
+.admin .design-identity-fields input:disabled{background:#f4f3ed;color:var(--muted)}
+.admin .design-list-asset{display:block;margin-top:4px;color:var(--muted);font-size:11px}
+.admin .design-editor-modern>.modal-actions:last-child{gap:10px}
+@media(max-width:760px){.admin .design-identity-fields{grid-template-columns:1fr}}
