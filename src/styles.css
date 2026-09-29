@@ -2699,3 +2699,70 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
   width:max-content!important;
   min-width:100%!important;
 }
+
+/* Keep the Design Library editor at the same scale as the product editor. */
+.admin .modal:has(>.design-editor-modern){
+  width:min(980px,calc(100vw - 32px))!important;
+  max-width:980px!important;
+  height:min(870px,calc(100dvh - 24px))!important;
+  max-height:calc(100dvh - 24px)!important;
+}
+.admin .design-editor-modern>section.design-existing{
+  padding:25px 0!important;
+}
+.admin .design-section-heading h3{
+  font-size:19px!important;
+  font-weight:600!important;
+}
+.admin .design-section-heading .primary-button{
+  min-height:38px!important;
+  padding:8px 14px!important;
+  border-radius:9px!important;
+  font-size:12px!important;
+  box-shadow:none!important;
+}
+.admin .design-editor-modern table th{
+  height:44px!important;
+  padding:0 16px!important;
+  font-size:10px!important;
+  letter-spacing:.1em!important;
+}
+.admin .design-editor-modern table td{
+  height:56px!important;
+  padding:9px 16px!important;
+  font-size:12px!important;
+}
+.admin .design-editor-modern .table-empty-row td{height:70px!important}
+.admin .design-editor-modern .table-empty-state{
+  min-height:48px!important;
+  padding:10px!important;
+}
+.admin .design-editor-modern .table-empty-state strong{font-size:12px!important}
+.admin .design-editor-modern>.modal-actions:last-child{
+  display:flex!important;
+  justify-content:flex-end!important;
+  width:calc(100% + 48px)!important;
+}
+.admin .design-editor-modern>.modal-actions:last-child>button,
+.admin .design-editor-modern>.modal-actions:last-child>button:only-child{
+  width:auto!important;
+  min-width:128px!important;
+  max-width:none!important;
+}
+@media(max-width:760px){
+  .admin .modal:has(>.design-editor-modern){
+    width:calc(100vw - 16px)!important;
+    max-width:calc(100vw - 16px)!important;
+    height:calc(100dvh - 16px)!important;
+    max-height:calc(100dvh - 16px)!important;
+  }
+  .admin .design-editor-modern>section.design-existing{padding:20px 0!important}
+  .admin .design-section-heading h3{font-size:18px!important}
+  .admin .design-section-heading .primary-button{font-size:12px!important}
+  .admin .design-editor-modern>.modal-actions:last-child{width:calc(100% + 32px)!important}
+  .admin .design-editor-modern>.modal-actions:last-child>button,
+  .admin .design-editor-modern>.modal-actions:last-child>button:only-child{
+    flex:1 1 0!important;
+    min-width:0!important;
+  }
+}
