@@ -2551,3 +2551,48 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
  .admin .modal:has(>.form-grid)>.form-grid{padding:18px 16px!important}
  .admin .modal:has(>.form-grid)>.modal-actions{padding:12px 16px!important}
 }
+
+
+/* Customers — CRM parity */
+.admin .customer-detail{gap:0!important}
+.admin .modal:has(>.customer-detail),
+.admin .modal:has(>.customer-create-form){
+ width:min(980px,calc(100vw - 48px))!important;max-width:980px!important;
+ background:var(--surface)!important;
+}
+.admin .customer-detail>section{padding:22px 24px!important;margin:0!important;border-top:1px solid var(--border)!important}
+.admin .customer-detail>section:first-child{border-top:0!important}
+.admin .customer-profile-grid{
+ grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:18px 20px!important;
+ padding:22px 24px!important;border-bottom:1px solid var(--border)!important;
+}
+.admin .customer-detail>.customer-profile-grid{border-top:0!important}
+.admin .customer-profile-grid label,.admin .customer-address-form label{
+ gap:8px!important;font-size:11px!important;letter-spacing:.12em!important;color:var(--text)!important;
+}
+.admin .customer-profile-grid .control,.admin .customer-address-form .control{
+ width:100%!important;min-height:46px!important;padding:11px 13px!important;
+ border:1px solid var(--border)!important;border-radius:8px!important;
+ background:var(--surface)!important;color:var(--text)!important;font-size:14px!important;
+}
+.admin .customer-profile-grid .control:disabled{opacity:1!important;background:var(--surface-2)!important;-webkit-text-fill-color:var(--text)!important}
+.admin .customer-notes textarea{min-height:110px!important}
+.admin .customer-profile-grid>.primary-button{min-height:46px!important;border-radius:9px!important;padding:10px 18px!important}
+.admin .customer-detail .section-head h3{font-size:23px!important;font-weight:500!important}
+.admin .customer-detail .section-head .secondary-button{min-height:42px!important;border-radius:9px!important}
+.admin .customer-addresses article{background:var(--surface)!important;padding:16px 18px!important}
+.admin .customer-addresses article strong{font-size:13px!important}
+.admin .customer-addresses article span{font-size:12px!important}
+.admin .customer-create-form>.customer-profile-grid{border-bottom:0!important}
+.admin .customer-create-form>.modal-actions{
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important;
+ margin:0!important;padding:14px 24px!important;border-top:1px solid var(--border)!important;
+}
+.admin .customer-create-form>.modal-actions>button{width:100%!important;min-height:46px!important;justify-content:center!important}
+.admin .row-actions{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:8px!important}
+@media(max-width:760px){
+ .admin .modal:has(>.customer-detail),.admin .modal:has(>.customer-create-form){width:calc(100vw - 24px)!important}
+ .admin .customer-profile-grid{grid-template-columns:1fr!important;padding:18px 16px!important}
+ .admin .customer-detail>section{padding:18px 16px!important}
+ .admin .customer-create-form>.modal-actions{padding:12px 16px!important}
+}
