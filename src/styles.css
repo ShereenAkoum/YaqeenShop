@@ -3133,12 +3133,32 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
 @media(max-width:760px){.legal-page{padding-top:44px;padding-bottom:72px}.footer-bottom{gap:14px;flex-wrap:wrap}.footer-legal-links{order:3;width:100%}.cookie-consent{left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));padding:18px;display:block}.cookie-actions{display:grid;grid-template-columns:1fr 1fr;margin-top:16px}.cookie-actions button{min-width:0;padding-left:10px;padding-right:10px}.not-found-page{min-height:56vh;padding-top:48px}}
 
 
-/* Temporary branded under-construction route */
-.construction-page{min-height:68vh;display:grid;place-items:center;padding-top:64px;padding-bottom:88px}
-.construction-card{width:min(760px,100%);text-align:center;padding:clamp(42px,7vw,82px) clamp(24px,7vw,72px);border:1px solid var(--border);border-radius:28px;background:#fffefa}
-.construction-mark{display:block;font-size:4.5rem;line-height:1;color:var(--olive,#4f5b45);margin-bottom:22px}
-.construction-card .eyebrow{margin-bottom:14px}
-.construction-card h1{font-size:clamp(2.4rem,6vw,4.8rem);line-height:1.02;margin:0 auto 20px;max-width:680px}
-.construction-card>p:not(.eyebrow){max-width:590px;margin:0 auto;color:var(--muted);font-size:1.05rem;line-height:1.7}
-.construction-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}
-@media(max-width:760px){.construction-page{min-height:62vh;padding:28px 16px 56px}.construction-card{padding:46px 20px;border-radius:22px}.construction-mark{font-size:3.8rem}.construction-actions{display:grid;grid-template-columns:1fr;width:100%}.construction-actions a{justify-content:center}}
+/* Branded under-construction experience */
+.construction-page{position:relative;isolation:isolate;overflow:hidden;min-height:clamp(620px,76vh,900px);display:grid;place-items:center;padding:clamp(64px,9vw,120px) 5vw;background:linear-gradient(145deg,#f8f3eb 0%,#f3eee5 52%,#edf0e7 100%)}
+.construction-page:before{content:'يقين';position:absolute;z-index:-1;right:-.04em;bottom:-.2em;font-family:'Traditional Arabic','Noto Naskh Arabic',Tahoma,serif;font-size:clamp(15rem,35vw,34rem);line-height:1;color:rgba(59,68,49,.035);pointer-events:none}
+.construction-grain{position:absolute;inset:0;z-index:-1;opacity:.22;background-image:radial-gradient(rgba(59,68,49,.12) .55px,transparent .55px);background-size:8px 8px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
+.construction-orbit{position:absolute;z-index:-1;border:1px solid rgba(59,68,49,.13);border-radius:50%;animation:construction-float 9s ease-in-out infinite}
+.construction-orbit:after{content:'';position:absolute;width:9px;height:9px;border-radius:50%;background:var(--yaqeen-gold);box-shadow:0 0 0 7px rgba(200,178,147,.13)}
+.construction-orbit-one{width:clamp(240px,34vw,520px);aspect-ratio:1;left:-10%;top:-18%}.construction-orbit-one:after{right:14%;bottom:13%}
+.construction-orbit-two{width:clamp(180px,25vw,360px);aspect-ratio:1;right:-7%;bottom:-13%;animation-delay:-4s}.construction-orbit-two:after{left:10%;top:24%}
+.construction-card{width:min(860px,100%);text-align:center;position:relative}
+.construction-brand{display:inline-flex;align-items:center;gap:11px;margin-bottom:24px;color:var(--primary);font-size:11px;font-weight:700;letter-spacing:.32em}
+.construction-mark{display:inline-block;font-size:2.7rem;line-height:1;letter-spacing:0}
+.construction-card .eyebrow{margin:0 0 20px;color:#777465;font-size:9px;letter-spacing:.3em}
+.construction-card h1{margin:0 auto 24px;max-width:850px;font-size:clamp(3.5rem,8vw,7.5rem);line-height:.88;letter-spacing:-.06em;color:#283024}
+.construction-card h1 em{font-weight:400;color:var(--primary)}
+.construction-copy{max-width:610px;margin:0 auto;color:#65665e;font-size:clamp(1rem,1.7vw,1.2rem);line-height:1.75}
+.construction-divider{display:flex;align-items:center;gap:14px;width:min(250px,45%);margin:31px auto 19px;color:#a69273;font-size:10px}
+.construction-divider:before,.construction-divider:after{content:'';height:1px;flex:1;background:linear-gradient(90deg,transparent,#b9aa91)}
+.construction-divider:after{background:linear-gradient(90deg,#b9aa91,transparent)}
+.construction-note{margin:0;color:#888579;font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:14px}
+.construction-actions{display:flex;align-items:center;justify-content:center;gap:24px;margin-top:30px}
+.construction-actions .button{min-width:180px;border-radius:999px;padding:13px 24px;box-shadow:0 10px 30px rgba(47,57,39,.13);transition:transform .25s,box-shadow .25s}
+.construction-actions .button:hover{transform:translateY(-2px);box-shadow:0 15px 34px rgba(47,57,39,.2)}
+.construction-contact{display:inline-flex;align-items:center;gap:8px;padding:11px 2px;border-bottom:1px solid #b6a98f;font-size:13px}
+.construction-contact span,.construction-actions .button span{transition:transform .2s}.construction-contact:hover span,.construction-actions .button:hover span{transform:translateX(3px)}
+.construction-bottom{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:58px;color:#969487;font-size:7px;font-weight:700;letter-spacing:.27em}
+.construction-bottom i{width:3px;height:3px;border-radius:50%;background:#b9aa91}
+@keyframes construction-float{0%,100%{transform:translate3d(0,0,0) rotate(0)}50%{transform:translate3d(0,-14px,0) rotate(3deg)}}
+@media(prefers-reduced-motion:reduce){.construction-orbit{animation:none}}
+@media(max-width:760px){.construction-page{min-height:calc(100svh - 160px);padding:58px 24px 62px}.construction-page:before{right:-.16em;bottom:-.08em;font-size:17rem}.construction-orbit-one{left:-35%;top:-10%}.construction-orbit-two{right:-28%;bottom:-7%}.construction-brand{margin-bottom:22px}.construction-mark{font-size:2.25rem}.construction-card .eyebrow{max-width:290px;margin:0 auto 20px;line-height:1.7}.construction-card h1{font-size:clamp(3.25rem,15vw,5.1rem);line-height:.92;margin-bottom:24px}.construction-card h1 br{display:none}.construction-copy{font-size:15px;line-height:1.72;max-width:330px}.construction-divider{margin-top:27px}.construction-actions{gap:20px;margin-top:28px}.construction-actions .button{min-width:0;padding:12px 20px}.construction-bottom{margin-top:48px;gap:9px;letter-spacing:.18em}}
