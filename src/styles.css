@@ -2925,9 +2925,6 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
   .admin .website-editor>.modal-actions:last-child>button{flex:1 1 0!important;min-width:0!important}
 }
 
-/* Keep the CRM section covered until its initial data loader finishes. */
-.admin-main > main{position:relative;min-height:60vh}
-.admin-route-loader{display:none}
-.admin-main > main:has(.admin-page .brand-loader) > .admin-page{visibility:hidden}
-.admin-main > main:has(.admin-page .brand-loader) > .admin-route-loader{display:grid;place-items:center;position:absolute;inset:0;z-index:2;min-height:60vh;background:#f8f7f3}
-.admin-main > main:has(.admin-page .brand-loader) > .admin-route-loader .brand-loader{min-height:0}
+/* Route transitions cover the viewport; table refreshes stay within their tables. */
+.admin-route-loader{position:fixed;inset:0;z-index:90;display:grid;place-items:center;background:#f8f7f3}
+.admin-route-loader .brand-loader{min-height:0}
