@@ -2957,3 +2957,14 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
 .admin .design-list-asset{display:block;margin-top:4px;color:var(--muted);font-size:11px}
 .admin .design-editor-modern>.modal-actions:last-child{gap:10px}
 @media(max-width:760px){.admin .design-identity-fields{grid-template-columns:1fr}}
+
+/* Product-style Design Library dialog: fixed header and actions, scrollable form body. */
+.admin .modal:has(>.design-editor-modern){display:flex!important;flex-direction:column!important;height:min(870px,calc(100dvh - 24px))!important;max-height:calc(100dvh - 24px)!important;padding:0!important;overflow:hidden!important}
+.admin .modal:has(>.design-editor-modern)>.modal-head{position:relative!important;flex:0 0 auto!important;z-index:2;padding:20px 24px!important;margin:0!important}
+.admin .modal:has(>.design-editor-modern)>.design-editor-modern{flex:1 1 auto!important;min-height:0!important;overflow-y:auto!important;overflow-x:hidden!important;padding:28px 24px 36px!important;overscroll-behavior:contain}
+.admin .modal:has(>.design-editor-modern)>.design-editor-modern>section.design-existing:first-child{padding-top:20px!important}
+.admin .modal:has(>.design-editor-modern)>.design-modal-footer{flex:0 0 auto!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important;padding:14px 24px!important;border-top:1px solid var(--border)!important;background:#fffefa!important}
+.admin .modal:has(>.design-editor-modern)>.design-modal-footer:has(>button:only-child){display:flex!important;justify-content:flex-end!important}
+.admin .design-modal-footer>button{width:100%!important;min-height:46px!important;justify-content:center!important}
+.admin .design-modal-footer>button:only-child{width:auto!important;min-width:150px!important}
+@media(max-width:760px){.admin .modal:has(>.design-editor-modern){height:calc(100dvh - 16px)!important;max-height:calc(100dvh - 16px)!important}.admin .modal:has(>.design-editor-modern)>.design-editor-modern{padding:22px 16px 28px!important}.admin .modal:has(>.design-editor-modern)>.design-modal-footer{padding:12px 16px!important}}
