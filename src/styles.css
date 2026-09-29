@@ -2985,3 +2985,32 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
 .admin .modal:has(>.design-modal-loading){display:flex;flex-direction:column;min-height:320px}
 .admin .modal:has(>.design-modal-loading)>.modal-head{flex:0 0 auto}
 .admin .design-modal-loading .brand-loader{min-height:180px}
+
+
+/* Design create: only name/code exist at this stage, so size to content instead of the asset editor. */
+.admin .modal.design-create-modal:has(>.design-editor-modern){
+  height:auto!important;
+  min-height:0!important;
+  max-height:calc(100dvh - 32px)!important;
+}
+.admin .modal.design-create-modal:has(>.design-editor-modern)>.design-editor-modern{
+  flex:0 1 auto!important;
+  overflow:visible!important;
+  padding:18px 24px 22px!important;
+}
+.admin .modal.design-create-modal:has(>.design-editor-modern)>.design-editor-modern>section.design-existing:first-child{
+  padding:12px 0 18px!important;
+  border-bottom:0!important;
+}
+.admin .modal.design-create-modal:has(>.design-editor-modern)>.design-modal-footer{
+  flex:0 0 auto!important;
+}
+@media(max-width:760px){
+  .admin .modal.design-create-modal:has(>.design-editor-modern){
+    height:auto!important;
+    max-height:calc(100dvh - 16px)!important;
+  }
+  .admin .modal.design-create-modal:has(>.design-editor-modern)>.design-editor-modern{
+    padding:16px!important;
+  }
+}
