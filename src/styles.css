@@ -2968,3 +2968,8 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
 .admin .design-modal-footer>button{width:100%!important;min-height:46px!important;justify-content:center!important}
 .admin .design-modal-footer>button:only-child{width:auto!important;min-width:150px!important}
 @media(max-width:760px){.admin .modal:has(>.design-editor-modern){height:calc(100dvh - 16px)!important;max-height:calc(100dvh - 16px)!important}.admin .modal:has(>.design-editor-modern)>.design-editor-modern{padding:22px 16px 28px!important}.admin .modal:has(>.design-editor-modern)>.design-modal-footer{padding:12px 16px!important}}
+
+.admin .design-success-dialog{display:grid;justify-items:center;gap:16px;padding:14px 10px 4px;text-align:center}
+.admin .design-success-dialog svg{color:var(--primary)}
+.admin .design-success-dialog p{margin:0;font-size:15px;font-weight:600}
+.admin .design-success-dialog button{min-width:140px;justify-content:center}
