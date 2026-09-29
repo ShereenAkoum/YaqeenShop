@@ -2689,7 +2689,11 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
   overflow-x:auto!important;
   overflow-y:hidden!important;
   -webkit-overflow-scrolling:touch;
-  scrollbar-width:thin;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+}
+.admin .admin-page .table-wrap::-webkit-scrollbar{
+  display:none;
 }
 .admin .admin-page .table-wrap>table{
   width:max-content!important;
