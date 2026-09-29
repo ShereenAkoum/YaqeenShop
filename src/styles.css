@@ -2980,3 +2980,8 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
 .admin .modal.modal-confirm>.design-success-confirm p{margin:0;color:var(--muted);font-size:13px}
 .admin .modal.modal-confirm>.design-success-confirm>.modal-actions{grid-column:1/-1;grid-row:2;display:flex!important;justify-content:flex-end!important;width:100%!important;max-width:none!important}
 .admin .modal.modal-confirm>.design-success-confirm>.modal-actions button{width:140px!important;flex:0 0 auto}
+
+.admin .modal:has(>.design-editor-modern)>.design-modal-loading{flex:1 1 auto;min-height:0;display:grid;place-items:center;padding:24px}
+.admin .modal:has(>.design-modal-loading){display:flex;flex-direction:column;min-height:320px}
+.admin .modal:has(>.design-modal-loading)>.modal-head{flex:0 0 auto}
+.admin .design-modal-loading .brand-loader{min-height:180px}
