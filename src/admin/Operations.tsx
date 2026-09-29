@@ -22,7 +22,7 @@ export function ProductionAdmin({permissions}:{permissions:string[]}){const[rows
 export function FulfillmentAdmin({kind,permissions}:{kind:'payments'|'deliveries';permissions:string[]}){
  const payment=kind==='payments',canEdit=permissions.includes(kind+'.edit');
  const[rows,setRows]=useState<any[]>([]),[q,setQ]=useState(''),[status,setStatus]=useState(''),[page,setPage]=useState(1),[size,setSize]=useState(25),[count,setCount]=useState(0),[loading,setLoading]=useState(true),[error,setError]=useState('');
- const[selected,setSelected]=useState<any|null>(null),[editing,setEditing]=useState<any|null>(null);
+ const[selected,setSelected]=useState<any|null>(null),[editing,setEditing]=useState<any|null>(null),[success,setSuccess]=useState('');
  const statuses=payment?paymentStatuses:deliveryStatuses;
  async function load(){
   if(!supabase)return;
