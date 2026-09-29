@@ -2073,3 +2073,45 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
 .admin .modal:not(.modal-confirm)>.modal-actions{
  margin-left:0!important;margin-right:0!important;
 }
+
+
+/* CRM modal footer — true edge-to-edge action width.
+   Previous rules made the grid 100% of its padded content box, leaving side gutters. */
+.admin .modal:not(.modal-confirm) .modal-actions,
+.admin .modal:not(.modal-confirm) .product-form-actions,
+.admin .modal:not(.modal-confirm) .staff-editor-actions,
+.admin .modal:not(.modal-confirm) .role-editor-actions{
+ width:auto!important;
+ max-width:none!important;
+ margin-left:-24px!important;
+ margin-right:-24px!important;
+ padding-left:24px!important;
+ padding-right:24px!important;
+ box-sizing:border-box!important;
+}
+.admin .modal:not(.modal-confirm)>.modal-actions{
+ width:100%!important;
+ margin-left:0!important;
+ margin-right:0!important;
+ padding-left:0!important;
+ padding-right:0!important;
+}
+@media(max-width:760px){
+ .admin .modal:not(.modal-confirm) .modal-actions,
+ .admin .modal:not(.modal-confirm) .product-form-actions,
+ .admin .modal:not(.modal-confirm) .staff-editor-actions,
+ .admin .modal:not(.modal-confirm) .role-editor-actions{
+  width:auto!important;
+  margin-left:-16px!important;
+  margin-right:-16px!important;
+  padding-left:16px!important;
+  padding-right:16px!important;
+ }
+ .admin .modal:not(.modal-confirm)>.modal-actions{
+  width:100%!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  padding-left:0!important;
+  padding-right:0!important;
+ }
+}
