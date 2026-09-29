@@ -3198,3 +3198,13 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
  .store-product-copy>.product-buy-row{display:none}
  .mobile-product-cta-button:disabled{opacity:.62}
 }
+
+
+/* Checkout fulfillment spacing */
+.checkout-fulfillment-options{margin-bottom:24px}
+.checkout-fulfillment-options+.checkout-fields{margin-top:0}
+@media(max-width:760px){
+ .checkout-fulfillment-options{margin-bottom:28px}
+ .checkout-fulfillment-options .checkout-method-card{min-height:64px}
+ .checkout-fulfillment-options+.checkout-fields{margin-top:0}
+}
