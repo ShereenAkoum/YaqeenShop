@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /YaqeenShop/admin/
+Disallow: /YaqeenShop/login
+Disallow: /YaqeenShop/checkout
+Disallow: /YaqeenShop/cart
+Disallow: /YaqeenShop/order-confirmation
+
+Sitemap: https://shereenakoum.github.io/YaqeenShop/sitemap.xml
