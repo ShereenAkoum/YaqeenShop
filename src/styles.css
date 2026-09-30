@@ -3217,3 +3217,20 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
 /* Resources summary uses two meaningful cards: financial total and ledger context */
 .resources-page .resources-summary{grid-template-columns:repeat(2,minmax(0,1fr))}
 @media(max-width:760px){.resources-page .resources-summary{grid-template-columns:1fr}}
+
+
+/* Resources detail modal — compact mobile layout */
+.resource-view-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.resource-view-grid>div{box-sizing:border-box;min-width:0}
+.resource-view-grid .resource-view-total,.resource-view-grid>div:last-child{grid-column:1/-1}
+@media(max-width:760px){
+ .resource-view h3{margin:4px 0 16px;font-size:25px;line-height:1.1}
+ .resource-view-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .resource-view-grid>div{padding:14px 15px;border-radius:13px}
+ .resource-view-grid>div:first-child,.resource-view-grid>div:nth-child(2){grid-column:auto}
+ .resource-view-grid .resource-view-total,.resource-view-grid>div:last-child{grid-column:1/-1}
+ .resource-view-grid span{margin-bottom:6px;font-size:9px}
+ .resource-view-grid strong{font-size:13px;overflow-wrap:anywhere}
+ .resource-view-grid .resource-view-total strong{font-size:20px}
+ .resource-view .modal-actions{margin-top:12px}
+}
