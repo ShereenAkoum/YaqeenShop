@@ -3267,3 +3267,10 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
 /* Resources table search + pagination */
 .resources-page .resources-summary{grid-template-columns:minmax(0,1fr);max-width:520px}
 .resources-table-tools{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:18px 0 10px}.resources-table-tools>span{font-size:10px;font-weight:700;color:var(--muted);white-space:nowrap}.resources-search{min-width:260px;max-width:420px;flex:1;display:flex;align-items:center;gap:9px;padding:0 13px;border:1px solid var(--border);border-radius:12px;background:var(--surface)}.resources-search svg{flex:0 0 auto;color:var(--muted)}.resources-search input{width:100%;min-height:42px;border:0!important;outline:0;background:transparent!important;box-shadow:none!important;padding:0!important}@media(max-width:760px){.resources-page .resources-summary{max-width:none}.resources-table-tools{margin-top:16px}.resources-search{min-width:0}.resources-table-tools>span{display:none}}
+
+
+/* Shared CRM pagination arrows — keep chevrons visible on every grid */
+.admin .pagination-button{color:#3f4937!important;opacity:1}
+.admin .pagination-button svg{display:block!important;width:17px!important;height:17px!important;min-width:17px;stroke:currentColor!important;stroke-width:2.25!important;fill:none!important;visibility:visible!important;opacity:1!important}
+.admin .pagination-button:disabled{color:#9a9b93!important;opacity:.58!important;background:#faf8f3}
+.admin .pagination-button:disabled svg{opacity:1!important}
