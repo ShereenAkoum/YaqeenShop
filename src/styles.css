@@ -3321,3 +3321,7 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
 .admin .settings-page .settings-tabs,.admin .settings-page .settings-tab-panel,.admin .settings-page .settings-page-actions{grid-column:1/-1!important;width:100%!important;min-width:0!important}
 .admin .settings-page .settings-tab-panel.is-active{display:block!important}
 @media(min-width:981px){.admin .settings-page .settings-stack{grid-template-columns:minmax(0,1fr)!important}.admin .settings-page .settings-tab-panel>.settings-card{width:100%!important;max-width:none!important}}
+
+
+/* Settings favicon uses the standard CRM select control */
+.admin .settings-page .settings-favicon-field select.control{width:100%!important;min-height:43px!important;height:43px!important;padding:0 42px 0 13px!important;border:1px solid var(--line)!important;border-radius:10px!important;background-color:#fff!important;color:var(--ink)!important;font:inherit!important;font-size:13px!important;font-weight:600!important;box-sizing:border-box!important;cursor:pointer!important}.admin .settings-page .settings-favicon-field select.control:focus{outline:none!important;border-color:var(--primary)!important;box-shadow:0 0 0 3px rgba(63,80,56,.09)!important}.admin .settings-page .settings-favicon-field select.control:disabled{cursor:not-allowed!important;opacity:.65!important}
