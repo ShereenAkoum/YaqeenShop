@@ -8,7 +8,7 @@ import { guardSubmit } from './submitGuard';
 const money=(n:number)=>'$'+Number(n||0).toFixed(2);
 export function ResourcesAdmin({permissions}:{permissions:string[]}){
  const[rows,setRows]=useState<any[]>([]),[loading,setLoading]=useState(true),[error,setError]=useState(''),[success,setSuccess]=useState(''),[viewing,setViewing]=useState<any|null>(null),[edit,setEdit]=useState<any|null|undefined>(undefined),[deleting,setDeleting]=useState<any|null>(null),[search,setSearch]=useState(''),[page,setPage]=useState(1),[pageSize,setPageSize]=useState(10);
- const canEdit=permissions.includes('resources.edit'),grandTotal=useMemo(()=>rows.reduce((sum,r)=>sum+Number(r.quantity)*Number(r.unit_price),0),[rows]),;
+ const canEdit=permissions.includes('resources.edit'),grandTotal=useMemo(()=>rows.reduce((sum,r)=>sum+Number(r.quantity)*Number(r.unit_price),0),[rows]);
  const filtered=useMemo(()=>{const q=search.trim().toLowerCase();return q?rows.filter(r=>String(r.name||'').toLowerCase().includes(q)||String(r.notes||'').toLowerCase().includes(q)):rows},[rows,search]);
  const pageCount=Math.max(1,Math.ceil(filtered.length/pageSize)),visibleRows=filtered.slice((page-1)*pageSize,page*pageSize);
  useEffect(()=>{setPage(1)},[search]);useEffect(()=>{if(page>pageCount)setPage(pageCount)},[page,pageCount]);
