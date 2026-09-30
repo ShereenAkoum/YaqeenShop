@@ -3246,3 +3246,19 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
  .resources-page .resource-view-grid{gap:8px}
  .resources-page .resource-view-grid>div{padding:12px 13px}
 }
+
+
+/* Resource details modal spacing */
+.resource-details-modal{width:min(720px,calc(100vw - 40px));padding:0;overflow:hidden;border-radius:20px}
+.resource-details-modal .modal-head{margin:0;padding:20px 24px 16px;border-bottom:1px solid var(--border)}
+.resource-details-modal .resource-view{padding:18px 24px 0}
+.resource-details-modal .resource-view .modal-actions{margin-left:-24px;margin-right:-24px;padding:16px 24px 20px}
+@media(max-width:760px){
+ .modal-backdrop:has(.resource-details-modal){padding:16px}
+ .resource-details-modal{width:calc(100vw - 32px);max-height:calc(100dvh - 48px);border-radius:18px}
+ .resource-details-modal .modal-head{padding:16px 18px 14px}
+ .resource-details-modal .modal-head h2{font-size:26px;line-height:1.1}
+ .resource-details-modal .resource-view{padding:16px 18px 0}
+ .resource-details-modal .resource-view h3{margin:5px 0 16px}
+ .resource-details-modal .resource-view .modal-actions{margin:12px -18px 0;padding:14px 18px 16px}
+}
