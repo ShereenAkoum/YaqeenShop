@@ -3274,3 +3274,15 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
 .admin .pagination-button svg{display:block!important;width:17px!important;height:17px!important;min-width:17px;stroke:currentColor!important;stroke-width:2.25!important;fill:none!important;visibility:visible!important;opacity:1!important}
 .admin .pagination-button:disabled{color:#9a9b93!important;opacity:.58!important;background:#faf8f3}
 .admin .pagination-button:disabled svg{opacity:1!important}
+
+
+/* Website document cards — compact, no artificial empty height */
+.admin-page .website-doc-grid{align-items:start}
+.admin-page .website-doc-grid .website-doc-card{min-height:0!important;height:auto!important;padding:18px!important;padding-right:104px!important;justify-content:flex-start!important}
+.admin-page .website-doc-grid .website-doc-card h2{margin:0 0 6px!important}
+@media(max-width:760px){
+ .admin-page .website-doc-grid{align-items:start!important}
+ .admin-page .website-doc-grid .website-doc-card{min-height:112px!important;height:auto!important;padding:16px!important;padding-right:88px!important;gap:4px!important}
+ .admin-page .website-doc-grid .website-doc-card h2{margin:0 0 5px!important;font-size:21px!important;line-height:1.08!important}
+ .admin-page .website-doc-grid .website-doc-card>.table-actions{top:12px!important;right:12px!important}
+}
