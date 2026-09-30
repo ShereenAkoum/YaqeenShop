@@ -3234,3 +3234,15 @@ html:has(.admin .modal-backdrop),body:has(.admin .modal-backdrop){overflow:hidde
  .resource-view-grid .resource-view-total strong{font-size:20px}
  .resource-view .modal-actions{margin-top:12px}
 }
+
+
+/* Resources mobile density */
+@media(max-width:760px){
+ .resources-page{padding-left:14px!important;padding-right:14px!important}
+ .resources-page .page-title{gap:12px}
+ .resources-page .resources-summary{margin:14px 0 18px}
+ .resources-page .resource-summary-card{padding:16px 18px;border-radius:16px}
+ .resources-page .resource-editor{gap:12px}
+ .resources-page .resource-view-grid{gap:8px}
+ .resources-page .resource-view-grid>div{padding:12px 13px}
+}
