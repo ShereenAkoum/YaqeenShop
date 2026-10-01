@@ -1298,3 +1298,18 @@ body:has(.home-redesign) .store-nav-icon svg {
 .home-redesign .store-image-fallback small{font-size:9px;letter-spacing:.28em}
 @keyframes yaqeen-image-shimmer{0%{background-position:100% 0}100%{background-position:-100% 0}}
 @media(prefers-reduced-motion:reduce){.home-redesign .store-product-image .store-image-shell:before{animation:none}}
+
+
+/* Product card loaded image: use full card width and natural source ratio */
+.home-redesign .store-product-image .store-image-shell.is-loaded{
+ aspect-ratio:auto!important;
+ background:transparent!important;
+}
+.home-redesign .store-product-image .store-image-shell.is-loaded img{
+ position:relative!important;
+ width:100%!important;
+ height:auto!important;
+ aspect-ratio:auto!important;
+ object-fit:contain!important;
+ object-position:center!important;
+}
