@@ -183,3 +183,21 @@ body:has(.home-redesign) .modern-footer{background:var(--primary);padding-top:56
  .store-product-copy>.product-buy-row{display:none!important}
  .mobile-product-cta-button:disabled{opacity:.62}
 }
+
+/* YAQEEN lifestyle showcase hero */
+.home-showcase-hero{position:relative;width:100%;overflow:hidden;background:#eee5d8;min-height:clamp(520px,43vw,720px)}
+.home-showcase-image{position:absolute;inset:0}
+.home-showcase-image>img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.home-showcase-copy{position:relative;z-index:2;width:min(1440px,calc(100% - 80px));margin:0 auto;min-height:clamp(520px,43vw,720px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding-right:66%;pointer-events:none}
+.home-showcase-copy h1{font-family:Georgia,serif;font-size:clamp(44px,4.4vw,72px);font-weight:400;line-height:1.03;letter-spacing:-.04em;color:#1d3214;margin:0 0 20px}
+.home-showcase-copy p{font-size:17px;line-height:1.55;color:#263126;max-width:470px;margin:0 0 26px}
+.home-showcase-copy .button{pointer-events:auto;background:#294714;border-color:#294714;min-width:190px;justify-content:center}
+@media(max-width:700px){
+ .home-showcase-hero{display:flex;flex-direction:column;min-height:0;background:#fafaf6}
+ .home-showcase-image{position:relative;width:100%;height:auto;aspect-ratio:1.28/1;overflow:hidden}
+ .home-showcase-image>img{object-fit:cover;object-position:62% center}
+ .home-showcase-copy{width:100%;min-height:0;padding:26px 20px 38px;display:block;background:#fafaf6}
+ .home-showcase-copy h1{font-size:clamp(38px,12vw,54px);line-height:1.02;margin-bottom:16px}
+ .home-showcase-copy p{font-size:15px;line-height:1.55;margin-bottom:22px;max-width:100%}
+ .home-showcase-copy .button{width:100%;min-height:52px}
+}
