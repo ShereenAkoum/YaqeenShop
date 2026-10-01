@@ -22668,3 +22668,16 @@ body:has(.admin .modal-backdrop) {
  .yaqeen-footer-bar>.container{min-height:0;flex-direction:column;padding:20px 24px;gap:10px;text-align:center}
  .yaqeen-footer-bar .footer-legal-links{gap:18px}
 }
+
+
+/* Footer mobile polish: brand first, compact spacing, reliable CRM logo */
+@media(max-width:800px){
+ .yaqeen-footer-main{padding-top:38px!important}
+ .yaqeen-footer .footer-brand-column{order:1!important;margin:0 auto 26px!important}
+ .yaqeen-footer .footer-brand-column .brand{display:flex!important;width:100%!important;min-height:86px!important;align-items:center!important;justify-content:center!important}
+ .yaqeen-footer .footer-brand-column .brand-logo{display:block!important;width:auto!important;max-width:180px!important;height:auto!important;max-height:86px!important;object-fit:contain!important}
+ .yaqeen-footer .footer-brand-column .footer-statement{margin-top:12px!important}
+ .yaqeen-footer .footer-group{order:2!important}
+ .yaqeen-footer .footer-journey{order:3!important;margin:26px 0 0!important;padding:26px 0 0!important;border-top:1px solid #ded9ce!important;border-bottom:0!important}
+ .yaqeen-footer-bar>.container{padding-bottom:28px!important}
+}
