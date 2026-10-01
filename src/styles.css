@@ -22625,3 +22625,10 @@ body:has(.admin .modal-backdrop) {
   cursor: not-allowed !important;
   opacity: .65 !important
 }
+/* Mobile Safari storefront images: never depend on slideshow animation for visibility */
+@media(max-width:760px){
+ .store-product-card .card-slideshow img{animation:none!important;opacity:0!important;transform:none!important}
+ .store-product-card .card-slideshow img:first-child{opacity:1!important}
+ .store-product-card .card-mobile-image{display:block!important}
+ .store-product-card .card-mobile-image>img{display:block!important;opacity:1!important;visibility:visible!important;animation:none!important}
+}
