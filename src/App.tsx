@@ -82,7 +82,7 @@ function HomeHero({section}:{section:any}){
  return <section className="yaqeen-home-hero">
   <StoreImageView className="yaqeen-home-hero-image" src={image} alt="YAQEEN — A More Meaningful Life collection" fetchPriority="high" loading="eager" sizes="100vw"/>
   <div className="yaqeen-home-hero-content">
-   <h1>{headingLines.map((line:string,i:number)=><Fragment key={i}>{line}{i<headingLines.length-1&&<br/>}</Fragment>)}</h1>
+   <h1>{headingLines.map((line:string,i:number)=><span key={i}>{line}{i<headingLines.length-1&&<br/>}</span>)}</h1>
    {section.body&&<p>{section.body}</p>}
    {section.cta_text&&<Link className="yaqeen-home-hero-button" to={section.cta_url||'/shop'}>{section.cta_text} <ChevronRight size={18}/></Link>}
   </div>
