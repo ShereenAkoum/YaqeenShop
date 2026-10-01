@@ -34,7 +34,7 @@ const homepageDefaults:any[]=[
  {id:'top-products',type:'products',selection:'top',enabled:true,heading:'Top picks',subheading:'FIND YOUR EVERYDAY REMINDER',cta_text:'Shop all products',cta_url:'/shop'},
  {id:'new-arrivals',type:'products',selection:'new_arrival',enabled:true,heading:'New arrivals',subheading:'JUST ADDED',cta_text:'Shop all products',cta_url:'/shop'},
  {id:'bestsellers',type:'products',selection:'bestseller',enabled:true,heading:'Bestsellers',subheading:'CUSTOMER FAVOURITES',cta_text:'Shop all products',cta_url:'/shop'},
- {id:'story',type:'story',enabled:true,subheading:'THE STORY OF YAQEEN',heading:'Made to mean something.',body:'Yaqeen means certainty. Thoughtful pieces that bring faith and meaning into the spaces you spend time in.',arabic:'يقين',image:'',cta_text:'Our story',cta_url:'/about'}
+ {id:'story',type:'story',enabled:true,subheading:'OUR STORY',heading:'A More\nMeaningful Life',body:'YAQEEN was born from a simple belief — that everyday reminders can bring more faith, peace, and intention into our lives.',body_secondary:'We create meaningful pieces inspired by Islamic values, designed to brighten your space and keep what matters close to your heart.',image:'',cta_text:'Our story',cta_url:'/about',values:[{title:'Faith-inspired designs',description:'Rooted in Islamic values'},{title:'Meaningful everyday reminders',description:'To bring more peace and intention'},{title:'Thoughtful gifts for loved ones',description:'For every special moment'}]}
 ];
 function normalizeHomepageSections(value:any[]){
  const source=Array.isArray(value)?value:[];
@@ -49,21 +49,18 @@ function Sections({value,setValue}:{value:any[];setValue:(v:any[])=>void}){
  const labels:Record<string,string>={hero:'Hero',top:'Top picks',new_arrival:'New arrivals',bestseller:'Bestsellers',story:'Story'};
  return <section className="website-editor-block homepage-editor">
   <div className="website-nav-editor-head"><span className="section-kicker">HOMEPAGE</span><h3>Storefront homepage</h3><p>Edit the same five sections customers see on the homepage. Product groups are populated automatically from your product catalogue.</p></div>
-  <div className="homepage-section-list">{sections.map((s,i)=>{
-   const title=s.type==='products'?labels[s.selection]:labels[s.type];
-   return <details className="website-section-editor homepage-section-card" key={s.id} open={i===0}>
-    <summary><span className="homepage-section-number">{String(i+1).padStart(2,'0')}</span><span><strong>{title}</strong><small>{s.type==='products'?'Automatic product collection':s.type==='hero'?'First section customers see':'Brand story section'}</small></span><span className={'homepage-visibility '+(s.enabled!==false?'is-visible':'')}>{s.enabled!==false?'Visible':'Hidden'}</span></summary>
-    <div className="website-editor-grid homepage-section-fields">
-     <div className="full homepage-visible-control"><div><strong>Visible on homepage</strong><small>Show this section on the storefront homepage.</small></div><label className="form-toggle" aria-label={'Show '+title+' on homepage'}><input type="checkbox" checked={s.enabled!==false} onChange={e=>patch(i,{enabled:e.target.checked})}/><span className="toggle-track"><span/></span></label></div>
-     {s.type!=='hero'&&<label>Eyebrow<input value={s.subheading||''} onChange={e=>patch(i,{subheading:e.target.value})} placeholder={s.type==='story'?'THE STORY OF YAQEEN':'Section label'}/></label>}
-     <label className={s.type==='hero'?'full':''}>Heading{s.type==='hero'?<><textarea rows={3} value={s.heading||''} onChange={e=>patch(i,{heading:e.target.value})} placeholder={'Little reminders.\nSpecial times.'}/><small className="muted">Press Enter where you want the headline to break onto a new line.</small></>:<input value={s.heading||''} onChange={e=>patch(i,{heading:e.target.value})}/>}</label>
-     {s.type!=='products'&&<label className="full">{s.type==='story'?'Story':'Description'}<textarea rows={4} value={s.body||''} onChange={e=>patch(i,{body:e.target.value})}/></label>}
-     {s.type!=='products'&&<label className="full">Image URL <span className="muted">(optional)</span><input value={s.image||''} onChange={e=>patch(i,{image:e.target.value})} placeholder="https://…"/></label>}
-     <label>Button text<input value={s.cta_text||''} onChange={e=>patch(i,{cta_text:e.target.value})}/></label>
-     <label className={s.type==='story'?'':'full'}>Button destination<input value={s.cta_url||''} onChange={e=>patch(i,{cta_url:e.target.value})} placeholder="/shop"/></label>
-     {s.type==='products'&&<p className="homepage-auto-note full">Products in this section are selected automatically from the <strong>{title}</strong> catalogue group. Manage product flags from Products instead of choosing products here.</p>}
-    </div>
-   </details>
-  })}</div>
+  <div className="homepage-section-list">{sections.map((s,i)=>{const title=s.type==='products'?labels[s.selection]:labels[s.type];return <details className="website-section-editor homepage-section-card" key={s.id} open={i===0}>
+   <summary><span className="homepage-section-number">{String(i+1).padStart(2,'0')}</span><span><strong>{title}</strong><small>{s.type==='products'?'Automatic product collection':s.type==='hero'?'First section customers see':'Brand story section'}</small></span><span className={'homepage-visibility '+(s.enabled!==false?'is-visible':'')}>{s.enabled!==false?'Visible':'Hidden'}</span></summary>
+   <div className="website-editor-grid homepage-section-fields">
+    <div className="full homepage-visible-control"><div><strong>Visible on homepage</strong><small>Show this section on the storefront homepage.</small></div><label className="form-toggle"><input type="checkbox" checked={s.enabled!==false} onChange={e=>patch(i,{enabled:e.target.checked})}/><span className="toggle-track"><span/></span></label></div>
+    {s.type==='story'?<><label>Eyebrow<input value={s.subheading||''} onChange={e=>patch(i,{subheading:e.target.value})} placeholder="OUR STORY"/></label><label className="full">Heading<textarea rows={2} value={s.heading||''} onChange={e=>patch(i,{heading:e.target.value})}/><small className="muted">Press Enter for a line break.</small></label><label className="full">First paragraph<textarea rows={3} value={s.body||''} onChange={e=>patch(i,{body:e.target.value})}/></label><label className="full">Second paragraph<textarea rows={3} value={s.body_secondary||''} onChange={e=>patch(i,{body_secondary:e.target.value})}/></label><label className="full">Image URL<input value={s.image||''} onChange={e=>patch(i,{image:e.target.value})} placeholder="https://…"/></label><label>Button text<input value={s.cta_text||''} onChange={e=>patch(i,{cta_text:e.target.value})}/></label><label>Button destination<input value={s.cta_url||''} onChange={e=>patch(i,{cta_url:e.target.value})}/></label><div className="full"><AboutValues value={s.values||[]} setValue={(values:any)=>patch(i,{values})}/></div></>:<>
+     {s.type!=='hero'&&<label>Eyebrow<input value={s.subheading||''} onChange={e=>patch(i,{subheading:e.target.value})}/></label>}
+     <label className={s.type==='hero'?'full':''}>Heading{s.type==='hero'?<><textarea rows={3} value={s.heading||''} onChange={e=>patch(i,{heading:e.target.value})}/><small className="muted">Press Enter where you want the headline to break onto a new line.</small></>:<input value={s.heading||''} onChange={e=>patch(i,{heading:e.target.value})}/>}</label>
+     {s.type!=='products'&&<label className="full">Description<textarea rows={4} value={s.body||''} onChange={e=>patch(i,{body:e.target.value})}/></label>}
+     {s.type!=='products'&&<label className="full">Image URL <span className="muted">(optional)</span><input value={s.image||''} onChange={e=>patch(i,{image:e.target.value})}/></label>}
+     <label>Button text<input value={s.cta_text||''} onChange={e=>patch(i,{cta_text:e.target.value})}/></label><label className="full">Button destination<input value={s.cta_url||''} onChange={e=>patch(i,{cta_url:e.target.value})}/></label>
+     {s.type==='products'&&<p className="homepage-auto-note full">Products in this section are selected automatically from the <strong>{title}</strong> catalogue group.</p>}
+    </>}
+   </div></details>})}</div>
  </section>
 }
