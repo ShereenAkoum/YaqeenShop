@@ -1276,10 +1276,13 @@ body:has(.home-redesign) .store-nav-icon svg {
 }
 
 
-/* Stable product image loading state */
+/* Product card loading state: preserve the pre-skeleton image sizing */
 .home-redesign .store-product-image .store-image-shell{
- position:relative!important;display:block!important;width:100%!important;
- aspect-ratio:3/2!important;overflow:hidden!important;background:#eeeae0!important
+ position:relative!important;
+ display:block!important;
+ width:100%!important;
+ overflow:hidden!important;
+ background:#eeeae0!important;
 }
 .home-redesign .store-product-image .store-image-shell:before{
  content:"";position:absolute;inset:0;z-index:0;
@@ -1287,68 +1290,18 @@ body:has(.home-redesign) .store-nav-icon svg {
  background-size:220% 100%;animation:yaqeen-image-shimmer 1.35s ease-in-out infinite
 }
 .home-redesign .store-product-image .store-image-shell img{
- position:relative;z-index:1;display:block!important;width:100%!important;height:100%!important;
- object-fit:contain!important;object-position:center!important;opacity:0;transition:opacity .28s ease;background:#f4f1e9
+ position:relative!important;z-index:1;display:block!important;
+ width:100%!important;height:auto!important;aspect-ratio:auto!important;
+ object-fit:contain!important;object-position:center!important;
+ opacity:0;transition:opacity .28s ease
 }
+.home-redesign .store-product-image .store-image-shell.is-loaded{background:transparent!important}
 .home-redesign .store-product-image .store-image-shell.is-loaded:before{display:none}
 .home-redesign .store-product-image .store-image-shell.is-loaded img{opacity:1}
+.home-redesign .store-product-image .store-image-shell.is-failed{aspect-ratio:3/2!important}
 .home-redesign .store-product-image .store-image-shell.is-failed:before{display:none}
 .home-redesign .store-image-fallback{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#405137;background:#f1eee5}
 .home-redesign .store-image-fallback .arabic{font-family:serif;font-size:30px;line-height:1}
 .home-redesign .store-image-fallback small{font-size:9px;letter-spacing:.28em}
 @keyframes yaqeen-image-shimmer{0%{background-position:100% 0}100%{background-position:-100% 0}}
 @media(prefers-reduced-motion:reduce){.home-redesign .store-product-image .store-image-shell:before{animation:none}}
-
-
-/* Product card loaded image: use full card width and natural source ratio */
-.home-redesign .store-product-image .store-image-shell.is-loaded{
- aspect-ratio:auto!important;
- background:transparent!important;
-}
-.home-redesign .store-product-image .store-image-shell.is-loaded img{
- position:relative!important;
- width:100%!important;
- height:auto!important;
- aspect-ratio:auto!important;
- object-fit:contain!important;
- object-position:center!important;
-}
-
-
-/* Product card final framing: compact landscape crop, consistent before/after load */
-.home-redesign .store-product-image,
-.home-redesign .store-product-image .store-image-shell,
-.home-redesign .store-product-image .store-image-shell.is-loaded{
- width:100%!important;
- aspect-ratio:3/2!important;
- height:auto!important;
- min-height:0!important;
- overflow:hidden!important;
- background:#eeeae0!important;
-}
-.home-redesign .store-product-image .store-image-shell img,
-.home-redesign .store-product-image .store-image-shell.is-loaded img{
- position:absolute!important;
- inset:0!important;
- display:block!important;
- width:100%!important;
- height:100%!important;
- aspect-ratio:auto!important;
- object-fit:cover!important;
- object-position:center center!important;
- padding:0!important;
-}
-@media(max-width:760px){
- .home-redesign .store-product-image,
- .home-redesign .store-product-image .store-image-shell,
- .home-redesign .store-product-image .store-image-shell.is-loaded{
-  aspect-ratio:3/2!important;
- }
-}
-
-
-/* Product card framing test: preserve complete image */
-.home-redesign .store-product-image .store-image-shell img,
-.home-redesign .store-product-image .store-image-shell.is-loaded img{
- object-fit:contain!important;
-}
