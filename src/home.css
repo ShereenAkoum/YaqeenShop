@@ -1265,3 +1265,12 @@ body:has(.home-redesign) .store-nav-icon svg {
  .home-redesign .home-story-editorial .home-story-copy>p:not(.eyebrow){font-size:14px!important;line-height:1.55!important}
  .home-redesign .home-story-values{padding-top:22px!important;gap:13px!important}
 }
+
+
+/* Product cards: show the complete source image without cropping */
+.home-redesign .store-product-image{aspect-ratio:auto!important;min-height:0!important;background:#f4f1e9!important}
+.home-redesign .store-product-image>img{display:block!important;width:100%!important;height:auto!important;aspect-ratio:auto!important;object-fit:contain!important;object-position:center!important;padding:0!important}
+@media(max-width:760px){
+ .home-redesign .store-product-image{aspect-ratio:auto!important}
+ .home-redesign .store-product-image>img{width:100%!important;height:auto!important;aspect-ratio:auto!important;object-fit:contain!important}
+}
