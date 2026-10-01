@@ -81,3 +81,53 @@ body:has(.home-redesign) .store-nav-icon svg{width:25px;height:25px}
  .home-redesign .home-section-head h2{display:block!important;margin:0!important}
  .home-redesign .home-text-link{margin-top:10px!important}
 }
+
+/* Mobile product section headers: never collapse behind adjacent content */
+@media(max-width:760px){
+ .home-redesign .home-products{display:block!important;padding-top:48px!important}
+ .home-redesign .home-products .home-section-head{
+  position:static!important;
+  width:100%!important;
+  min-height:118px!important;
+  height:auto!important;
+  margin:0 0 28px!important;
+  padding:0!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  justify-content:flex-start!important;
+  gap:12px!important;
+  overflow:visible!important;
+  visibility:visible!important;
+  opacity:1!important;
+  transform:none!important
+ }
+ .home-redesign .home-products .home-section-head>div{
+  display:block!important;
+  width:100%!important;
+  visibility:visible!important;
+  opacity:1!important
+ }
+ .home-redesign .home-products .home-section-head .eyebrow{
+  display:block!important;
+  margin:0 0 8px!important;
+  color:#56614d!important;
+  font-size:11px!important;
+  line-height:1.3!important;
+  letter-spacing:.16em!important
+ }
+ .home-redesign .home-products .home-section-head h2{
+  display:block!important;
+  margin:0!important;
+  color:#294714!important;
+  font-size:34px!important;
+  line-height:1.08!important
+ }
+ .home-redesign .home-products .home-text-link{
+  display:inline-flex!important;
+  min-height:32px!important;
+  margin:0!important;
+  visibility:visible!important;
+  opacity:1!important
+ }
+}
