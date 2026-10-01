@@ -67,7 +67,7 @@ function HomeProductSection({section}:{section:any}){
  useEffect(()=>{let live=true;if(!supabase){setLoading(false);return}setLoading(true);setFailed(false);(async()=>{
   let q=supabase.from('products').select('id,title,slug,price,shape,bestseller,arabic_title,product_images(id,url,alt,position),product_variants(id,active,image_url,color,sku,product_variant_images(id,url,alt,position))').eq('status','Active');
   if(section.selection==='top')q=q.eq('top_pick',true);
-  q=q.order('created_at',{ascending:false}).limit(4);
+  let productLimit=4;if(section.selection==='top'){const{data:merch}=await supabase.from('site_settings').select('value').eq('key','merchandising').maybeSingle();productLimit=Math.max(1,Math.min(24,Number(merch?.value?.top_picks_limit)||4)}q=q.order('created_at',{ascending:false}).limit(productLimit);
   if(section.selection==='bestseller')q=q.eq('bestseller',true);
   if(section.selection==='new_arrival')q=q.eq('new_arrival',true);
   const{data,error}=await q;if(live){const loaded=(data||[]) as P[];setItems(loaded);setFailed(Boolean(error));setLoading(false)}
