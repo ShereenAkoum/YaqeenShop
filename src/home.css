@@ -1221,3 +1221,47 @@ body:has(.home-redesign) .store-nav-icon svg {
         font-size: 12px !important
     }
 }
+
+/* Our Story fidelity pass — lighter, more compact editorial proportions */
+@media(min-width:761px){
+ .home-redesign .home-story-editorial{
+  max-width:1320px!important;
+  grid-template-columns:minmax(0,.9fr) minmax(430px,.78fr)!important;
+  column-gap:86px!important;
+  row-gap:52px!important;
+  padding-top:76px!important;
+  padding-bottom:68px!important;
+  align-items:center!important
+ }
+ .home-redesign .home-story-editorial .home-story-copy{max-width:500px!important;padding-left:18px!important}
+ .home-redesign .home-story-editorial .eyebrow{font-size:11px!important;letter-spacing:.19em!important;margin-bottom:15px!important}
+ .home-redesign .home-story-editorial h2{
+  font-size:clamp(46px,3.6vw,58px)!important;
+  line-height:1.02!important;
+  letter-spacing:-.035em!important;
+  margin-bottom:22px!important;
+  max-width:440px!important
+ }
+ .home-redesign .home-story-editorial .home-story-copy>p:not(.eyebrow){
+  max-width:470px!important;
+  font-size:16px!important;
+  line-height:1.6!important;
+  margin-bottom:13px!important
+ }
+ .home-redesign .home-story-editorial .home-story-button{margin-top:10px!important;padding:12px 22px!important;font-size:13px!important}
+ .home-redesign .home-story-editorial .home-story-image{width:100%!important;max-width:500px!important;justify-self:end!important;border-radius:150px 0 0 0!important}
+ .home-redesign .home-story-editorial .home-story-image img{height:auto!important;aspect-ratio:1/1.03!important;object-fit:cover!important}
+ .home-redesign .home-story-values{gap:46px!important;padding:0 18px!important}
+ .home-redesign .home-story-values>div{gap:12px!important}
+ .home-redesign .home-story-values>div>span{width:42px!important;height:42px!important;font-size:21px!important}
+ .home-redesign .home-story-values strong{font-size:14px!important}
+ .home-redesign .home-story-values small{font-size:12px!important}
+}
+@media(max-width:760px){
+ .home-redesign .home-story-editorial{padding:44px 20px 50px!important}
+ .home-redesign .home-story-editorial .home-story-image img{aspect-ratio:1.55/1!important}
+ .home-redesign .home-story-editorial .home-story-copy{padding:22px 12px 21px!important}
+ .home-redesign .home-story-editorial h2{font-size:38px!important;line-height:1.02!important;margin-bottom:17px!important}
+ .home-redesign .home-story-editorial .home-story-copy>p:not(.eyebrow){font-size:14px!important;line-height:1.55!important}
+ .home-redesign .home-story-values{padding-top:22px!important;gap:13px!important}
+}
