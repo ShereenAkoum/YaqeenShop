@@ -301,3 +301,16 @@ body:has(.home-redesign) .store-nav-icon svg{width:25px;height:25px}
  .home-story-values>div{gap:13px!important}.home-story-values>div>span{width:46px!important;height:46px!important}
  .home-story-values strong{font-size:14px!important}.home-story-values small{font-size:12px!important}
 }
+
+
+/* Keep Our Story CTA label visible on mobile */
+@media(max-width:760px){
+ .home-redesign .home-story-editorial .home-story-button{
+  color:#fff!important;
+  font-size:14px!important;
+  font-weight:600!important;
+  line-height:1!important;
+  text-decoration:none!important;
+ }
+ .home-redesign .home-story-editorial .home-story-button svg{color:#fff!important;stroke:currentColor!important}
+}
