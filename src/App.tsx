@@ -66,12 +66,11 @@ function HomeProductSection({section}:{section:any}){
  const[items,setItems]=useState<P[]>([]),[loading,setLoading]=useState(true),[failed,setFailed]=useState(false);
  useEffect(()=>{let live=true;if(!supabase){setLoading(false);return}setLoading(true);setFailed(false);(async()=>{
   let q=supabase.from('products').select('id,title,slug,price,shape,bestseller,arabic_title,product_images(id,url,alt,position),product_variants(id,active,image_url,color,sku,product_variant_images(id,url,alt,position))').eq('status','Active');
-  if(section.selection==='top'&&!(Array.isArray(section.product_ids)&&section.product_ids.length))q=q.order('featured',{ascending:false});
+  if(section.selection==='top')q=q.eq('top_pick',true);
   q=q.order('created_at',{ascending:false}).limit(4);
   if(section.selection==='bestseller')q=q.eq('bestseller',true);
   if(section.selection==='new_arrival')q=q.eq('new_arrival',true);
-  if(Array.isArray(section.product_ids)&&section.product_ids.length)q=q.in('id',section.product_ids);
-  const{data,error}=await q;if(live){let loaded=(data||[]) as P[];if(section.selection==='top'&&Array.isArray(section.product_ids)&&section.product_ids.length){const order=new Map<string,number>(section.product_ids.map((id:string,index:number)=>[id,index]));loaded=[...loaded].sort((a,b)=>(order.get(a.id)??999)-(order.get(b.id)??999))}setItems(loaded);setFailed(Boolean(error));setLoading(false)}
+  const{data,error}=await q;if(live){const loaded=(data||[]) as P[];setItems(loaded);setFailed(Boolean(error));setLoading(false)}
  })();return()=>{live=false}},[section.selection,JSON.stringify(section.product_ids||[])]);
  if(!loading&&!failed&&!items.length)return null;
  return <section className={'home-cms-section home-products container '+(section.selection==='top'?'home-top-picks':'')}><div className="home-section-head"><div>{section.subheading&&<p className="eyebrow">{section.subheading}</p>}<h2>{section.heading}</h2></div><Link className="home-text-link" to={section.cta_url||'/shop'}>{section.cta_text||'Explore the collection'} <ChevronRight size={18}/></Link></div>
