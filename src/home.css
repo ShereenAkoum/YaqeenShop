@@ -131,3 +131,40 @@ body:has(.home-redesign) .store-nav-icon svg{width:25px;height:25px}
   opacity:1!important
  }
 }
+
+/* Mobile CMS sections must remain independent normal-flow blocks */
+@media(max-width:760px){
+ .home-redesign{display:block!important}
+ .home-redesign>.yaqeen-home-hero,
+ .home-redesign>.home-cms-section,
+ .home-redesign>.home-products,
+ .home-redesign>section{
+  position:relative!important;
+  inset:auto!important;
+  float:none!important;
+  clear:both!important;
+  width:100%!important;
+  transform:none!important
+ }
+ .home-redesign .yaqeen-home-hero{z-index:1!important;margin:0!important}
+ .home-redesign .yaqeen-home-hero-content{position:relative!important;z-index:2!important}
+ .home-redesign .home-products{
+  position:relative!important;
+  z-index:3!important;
+  clear:both!important;
+  margin:0!important;
+  padding-top:48px!important;
+  background:#faf8f2!important
+ }
+ .home-redesign .home-products .home-section-head{
+  position:relative!important;
+  z-index:4!important;
+  min-height:0!important;
+  margin-bottom:28px!important
+ }
+ .home-redesign .home-products .store-product-grid{
+  position:relative!important;
+  z-index:1!important;
+  margin:0!important
+ }
+}
