@@ -16,7 +16,7 @@ body:has(.home-redesign) .store-nav-icon{width:auto;height:auto;min-width:0;min-
 body:has(.home-redesign) .store-nav-icon:hover{background:transparent;border:0;color:#111;transform:none}
 body:has(.home-redesign) .store-nav-icon svg{width:25px;height:25px}
 .yaqeen-home-hero{position:relative;width:100%;aspect-ratio:1536/535;overflow:hidden;background:#f4eadf}
-.yaqeen-home-hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:fill}
+.yaqeen-home-hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center}
 .yaqeen-home-hero-content{position:relative;z-index:1;width:100%;height:100%;padding-left:7.55vw;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
 .yaqeen-home-hero-content h1{margin:0 0 17px;font-family:Georgia,'Times New Roman',serif;font-size:67px;font-weight:400;line-height:1.01;letter-spacing:-.03em;color:#18300f}
 .yaqeen-home-hero-content p{margin:0 0 24px;max-width:430px;font-size:17px;line-height:1.5;color:#263126}
