@@ -36,7 +36,7 @@ function warmImageCache(urls:(string|null|undefined)[]){
   if(response.ok)await cache.put(url,response.clone());
  }))).catch(()=>{});
 }
-function StoreImageView({src,alt,className,loading='lazy',fetchPriority='auto',style}:{src:string;alt:string;className?:string;loading?:'eager'|'lazy';fetchPriority?:'high'|'low'|'auto';sizes?:string;style?:CSSProperties}){return <img className={className} src={src} alt={alt} loading={loading} decoding="async" fetchPriority={fetchPriority} style={style}/>}
+function StoreImageView({src,alt,className,loading='lazy',fetchPriority='auto',sizes,style}:{src:string;alt:string;className?:string;loading?:'eager'|'lazy';fetchPriority?:'high'|'low'|'auto';sizes?:string;style?:CSSProperties}){return <img className={className} src={src} alt={alt} loading={loading} decoding="async" fetchPriority={fetchPriority} sizes={sizes} style={style}/>}
 type StoreCategory={id:string;title:string;slug:string};
 type StoreImage={id:string;url:string;alt:string|null;position:number};
 type StoreVariant={id:string;active:boolean;sku?:string;color?:string|null;price_override?:number|null;image_url?:string|null;stock_allocation?:number;inventory_item_id?:string|null;inventory_items?:{title?:string|null;sku?:string|null}|null;product_variant_images?:{id:string;url:string;alt?:string|null;position?:number}[]};
