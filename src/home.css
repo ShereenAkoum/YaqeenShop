@@ -6,21 +6,6 @@
 .home-redesign .button:hover{background:#24351e}
 .home-redesign a:focus-visible,.home-redesign input:focus-visible,.home-redesign button:focus-visible{outline:3px solid #8b723c;outline-offset:5px}
 .home-text-link{display:inline-flex;align-items:center;gap:12px;font-size:14px;font-weight:600;min-height:44px;text-decoration:underline;text-underline-offset:6px}
-.home-editorial-hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:6%;padding-block:88px 104px;min-height:650px}
-.home-hero-copy{padding-block:20px}
-.home-redesign .home-hero-copy h1{font-family:Georgia,serif;font-size:clamp(42px,4.8vw,72px);font-weight:400;line-height:1.09;letter-spacing:-.045em;margin:0 0 26px}
-.home-hero-copy h1 span{display:block}
-.home-hero-copy h1 span+span{color:#718160;font-style:italic}
-.home-hero-description{font-size:18px;line-height:1.75;max-width:440px;color:#62685c;margin:0 0 30px}
-.home-hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:15px 26px}
-.home-hero-note{display:flex;align-items:center;gap:20px;border-top:1px solid var(--home-line);margin-top:42px;padding-top:23px;max-width:440px}
-.home-hero-note>.arabic{font-size:42px;line-height:1.3;color:#64734f}
-.home-hero-note p{font-size:14px;line-height:1.7;margin:0}.home-hero-note p span{color:#777b70}
-.home-hero-visual{position:relative;min-width:0;background:var(--primary);aspect-ratio:4/4.7;border-radius:160px 160px 8px 8px;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.home-hero-visual>img{display:block;width:100%;height:100%;object-fit:contain;padding:30px 20px 95px}
-.home-visual-caption{position:absolute;bottom:0;left:0;right:0;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#f0f1e8;padding:22px 25px;border-top:1px solid #d9ddcf}
-.home-visual-caption>span:first-child{font-size:10px;letter-spacing:.13em}.home-visual-caption>a{font-size:13px;display:flex;align-items:center;gap:8px}.home-visual-caption>span{font-size:13px}
-.home-hero-wordmark{display:grid;text-align:center;gap:10px;padding-bottom:50px}.home-hero-wordmark .arabic{font-size:120px;line-height:1.6}.home-hero-wordmark>span:last-child{font-size:11px;letter-spacing:.2em}
 .home-redesign .home-products{padding-block:65px 80px;border-top:1px solid var(--home-line)}
 .home-redesign .home-section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin:0 0 34px}
 .home-redesign h2{font-size:clamp(32px,3.3vw,48px);line-height:1.15;letter-spacing:-.035em;font-weight:400;margin:0 0 20px}
@@ -51,9 +36,6 @@ body:has(.home-redesign) .site-header{background:#fafaf6;border-color:#deded3;pa
 body:has(.home-redesign) .desktop-nav a{font-size:14px;padding:10px 4px}body:has(.home-redesign) .store-nav-icon{min-width:44px;min-height:44px}
 body:has(.home-redesign) .announcement{font-size:11px;padding:9px 20px;background:var(--primary)}
 body:has(.home-redesign) .modern-footer{background:var(--primary);padding-top:56px}body:has(.home-redesign) .footer a,body:has(.home-redesign) .footer-contact-copy,body:has(.home-redesign) .footer-statement{font-size:14px;line-height:1.8}body:has(.home-redesign) .footer-heading,body:has(.home-redesign) .footer-bottom{font-size:12px}
-@media(min-width:1600px){.home-editorial-hero{min-height:730px}}
-@media(max-width:1000px){.home-editorial-hero{gap:35px;min-height:0;padding-block:56px 72px}.home-redesign .store-product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.home-hero-visual{border-radius:110px 110px 8px 8px}.home-redesign .home-cms-newsletter{gap:30px;grid-template-columns:1fr}.home-hero-actions .home-text-link{font-size:13px}}
-@media(max-width:700px){.home-editorial-hero{grid-template-columns:1fr;gap:32px;padding-top:26px}.home-hero-copy{padding:0}.home-redesign .home-hero-copy h1{font-size:clamp(40px,9.8vw,62px)}.home-hero-description{font-size:16px}.home-hero-note{display:none}.home-hero-visual{aspect-ratio:1.1;border-radius:100px 100px 8px 8px}.home-hero-visual>img{padding-bottom:75px}.home-visual-caption{padding:18px}.home-redesign .home-section-head{align-items:start;flex-direction:column;gap:12px}.home-redesign .home-products{padding-block:40px 50px}.home-redesign .store-product-grid{gap:28px 16px}.home-product-info{flex-direction:column;gap:8px}.home-redesign .home-product-info h3{font-size:17px}.home-product-info p{font-size:13px}.home-redesign .home-cms-story{grid-template-columns:1fr;gap:32px;padding-block:50px}.home-story-symbol{aspect-ratio:1.6}.home-redesign .home-cms-banner{padding-block:55px}.home-redesign .home-cms-newsletter{padding-block:40px 50px}.home-redesign .eyebrow{font-size:11px}.home-redesign .newsletter-field{flex-direction:column}.home-redesign .newsletter-field button{width:100%}}
 @media(prefers-reduced-motion:reduce){.home-redesign *{transition:none!important}}
 
 /* Consistent vertical cards, including when a collection has only one item. */
@@ -132,16 +114,6 @@ body:has(.home-redesign) .modern-footer{background:var(--primary);padding-top:56
 /* Mobile homepage layout correction */
 @media(max-width:700px){
  .home-redesign .container{padding-inline:20px!important}
- .home-redesign .home-editorial-hero{display:flex!important;flex-direction:column!important;gap:28px!important;padding-block:48px 72px!important;overflow:visible!important}
- .home-redesign .home-hero-copy{width:100%!important;padding:0!important}
- .home-redesign .home-hero-actions{display:grid!important;grid-template-columns:1fr!important;gap:12px!important;width:100%!important}
- .home-redesign .home-hero-actions .button{width:100%!important;min-height:52px!important;justify-content:space-between!important;padding-inline:22px!important}
- .home-redesign .home-hero-actions .home-text-link{width:max-content!important;max-width:100%!important;min-height:44px!important}
- .home-redesign .home-hero-visual{width:100%!important;max-width:none!important;aspect-ratio:1/1.18!important;border-radius:72px 72px 8px 8px!important;margin:6px 0 0!important}
- .home-redesign .home-hero-visual>img{width:100%!important;height:calc(100% - 76px)!important;object-fit:contain!important;padding:16px!important}
- .home-redesign .home-visual-caption{min-height:76px!important;padding:16px 18px!important;gap:8px!important;flex-wrap:nowrap!important}
- .home-redesign .home-visual-caption>span:first-child{font-size:9px!important;letter-spacing:.12em!important}
- .home-redesign .home-visual-caption>a{font-size:12px!important;white-space:nowrap!important}
  .home-redesign .home-products{padding-block:48px 58px!important}
  .home-redesign .home-section-head{margin-bottom:26px!important;gap:8px!important}
  .home-redesign .home-section-head .eyebrow{margin-bottom:7px!important}
@@ -186,20 +158,8 @@ body:has(.home-redesign) .modern-footer{background:var(--primary);padding-top:56
 
 /* YAQEEN lifestyle showcase hero */
 .home-showcase-hero{position:relative;width:100%;overflow:hidden;background:#eee5d8;min-height:clamp(520px,43vw,720px)}
-.home-showcase-image{position:absolute;inset:0}
-.home-showcase-image>img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
-.home-showcase-copy{position:relative;z-index:2;width:min(1440px,calc(100% - 80px));margin:0 auto;min-height:clamp(520px,43vw,720px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding-right:66%;pointer-events:none}
-.home-showcase-copy h1{font-family:Georgia,serif;font-size:clamp(44px,4.4vw,72px);font-weight:400;line-height:1.03;letter-spacing:-.04em;color:#1d3214;margin:0 0 20px}
-.home-showcase-copy p{font-size:17px;line-height:1.55;color:#263126;max-width:470px;margin:0 0 26px}
-.home-showcase-copy .button{pointer-events:auto;background:#294714;border-color:#294714;min-width:190px;justify-content:center}
 @media(max-width:700px){
  .home-showcase-hero{display:flex;flex-direction:column;min-height:0;background:#fafaf6}
- .home-showcase-image{position:relative;width:100%;height:auto;aspect-ratio:1.28/1;overflow:hidden}
- .home-showcase-image>img{object-fit:cover;object-position:62% center}
- .home-showcase-copy{width:100%;min-height:0;padding:26px 20px 38px;display:block;background:#fafaf6}
- .home-showcase-copy h1{font-size:clamp(38px,12vw,54px);line-height:1.02;margin-bottom:16px}
- .home-showcase-copy p{font-size:15px;line-height:1.55;margin-bottom:22px;max-width:100%}
- .home-showcase-copy .button{width:100%;min-height:52px}
 }
 
 /* Exact approved showcase: artwork contains its own hero typography; never duplicate CMS copy over it. */
