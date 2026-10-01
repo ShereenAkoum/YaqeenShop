@@ -77,12 +77,12 @@ function HomeProductSection({section}:{section:any}){
 }
 function HomeHero({section}:{section:any}){
  const image=section.image||SOCIAL_SHARE_IMAGE;
- return <section className="home-showcase-hero">
-  <StoreImageView className="home-showcase-art" src={image} alt="YAQEEN — A More Meaningful Life collection" fetchPriority="high" loading="eager" sizes="100vw"/>
-  <div className="home-showcase-copy">
+ return <section className="yaqeen-home-hero">
+  <StoreImageView className="yaqeen-home-hero-image" src={image} alt="YAQEEN — A More Meaningful Life collection" fetchPriority="high" loading="eager" sizes="100vw"/>
+  <div className="yaqeen-home-hero-content">
    <h1>A More<br/>Meaningful Life</h1>
    <p>Islamic products, inspiration and resources<br className="desktop-only"/> to help you live with greater purpose, peace and faith.</p>
-   <Link className="button" to="/shop">Shop Now <ChevronRight size={18}/></Link>
+   <Link className="yaqeen-home-hero-button" to="/shop">Shop Now <ChevronRight size={18}/></Link>
   </div>
  </section>
 }
