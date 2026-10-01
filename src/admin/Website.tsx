@@ -45,6 +45,8 @@ function normalizeHomepageSections(value:any[]){
 }
 function Sections({value,setValue}:{value:any[];setValue:(v:any[])=>void}){
  const sections=normalizeHomepageSections(value);
+ const[products,setProducts]=useState<any[]>([]);
+ useEffect(()=>{let live=true;(async()=>{const{data}=await supabase!.from('products').select('id,title,status').eq('status','Active').order('title');if(live)setProducts(data||[])})();return()=>{live=false}},[]);
  function patch(i:number,p:any){setValue(sections.map((x,n)=>n===i?{...x,...p}:x))}
  const labels:Record<string,string>={hero:'Hero',top:'Top picks',new_arrival:'New arrivals',bestseller:'Bestsellers',story:'Story'};
  return <section className="website-editor-block homepage-editor">
@@ -59,7 +61,7 @@ function Sections({value,setValue}:{value:any[];setValue:(v:any[])=>void}){
      {s.type!=='products'&&<label className="full">Description<textarea rows={4} value={s.body||''} onChange={e=>patch(i,{body:e.target.value})}/></label>}
      {s.type!=='products'&&<label className="full">Image URL <span className="muted">(optional)</span><input value={s.image||''} onChange={e=>patch(i,{image:e.target.value})}/></label>}
      <label>Button text<input value={s.cta_text||''} onChange={e=>patch(i,{cta_text:e.target.value})}/></label><label className="full">Button destination<input value={s.cta_url||''} onChange={e=>patch(i,{cta_url:e.target.value})}/></label>
-     {s.type==='products'&&<p className="homepage-auto-note full">Products in this section are selected automatically from the <strong>{title}</strong> catalogue group.</p>}
+     {s.type==='products'&&(s.selection==='top'?<div className="homepage-auto-note full"><strong>Choose Top Picks</strong><p>Select up to 4 products and their selection order will be used on the homepage.</p><div className="website-list-row">{products.map(p=>{const selected=(s.product_ids||[]).includes(p.id);return <label key={p.id} style={{display:'flex',alignItems:'center',gap:8}}><input type="checkbox" checked={selected} disabled={!selected&&(s.product_ids||[]).length>=4} onChange={e=>{const ids=s.product_ids||[];patch(i,{product_ids:e.target.checked?[...ids,p.id]:ids.filter((id:string)=>id!==p.id)})}}/>{p.title}</label>})}</div></div>:<p className="homepage-auto-note full">Products in this section are selected automatically from the <strong>{title}</strong> catalogue group.</p>)}
     </>}
    </div></details>})}</div>
  </section>
