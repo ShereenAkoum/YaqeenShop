@@ -40,3 +40,21 @@ body:has(.home-redesign) .store-nav-icon svg{width:25px;height:25px}
 body:has(.home-redesign) .modern-footer{background:#294714;padding-top:56px}
 @media(max-width:760px){body:has(.home-redesign) .site-header{height:64px}body:has(.home-redesign) .store-nav-shell{height:64px;padding-inline:14px;grid-template-columns:1fr auto;gap:12px}body:has(.home-redesign) .desktop-nav{display:none}body:has(.home-redesign) .site-header .brand-logo{width:78px;height:46px;max-width:78px;max-height:46px}body:has(.home-redesign) .header-actions{gap:16px}body:has(.home-redesign) .store-nav-icon svg{width:21px;height:21px}.yaqeen-home-hero{height:auto;display:flex;flex-direction:column;background:#faf8f2}.yaqeen-home-hero-image{position:relative;inset:auto;width:100%;height:auto;aspect-ratio:1.78/1;object-fit:cover;object-position:center}.yaqeen-home-hero-content{width:100%;height:auto;padding:18px 18px 28px;display:block;background:#faf8f2}.yaqeen-home-hero-content h1{margin:0 0 10px;font-size:38px;line-height:1.02}.yaqeen-home-hero-content p{max-width:100%;margin:0 0 17px;font-size:14px;line-height:1.45}.yaqeen-home-hero-content .desktop-only{display:none}.yaqeen-home-hero-button{width:100%;min-height:48px;border-radius:11px;font-size:15px}.home-redesign .container{padding-inline:20px}.home-products{padding-block:48px 58px}.home-section-head{gap:10px;margin-bottom:26px}.home-redesign .home-section-head h2{font-size:34px}.home-redesign .store-product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 12px}.home-redesign .store-product-card{padding:8px;border-radius:14px}.home-redesign .store-product-image{border-radius:9px}.home-redesign .store-product-image img{padding:8px}.home-redesign .home-product-info{grid-template-columns:1fr;gap:5px;margin-top:9px}.home-redesign .home-product-info h3{font-size:12px;line-height:1.35}.home-product-price{font-size:12px}.home-product-action{margin-top:8px;padding-top:8px;font-size:9px}.home-cms-story{grid-template-columns:1fr;gap:28px;padding-block:54px}.home-story-symbol{width:100%;aspect-ratio:1.45}.home-story-symbol img{object-fit:contain}.home-cms-newsletter{grid-template-columns:1fr;gap:22px}}
 @media(prefers-reduced-motion:reduce){.home-redesign *{transition:none!important}}
+/* Mobile homepage: preserve brand visibility and show the full hero artwork */
+@media(max-width:760px){
+ body:has(.home-redesign) .store-nav-shell{grid-template-columns:auto 1fr auto!important}
+ body:has(.home-redesign) .site-header .brand{display:flex!important;visibility:visible!important;opacity:1!important;min-width:78px;justify-self:start}
+ body:has(.home-redesign) .site-header .brand-logo{display:block!important;width:78px!important;height:46px!important;max-width:78px!important;max-height:46px!important;object-fit:contain!important}
+ body:has(.home-redesign) .site-header .brand:not(.brand-has-logo){gap:3px}
+ body:has(.home-redesign) .site-header .brand:not(.brand-has-logo) .arabic{font-size:22px;line-height:1}
+ body:has(.home-redesign) .site-header .brand:not(.brand-has-logo)>span:not(.arabic){font-size:11px;letter-spacing:.16em}
+ body:has(.home-redesign) .site-header .brand:not(.brand-has-logo) small{display:none}
+ .yaqeen-home-hero-image{
+  aspect-ratio:auto!important;
+  height:auto!important;
+  min-height:0!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  background:#f4eadf
+ }
+}
