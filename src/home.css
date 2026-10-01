@@ -168,3 +168,10 @@ body:has(.home-redesign) .store-nav-icon svg{width:25px;height:25px}
   margin:0!important
  }
 }
+
+/* Empty image-only hero: next CMS section follows immediately */
+@media(max-width:760px){
+ .home-redesign .yaqeen-home-hero:not(:has(.yaqeen-home-hero-content)) + .home-products{
+  padding-top:48px!important
+ }
+}
