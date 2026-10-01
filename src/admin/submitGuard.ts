@@ -11,14 +11,22 @@ export function guardSubmit<T extends HTMLFormElement = HTMLFormElement>(
 ){
   return async (event: FormEvent<T>) => {
     const form=event.currentTarget;
+    const nativeEvent=event.nativeEvent as SubmitEvent;
+    // CRM forms must only submit from an explicit submit-button click.
+    // Pressing Enter in an input can trigger a submit with no submitter; ignore it.
+    const submitter=nativeEvent.submitter as HTMLButtonElement|null;
+    if(!submitter){
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
     if(pendingForms.has(form)){
       event.preventDefault();
       event.stopPropagation();
       return;
     }
     pendingForms.add(form);
-    const submitter=(event.nativeEvent as SubmitEvent).submitter as HTMLButtonElement|null;
-    if(submitter) submitter.disabled=true;
+    submitter.disabled=true;
     form.setAttribute('aria-busy','true');
     try{
       await handler(event);
