@@ -36,10 +36,7 @@ function warmImageCache(urls:(string|null|undefined)[]){
   if(response.ok)await cache.put(url,response.clone());
  }))).catch(()=>{});
 }
-const RESPONSIVE_WIDTHS=[320,480,640,800,1080,1440];
-function supabaseImageUrl(url:string,width:number,quality=78){try{const u=new URL(url);if(!u.pathname.includes('/storage/v1/object/public/'))return url;u.pathname=u.pathname.replace('/storage/v1/object/public/','/storage/v1/render/image/public/');u.searchParams.set('width',String(width));u.searchParams.set('quality',String(quality));u.searchParams.set('resize','contain');return u.toString()}catch{return url}}
-function responsiveSrcSet(url:string,widths=RESPONSIVE_WIDTHS){if(!url||!url.includes('/storage/v1/object/public/'))return undefined;return widths.map(w=>supabaseImageUrl(url,w)+' '+w+'w').join(', ')}
-function StoreImageView({src,alt,className,loading='lazy',fetchPriority='auto',sizes='(max-width: 700px) 92vw, 50vw',style}:{src:string;alt:string;className?:string;loading?:'eager'|'lazy';fetchPriority?:'high'|'low'|'auto';sizes?:string;style?:CSSProperties}){return <img className={className} src={supabaseImageUrl(src,1080,80)} srcSet={responsiveSrcSet(src)} sizes={sizes} alt={alt} loading={loading} decoding="async" fetchPriority={fetchPriority} style={style} onError={e=>{const el=e.currentTarget;if(el.src!==src){el.srcset='';el.src=src}}}/>}
+function StoreImageView({src,alt,className,loading='lazy',fetchPriority='auto',style}:{src:string;alt:string;className?:string;loading?:'eager'|'lazy';fetchPriority?:'high'|'low'|'auto';sizes?:string;style?:CSSProperties}){return <img className={className} src={src} alt={alt} loading={loading} decoding="async" fetchPriority={fetchPriority} style={style}/>}
 type StoreCategory={id:string;title:string;slug:string};
 type StoreImage={id:string;url:string;alt:string|null;position:number};
 type StoreVariant={id:string;active:boolean;sku?:string;color?:string|null;price_override?:number|null;image_url?:string|null;stock_allocation?:number;inventory_item_id?:string|null;inventory_items?:{title?:string|null;sku?:string|null}|null;product_variant_images?:{id:string;url:string;alt?:string|null;position?:number}[]};
