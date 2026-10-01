@@ -1345,3 +1345,10 @@ body:has(.home-redesign) .store-nav-icon svg {
   aspect-ratio:3/2!important;
  }
 }
+
+
+/* Product card framing test: preserve complete image */
+.home-redesign .store-product-image .store-image-shell img,
+.home-redesign .store-product-image .store-image-shell.is-loaded img{
+ object-fit:contain!important;
+}
