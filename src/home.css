@@ -1293,3 +1293,27 @@ body:has(.home-redesign) .store-nav-icon svg {
   object-position:center!important;
   padding:0!important;
 }
+
+
+/* Warm YAQEEN shimmer while reserved product image space loads */
+.home-redesign .store-product-image .product-card-image-load{
+ position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;
+ overflow:hidden!important;background:#eee9df!important
+}
+.home-redesign .store-product-image .product-card-image-load:before{
+ content:"";position:absolute;inset:0;z-index:0;
+ background:linear-gradient(105deg,#eee9df 20%,#f8f4e9 40%,#eee9df 60%);
+ background-size:220% 100%;animation:yaqeen-product-shimmer 1.45s ease-in-out infinite
+}
+.home-redesign .store-product-image .product-card-image-load img{
+ position:absolute!important;inset:0!important;z-index:1!important;display:block!important;
+ width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;
+ padding:0!important;opacity:0!important;transition:opacity .35s ease!important
+}
+.home-redesign .store-product-image .product-card-image-load.is-loaded:before{opacity:0;transition:opacity .25s ease}
+.home-redesign .store-product-image .product-card-image-load.is-loaded img{opacity:1!important}
+@keyframes yaqeen-product-shimmer{0%{background-position:100% 0}100%{background-position:-100% 0}}
+@media(prefers-reduced-motion:reduce){
+ .home-redesign .store-product-image .product-card-image-load:before{animation:none}
+ .home-redesign .store-product-image .product-card-image-load img{transition:none!important}
+}
