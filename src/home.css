@@ -1313,3 +1313,35 @@ body:has(.home-redesign) .store-nav-icon svg {
  object-fit:contain!important;
  object-position:center!important;
 }
+
+
+/* Product card final framing: compact landscape crop, consistent before/after load */
+.home-redesign .store-product-image,
+.home-redesign .store-product-image .store-image-shell,
+.home-redesign .store-product-image .store-image-shell.is-loaded{
+ width:100%!important;
+ aspect-ratio:3/2!important;
+ height:auto!important;
+ min-height:0!important;
+ overflow:hidden!important;
+ background:#eeeae0!important;
+}
+.home-redesign .store-product-image .store-image-shell img,
+.home-redesign .store-product-image .store-image-shell.is-loaded img{
+ position:absolute!important;
+ inset:0!important;
+ display:block!important;
+ width:100%!important;
+ height:100%!important;
+ aspect-ratio:auto!important;
+ object-fit:cover!important;
+ object-position:center center!important;
+ padding:0!important;
+}
+@media(max-width:760px){
+ .home-redesign .store-product-image,
+ .home-redesign .store-product-image .store-image-shell,
+ .home-redesign .store-product-image .store-image-shell.is-loaded{
+  aspect-ratio:3/2!important;
+ }
+}
