@@ -58,3 +58,8 @@ body:has(.home-redesign) .modern-footer{background:#294714;padding-top:56px}
   background:#f4eadf
  }
 }
+
+@media(max-width:760px){
+ .home-redesign .yaqeen-home-hero{display:block!important;height:auto!important;min-height:0!important;overflow:visible!important}
+ .home-redesign img.yaqeen-home-hero-image{display:block!important;position:static!important;inset:auto!important;width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;aspect-ratio:auto!important;object-fit:contain!important;opacity:1!important;visibility:visible!important;animation:none!important;transform:none!important}
+}
