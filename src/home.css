@@ -1274,3 +1274,22 @@ body:has(.home-redesign) .store-nav-icon svg {
  .home-redesign .store-product-image{aspect-ratio:auto!important}
  .home-redesign .store-product-image>img{width:100%!important;height:auto!important;aspect-ratio:auto!important;object-fit:contain!important}
 }
+
+
+/* Reserve product image space before the image downloads.
+   Product photography is 3:2, so the card no longer shifts while loading. */
+.home-redesign .store-product-image{
+  aspect-ratio:3/2!important;
+  min-height:0!important;
+  overflow:hidden!important;
+  background:#f4f1e9!important;
+}
+.home-redesign .store-product-image>img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  aspect-ratio:3/2!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  padding:0!important;
+}
