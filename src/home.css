@@ -1321,3 +1321,10 @@ body:has(.home-redesign) .store-nav-icon svg {
  .home-redesign .store-product-image .product-card-image-load:before{animation:none}
  .home-redesign .store-product-image .product-card-image-load img{transition:none!important}
 }
+
+
+/* Keep the mobile storefront drawer above the sticky navigation on every storefront route. */
+@media (max-width:760px) {
+    body .mobile-menu-backdrop { z-index: 200; }
+    body .mobile-nav-drawer { z-index: 201; }
+}
