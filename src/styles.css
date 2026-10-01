@@ -22705,3 +22705,12 @@ body:has(.admin .modal-backdrop) {
  .yaqeen-footer-bar>.container{width:min(100% - 64px,1440px)!important;max-width:1440px!important;margin:0 auto!important;min-height:64px!important;padding:0!important;font-family:'DM Sans',Arial,sans-serif!important;font-size:12px!important}
 }
 @media(max-width:800px){.footer-socials{display:flex;justify-content:center;gap:10px;margin-top:18px}.footer-socials span{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#efede5;font-family:Arial,sans-serif;font-size:14px;color:#3d4935}}
+
+
+/* Transparent footer botanical asset */
+@media(min-width:801px){
+ .yaqeen-footer .footer-olive-art{
+  right:0!important;top:0!important;width:min(29vw,445px)!important;height:100%!important;
+  object-fit:contain!important;object-position:right top!important;mix-blend-mode:normal!important;opacity:.38!important
+ }
+}
