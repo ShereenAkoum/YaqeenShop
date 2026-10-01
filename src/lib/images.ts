@@ -56,3 +56,11 @@ export async function uploadResponsiveImage(storage:any,bucket:string,path:strin
  }
  return{error:null,url:storage.from(bucket).getPublicUrl(path).data.publicUrl};
 }
+
+export function responsivePaths(originalPath:string){
+ return [originalPath,...RESPONSIVE_WIDTHS.map(width=>responsivePath(originalPath,width))];
+}
+
+export async function removeResponsiveImage(storage:any,bucket:string,originalPath:string){
+ return storage.from(bucket).remove(responsivePaths(originalPath));
+}
