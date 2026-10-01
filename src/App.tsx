@@ -71,7 +71,7 @@ function HomeProductSection({section}:{section:any}){
   if(section.selection==='bestseller')q=q.eq('bestseller',true);
   if(section.selection==='new_arrival')q=q.eq('new_arrival',true);
   if(Array.isArray(section.product_ids)&&section.product_ids.length)q=q.in('id',section.product_ids);
-  const{data,error}=await q;if(live){let loaded=(data||[]) as P[];if(section.selection==='top'&&Array.isArray(section.product_ids)&&section.product_ids.length){const order=new Map(section.product_ids.map((id:string,index:number)=>[id,index]));loaded=[...loaded].sort((a,b)=>(order.get(a.id)??999)-(order.get(b.id)??999))}setItems(loaded);setFailed(Boolean(error));setLoading(false)}
+  const{data,error}=await q;if(live){let loaded=(data||[]) as P[];if(section.selection==='top'&&Array.isArray(section.product_ids)&&section.product_ids.length){const order=new Map<string,number>(section.product_ids.map((id:string,index:number)=>[id,index]));loaded=[...loaded].sort((a,b)=>(order.get(a.id)??999)-(order.get(b.id)??999))}setItems(loaded);setFailed(Boolean(error));setLoading(false)}
  })();return()=>{live=false}},[section.selection,JSON.stringify(section.product_ids||[])]);
  if(!loading&&!failed&&!items.length)return null;
  return <section className={'home-cms-section home-products container '+(section.selection==='top'?'home-top-picks':'')}><div className="home-section-head"><div>{section.subheading&&<p className="eyebrow">{section.subheading}</p>}<h2>{section.heading}</h2></div><Link className="home-text-link" to={section.cta_url||'/shop'}>{section.cta_text||'Explore the collection'} <ChevronRight size={18}/></Link></div>
