@@ -20,7 +20,7 @@ body:has(.home-redesign) .store-nav-icon svg{width:25px;height:25px}
 .yaqeen-home-hero-content{position:relative;z-index:1;width:100%;height:100%;padding-left:7.55vw;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
 .yaqeen-home-hero-content h1{margin:0 0 17px;font-family:Georgia,'Times New Roman',serif;font-size:67px;font-weight:400;line-height:1.01;letter-spacing:-.03em;color:#18300f}
 .yaqeen-home-hero-content p{margin:0 0 24px;max-width:430px;font-size:17px;line-height:1.5;color:#263126}
-.yaqeen-home-hero-button{min-width:190px;min-height:50px;padding:13px 24px;border-radius:11px;display:inline-flex;align-items:center;justify-content:center;gap:18px;background:#294714;color:#fff;font-size:16px;font-weight:600;line-height:1;text-decoration:none}
+.yaqeen-home-hero-button{min-width:190px;min-height:50px;padding:13px 24px;border-radius:11px;display:inline-flex;align-items:center;justify-content:center;gap:18px;background:#313c19;color:#fff;font-size:16px;font-weight:600;line-height:1;text-decoration:none}
 .home-products{padding-block:72px 86px;border-top:1px solid var(--home-line)}
 .home-section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:34px}
 .home-text-link{display:inline-flex;align-items:center;gap:12px;min-height:44px;font-size:14px;font-weight:600;text-decoration:underline;text-underline-offset:6px}
