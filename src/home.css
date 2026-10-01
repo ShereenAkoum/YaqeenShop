@@ -43,8 +43,9 @@ body:has(.home-redesign) .announcement {
 }
 
 body:has(.home-redesign) .site-header {
-    position: relative;
-    top: auto;
+    position: sticky;
+    top: 0;
+    z-index: 100;
     height: 72px;
     padding: 0 !important;
     border: 0;
