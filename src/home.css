@@ -63,3 +63,22 @@ body:has(.home-redesign) .modern-footer{background:#294714;padding-top:56px}
  .home-redesign .yaqeen-home-hero{display:block!important;height:auto!important;min-height:0!important;overflow:visible!important}
  .home-redesign img.yaqeen-home-hero-image{display:block!important;position:static!important;inset:auto!important;width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;aspect-ratio:auto!important;object-fit:contain!important;opacity:1!important;visibility:visible!important;animation:none!important;transform:none!important}
 }
+
+/* Mobile homepage section rhythm: keep hero CTA clear of Top picks */
+@media(max-width:760px){
+ .yaqeen-home-hero-content{padding-bottom:36px!important}
+ .home-redesign .yaqeen-home-hero + .home-cms-section,
+ .home-redesign .yaqeen-home-hero + .home-products{
+  padding-top:54px!important;
+  margin-top:0!important
+ }
+ .home-redesign .home-section-head{
+  display:flex!important;
+  align-items:flex-start!important;
+  margin-bottom:30px!important
+ }
+ .home-redesign .home-section-head>div{display:block!important}
+ .home-redesign .home-section-head .eyebrow{display:block!important;margin:0 0 10px!important}
+ .home-redesign .home-section-head h2{display:block!important;margin:0!important}
+ .home-redesign .home-text-link{margin-top:10px!important}
+}
