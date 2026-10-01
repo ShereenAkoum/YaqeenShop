@@ -77,7 +77,14 @@ function HomeProductSection({section}:{section:any}){
 }
 function HomeHero({section}:{section:any}){
  const image=section.image||SOCIAL_SHARE_IMAGE;
- return <section className="home-showcase-hero"><StoreImageView className="home-showcase-art" src={image} alt="YAQEEN — A More Meaningful Life collection" fetchPriority="high" loading="eager" sizes="100vw"/></section>
+ return <section className="home-showcase-hero">
+  <StoreImageView className="home-showcase-art" src={image} alt="YAQEEN — A More Meaningful Life collection" fetchPriority="high" loading="eager" sizes="100vw"/>
+  <div className="home-showcase-copy">
+   <h1>A More<br/>Meaningful Life</h1>
+   <p>Islamic products, inspiration and resources<br className="desktop-only"/> to help you live with greater purpose, peace and faith.</p>
+   <Link className="button" to="/shop">Shop Now <ChevronRight size={18}/></Link>
+  </div>
+ </section>
 }
 function NewsletterSection({section}:{section:any}){const[email,setEmail]=useState(''),[sending,setSending]=useState(false),[status,setStatus]=useState<'idle'|'success'|'error'>('idle');async function subscribe(e:React.FormEvent<HTMLFormElement>){e.preventDefault();const clean=email.trim().toLowerCase();if(!clean||!supabase)return;setSending(true);setStatus('idle');const{error}=await supabase.rpc('subscribe_newsletter',{p_email:clean});setSending(false);if(error){setStatus('error');return}setEmail('');setStatus('success')}return <section className="container home-cms-newsletter"><div>{section.subheading&&<p className="eyebrow">{section.subheading}</p>}<h2>{section.heading}</h2>{section.body&&<p>{section.body}</p>}</div><form className="newsletter-signup" onSubmit={subscribe}><div className="newsletter-field"><input type="email" required maxLength={254} value={email} onChange={e=>{setEmail(e.target.value);setStatus('idle')}} placeholder="Your email address" aria-label="Email address"/><button className="button" disabled={sending}>{sending?'Joining…':(section.cta_text||'Subscribe')}</button></div>{status==='success'&&<span className="newsletter-success">You’re on the list. Thank you.</span>}{status==='error'&&<span className="newsletter-error">We couldn’t add you right now. Please try again.</span>}</form></section>}
 function HomeSection({section}:{section:any}){
