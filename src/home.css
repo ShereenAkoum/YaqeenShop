@@ -258,3 +258,16 @@ body:has(.home-redesign) .store-nav-icon svg{width:25px;height:25px}
  .home-redesign .home-products .home-text-link{justify-self:start!important}
  .home-redesign .store-product-card{flex-basis:82vw!important;width:82vw!important}
 }
+
+
+/* Product title alignment: match mockup regardless of Arabic/RTL title */
+@media(max-width:760px){
+ .home-redesign .home-product-copy,
+ .home-redesign .home-product-copy h3{
+  width:100%!important;
+  text-align:left!important;
+ }
+ .home-redesign .home-product-copy h3{
+  direction:ltr!important;
+ }
+}
