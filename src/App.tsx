@@ -66,15 +66,15 @@ function HomeProductSection({section}:{section:any}){
  const[items,setItems]=useState<P[]>([]),[loading,setLoading]=useState(true),[failed,setFailed]=useState(false);
  useEffect(()=>{let live=true;if(!supabase){setLoading(false);return}setLoading(true);setFailed(false);(async()=>{
   let q=supabase.from('products').select('id,title,slug,price,shape,bestseller,arabic_title,product_images(id,url,alt,position),product_variants(id,active,image_url,color,sku,product_variant_images(id,url,alt,position))').eq('status','Active');
-  if(section.selection==='top')q=q.order('featured',{ascending:false});
+  if(section.selection==='top'&&!(Array.isArray(section.product_ids)&&section.product_ids.length))q=q.order('featured',{ascending:false});
   q=q.order('created_at',{ascending:false}).limit(4);
   if(section.selection==='bestseller')q=q.eq('bestseller',true);
   if(section.selection==='new_arrival')q=q.eq('new_arrival',true);
   if(Array.isArray(section.product_ids)&&section.product_ids.length)q=q.in('id',section.product_ids);
-  const{data,error}=await q;if(live){const loaded=(data||[]) as P[];setItems(loaded);setFailed(Boolean(error));setLoading(false)}
+  const{data,error}=await q;if(live){let loaded=(data||[]) as P[];if(section.selection==='top'&&Array.isArray(section.product_ids)&&section.product_ids.length){const order=new Map(section.product_ids.map((id:string,index:number)=>[id,index]));loaded=[...loaded].sort((a,b)=>(order.get(a.id)??999)-(order.get(b.id)??999))}setItems(loaded);setFailed(Boolean(error));setLoading(false)}
  })();return()=>{live=false}},[section.selection,JSON.stringify(section.product_ids||[])]);
  if(!loading&&!failed&&!items.length)return null;
- return <section className="home-cms-section home-products container"><div className="home-section-head"><div>{section.subheading&&<p className="eyebrow">{section.subheading}</p>}<h2>{section.heading}</h2></div><Link className="home-text-link" to={section.cta_url||'/shop'}>{section.cta_text||'Explore the collection'} <ChevronRight size={18}/></Link></div>
+ return <section className={'home-cms-section home-products container '+(section.selection==='top'?'home-top-picks':'')}><div className="home-section-head"><div>{section.subheading&&<p className="eyebrow">{section.subheading}</p>}<h2>{section.heading}</h2></div><Link className="home-text-link" to={section.cta_url||'/shop'}>{section.cta_text||'Explore the collection'} <ChevronRight size={18}/></Link></div>
  {loading?<BrandLoader label="Loading the collection"/>:failed?<p role="status">The collection is temporarily unavailable. <Link to="/shop">Visit the shop</Link></p>:<div className="store-product-grid">{items.map((p,index)=>{const productImages=[...(p.product_images||[])].sort((a,b)=>(a.position||0)-(b.position||0)),cardImage=productImages.find(img=>Number(img.position)===0)||productImages[0];return <Link className="store-product-card" key={p.id} to={'/products/'+p.slug}><div className="store-product-image">{cardImage?<ProductCardImage src={storeThumb(cardImage.url,640,78)} alt={cardImage.alt||p.title} sizes="(max-width: 700px) 78vw, 25vw" priority={section.selection==='top'&&index<2}/>:<div className="placeholder"><span className="arabic">{p.arabic_title||'يقين'}</span><small>YAQEEN</small></div>}{p.bestseller&&<span className="badge">Much loved</span>}</div><div className="home-product-info"><div className="home-product-copy"><h3 dir="auto">{p.title}</h3></div>{p.price!=null&&<strong className="home-product-price" dir="ltr">{headerMoney(p.price)}</strong>}</div><span className="home-product-action">View product <ChevronRight size={15}/></span></Link>})}</div>}</section>
 }
 function HomeHero({section}:{section:any}){
