@@ -201,3 +201,10 @@ body:has(.home-redesign) .modern-footer{background:var(--primary);padding-top:56
  .home-showcase-copy p{font-size:15px;line-height:1.55;margin-bottom:22px;max-width:100%}
  .home-showcase-copy .button{width:100%;min-height:52px}
 }
+
+/* Exact approved showcase: artwork contains its own hero typography; never duplicate CMS copy over it. */
+.home-showcase-hero{display:block!important;position:relative!important;width:100%!important;min-height:0!important;overflow:hidden!important;background:#f4eadf!important}
+.home-showcase-hero .home-showcase-art{display:block!important;width:100%!important;height:auto!important;aspect-ratio:auto!important;object-fit:contain!important;object-position:center!important;padding:0!important;margin:0!important}
+@media(max-width:700px){
+ .home-showcase-hero .home-showcase-art{width:100%!important;height:auto!important;object-fit:contain!important;object-position:center!important}
+}
