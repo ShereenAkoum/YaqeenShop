@@ -112,7 +112,7 @@
 }
 
 :where(html[data-style-screen="admin-operations"]) .production-summary strong {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-heading);
   font-size: 23px;
   font-weight: 400
 }
@@ -299,7 +299,7 @@
 }
 
 :where(html[data-style-screen="admin-operations"]) .production-page .production-stat strong {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-heading);
   font-size: 30px;
   font-weight: 400;
   line-height: 1

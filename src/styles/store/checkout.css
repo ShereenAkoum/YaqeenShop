@@ -243,7 +243,7 @@
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-summary-item>span {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-heading);
   font-size: 13px
 }
 
@@ -275,7 +275,7 @@
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-summary-total strong {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-heading);
   font-size: 27px;
   font-weight: 500
 }

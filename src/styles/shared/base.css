@@ -8,7 +8,7 @@ body {
   margin: 0;
   background: var(--yaqeen-canvas);
   color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
   font-size: 15px;
   line-height: 1.6
 }
@@ -43,7 +43,7 @@ p {
 
 h1,
 h2 {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-heading);
   font-weight: 400;
   line-height: 1.13
 }
@@ -56,6 +56,13 @@ h1 {
 h2 {
   font-size: clamp(1.8rem, 3vw, 2.8rem);
   letter-spacing: -.03em
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
 }
 
 h3 {

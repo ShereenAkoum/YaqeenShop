@@ -9,7 +9,7 @@ export function styleScope(pathname: string) {
   }
   const screens: Record<string, string> = {
     '/': 'home', '/shop': 'shop', '/cart': 'cart', '/checkout': 'checkout',
-    '/order-confirmation': 'confirmation', '/search': 'search', '/about': 'about',
+    '/order-confirmation': 'confirmation', '/search': 'search',
     '/contact': 'contact', '/faq': 'faq', '/privacy': 'legal', '/terms': 'legal',
     '/under-construction': 'construction',
   };

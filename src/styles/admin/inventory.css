@@ -4,7 +4,7 @@
 :where(html[data-style-screen="admin-inventory"]) .inventory-history h2 {
   margin: 0;
   /* Preserve the shared admin heading font that won in the original cascade. */
-  font: 400 21px Arial, Helvetica, sans-serif
+  font: 400 21px var(--font-body)
 }
 
 :where(html[data-style-screen="admin-inventory"]) .inventory-history {

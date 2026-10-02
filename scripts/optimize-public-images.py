@@ -5,7 +5,6 @@ from PIL import Image
 image_dir = Path(__file__).resolve().parents[1] / 'public' / 'images'
 assets = {
     'yaqeen-home-hero': (1536, 960),
-    'yaqeen-our-story': (1024, 640),
     'yaqeen-footer-olive': (560,),
     'Logo': (480,),
 }

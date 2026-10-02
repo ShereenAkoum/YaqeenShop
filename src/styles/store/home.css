@@ -32,7 +32,7 @@
 :where(html[data-style-screen="store-home"]) .yaqeen-home-hero-content h1 {
     max-width: 35%;
     margin: 0 0 17px;
-    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    font-family: var(--font-heading);
     font-size: clamp(36px, 4.36vw, 78px);
     font-weight: 400;
     line-height: 1.01;
@@ -75,7 +75,7 @@
     outline-offset: 4px;
 }
 :where(html[data-style-screen="store-home"]) .home-redesign {
-    font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+    font-family: var(--font-body);
     background: var(--home-bg);
     color: var(--home-text);
     font-size: 16px;
@@ -181,7 +181,7 @@
 
 :where(html[data-style-screen="store-home"]) .home-redesign .home-product-info h3 {
     margin: 0;
-    font: 600 16px/1.45 Arial, sans-serif;
+    font: 600 16px/1.45 var(--font-body);
     color: #263225
 }
 
@@ -203,21 +203,6 @@
     margin: 0 auto 28px;
     color: #e0e4d9;
     font-size: 17px
-}
-
-:where(html[data-style-screen="store-home"]) .home-cms-story {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 9%;
-    align-items: center;
-    padding-block: 90px
-}
-
-:where(html[data-style-screen="store-home"]) .home-cms-story>div>p:not(.eyebrow) {
-    font-family: 'DM Sans', Arial, sans-serif;
-    font-size: 17px;
-    line-height: 1.9;
-    color: var(--home-muted)
 }
 
 :where(html[data-style-screen="store-home"]) .home-cms-newsletter {
@@ -315,12 +300,6 @@
     :where(html[data-style-screen="store-home"]) .home-redesign .home-product-info h3 {
         font-size: 12px;
         line-height: 1.35
-    }
-
-    :where(html[data-style-screen="store-home"]) .home-cms-story {
-        grid-template-columns: 1fr;
-        gap: 28px;
-        padding-block: 54px
     }
 
     :where(html[data-style-screen="store-home"]) .home-cms-newsletter {
@@ -646,155 +625,9 @@
         direction: ltr;
     }
 }
-/* Our Story: desktop editorial composition and a single mobile card. */
-:where(html[data-style-screen="store-home"]) .home-redesign section.home-story-editorial {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-    grid-template-areas: "copy image" "values values";
-    gap: 34px 48px;
-    align-items: center;
-    max-width: 1440px;
-    padding: 64px 0 36px 7.2%;
-    background: var(--yaqeen-canvas);
-    color: #26351d;
-}
-:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-image {
-    grid-area: image;
-    max-width: none;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 180px 0 0 0;
-}
-:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-image img {
-    display: block;
-    width: 100%;
-    height: auto;
-    min-height: 0;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-}
-:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-copy {
-    grid-area: copy;
-    max-width: 570px;
-    padding: 0;
-}
-:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .eyebrow {
-    margin: 0 0 14px;
-    font-size: 16px;
-    letter-spacing: .16em;
-    color: #727b61;
-}
-:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial h2 {
-    margin: 0 0 24px;
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(38px, 5.3vw, 72px);
-    font-weight: 400;
-    line-height: 1.04;
-    letter-spacing: -.035em;
-    color: #26351d;
-}
-:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-copy>p:not(.eyebrow) {
-    margin: 0 0 16px;
-    font-family: 'DM Sans', Arial, sans-serif;
-    font-size: clamp(15px, 1.8vw, 20px);
-    line-height: 1.45;
-    max-width: 510px;
-}
-:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    min-height: 52px;
-    margin-top: 4px;
-    padding: 14px 32px;
-    border-radius: 999px;
-    background: #354625;
-    color: #fffdf8;
-    font-family: 'DM Sans', Arial, sans-serif;
-    font-size: 17px;
-    font-weight: 500;
-    line-height: 1;
-    text-decoration: none;
-}
-:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-button:hover {
-    background: #26351d;
-}
-:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-button:focus-visible {
-    outline: 2px solid #26351d;
-    outline-offset: 4px;
-}
-:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-values {
-    grid-area: values;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
-    padding: 0 7.2% 0 0;
-}
-:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-values>div {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    min-width: 0;
-}
-:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-values>div>span {
-    display: grid;
-    place-items: center;
-    flex: none;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: #ecebdd;
-    color: #26351d;
-}
-:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-values p {margin: 0; line-height: 1.4; color: #26351d; font-family: 'DM Sans', Arial, sans-serif}
-:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-values strong {display: block; font-size: 16px; font-weight: 500}
-:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-values small {display: block; margin-top: 3px; font-size: 13px; color: #727b61}
 @media(min-width:761px) {
-    :where(html[data-style-screen="store-home"]) .home-redesign section.home-story-editorial {
-        max-width: 1200px;
-        margin-inline: auto;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        gap: 28px 48px;
-        padding: 48px clamp(24px, 4vw, 56px) 32px;
-    }
-    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-image {
-        max-width: 500px;
-        justify-self: end;
-        border-top-left-radius: 140px;
-    }
-    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial h2 {
-        font-size: clamp(36px, 3.8vw, 54px);
-        margin-bottom: 20px;
-    }
-    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .eyebrow {font-size: 13px}
-    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-copy>p:not(.eyebrow) {font-size: 17px}
-    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-button {min-height: 46px; padding: 12px 26px; font-size: 15px}
-    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-values {padding: 0}
 }
 @media(max-width:760px) {
-    :where(html[data-style-screen="store-home"]) .home-redesign section.home-story-editorial {
-        grid-template-columns: minmax(0, 1fr);
-        grid-template-areas: "image" "copy" "values";
-        gap: 0;
-        width: calc(100% - 40px);
-        max-width: 560px;
-        margin: 40px auto;
-        padding: 0;
-        border-radius: 20px;
-        overflow: hidden;
-    }
-    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-image {border-radius: 0}
-    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-image img {aspect-ratio: 1.65 / 1; object-position: center 65%}
-    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-copy {padding: 24px 24px 20px; max-width: none}
-    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .eyebrow {font-size: 12px; margin-bottom: 10px}
-    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial h2 {font-size: clamp(34px, 8.5vw, 48px); margin-bottom: 18px}
-    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-copy>p:not(.eyebrow) {font-size: 16px; line-height: 1.5; margin-bottom: 14px}
-    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-button {font-size: 16px; padding: 14px 28px; min-height: 50px}
-    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-values {grid-template-columns: minmax(0, 1fr); gap: 15px; padding: 0 24px 28px}
-    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-values>div>span {width: 54px; height: 54px}
-    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-values strong {font-size: 14px}
-    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-values small {font-size: 13px}
 }
 
 :where(html[data-style-screen="store-home"]) .home-redesign .store-product-image{aspect-ratio:auto;min-height:0;background:#f4f1e9}
@@ -867,18 +700,16 @@
 
 :where(html[data-style-screen="store-home"]) .home-section-head h2,
 :where(html[data-style-screen="store-home"]) .home-cms-banner h2,
-:where(html[data-style-screen="store-home"]) .home-cms-story h2,
 :where(html[data-style-screen="store-home"]) .home-cms-newsletter h2 {
   margin: 5px 0 0;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-heading);
   font-size: clamp(30px, 4.5vw, 48px);
   font-weight: 400;
   line-height: 1.08;
   color: var(--primary)
 }
 
-:where(html[data-style-screen="store-home"]) .home-section-head>a,
-:where(html[data-style-screen="store-home"]) .home-cms-story a {
+:where(html[data-style-screen="store-home"]) .home-section-head>a{
   color: var(--primary);
   font-size: 12px;
   font-weight: 700;
@@ -905,25 +736,6 @@
   margin: 18px auto 24px;
   color: var(--muted);
   line-height: 1.8
-}
-
-:where(html[data-style-screen="store-home"]) .home-cms-story {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(260px, .85fr);
-  align-items: center;
-  gap: 70px;
-  padding-top: 90px;
-  padding-bottom: 90px
-}
-
-:where(html[data-style-screen="store-home"]) .home-cms-story>div:first-child {
-  max-width: 600px
-}
-
-:where(html[data-style-screen="store-home"]) .home-cms-story p:not(.eyebrow) {
-  margin: 20px 0 24px;
-  color: var(--muted);
-  line-height: 1.9
 }
 
 :where(html[data-style-screen="store-home"]) .home-section-image {
@@ -965,13 +777,6 @@
   :where(html[data-style-screen="store-home"]) .home-section-head {
     align-items: flex-start;
     flex-direction: column
-  }
-
-  :where(html[data-style-screen="store-home"]) .home-cms-story {
-    grid-template-columns: 1fr;
-    gap: 34px;
-    padding-top: 58px;
-    padding-bottom: 58px
   }
 
   :where(html[data-style-screen="store-home"]) .home-cms-newsletter {
@@ -1098,3 +903,39 @@
 }
 
 
+/* Top Picks and Bestsellers follow the supplied editorial reference. */
+:where(html[data-style-screen="store-home"]) .home-redesign .home-reference-collection {width:100%;max-width:none;margin:0;padding:64px 7.2% 88px;background:#faf7f1;border-bottom:1px solid #e7e1d8}
+:where(html[data-style-screen="store-home"]) .home-redesign .home-reference-collection .home-section-head {display:flex;align-items:end;justify-content:space-between;gap:24px;margin:0 0 28px;padding:0;border:0;text-align:left}
+:where(html[data-style-screen="store-home"]) .home-reference-collection .home-section-head .eyebrow {margin:0 0 8px;color:#39432e;font-size:11px;font-weight:400;letter-spacing:.18em}
+:where(html[data-style-screen="store-home"]) .home-reference-collection .home-section-head h2 {margin:0;color:#2c2e27;font:400 clamp(36px,4.1vw,54px)/1.1 var(--font-heading);letter-spacing:-.035em}
+:where(html[data-style-screen="store-home"]) .home-collection-description {margin:8px 0 0;color:#41413b;font:400 clamp(16px,1.6vw,20px)/1.4 var(--font-heading)}
+:where(html[data-style-screen="store-home"]) .home-reference-collection .home-text-link {display:flex;align-items:center;gap:12px;margin:0 0 8px;padding:0;border:0;background:transparent;font-size:13px;font-weight:400;color:#232a1d;text-transform:none;letter-spacing:0;white-space:nowrap}
+:where(html[data-style-screen="store-home"]) .home-collection-carousel {position:relative}
+:where(html[data-style-screen="store-home"]) body .home-redesign .home-reference-collection .store-product-grid {display:grid;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:calc((100% - 54px)/4);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0;padding:0;max-width:none}
+:where(html[data-style-screen="store-home"]) .home-reference-collection .store-product-grid::-webkit-scrollbar {display:none}
+:where(html[data-style-screen="store-home"]) .home-redesign .home-reference-collection .store-product-card {position:relative;min-width:0;width:auto;max-width:none;padding:0;margin:0;border:0;border-radius:0;background:transparent;box-shadow:none;transform:none;scroll-snap-align:start}
+:where(html[data-style-screen="store-home"]) .home-redesign .home-reference-collection .store-product-image {width:100%;height:auto;aspect-ratio:.88;border-radius:8px;overflow:hidden;background:#e9e1d3}
+:where(html[data-style-screen="store-home"]) .home-redesign .home-reference-collection .store-product-image .product-card-image-load img {object-fit:cover}
+:where(html[data-style-screen="store-home"]) .home-reference-collection .product-favorite {position:absolute;right:10px;top:10px;display:grid;place-items:center;width:29px;height:29px;padding:5px;border:0;border-radius:50%;background:#fffdf8;color:#2a2d24;z-index:2}
+:where(html[data-style-screen="store-home"]) .home-reference-collection .product-favorite svg {width:20px;height:20px}
+:where(html[data-style-screen="store-home"]) .home-redesign .home-reference-collection .home-product-info {display:flex;flex-direction:column;align-items:flex-start;gap:4px;margin:12px 0 0;padding:0}
+:where(html[data-style-screen="store-home"]) .home-reference-collection .home-product-info h3 {margin:0;color:#111;font:400 16px/1.35 var(--font-heading)}
+:where(html[data-style-screen="store-home"]) .home-reference-collection .home-product-price {font-size:15px;line-height:1.4;font-weight:400;color:#111}
+:where(html[data-style-screen="store-home"]) .home-carousel-arrow {position:absolute;top:40%;display:grid;place-items:center;width:48px;height:48px;padding:0;border:0;border-radius:50%;background:#fffdf9;color:#252820;box-shadow:0 4px 18px #34302412;transform:translateY(-50%);z-index:3}
+:where(html[data-style-screen="store-home"]) .home-carousel-prev {left:-64px}
+:where(html[data-style-screen="store-home"]) .home-carousel-next {right:-64px}
+:where(html[data-style-screen="store-home"]) .home-carousel-arrow:disabled {opacity:.45;cursor:default}
+@media(max-width:900px) {
+ :where(html[data-style-screen="store-home"]) .home-carousel-arrow {width:36px;height:36px}
+ :where(html[data-style-screen="store-home"]) .home-carousel-prev {left:-44px}
+ :where(html[data-style-screen="store-home"]) .home-carousel-next {right:-44px}
+}
+@media(max-width:760px) {
+ :where(html[data-style-screen="store-home"]) .home-redesign .home-reference-collection {padding:40px 22px 48px}
+ :where(html[data-style-screen="store-home"]) .home-redesign .home-reference-collection .home-section-head {display:flex;flex-wrap:wrap;gap:14px;margin-bottom:22px;text-align:left}
+ :where(html[data-style-screen="store-home"]) .home-reference-collection .home-text-link {margin:0;font-size:12px}
+ :where(html[data-style-screen="store-home"]) body .home-redesign .home-reference-collection .store-product-grid {grid-auto-columns:76%;gap:16px}
+ :where(html[data-style-screen="store-home"]) .home-carousel-arrow {top:40%;width:32px;height:32px}
+ :where(html[data-style-screen="store-home"]) .home-carousel-prev {left:-16px}
+ :where(html[data-style-screen="store-home"]) .home-carousel-next {right:-16px}
+}

@@ -101,7 +101,7 @@
 }
 
 :where(html[data-style-screen="store-cart"]) .cart-item-title {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-heading);
   font-size: 21px;
   line-height: 1.25;
   color: var(--text);
@@ -147,7 +147,7 @@
 }
 
 :where(html[data-style-screen="store-cart"]) .cart-item-bottom>strong {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-heading);
   font-size: 17px;
   font-weight: 500
 }
@@ -229,7 +229,7 @@
 }
 
 :where(html[data-style-screen="store-cart"]) .cart-summary-total strong {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-heading);
   font-size: 27px;
   font-weight: 500
 }

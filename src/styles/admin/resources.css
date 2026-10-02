@@ -38,7 +38,7 @@
 }
 
 :where(html[data-style-screen="admin-resources"]) .resource-summary-card>strong {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-heading);
   font-size: 30px;
   font-weight: 400;
   color: var(--primary)
@@ -83,7 +83,7 @@
 
 :where(html[data-style-screen="admin-resources"]) .resource-view h3 {
   margin: 5px 0 20px;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-heading);
   font-size: 28px;
   font-weight: 400
 }
@@ -118,7 +118,7 @@
 }
 
 :where(html[data-style-screen="admin-resources"]) .resource-view-grid .resource-view-total strong {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-heading);
   font-size: 21px;
   font-weight: 400
 }

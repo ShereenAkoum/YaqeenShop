@@ -1,5 +1,7 @@
 /* Edit the brand palette here. Screen files consume these colors through var(). */
 :root {
+  --font-heading: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Montserrat", Arial, sans-serif;
   /* YAQEEN brand palette */
   --yaqeen-olive: #3b4431;
   --yaqeen-olive-dark: #2f3927;

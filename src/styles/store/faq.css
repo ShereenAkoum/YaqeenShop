@@ -1,129 +1,43 @@
-/* store/faq: rules are isolated to their route or application area. */
-
-:where(html[data-style-screen="store-faq"]) .faq-page {
-  max-width: 940px
-}
-
-:where(html[data-style-screen="store-faq"]) .faq-hero {
-  max-width: 680px;
-  margin: 18px auto 52px;
-  text-align: center
-}
-
-:where(html[data-style-screen="store-faq"]) .faq-hero h1 {
-  margin: 0;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(38px, 6vw, 62px);
-  font-weight: 400;
-  line-height: 1.05;
-  color: var(--primary)
-}
-
-:where(html[data-style-screen="store-faq"]) .faq-hero>p:last-child {
-  max-width: 580px;
-  margin: 18px auto 0;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.75
-}
-
-:where(html[data-style-screen="store-faq"]) .faq-list {
-  display: grid;
-  gap: 10px
-}
-
-:where(html[data-style-screen="store-faq"]) .modern-faq {
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  background: rgba(255, 255, 255, .58);
-  transition: border-color .2s, box-shadow .2s, background .2s
-}
-
-:where(html[data-style-screen="store-faq"]) .modern-faq[open] {
-  border-color: #c7cebc;
-  background: var(--yaqeen-pure-white);
-  box-shadow: 0 12px 32px rgba(42, 52, 37, .06)
-}
-
-:where(html[data-style-screen="store-faq"]) .modern-faq summary {
-  display: grid;
-  grid-template-columns: 38px 1fr 34px;
-  align-items: center;
-  gap: 15px;
-  padding: 20px 22px;
-  cursor: pointer;
-  list-style: none
-}
-
-:where(html[data-style-screen="store-faq"]) .modern-faq summary::-webkit-details-marker {
-  display: none
-}
-
-:where(html[data-style-screen="store-faq"]) .modern-faq summary strong {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.35;
-  color: #283224
-}
-
-:where(html[data-style-screen="store-faq"]) .faq-number {
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: .08em;
-  color: #89917f
-}
-
-:where(html[data-style-screen="store-faq"]) .faq-chevron {
-  width: 32px;
-  height: 32px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: #eef1e9;
-  color: var(--primary);
-  transition: transform .25s, background .2s
-}
-
-:where(html[data-style-screen="store-faq"]) .modern-faq[open] .faq-chevron {
-  transform: rotate(180deg);
-  background: var(--primary);
-  color: var(--yaqeen-pure-white)
-}
-
-:where(html[data-style-screen="store-faq"]) .faq-answer {
-  padding: 0 72px 22px 75px
-}
-
-:where(html[data-style-screen="store-faq"]) .faq-answer p {
-  margin: 0;
-  color: #666b62;
-  font-size: 13px;
-  line-height: 1.8;
-  white-space: pre-line
-}
-
-@media(max-width:620px) {
-  :where(html[data-style-screen="store-faq"]) .faq-hero {
-    margin-bottom: 34px
-  }
-
-  :where(html[data-style-screen="store-faq"]) .modern-faq summary {
-    grid-template-columns: 28px 1fr 32px;
-    padding: 17px 15px;
-    gap: 10px
-  }
-
-  :where(html[data-style-screen="store-faq"]) .modern-faq summary strong {
-    font-size: 16px
-  }
-
-  :where(html[data-style-screen="store-faq"]) .faq-answer {
-    padding: 0 57px 18px 53px
-  }
-}
-
-:where(html[data-style-screen="store-faq"]) .faq-hero .eyebrow {
-  margin-bottom: 12px
+/* FAQ storefront: warm editorial hero and accessible question accordion. */
+:where(html[data-style-screen="store-faq"]) .faq-page {background:var(--yaqeen-white);font-family:var(--font-body)}
+:where(html[data-style-screen="store-faq"]) .faq-hero {position:relative;isolation:isolate;overflow:hidden;min-height:360px;display:flex;align-items:center;background:#e9d4bb}
+:where(html[data-style-screen="store-faq"]) .faq-hero-image {position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:-2}
+:where(html[data-style-screen="store-faq"]) .faq-hero::after {content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#f4e6d3cc 0%,#f4e6d366 38%,transparent 62%)}
+:where(html[data-style-screen="store-faq"]) .faq-hero-inner {width:min(1030px,calc(100% - 64px));margin:0 auto;padding:40px 0}
+:where(html[data-style-screen="store-faq"]) .eyebrow {font-size:10px;letter-spacing:.14em;color:#806344;margin:0 0 12px}
+:where(html[data-style-screen="store-faq"]) .faq-hero h1 {font-family:var(--font-heading);font-weight:400;font-size:clamp(36px,3.4vw,48px);line-height:1.04;letter-spacing:-.025em;color:#172313;margin:0;max-width:470px}
+:where(html[data-style-screen="store-faq"]) .faq-hero-description {max-width:355px;font-size:14px;line-height:1.5;margin:18px 0;color:#252820}
+:where(html[data-style-screen="store-faq"]) .faq-contact-link {display:inline-flex;justify-content:center;align-items:center;gap:14px;padding:12px 24px;border-radius:100px;background:var(--primary);color:var(--on-primary);font-size:13px;text-decoration:none;transition:background .2s}
+:where(html[data-style-screen="store-faq"]) .faq-contact-link:hover {background:var(--primary-hover)}
+:where(html[data-style-screen="store-faq"]) .faq-content {max-width:1030px;width:calc(100% - 64px);margin:auto;padding:30px 0 40px}
+:where(html[data-style-screen="store-faq"]) .faq-intro {padding:0 28px;margin-bottom:20px}
+:where(html[data-style-screen="store-faq"]) .faq-intro .eyebrow {margin-bottom:8px}
+:where(html[data-style-screen="store-faq"]) .faq-intro h2,:where(html[data-style-screen="store-faq"]) .faq-help h2 {font-family:var(--font-heading);font-weight:400;letter-spacing:-.025em;line-height:1.15;color:#1c2318;margin:0 0 6px;font-size:36px}
+:where(html[data-style-screen="store-faq"]) .faq-intro>p:last-child,:where(html[data-style-screen="store-faq"]) .faq-help p {margin:0;color:#62666a;font-size:14px;line-height:1.6}
+:where(html[data-style-screen="store-faq"]) .faq-list {display:grid;gap:5px;padding:0 24px}
+:where(html[data-style-screen="store-faq"]) .modern-faq {border:1px solid #e9e2d7;border-radius:10px;background:#ffffff30;overflow:hidden}
+:where(html[data-style-screen="store-faq"]) .modern-faq h3 {margin:0;font-size:14px;font-weight:500}
+:where(html[data-style-screen="store-faq"]) .modern-faq button {display:grid;grid-template-columns:30px 1fr 18px;align-items:center;gap:23px;width:100%;border:0;background:transparent;padding:9px 19px;color:var(--text);font:inherit;text-align:left;cursor:pointer;min-height:48px}
+:where(html[data-style-screen="store-faq"]) .faq-toggle {display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#e9e6d8;color:#182213}
+:where(html[data-style-screen="store-faq"]) .is-open .faq-toggle {background:var(--primary);color:var(--on-primary)}
+:where(html[data-style-screen="store-faq"]) .is-open .faq-chevron {transform:rotate(180deg)}
+:where(html[data-style-screen="store-faq"]) .faq-answer {margin:0 13px 10px;padding:12px 58px;background:#f3f1ec;border-radius:9px}
+:where(html[data-style-screen="store-faq"]) .faq-answer p {margin:0;font-size:13px;line-height:1.85;white-space:pre-line;color:#393b3a}
+:where(html[data-style-screen="store-faq"]) .faq-help {position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;gap:24px;border:1px solid #e9e2d7;border-radius:12px;margin-top:21px;padding:25px 44px 25px 170px;min-height:115px;background:linear-gradient(110deg,#f7f3eb,#fbf9f4)}
+:where(html[data-style-screen="store-faq"]) .faq-help>img {position:absolute;left:22px;bottom:-22px;width:120px;height:140px;object-fit:contain;z-index:-1;opacity:.8}
+:where(html[data-style-screen="store-faq"]) .faq-help h2 {font-size:30px}
+:where(html[data-style-screen="store-faq"]) .faq-help .faq-contact-link {margin-left:auto;flex-shrink:0}
+:where(html[data-style-screen="store-faq"]) .modern-faq button:focus-visible,:where(html[data-style-screen="store-faq"]) .faq-contact-link:focus-visible {outline:2px solid var(--primary);outline-offset:3px}
+@media(max-width:700px) {
+ :where(html[data-style-screen="store-faq"]) .faq-hero {min-height:410px}
+ :where(html[data-style-screen="store-faq"]) .faq-hero-image {object-position:65% center}
+ :where(html[data-style-screen="store-faq"]) .faq-hero::after {background:linear-gradient(90deg,#f4e6d3f2,#f4e6d3b3 70%,#f4e6d355)}
+ :where(html[data-style-screen="store-faq"]) .faq-hero-inner,:where(html[data-style-screen="store-faq"]) .faq-content {width:calc(100% - 40px)}
+ :where(html[data-style-screen="store-faq"]) .faq-intro,:where(html[data-style-screen="store-faq"]) .faq-list {padding:0}
+ :where(html[data-style-screen="store-faq"]) .modern-faq button {gap:12px;padding:12px}
+ :where(html[data-style-screen="store-faq"]) .faq-answer {padding:12px 15px;margin:0 10px 10px}
+ :where(html[data-style-screen="store-faq"]) .faq-help {padding:24px 22px 24px 85px;flex-direction:column;align-items:flex-start;gap:16px}
+ :where(html[data-style-screen="store-faq"]) .faq-help>img {left:-20px;width:100px;height:170px}
+ :where(html[data-style-screen="store-faq"]) .faq-help h2 {font-size:27px}
+ :where(html[data-style-screen="store-faq"]) .faq-help .faq-contact-link {margin-left:0}
 }

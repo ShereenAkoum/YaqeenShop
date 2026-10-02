@@ -632,7 +632,7 @@
 
 :where(html[data-style-screen="admin-settings"]) .website-media-modal-head h3 {
   margin: 0 0 4px;
-  font: 600 18px/1.25 Arial, sans-serif;
+  font: 600 18px/1.25 var(--font-body);
   letter-spacing: 0
 }
 

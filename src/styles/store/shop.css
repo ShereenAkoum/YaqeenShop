@@ -1,10 +1,10 @@
 /* The shop's editorial layout follows the desktop and mobile collection mockup. */
-:where(html[data-style-screen="store-shop"]) body {background:#f8f5f0;color:#181818;font-family:'DM Sans',Arial,sans-serif}
+:where(html[data-style-screen="store-shop"]) body {background:#f8f5f0;color:#181818;font-family:var(--font-body)}
 :where(html[data-style-screen="store-shop"]) .store-catalog {width:calc(100% - 8.2%);max-width:1360px;padding:0 0 64px;margin-inline:auto}
 :where(html[data-style-screen="store-shop"]) .shop-hero {display:grid;grid-template-columns:46% 54%;align-items:stretch;margin:0 -2.4% 22px;min-height:276px}
 :where(html[data-style-screen="store-shop"]) .store-title {max-width:none;margin:0;padding:40px 24px 36px 4%;align-self:center}
 :where(html[data-style-screen="store-shop"]) .store-title .eyebrow {margin:0 0 12px;color:#7b4c24;font-size:12px;font-weight:400;letter-spacing:.12em}
-:where(html[data-style-screen="store-shop"]) .store-title h1 {margin:0;font:400 clamp(36px,4.25vw,58px)/1.02 Georgia,serif;letter-spacing:-.035em;color:#080808}
+:where(html[data-style-screen="store-shop"]) .store-title h1 {margin:0;font:400 clamp(36px,4.25vw,58px)/1.02 var(--font-heading);letter-spacing:-.035em;color:#080808}
 :where(html[data-style-screen="store-shop"]) .shop-hero-description {margin:16px 0 0;font-size:19px;line-height:1.5;font-weight:400}
 :where(html[data-style-screen="store-shop"]) .shop-hero-image {width:100%;height:100%;min-height:276px;max-height:330px;object-fit:cover;border-radius:0 6px 6px 0}
 :where(html[data-style-screen="store-shop"]) .store-category-nav {display:flex;gap:16px;margin:0 0 20px;padding:0;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none}
@@ -24,7 +24,7 @@
 :where(html[data-style-screen="store-shop"]) .store-product-card:hover .product-card-image-load img {transform:scale(1.025)}
 :where(html[data-style-screen="store-shop"]) .store-catalog .store-product-image .badge {position:absolute;display:flex;align-items:center;gap:6px;top:12px;left:10px;padding:6px 12px;border:0;border-radius:20px;background:#bfa16bd9;color:#fff;font-size:13px;line-height:1.6;font-weight:400;letter-spacing:0;text-transform:none;box-shadow:none}
 :where(html[data-style-screen="store-shop"]) .store-catalog .home-product-info {display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;margin:9px 0 0;padding:0;align-items:start}
-:where(html[data-style-screen="store-shop"]) .store-catalog .home-product-info h3 {margin:0;color:#181818;font:400 15px/1.4 'DM Sans',Arial,sans-serif}
+:where(html[data-style-screen="store-shop"]) .store-catalog .home-product-info h3 {margin:0;color:#181818;font:400 15px/1.4 var(--font-heading)}
 :where(html[data-style-screen="store-shop"]) .store-catalog .home-product-price {padding:0;background:none;border:0;color:#181818;font-size:15px;font-weight:400;line-height:1.4;white-space:nowrap}
 :where(html[data-style-screen="store-shop"]) .store-catalog .home-product-action {display:flex;justify-content:flex-start;align-items:center;gap:12px;width:max-content;margin:4px 0 0;padding:0;border:0;color:#222;font-size:14px;font-weight:400;letter-spacing:0;text-transform:none;text-decoration:underline;text-decoration-color:#96988c;text-underline-offset:6px}
 :where(html[data-style-screen="store-shop"]) :is(button,select,a):focus-visible {outline:2px solid #50563e;outline-offset:4px}
@@ -53,8 +53,6 @@
 :where(html[data-style-screen="store-shop"]) body {background:#fdfbf8}
 :where(html[data-style-screen="store-shop"]) .shop-announcement {height:32px;display:flex;align-items:center;justify-content:center;background:#50563e;color:#fffdf8;font-size:11px;letter-spacing:.13em;text-align:center}
 :where(html[data-style-screen="store-shop"]) .store-nav-shell {padding-inline:5.5%}
-:where(html[data-style-screen="store-shop"]) .desktop-nav a {padding:10px 0}
-:where(html[data-style-screen="store-shop"]) .desktop-nav a[aria-current="page"] {border-bottom:2px solid #181818}
 :where(html[data-style-screen="store-shop"]) .header-actions .mobile-menu-button {display:none}
 :where(html[data-style-screen="store-shop"]) .store-catalog {width:100%;max-width:none;padding:0 4.2% 64px}
 :where(html[data-style-screen="store-shop"]) .shop-hero {position:relative;isolation:isolate;display:flex;align-items:flex-start;min-height:360px;margin:0 -4.585% 16px;background:#f5e9dc;overflow:hidden}

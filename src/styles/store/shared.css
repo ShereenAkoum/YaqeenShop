@@ -435,7 +435,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 17px 2px;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-heading);
   font-size: 24px;
   border-bottom: 1px solid var(--border)
 }
@@ -501,7 +501,7 @@
 :where(html[data-style-area="store"]) .footer-statement {
   max-width: 330px;
   margin: 0;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-heading);
   font-size: 24px;
   line-height: 1.35;
   color: #f5f1e8
@@ -683,7 +683,7 @@
 
 :where(html[data-style-area="store"]) .store-product-card h3 {
   margin: 16px 0 5px;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-heading);
   font-size: 18px;
   font-weight: 400;
   line-height: 1.25
@@ -785,7 +785,7 @@
 
 :where(html[data-style-area="store"]) .cart-empty-modern h2 {
   margin: 0 0 10px;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-heading);
   font-size: 30px;
   font-weight: 400
 }
@@ -1062,12 +1062,12 @@
   }
 }
 /* Shared storefront footer: desktop columns and native mobile accordions. */
-:where(html[data-style-area="store"]) .yaqeen-footer {position:relative; overflow:hidden; padding:0; background:var(--yaqeen-canvas); color:var(--yaqeen-footer-text); border-top:1px solid var(--yaqeen-footer-border); font-family:'DM Sans',Arial,sans-serif}
+:where(html[data-style-area="store"]) .yaqeen-footer {position:relative; overflow:hidden; padding:0; background:var(--yaqeen-canvas); color:var(--yaqeen-footer-text); border-top:1px solid var(--yaqeen-footer-border); font-family:var(--font-body)}
 :where(html[data-style-area="store"]) .yaqeen-footer .footer-olive-art {position:absolute; z-index:0; right:-12px; top:-48px; width:clamp(220px,18vw,280px); height:auto; object-fit:contain; object-position:right top; pointer-events:none}
-:where(html[data-style-area="store"]) .yaqeen-footer .yaqeen-footer-main {position:relative; z-index:1; width:calc(100% - 96px); max-width:1360px; margin:auto; display:grid; grid-template-columns:minmax(0,1.35fr) repeat(3,minmax(0,.65fr)) minmax(0,1.7fr); gap:28px; padding:50px 0 38px; align-items:start}
+:where(html[data-style-area="store"]) .yaqeen-footer .yaqeen-footer-main {position:relative; z-index:1; width:calc(100% - 96px); max-width:1360px; margin:auto; display:grid; grid-template-columns:minmax(0,1.35fr) repeat(2,minmax(0,.65fr)) minmax(0,1.7fr); gap:28px; padding:50px 0 38px; align-items:start}
 :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column .brand {display:inline-flex; width:auto; padding:0}
 :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column .brand-logo {display:block; width:160px; height:125px; max-width:160px; max-height:125px; object-fit:contain; object-position:left center}
-:where(html[data-style-area="store"]) .yaqeen-footer .footer-statement {font-family:'DM Sans',Arial,sans-serif; font-size:14px; line-height:1.55; color:var(--yaqeen-footer-muted); max-width:280px; margin:12px 0 18px}
+:where(html[data-style-area="store"]) .yaqeen-footer .footer-statement {font-family:var(--font-body); font-size:14px; line-height:1.55; color:var(--yaqeen-footer-muted); max-width:280px; margin:12px 0 18px}
 :where(html[data-style-area="store"]) .yaqeen-footer .footer-socials {display:flex; flex-wrap:wrap; gap:10px}
 :where(html[data-style-area="store"]) .yaqeen-footer .footer-socials a {display:grid; place-items:center; width:38px; height:38px; border-radius:50%; background:#ece9de; color:#283421}
 :where(html[data-style-area="store"]) .yaqeen-footer .footer-socials a:hover {background:#e1e4d5}
@@ -1078,7 +1078,7 @@
 :where(html[data-style-area="store"]) .yaqeen-footer .footer-group nav {display:flex; flex-direction:column; gap:9px}
 :where(html[data-style-area="store"]) .yaqeen-footer .footer-group nav a {display:block; padding:0; font-size:14px; line-height:1.45; color:var(--yaqeen-footer-link); text-decoration:none}
 :where(html[data-style-area="store"]) .yaqeen-footer .footer-group nav a:hover {color:var(--yaqeen-footer-hover); text-decoration:underline}
-:where(html[data-style-area="store"]) .yaqeen-footer .footer-journey summary {font-family:Georgia,serif; font-size:23px; font-weight:400}
+:where(html[data-style-area="store"]) .yaqeen-footer .footer-journey summary {font-family:var(--font-heading); font-size:23px; font-weight:400}
 :where(html[data-style-area="store"]) .yaqeen-footer .footer-journey .footer-group-content>p {margin:0 0 18px; font-size:14px; line-height:1.55; color:var(--yaqeen-footer-muted)}
 :where(html[data-style-area="store"]) .yaqeen-footer .footer-newsletter {margin:0; padding:0; display:block}
 :where(html[data-style-area="store"]) .yaqeen-footer .footer-newsletter>div {display:none}
@@ -1188,10 +1188,13 @@
 :where(html[data-style-area="store"]) .site-header .store-nav-shell>.brand.brand-has-logo {display:flex;width:104px;height:68px;min-width:0;max-width:104px;padding:0;align-items:center;justify-content:flex-start;overflow:hidden}
 :where(html[data-style-area="store"]) .site-header .store-nav-shell>.brand.brand-has-logo>.brand-logo {display:block;width:104px;height:64px;max-width:104px;max-height:64px;object-fit:contain;object-position:center;margin:0;flex:none}
 :where(html[data-style-area="store"]) .desktop-nav {display:flex;align-items:center;justify-content:center;gap:38px;font-size:15px}
-:where(html[data-style-area="store"]) .desktop-nav a {position:relative;padding:25px 0 10px;border-radius:0;background:transparent;color:#161b15;font-size:15px;font-weight:500;line-height:1.4;transform:none}
+:where(html[data-style-area="store"]) .desktop-nav a {position:relative;padding:10px 0;border-bottom:2px solid transparent;border-radius:0;background:transparent;color:#161b15;font-size:15px;font-weight:500;line-height:1.4;transform:none}
+:where(html[data-style-area="store"]) .desktop-nav a[aria-current="page"] {border-bottom-color:#181818}
 :where(html[data-style-area="store"]) .desktop-nav a:hover {background:transparent;color:#161b15;transform:none}
 :where(html[data-style-area="store"]) .header-actions {justify-self:end;display:flex;align-items:center;gap:26px}
-:where(html[data-style-area="store"]) .site-header .header-actions .store-nav-icon,:where(html[data-style-area="store"]) .site-header .header-actions .mobile-menu-button {display:grid;place-items:center;width:auto;height:auto;min-width:0;min-height:0;padding:0;margin:0;border:0;border-radius:0;background:transparent;color:#111;line-height:1}
+:where(html[data-style-area="store"]) .site-header .header-actions .store-nav-icon {display:grid;place-items:center;width:auto;height:auto;min-width:0;min-height:0;padding:0;margin:0;border:0;border-radius:0;background:transparent;color:#111;line-height:1}
+:where(html[data-style-area="store"]) .site-header .header-actions .mobile-menu-button {display:none}
+@media(max-width:760px){:where(html[data-style-area="store"]) .site-header .header-actions .mobile-menu-button {display:grid}}
 :where(html[data-style-area="store"]) .site-header .store-nav-icon:hover,:where(html[data-style-area="store"]) .site-header .mobile-menu-button:hover {background:transparent;border:0;color:#111;transform:none}
 :where(html[data-style-area="store"]) .site-header .store-nav-icon svg,:where(html[data-style-area="store"]) .site-header .mobile-menu-button svg {display:block;width:25px;height:25px;margin:auto}
 @media(max-width:760px){:where(html[data-style-area="store"]) .site-header{height:64px}:where(html[data-style-area="store"]) .store-nav-shell{height:64px;min-height:64px;padding-inline:14px;grid-template-columns:auto 1fr auto;gap:12px}:where(html[data-style-area="store"]) .desktop-nav{display:none}:where(html[data-style-area="store"]) .site-header .brand{min-width:78px}:where(html[data-style-area="store"]) .site-header .store-nav-shell>.brand.brand-has-logo{width:84px;height:58px;max-width:84px;padding:0;border-radius:0}:where(html[data-style-area="store"]) .site-header .store-nav-shell>.brand.brand-has-logo>.brand-logo{width:84px;height:56px;max-width:84px;max-height:56px}:where(html[data-style-area="store"]) .header-actions{gap:16px}:where(html[data-style-area="store"]) .site-header .store-nav-icon svg,:where(html[data-style-area="store"]) .site-header .mobile-menu-button svg{width:21px;height:21px}}

@@ -69,7 +69,7 @@ async function capture(page) {
   const browser = await playwright[engine].launch({headless:true});
   activeBrowser = browser;
   const results = [];
-  const routes = process.env.VISUAL_CHECK_ROUTES?.split(',') || (adminFixtures ? Object.keys(modules).flatMap(screen=>[screen,...(['categories','products','inventory','resources','designs','orders','customers','users'].includes(screen)?[screen+'-dialog']:[])]) : ['/','/shop','/cart','/checkout','/order-confirmation','/search','/about','/contact','/faq','/privacy','/terms','/under-construction','/login','/missing-page']);
+  const routes = process.env.VISUAL_CHECK_ROUTES?.split(',') || (adminFixtures ? Object.keys(modules).flatMap(screen=>[screen,...(['categories','products','inventory','resources','designs','orders','customers','users'].includes(screen)?[screen+'-dialog']:[])]) : ['/','/shop','/cart','/checkout','/order-confirmation','/search','/contact','/faq','/privacy','/terms','/under-construction','/login','/missing-page']);
   if(!adminFixtures && process.env.VISUAL_CHECK_PRODUCT === '1') {
     const discovery = await browser.newPage();
     await discovery.goto(origin+'/shop',{waitUntil:'networkidle'});
@@ -127,8 +127,8 @@ async function capture(page) {
         if(url.pathname.endsWith('/dashboard_stats')) data={new_orders:0,to_print:0,ready_to_pack:0,out_for_delivery:0,revenue:0,low_stock:0};
         if(url.pathname.endsWith('/sales_report')) data={summary:{},products:[],designs:[],payments:[],production:[],delivery:[]};
         if(url.pathname.endsWith('/sales_report') && process.env.VISUAL_CHECK_REPORTS==='1') data={summary:{orders:12,sales:240,average_order:20},products:Array.from({length:12},(_,index)=>({title:`Printed product ${index+1}`,quantity:index+2,sales:40})),designs:[{code:'DES-001',title:'Saved design',quantity:8}],payments:[{status:'Paid',amount:240,records:12}],production:[{stage:'QC',jobs:5}],delivery:[{status:'Delivered',deliveries:9}]};
-        if(url.pathname.endsWith('/website_documents')) data=['navigation','footer','homepage','about','contact','faq'].map(key=>({id:key,key,title:key,draft:{},published:{}}));
-        if(url.pathname.endsWith('/website_documents') && process.env.VISUAL_CHECK_WEBSITE==='1') data=['navigation','footer','homepage','about','contact','faq','privacy','terms'].map(key=>({id:key,key,title:key,draft:{heading:'Website content fixture',body:'Meaningful pieces for everyday life.',links:[{label:'Shop',url:'/shop'},{label:'About',url:'/about'}],faqs:[{question:'How can I order?',answer:'Choose a product and continue to checkout.'}],values:[{number:'01',title:'Faith and meaning',description:'Thoughtful designs for everyday life.'}]},published:{},published_at:'2026-01-01T00:00:00Z'}));
+        if(url.pathname.endsWith('/website_documents')) data=['navigation','footer','homepage','contact','faq'].map(key=>({id:key,key,title:key,draft:{},published:{}}));
+        if(url.pathname.endsWith('/website_documents') && process.env.VISUAL_CHECK_WEBSITE==='1') data=['navigation','footer','homepage','contact','faq','privacy','terms'].map(key=>({id:key,key,title:key,draft:{heading:'Website content fixture',body:'Meaningful pieces for everyday life.',links:[{label:'Shop',url:'/shop'}],faqs:[{question:'How can I order?',answer:'Choose a product and continue to checkout.'}],values:[{number:'01',title:'Faith and meaning',description:'Thoughtful designs for everyday life.'}]},published:{},published_at:'2026-01-01T00:00:00Z'}));
         if (process.env.VISUAL_CHECK_SAVED_DESIGNS === '1') {
           const assets = ['pdf','image','url'].map((asset_type,index)=>({id:`fixture-asset-${index}`,design_id:'fixture-design',title:`Saved ${asset_type} reference`,asset_type,path:null,url:asset_type==='url'?'https://example.com/design-reference':null,created_at:'2026-01-01T00:00:00Z'}));
           const design = {id:'fixture-design',name:'Saved design fixture',code:'DES-FIXTURE',created_at:'2026-01-01T00:00:00Z',design_assets:assets};
@@ -157,7 +157,7 @@ async function capture(page) {
         const key=route.slice('website-'.length);
         await page.locator('.website-doc-card').filter({has:page.getByRole('heading',{name:key==='navigation'?'Nav Bar':key,exact:true})}).locator('[data-tooltip="Edit"]').click();
         await page.locator('.website-editor').waitFor({state:'visible'});
-        if(process.env.VISUAL_CHECK_WEBSITE_NESTED==='1' && ['faq','about','homepage'].includes(key)) {
+        if(process.env.VISUAL_CHECK_WEBSITE_NESTED==='1' && ['faq'].includes(key)) {
           if(key==='homepage') await page.locator('.homepage-section-card').last().evaluate(el=>el.open=true);
           if(process.env.VISUAL_CHECK_WEBSITE_NESTED_EDIT==='1') await page.locator('.faq-row-actions [data-tooltip="Edit"]').first().click();
           else await page.getByRole('button',{name:key==='faq'?'Add question':'Add value',exact:true}).click();

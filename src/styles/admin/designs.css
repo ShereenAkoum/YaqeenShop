@@ -631,7 +631,7 @@
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-step-heading h3 {
   margin: 2px 0 4px;
-  font: 700 14px Arial, sans-serif;
+  font: 700 14px var(--font-body);
   color: var(--text)
 }
 

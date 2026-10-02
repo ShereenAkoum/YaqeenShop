@@ -50,7 +50,7 @@ const {styleScope} = exportsObject;
 for (const [path, screen] of Object.entries({
   '/':'store-home', '/shop':'store-shop', '/products/example':'store-product',
   '/cart':'store-cart', '/checkout':'store-checkout', '/order-confirmation':'store-confirmation',
-  '/search':'store-search', '/about':'store-about', '/contact':'store-contact', '/faq':'store-faq',
+  '/search':'store-search', '/contact':'store-contact', '/faq':'store-faq',
   '/privacy':'store-legal', '/terms':'store-legal', '/under-construction':'store-construction',
   '/login':'login', '/admin':'admin-dashboard', '/admin/':'admin-dashboard',
   '/admin/production':'admin-operations', '/admin/deliveries':'admin-operations',

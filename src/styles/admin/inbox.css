@@ -96,7 +96,7 @@
   border-radius: 50%;
   background: #eef1e9;
   color: var(--primary);
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-heading);
   font-size: 18px
 }
 
