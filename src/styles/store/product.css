@@ -871,3 +871,26 @@
     font-weight: 500
   }
 }
+
+
+/* Mobile purchase controls: the sticky CTA owns Add to Bag. */
+@media(max-width:760px) {
+  :where(html[data-style-screen="store-product"]) .product-buy-row {
+    display: block
+  }
+
+  :where(html[data-style-screen="store-product"]) .product-buy-row .product-actions {
+    display: none
+  }
+
+  :where(html[data-style-screen="store-product"]) .product-buy-row .product-quantity {
+    width: 92px;
+    max-width: 92px;
+    flex: none
+  }
+
+  :where(html[data-style-screen="store-product"]) .product-buy-row .product-quantity input {
+    width: 92px;
+    max-width: 92px
+  }
+}
