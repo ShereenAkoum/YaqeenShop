@@ -1179,3 +1179,19 @@
   font-weight: 600;
   cursor: pointer
 }
+
+
+/* Shared storefront navigation — single source of truth for every public page. */
+:where(html[data-style-area="store"]) .site-header {position:sticky;top:0;z-index:100;height:72px;padding:0;border:0;background:#fffdf8;box-shadow:0 1px 0 rgba(38,53,29,.10);backdrop-filter:none;-webkit-backdrop-filter:none}
+:where(html[data-style-area="store"]) .store-nav-shell {width:100%;max-width:none;height:72px;min-height:72px;padding-inline:7.5vw;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px}
+:where(html[data-style-area="store"]) .site-header .brand {justify-self:start}
+:where(html[data-style-area="store"]) .site-header .store-nav-shell>.brand.brand-has-logo {display:flex;width:104px;height:68px;min-width:0;max-width:104px;padding:0;align-items:center;justify-content:flex-start;overflow:hidden}
+:where(html[data-style-area="store"]) .site-header .store-nav-shell>.brand.brand-has-logo>.brand-logo {display:block;width:104px;height:64px;max-width:104px;max-height:64px;object-fit:contain;object-position:center;margin:0;flex:none}
+:where(html[data-style-area="store"]) .desktop-nav {display:flex;align-items:center;justify-content:center;gap:38px;font-size:15px}
+:where(html[data-style-area="store"]) .desktop-nav a {position:relative;padding:25px 0 10px;border-radius:0;background:transparent;color:#161b15;font-size:15px;font-weight:500;line-height:1.4;transform:none}
+:where(html[data-style-area="store"]) .desktop-nav a:hover {background:transparent;color:#161b15;transform:none}
+:where(html[data-style-area="store"]) .header-actions {justify-self:end;display:flex;align-items:center;gap:26px}
+:where(html[data-style-area="store"]) .site-header .header-actions .store-nav-icon,:where(html[data-style-area="store"]) .site-header .header-actions .mobile-menu-button {display:grid;place-items:center;width:auto;height:auto;min-width:0;min-height:0;padding:0;margin:0;border:0;border-radius:0;background:transparent;color:#111;line-height:1}
+:where(html[data-style-area="store"]) .site-header .store-nav-icon:hover,:where(html[data-style-area="store"]) .site-header .mobile-menu-button:hover {background:transparent;border:0;color:#111;transform:none}
+:where(html[data-style-area="store"]) .site-header .store-nav-icon svg,:where(html[data-style-area="store"]) .site-header .mobile-menu-button svg {display:block;width:25px;height:25px;margin:auto}
+@media(max-width:760px){:where(html[data-style-area="store"]) .site-header{height:64px}:where(html[data-style-area="store"]) .store-nav-shell{height:64px;min-height:64px;padding-inline:14px;grid-template-columns:auto 1fr auto;gap:12px}:where(html[data-style-area="store"]) .desktop-nav{display:none}:where(html[data-style-area="store"]) .site-header .brand{min-width:78px}:where(html[data-style-area="store"]) .site-header .store-nav-shell>.brand.brand-has-logo{width:84px;height:58px;max-width:84px;padding:0;border-radius:0}:where(html[data-style-area="store"]) .site-header .store-nav-shell>.brand.brand-has-logo>.brand-logo{width:84px;height:56px;max-width:84px;max-height:56px}:where(html[data-style-area="store"]) .header-actions{gap:16px}:where(html[data-style-area="store"]) .site-header .store-nav-icon svg,:where(html[data-style-area="store"]) .site-header .mobile-menu-button svg{width:21px;height:21px}}
