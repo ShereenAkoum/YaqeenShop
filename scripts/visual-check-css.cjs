@@ -104,6 +104,36 @@ async function capture(page) {
       const target=adminFixtures?new URL(origin).origin+'/css-visual-fixture.html?screen='+route.replace('-dialog',''):origin+route;
       await page.goto(target, {waitUntil:'networkidle', timeout:45000});
       await page.locator('.brand-loader').first().waitFor({state:'hidden',timeout:15000}).catch(()=>{});
+      if (process.env.VISUAL_CHECK_STORE_CHROME === '1') {
+        for (const summary of await page.locator('.yaqeen-footer .footer-group summary').all()) {
+          await summary.click();
+        }
+        if (width <= 760) {
+          await page.locator('.mobile-menu-button').click();
+          await page.locator('.mobile-nav-drawer').waitFor({state:'visible'});
+        }
+      }
+      if (route === '/search' && process.env.VISUAL_CHECK_SEARCH_QUERY) {
+        await Promise.all([
+          page.waitForResponse(response => response.url().includes('/rest/v1/products') && response.request().method() === 'GET'),
+          page.locator('.store-search input').fill(process.env.VISUAL_CHECK_SEARCH_QUERY),
+        ]);
+        await page.locator('.store-empty').waitFor({state:'hidden'});
+      }
+      if (route === '/faq' && process.env.VISUAL_CHECK_FAQ_OPEN === '1') {
+        const question = page.locator('.modern-faq summary').first();
+        await question.click();
+        await page.waitForFunction(() => document.querySelector('.modern-faq')?.hasAttribute('open'));
+      }
+      const validationField = route === '/contact' ? process.env.VISUAL_CHECK_CONTACT_FIELD : route === '/checkout' ? process.env.VISUAL_CHECK_CHECKOUT_FIELD : null;
+      if (validationField) {
+        if (!['input', 'textarea'].includes(validationField)) throw new Error('Validation field must be input or textarea.');
+        // Exercise error/focus styling locally without submitting either form.
+        const form = route === '/contact' ? '.contact-form-modern' : '.checkout-fields';
+        const control = page.locator(`${form} ${validationField}`).first();
+        await control.evaluate(element => element.setAttribute('aria-invalid', 'true'));
+        await control.focus();
+      }
       if (route === '/' && process.env.VISUAL_CHECK_HOME_VARIANTS === '1') {
         // Exercise optional CMS layouts using local DOM copies; no CMS records are changed.
         await page.evaluate(() => {

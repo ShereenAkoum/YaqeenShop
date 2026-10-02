@@ -1,7 +1,7 @@
 /* store/faq: rules are isolated to their route or application area. */
 
 :where(html[data-style-screen="store-faq"]) .faq-page {
-  max-width: 940px !important
+  max-width: 940px
 }
 
 :where(html[data-style-screen="store-faq"]) .faq-hero {

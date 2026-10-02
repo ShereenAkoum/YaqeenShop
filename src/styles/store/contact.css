@@ -155,8 +155,10 @@
 }
 
 :where(html[data-style-screen="store-contact"]) .contact-form-modern textarea {
+  box-sizing: border-box;
   resize: vertical;
-  min-height: 145px
+  min-height: 130px;
+  line-height: 1.55
 }
 
 :where(html[data-style-screen="store-contact"]) .contact-form-modern input:focus,
@@ -205,25 +207,16 @@
   }
 }
 
-:where(html[data-style-screen="store-contact"]) .contact-form-modern textarea {
-  box-sizing: border-box;
-  width: 100%;
-  resize: vertical;
-  line-height: 1.55
-}
-
-:where(html[data-style-screen="store-contact"]) .contact-form-modern textarea {
-  min-height: 130px
-}
-
 :where(html[data-style-screen="store-contact"]) .contact-form-modern label:has([aria-invalid="true"]) {
   color: #7f332b
 }
 
-:where(html[data-style-screen="store-contact"]) .contact-form-modern [aria-invalid="true"] {
-  border-color: #a64b40 !important;
-  background: #fff9f7 !important;
-  box-shadow: 0 0 0 3px rgba(166, 75, 64, .08) !important
+/* Validation follows focus rules at equal specificity, so errors stay visible on focus. */
+:where(html[data-style-screen="store-contact"]) .contact-form-modern input[aria-invalid="true"],
+:where(html[data-style-screen="store-contact"]) .contact-form-modern textarea[aria-invalid="true"] {
+  border-color: #a64b40;
+  background: #fff9f7;
+  box-shadow: 0 0 0 3px rgba(166, 75, 64, .08)
 }
 
 :where(html[data-style-screen="store-contact"]) .contact-form-modern [aria-invalid="true"]:focus {

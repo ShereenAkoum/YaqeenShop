@@ -242,7 +242,7 @@
 }
 
 :where(html[data-style-screen="store-cart"]) .cart-checkout-button {
-  display: flex !important;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
@@ -449,45 +449,45 @@
 
   :where(html[data-style-screen="store-cart"]) .cart-remove,
 :where(html[data-style-screen="store-cart"]) .cart-quantity button {
-    display: grid !important;
-    place-items: center !important;
-    padding: 0 !important;
-    line-height: 0 !important
+    display: grid;
+    place-items: center;
+    padding: 0;
+    line-height: 0
   }
 
   :where(html[data-style-screen="store-cart"]) .cart-remove svg,
 :where(html[data-style-screen="store-cart"]) .cart-quantity button svg,
 :where(html[data-style-screen="store-cart"]) .cart-checkout-button svg,
 :where(html[data-style-screen="store-cart"]) .cart-continue-link svg {
-    display: block !important;
-    margin: auto !important;
+    display: block;
+    margin: auto;
     flex: 0 0 auto
   }
 
   :where(html[data-style-screen="store-cart"]) .cart-item-top {
-    align-items: start !important
+    align-items: start
   }
 
   :where(html[data-style-screen="store-cart"]) .cart-remove {
-    align-self: start !important;
-    justify-self: end !important
+    align-self: start;
+    justify-self: end
   }
 
   :where(html[data-style-screen="store-cart"]) .cart-quantity {
-    align-items: center !important
+    align-items: center
   }
 
   :where(html[data-style-screen="store-cart"]) .cart-quantity button {
-    align-self: stretch !important
+    align-self: stretch
   }
 
   :where(html[data-style-screen="store-cart"]) .cart-checkout-button,
 :where(html[data-style-screen="store-cart"]) .cart-continue-link {
-    align-items: center !important
+    align-items: center
   }
 
   :where(html[data-style-screen="store-cart"]) .cart-checkout-button svg,
 :where(html[data-style-screen="store-cart"]) .cart-continue-link svg {
-    align-self: center !important
+    align-self: center
   }
 }

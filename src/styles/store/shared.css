@@ -260,7 +260,7 @@
   position: sticky;
   top: 0;
   z-index: 60;
-  padding: 0 !important;
+  padding: 0;
   border-bottom: 1px solid rgba(63, 80, 56, .12);
   background: rgba(250, 248, 242, .92);
   backdrop-filter: blur(18px);
@@ -276,43 +276,43 @@
 }
 
 :where(html[data-style-area="store"]) .site-header .brand {
-  display: grid !important;
-  width: auto !important;
-  height: auto !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  overflow: visible !important;
+  display: grid;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: visible;
   text-align: left;
   justify-self: start;
   align-content: center
 }
 
 :where(html[data-style-area="store"]) .site-header .brand::after {
-  display: none !important
+  display: none
 }
 
 :where(html[data-style-area="store"]) .site-header .brand .arabic {
-  display: block !important;
-  font-size: 22px !important;
-  line-height: 1 !important;
+  display: block;
+  font-size: 22px;
+  line-height: 1;
   letter-spacing: 0;
   color: var(--primary)
 }
 
 :where(html[data-style-area="store"]) .site-header .brand span:not(.arabic) {
-  display: block !important;
-  visibility: visible !important;
-  font-size: 13px !important;
+  display: block;
+  visibility: visible;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: .22em;
   margin-top: 3px
 }
 
 :where(html[data-style-area="store"]) .site-header .brand small {
-  display: block !important;
-  visibility: visible !important;
-  font-size: 5.5px !important;
+  display: block;
+  visibility: visible;
+  font-size: 5.5px;
   letter-spacing: .22em;
   margin-top: 5px;
   color: #8c8d84
@@ -374,8 +374,8 @@
 }
 
 :where(html[data-style-area="store"]) .mobile-nav-drawer {
-  padding: 24px !important;
-  background: var(--yaqeen-canvas) !important
+  padding: 24px;
+  background: var(--yaqeen-canvas)
 }
 
 :where(html[data-style-area="store"]) .mobile-drawer-brand {
@@ -387,28 +387,28 @@
 }
 
 :where(html[data-style-area="store"]) .mobile-nav-drawer .brand {
-  display: grid !important;
-  width: auto !important;
-  height: auto !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  text-align: left !important
+  display: grid;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-align: left
 }
 
 :where(html[data-style-area="store"]) .mobile-nav-drawer .brand::after {
-  display: none !important
+  display: none
 }
 
 :where(html[data-style-area="store"]) .mobile-nav-drawer .brand .arabic,
 :where(html[data-style-area="store"]) .mobile-nav-drawer .brand span:not(.arabic),
 :where(html[data-style-area="store"]) .mobile-nav-drawer .brand small {
-  display: block !important;
-  visibility: visible !important
+  display: block;
+  visibility: visible
 }
 
 :where(html[data-style-area="store"]) .mobile-nav-drawer .brand .arabic {
-  font-size: 23px !important
+  font-size: 23px
 }
 
 :where(html[data-style-area="store"]) .mobile-nav-drawer .brand span:not(.arabic) {
@@ -427,16 +427,16 @@
 }
 
 :where(html[data-style-area="store"]) .mobile-nav-drawer nav {
-  padding: 0 !important
+  padding: 0
 }
 
 :where(html[data-style-area="store"]) .mobile-nav-drawer nav a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 17px 2px !important;
+  padding: 17px 2px;
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: 24px !important;
+  font-size: 24px;
   border-bottom: 1px solid var(--border)
 }
 
@@ -481,11 +481,11 @@
   }
 
   :where(html[data-style-area="store"]) .site-header .brand .arabic {
-    font-size: 19px !important
+    font-size: 19px
   }
 
   :where(html[data-style-area="store"]) .site-header .brand span:not(.arabic) {
-    font-size: 12px !important
+    font-size: 12px
   }
 
   :where(html[data-style-area="store"]) .header-actions {
@@ -515,10 +515,10 @@
 }
 :where(html[data-style-area="store"]) .bag-nav-link {
   position: relative;
-  display: flex !important;
+  display: flex;
   flex-direction: column;
-  align-items: center !important;
-  justify-content: center !important;
+  align-items: center;
+  justify-content: center;
   gap: 1px;
   min-width: 42px
 }
@@ -812,38 +812,38 @@
     gap: 10px
   }
 
-  :where(html[data-style-area="store"]) .site-header .store-nav-icon,
-:where(html[data-style-area="store"]) .site-header .mobile-menu-button {
-    box-sizing: border-box !important;
-    display: grid !important;
-    place-items: center !important;
-    width: 46px !important;
-    height: 46px !important;
-    min-width: 46px !important;
-    min-height: 46px !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    border-radius: 50% !important;
-    line-height: 1 !important
+  :where(html[data-style-area="store"]) .site-header .header-actions .store-nav-icon,
+:where(html[data-style-area="store"]) .site-header .header-actions .mobile-menu-button {
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+    min-height: 46px;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    line-height: 1
   }
 
   :where(html[data-style-area="store"]) .site-header .store-nav-icon svg,
 :where(html[data-style-area="store"]) .site-header .mobile-menu-button svg {
-    display: block !important;
-    margin: auto !important
+    display: block;
+    margin: auto
   }
 
   :where(html[data-style-area="store"]) .site-header .bag-nav-link {
-    display: grid !important;
-    grid-template-rows: 1fr auto !important;
-    align-content: center !important;
-    justify-items: center !important;
-    gap: 0 !important
+    display: grid;
+    grid-template-rows: 1fr auto;
+    align-content: center;
+    justify-items: center;
+    gap: 0
   }
 
   :where(html[data-style-area="store"]) .site-header .bag-icon-wrap {
-    display: grid !important;
-    place-items: center !important;
+    display: grid;
+    place-items: center;
     width: 24px;
     height: 24px;
     line-height: 0
@@ -858,15 +858,15 @@
   }
 
   :where(html[data-style-area="store"]) .mobile-nav-drawer .icon-button {
-    display: grid !important;
-    place-items: center !important;
-    padding: 0 !important;
-    line-height: 0 !important
+    display: grid;
+    place-items: center;
+    padding: 0;
+    line-height: 0
   }
 
   :where(html[data-style-area="store"]) .mobile-nav-drawer .icon-button svg {
-    display: block !important;
-    margin: auto !important;
+    display: block;
+    margin: auto;
     flex: 0 0 auto
   }
 }
@@ -890,9 +890,10 @@
   min-height: 64px
 }
 
-:where(html[data-style-area="store"]) .mobile-drawer-brand .brand.brand-has-logo {
-  width: 130px;
-  height: 58px
+:where(html[data-style-area="store"]) .mobile-nav-drawer .mobile-drawer-brand .brand.brand-has-logo {
+  display: grid;
+  width: auto;
+  height: auto
 }
 
 :where(html[data-style-area="store"]) .mobile-drawer-brand .brand-logo {
@@ -905,10 +906,6 @@
 }
 
 @media(max-width:760px) {
-  :where(html[data-style-area="store"]) .site-header {
-    padding: 12px 0
-  }
-
   :where(html[data-style-area="store"]) .site-header .brand.brand-has-logo {
     width: 120px;
     height: 52px
@@ -919,55 +916,55 @@
   }
 }
 :where(html[data-style-area="store"]) .site-header .store-nav-shell>.brand.brand-has-logo {
-  display: flex !important;
-  width: 132px !important;
-  height: 62px !important;
-  min-width: 0 !important;
-  max-width: 132px !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  align-content: normal !important;
-  overflow: hidden !important
+  display: flex;
+  width: 132px;
+  height: 62px;
+  min-width: 0;
+  max-width: 132px;
+  align-items: center;
+  justify-content: flex-start;
+  align-content: normal;
+  overflow: hidden
 }
 
 :where(html[data-style-area="store"]) .site-header .store-nav-shell>.brand.brand-has-logo>.brand-logo {
-  display: block !important;
-  width: auto !important;
-  height: auto !important;
-  max-width: 100% !important;
-  max-height: 56px !important;
-  object-fit: contain !important;
-  object-position: left center !important;
-  flex: none !important
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 56px;
+  object-fit: contain;
+  object-position: left center;
+  flex: none
 }
 
 @media(max-width:760px) {
   :where(html[data-style-area="store"]) .site-header .store-nav-shell>.brand.brand-has-logo {
-    width: 105px !important;
-    height: 50px !important;
-    max-width: 105px !important
+    width: 105px;
+    height: 50px;
+    max-width: 105px
   }
 
   :where(html[data-style-area="store"]) .site-header .store-nav-shell>.brand.brand-has-logo>.brand-logo {
-    max-height: 46px !important
+    max-height: 46px
   }
 }
 
 
 :where(html[data-style-area="store"]) .site-header .store-nav-shell>.brand.brand-has-logo>.brand-logo {
-  max-height: 46px !important;
-  object-position: center !important;
-  margin: auto !important
+  max-height: 46px;
+  object-position: center;
+  margin: auto
 }
 
 @media(max-width:760px) {
   :where(html[data-style-area="store"]) .site-header .store-nav-shell>.brand.brand-has-logo {
-    padding: 6px 9px !important;
-    border-radius: 10px !important
+    padding: 6px 9px;
+    border-radius: 10px
   }
 
   :where(html[data-style-area="store"]) .site-header .store-nav-shell>.brand.brand-has-logo>.brand-logo {
-    max-height: 38px !important
+    max-height: 38px
   }
 }
 
@@ -1098,40 +1095,40 @@
  :where(html[data-style-area="store"]) .yaqeen-footer-bar .footer-legal-links{gap:18px}
 }
 @media(max-width:800px){
- :where(html[data-style-area="store"]) .yaqeen-footer-main{padding-top:38px!important}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column{order:1!important;margin:0 auto 26px!important}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column .brand{display:flex!important;width:100%!important;min-height:86px!important;align-items:center!important;justify-content:center!important}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column .brand-logo{display:block!important;width:auto!important;max-width:180px!important;height:auto!important;max-height:86px!important;object-fit:contain!important}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column .footer-statement{margin-top:12px!important}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-group{order:2!important}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-journey{order:3!important;margin:26px 0 0!important;padding:26px 0 0!important;border-top:1px solid #ded9ce!important;border-bottom:0!important}
- :where(html[data-style-area="store"]) .yaqeen-footer-bar>.container{padding-bottom:28px!important}
+ :where(html[data-style-area="store"]) .yaqeen-footer-main{padding-top:38px}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column{order:1;margin:0 auto 26px}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column .brand{display:flex;width:100%;min-height:86px;align-items:center;justify-content:center}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column .brand-logo{display:block;width:auto;max-width:180px;height:auto;max-height:86px;object-fit:contain}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column .footer-statement{margin-top:12px}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-group{order:2}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-journey{order:3;margin:26px 0 0;padding:26px 0 0;border-top:1px solid #ded9ce;border-bottom:0}
+ :where(html[data-style-area="store"]) .yaqeen-footer-bar>.container{padding-bottom:28px}
 }
 @media(min-width:801px){
  :where(html[data-style-area="store"]) .yaqeen-footer{min-height:0;background:var(--yaqeen-footer-bg)}
- :where(html[data-style-area="store"]) .yaqeen-footer-main{width:min(100% - 64px,1440px)!important;max-width:1440px!important;margin:0 auto!important;grid-template-columns:1.45fr .72fr .72fr .85fr 1.65fr!important;gap:48px!important;padding:72px 0 66px!important;align-items:start!important}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column{max-width:330px!important}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column .brand{display:flex!important;justify-content:flex-start!important;width:auto!important}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column .brand-logo{width:auto!important;height:auto!important;max-width:190px!important;max-height:112px!important;object-fit:contain!important}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-statement{max-width:300px!important;margin-top:20px!important;font-family:'DM Sans',Arial,sans-serif!important;font-size:14px!important;line-height:1.55!important}
+ :where(html[data-style-area="store"]) .yaqeen-footer-main{width:min(100% - 64px,1440px);max-width:1440px;margin:0 auto;grid-template-columns:1.45fr .72fr .72fr .85fr 1.65fr;gap:48px;padding:72px 0 66px;align-items:start}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column{max-width:330px}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column .brand{display:flex;justify-content:flex-start;width:auto}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column .brand-logo{width:auto;height:auto;max-width:190px;max-height:112px;object-fit:contain}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-statement{max-width:300px;margin-top:20px;font-family:'DM Sans',Arial,sans-serif;font-size:14px;line-height:1.55}
  :where(html[data-style-area="store"]) .footer-socials{display:flex;gap:10px;margin-top:24px}:where(html[data-style-area="store"]) .footer-socials span{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:#efede5;font-family:Arial,sans-serif;font-size:15px;font-weight:600;color:#3d4935}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-group{padding-left:28px!important;border-left:1px solid #e2ded4!important}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-group summary{font-family:'DM Sans',Arial,sans-serif!important;font-size:14px!important;margin:0 0 18px!important;color:#35422f!important}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-group nav{gap:11px!important}:where(html[data-style-area="store"]) .yaqeen-footer .footer-group nav a{font-family:'DM Sans',Arial,sans-serif!important;font-size:13px!important}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-journey{max-width:390px!important;padding-left:12px!important}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-journey h3{font-size:27px!important;line-height:1.1!important;margin-bottom:16px!important}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-journey>p{max-width:340px!important;font-size:13px!important}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-journey-cta{display:flex!important;width:100%!important;max-width:370px!important;min-height:50px!important;padding:7px 8px 7px 18px!important;background:var(--yaqeen-pure-white)!important}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-journey-cta svg{margin-left:auto!important;width:36px!important;height:36px!important}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-motto{font-size:14px!important;margin-top:25px!important}
- :where(html[data-style-area="store"]) .footer-olive-art{right:-65px!important;top:-75px!important;width:390px!important;height:430px!important;object-fit:cover!important;object-position:72% center!important;opacity:.22!important}
- :where(html[data-style-area="store"]) .yaqeen-footer-bar>.container{width:min(100% - 64px,1440px)!important;max-width:1440px!important;margin:0 auto!important;min-height:64px!important;padding:0!important;font-family:'DM Sans',Arial,sans-serif!important;font-size:12px!important}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-group{padding-left:28px;border-left:1px solid #e2ded4}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-group summary{font-family:'DM Sans',Arial,sans-serif;font-size:14px;margin:0 0 18px;color:#35422f}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-group nav{gap:11px}:where(html[data-style-area="store"]) .yaqeen-footer .footer-group nav a{font-family:'DM Sans',Arial,sans-serif;font-size:13px}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-journey{max-width:390px;padding-left:12px}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-journey h3{font-size:27px;line-height:1.1;margin-bottom:16px}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-journey>p{max-width:340px;font-size:13px}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-journey-cta{display:flex;width:100%;max-width:370px;min-height:50px;padding:7px 8px 7px 18px;background:var(--yaqeen-pure-white)}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-journey-cta svg{margin-left:auto;width:36px;height:36px}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-motto{font-size:14px;margin-top:25px}
+ :where(html[data-style-area="store"]) .footer-olive-art{right:-65px;top:-75px;width:390px;height:430px;object-fit:cover;object-position:72% center;opacity:.22}
+ :where(html[data-style-area="store"]) .yaqeen-footer-bar>.container{width:min(100% - 64px,1440px);max-width:1440px;margin:0 auto;min-height:64px;padding:0;font-family:'DM Sans',Arial,sans-serif;font-size:12px}
 }
 @media(max-width:800px){:where(html[data-style-area="store"]) .footer-socials{display:flex;justify-content:center;gap:10px;margin-top:18px}:where(html[data-style-area="store"]) .footer-socials span{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#efede5;font-family:Arial,sans-serif;font-size:14px;color:#3d4935}}
 @media(min-width:801px){
  :where(html[data-style-area="store"]) .yaqeen-footer .footer-olive-art{
-  right:0!important;top:0!important;width:min(29vw,445px)!important;height:100%!important;
-  object-fit:contain!important;object-position:right top!important;mix-blend-mode:normal!important;opacity:1!important
+  right:0;top:0;width:min(29vw,445px);height:100%;
+  object-fit:contain;object-position:right top;mix-blend-mode:normal;opacity:1
  }
 }
 

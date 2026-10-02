@@ -188,6 +188,12 @@
 }
 
 .brand.brand-has-logo {
+  display: flex;
+  align-items: center
+}
+
+/* Store header/footer layouts own their logo display; retain legacy priority elsewhere. */
+:where(html:not([data-style-area="store"])) .brand.brand-has-logo {
   display: flex !important;
   align-items: center !important
 }

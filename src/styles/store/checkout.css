@@ -332,7 +332,7 @@
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-place-order {
-  display: flex !important;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
@@ -417,17 +417,17 @@
   }
 }
 :where(html[data-style-screen="store-checkout"]) .checkout-section-heading {
-  display: grid !important;
+  display: grid;
   grid-template-columns: 36px minmax(0, 1fr);
   column-gap: 14px;
-  align-items: start !important
+  align-items: start
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-section-heading>span {
   grid-column: 1;
   grid-row: 1;
-  width: 36px !important;
-  height: 36px !important
+  width: 36px;
+  height: 36px
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-section-heading>div {
@@ -437,16 +437,16 @@
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-section-heading h2 {
-  margin: 0 0 5px !important;
-  font-family: inherit !important;
-  font-size: 16px !important;
-  font-weight: 700 !important;
-  line-height: 1.25 !important
+  margin: 0 0 5px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-section-heading p {
-  font-size: 10px !important;
-  line-height: 1.5 !important
+  font-size: 10px;
+  line-height: 1.5
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-fields {
@@ -459,31 +459,31 @@
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-fields label {
-  gap: 7px !important;
-  font-size: 11px !important;
-  line-height: 1.35 !important
+  gap: 7px;
+  font-size: 11px;
+  line-height: 1.35
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-fields label small {
-  display: inline !important;
-  margin-left: 5px !important;
-  font-size: 9px !important
+  display: inline;
+  margin-left: 5px;
+  font-size: 9px
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-fields input,
 :where(html[data-style-screen="store-checkout"]) .checkout-fields textarea {
-  border-radius: 9px !important;
-  padding: 12px 14px !important;
-  font-size: 12px !important
+  border-radius: 9px;
+  padding: 12px 14px;
+  font-size: 12px
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-fields input {
-  height: 46px !important
+  height: 46px
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-section {
-  padding-bottom: 30px !important;
-  margin-bottom: 30px !important
+  padding-bottom: 30px;
+  margin-bottom: 30px
 }
 
 @media(max-width:650px) {
@@ -493,8 +493,8 @@
   }
 
   :where(html[data-style-screen="store-checkout"]) .checkout-section-heading>span {
-    width: 34px !important;
-    height: 34px !important
+    width: 34px;
+    height: 34px
   }
 
   :where(html[data-style-screen="store-checkout"]) .checkout-fields {
@@ -506,7 +506,7 @@
   }
 
   :where(html[data-style-screen="store-checkout"]) .checkout-section-heading h2 {
-    font-size: 15px !important
+    font-size: 15px
   }
 }
 :where(html[data-style-screen="store-checkout"]) .checkout-page-modern .required-mark {
@@ -522,9 +522,9 @@
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-page-modern .required-mark {
-  display: inline !important;
-  margin: 0 0 0 2px !important;
-  line-height: 1 !important;
+  display: inline;
+  margin: 0 0 0 2px;
+  line-height: 1;
   vertical-align: baseline
 }
 
@@ -626,115 +626,115 @@
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-section {
-  padding: 28px 0 !important
+  padding: 28px 0
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-section:first-child {
-  padding-top: 0 !important
+  padding-top: 0
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-section-heading {
-  display: grid !important;
-  grid-template-columns: 38px minmax(0, 1fr) !important;
-  align-items: start !important;
-  gap: 14px !important;
-  margin-bottom: 24px !important
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  align-items: start;
+  gap: 14px;
+  margin-bottom: 24px
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-section-heading>span {
-  display: grid !important;
-  place-items: center !important;
-  width: 36px !important;
-  height: 36px !important;
-  margin: 0 !important;
-  border-radius: 10px !important
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  border-radius: 10px
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-section-heading h2 {
-  margin: 0 0 4px !important;
-  font-size: 17px !important;
-  line-height: 1.25 !important
+  margin: 0 0 4px;
+  font-size: 17px;
+  line-height: 1.25
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-section-heading p {
-  margin: 0 !important;
-  font-size: 11px !important;
-  line-height: 1.5 !important
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.5
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-payment-section .checkout-method-group {
-  margin-top: 0 !important
+  margin-top: 0
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-payment-section .checkout-method-group+.checkout-method-group {
-  margin-top: 24px !important
+  margin-top: 24px
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-payment-section .checkout-method-group h3 {
-  margin: 0 0 10px !important;
-  font-size: 13px !important;
-  line-height: 1.35 !important
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.35
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-payment-section .checkout-method-group>.muted {
-  margin: -2px 0 12px !important
+  margin: -2px 0 12px
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-payment-section .checkout-method-card {
-  min-height: 54px !important;
-  padding: 13px 16px !important;
-  border-radius: 10px !important
+  min-height: 54px;
+  padding: 13px 16px;
+  border-radius: 10px
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-payment-section .checkout-payment-options {
-  gap: 10px !important
+  gap: 10px
 }
 
 @media(max-width:760px) {
   :where(html[data-style-screen="store-checkout"]) .checkout-section {
-    padding: 24px 0 !important
+    padding: 24px 0
   }
 
   :where(html[data-style-screen="store-checkout"]) .checkout-section-heading {
-    grid-template-columns: 34px minmax(0, 1fr) !important;
-    gap: 11px !important;
-    margin-bottom: 20px !important
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 11px;
+    margin-bottom: 20px
   }
 
   :where(html[data-style-screen="store-checkout"]) .checkout-section-heading>span {
-    width: 32px !important;
-    height: 32px !important;
-    border-radius: 9px !important
+    width: 32px;
+    height: 32px;
+    border-radius: 9px
   }
 
   :where(html[data-style-screen="store-checkout"]) .checkout-section-heading h2 {
-    font-size: 16px !important
+    font-size: 16px
   }
 
   :where(html[data-style-screen="store-checkout"]) .checkout-section-heading p {
-    font-size: 10px !important
+    font-size: 10px
   }
 
   :where(html[data-style-screen="store-checkout"]) .checkout-payment-section .checkout-method-group+.checkout-method-group {
-    margin-top: 20px !important
+    margin-top: 20px
   }
 }
 :where(html[data-style-screen="store-checkout"]) .checkout-payment-section>.checkout-method-group {
-  margin-left: 52px !important;
-  width: calc(100% - 52px) !important
+  margin-left: 52px;
+  width: calc(100% - 52px)
 }
 
 @media(max-width:760px) {
   :where(html[data-style-screen="store-checkout"]) .checkout-payment-section>.checkout-method-group {
-    margin-left: 45px !important;
-    width: calc(100% - 45px) !important
+    margin-left: 45px;
+    width: calc(100% - 45px)
   }
 }
 
 @media(max-width:520px) {
   :where(html[data-style-screen="store-checkout"]) .checkout-payment-section>.checkout-method-group {
-    margin-left: 0 !important;
-    width: 100% !important
+    margin-left: 0;
+    width: 100%
   }
 }
 
@@ -742,10 +742,11 @@
   color: #7f332b
 }
 
-:where(html[data-style-screen="store-checkout"]) .checkout-fields [aria-invalid="true"] {
-  border-color: #a64b40 !important;
-  background: #fff9f7 !important;
-  box-shadow: 0 0 0 3px rgba(166, 75, 64, .08) !important
+:where(html[data-style-screen="store-checkout"]) .checkout-fields input[aria-invalid="true"],
+:where(html[data-style-screen="store-checkout"]) .checkout-fields textarea[aria-invalid="true"] {
+  border-color: #a64b40;
+  background: #fff9f7;
+  box-shadow: 0 0 0 3px rgba(166, 75, 64, .08)
 }
 
 :where(html[data-style-screen="store-checkout"]) .checkout-fields [aria-invalid="true"]:focus {
