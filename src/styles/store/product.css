@@ -894,3 +894,21 @@
     max-width: 92px
   }
 }
+
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="store-product"]) .product-buy-row .product-actions,
+  :where(html[data-style-screen="store-product"]) .product-buy-row .product-bag-button {
+    display: none !important
+  }
+
+  :where(html[data-style-screen="store-product"]) .product-buy-row {
+    display: block !important
+  }
+
+  :where(html[data-style-screen="store-product"]) .product-buy-row .product-quantity,
+  :where(html[data-style-screen="store-product"]) .product-buy-row .product-quantity input {
+    width: 88px !important;
+    max-width: 88px !important
+  }
+}
