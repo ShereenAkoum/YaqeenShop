@@ -108,107 +108,6 @@
     display: none
 }
 
-:where(html[data-style-screen="store-home"]) body:has(.home-redesign) .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    height: 72px;
-    padding: 0;
-    border: 0;
-    background: #fffdf8;
-    box-shadow: 0 1px 0 rgba(38,53,29,.10);
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none
-}
-
-:where(html[data-style-screen="store-home"]) body:has(.home-redesign) .store-nav-shell {
-    width: 100%;
-    max-width: none;
-    height: 72px;
-    padding-inline: 7.5vw;
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    gap: 24px
-}
-
-:where(html[data-style-screen="store-home"]) body:has(.home-redesign) .site-header .brand {
-    justify-self: start
-}
-
-:where(html[data-style-screen="store-home"]) body:has(.home-redesign) .site-header .brand-logo {
-    display: block;
-    width: 82px;
-    height: 54px;
-    max-width: 82px;
-    max-height: 54px;
-    object-fit: contain
-}
-
-:where(html[data-style-screen="store-home"]) body:has(.home-redesign) .desktop-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 38px;
-    font-size: 15px
-}
-
-:where(html[data-style-screen="store-home"]) body:has(.home-redesign) .desktop-nav a {
-    position: relative;
-    padding: 25px 0 10px;
-    border-radius: 0;
-    background: transparent;
-    color: #161b15;
-    font-weight: 500;
-    transform: none
-}
-
-:where(html[data-style-screen="store-home"]) body:has(.home-redesign) .desktop-nav a:hover {
-    background: transparent;
-    color: #161b15;
-    transform: none
-}
-
-:where(html[data-style-screen="store-home"]) body:has(.home-redesign) .desktop-nav a:first-child:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 1px;
-    background: var(--yaqeen-hero-cta-hover)
-}
-
-:where(html[data-style-screen="store-home"]) body:has(.home-redesign) .header-actions {
-    justify-self: end;
-    display: flex;
-    align-items: center;
-    gap: 26px
-}
-
-:where(html[data-style-screen="store-home"]) body:has(.home-redesign) .store-nav-icon {
-    width: auto;
-    height: auto;
-    min-width: 0;
-    min-height: 0;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-    color: #111
-}
-
-:where(html[data-style-screen="store-home"]) body:has(.home-redesign) .store-nav-icon:hover {
-    background: transparent;
-    border: 0;
-    color: #111;
-    transform: none
-}
-
-:where(html[data-style-screen="store-home"]) body:has(.home-redesign) .store-nav-icon svg {
-    width: 25px;
-    height: 25px
-}
-
 :where(html[data-style-screen="store-home"]) .home-products {
     padding-block: 72px 86px;
     border-top: 1px solid var(--home-line)
@@ -371,36 +270,6 @@
 }
 
 @media(max-width:760px) {
-    :where(html[data-style-screen="store-home"]) body:has(.home-redesign) .site-header {
-        height: 64px
-    }
-
-    :where(html[data-style-screen="store-home"]) body:has(.home-redesign) .store-nav-shell {
-        height: 64px;
-        padding-inline: 14px;
-        grid-template-columns: 1fr auto;
-        gap: 12px
-    }
-
-    :where(html[data-style-screen="store-home"]) body:has(.home-redesign) .desktop-nav {
-        display: none
-    }
-
-    :where(html[data-style-screen="store-home"]) body:has(.home-redesign) .site-header .brand-logo {
-        width: 78px;
-        height: 46px;
-        max-width: 78px;
-        max-height: 46px
-    }
-
-    :where(html[data-style-screen="store-home"]) body:has(.home-redesign) .header-actions {
-        gap: 16px
-    }
-
-    :where(html[data-style-screen="store-home"]) body:has(.home-redesign) .store-nav-icon svg {
-        width: 21px;
-        height: 21px
-    }
 
     :where(html[data-style-screen="store-home"]) .home-redesign .container {
         padding-inline: 20px
@@ -466,46 +335,7 @@
         transition: none !important
     }
 }
-@media(max-width:760px) {
-    :where(html[data-style-screen="store-home"]) body:has(.home-redesign) .store-nav-shell {
-        grid-template-columns: auto 1fr auto
-    }
 
-    :where(html[data-style-screen="store-home"]) body:has(.home-redesign) .site-header .brand {
-        display: flex;
-        visibility: visible;
-        opacity: 1;
-        min-width: 78px;
-        justify-self: start
-    }
-
-    :where(html[data-style-screen="store-home"]) body:has(.home-redesign) .site-header .brand-logo {
-        display: block;
-        width: 78px;
-        height: 46px;
-        max-width: 78px;
-        max-height: 46px;
-        object-fit: contain
-    }
-
-    :where(html[data-style-screen="store-home"]) body:has(.home-redesign) .site-header .brand:not(.brand-has-logo) {
-        gap: 3px
-    }
-
-    :where(html[data-style-screen="store-home"]) body:has(.home-redesign) .site-header .brand:not(.brand-has-logo) .arabic {
-        font-size: 22px;
-        line-height: 1
-    }
-
-    :where(html[data-style-screen="store-home"]) body:has(.home-redesign) .site-header .brand:not(.brand-has-logo)>span:not(.arabic) {
-        font-size: 11px;
-        letter-spacing: .16em
-    }
-
-    :where(html[data-style-screen="store-home"]) body:has(.home-redesign) .site-header .brand:not(.brand-has-logo) small {
-        display: none
-    }
-}
 @media(max-width:760px) {
 
     :where(html[data-style-screen="store-home"]) .home-redesign .yaqeen-home-hero+.home-cms-section,
@@ -1267,34 +1097,4 @@
     }
 }
 
-/* Homepage navigation logo matches the hero mockup's taller brand mark. */
-:where(html[data-style-screen="store-home"]) .site-header .store-nav-shell>a.brand.brand-has-logo {
-    width: 104px;
-    height: 68px;
-    max-width: 104px;
-    padding: 0;
-}
 
-:where(html[data-style-screen="store-home"]) .site-header .store-nav-shell>.brand.brand-has-logo>img.brand-logo {
-    width: 104px;
-    height: 64px;
-    max-width: 104px;
-    max-height: 64px;
-    object-fit: contain;
-    margin: 0;
-}
-
-@media(max-width:760px) {
-    :where(html[data-style-screen="store-home"]) .site-header .store-nav-shell>a.brand.brand-has-logo {
-        width: 84px;
-        height: 58px;
-        max-width: 84px;
-    }
-
-    :where(html[data-style-screen="store-home"]) .site-header .store-nav-shell>.brand.brand-has-logo>img.brand-logo {
-        width: 84px;
-        height: 56px;
-        max-width: 84px;
-        max-height: 56px;
-    }
-}
