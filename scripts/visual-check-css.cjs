@@ -12,8 +12,22 @@ try { playwright = require('playwright'); } catch {
 const origin = process.env.VISUAL_CHECK_URL || 'http://127.0.0.1:5173/YaqeenShop';
 const output = process.env.VISUAL_CHECK_OUTPUT || path.join(require('node:os').tmpdir(), 'yaqeen-css-verification');
 fs.mkdirSync(output, {recursive:true});
-// main.tsx imports App (and home.css) before styles.css.
-const baseline = ['home.css','styles.css'].map(file => execFileSync('git', ['show', `main:src/${file}`], {encoding:'utf8', maxBuffer:10e6})).join('\n');
+const baselineRef = process.env.VISUAL_CHECK_BASE_REF || 'main';
+function readBaseline(file) {
+  return execFileSync('git',['show',`${baselineRef}:${file}`],{encoding:'utf8',maxBuffer:10e6});
+}
+function expandBaseline(file, ancestors = []) {
+  if(ancestors.includes(file))throw new Error(`Circular CSS import: ${file}`);
+  return readBaseline(file).replace(/@import\s+(['"])([^'"]+)\1\s*;/g,(statement,quote,target)=> {
+    if(/^(?:https?:|\/\/)/.test(target))return statement;
+    const imported=path.posix.normalize(path.posix.join(path.posix.dirname(file),target));
+    return expandBaseline(imported,[...ancestors,file]);
+  });
+}
+// Dependencies' CSS loads before the entry module's CSS. Read the imports from
+// the selected revision so comparisons also work after the stylesheet split.
+const baselineFiles = ['src/App.tsx','src/main.tsx'].flatMap(file=>[...readBaseline(file).matchAll(/import\s*['"]([^'"]+\.css)['"]/g)].map(match=>path.posix.normalize(path.posix.join(path.posix.dirname(file),match[1]))));
+const baseline = baselineFiles.map(file=>expandBaseline(file)).join('\n');
 // ID specificity also defeats legacy !important transitions in sidebar rules.
 const stable = ':is(#visual-stability-html, html) :is(#visual-stability-body, body) * { animation: none !important; transition: none !important; caret-color: transparent !important; }';
 const adminFixtures = process.env.VISUAL_CHECK_ADMIN === '1';

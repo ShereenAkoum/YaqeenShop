@@ -171,8 +171,7 @@
   background: #f1efe7
 }
 
-:where(html[data-style-screen="store-shop"]) .store-catalog .store-product-image>img,
-:where(html[data-style-screen="store-shop"]) .store-catalog .card-variant-strip img {
+:where(html[data-style-screen="store-shop"]) .store-catalog .store-product-image>img {
   object-fit: contain;
   padding: 12px
 }
@@ -213,11 +212,6 @@
   color: var(--primary);
   font-size: 14px;
   white-space: nowrap
-}
-
-:where(html[data-style-screen="store-shop"]) .store-catalog .home-product-meta {
-  font-size: 11px;
-  color: #85897f
 }
 
 :where(html[data-style-screen="store-shop"]) .store-catalog .home-product-action {

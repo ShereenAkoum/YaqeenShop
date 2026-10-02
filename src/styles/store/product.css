@@ -152,12 +152,6 @@
   cursor: pointer
 }
 
-:where(html[data-style-screen="store-product"]) .product-actions .button.secondary {
-  background: transparent;
-  color: var(--text);
-  border-color: var(--border)
-}
-
 :where(html[data-style-screen="store-product"]) .product-actions .button:disabled {
   opacity: .45;
   cursor: not-allowed

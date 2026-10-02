@@ -8,68 +8,9 @@
   color: var(--primary);
   cursor: pointer
 }
-
-:where(html[data-style-screen="admin-designs"]) .link-button.danger {
-  color: var(--danger)
-}
 :where(html[data-style-screen="admin-designs"]) .design-editor {
   display: grid;
   gap: 24px
-}
-
-:where(html[data-style-screen="admin-designs"]) .design-fields {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px
-}
-
-:where(html[data-style-screen="admin-designs"]) .design-fields label {
-  display: grid;
-  gap: 6px;
-  font-size: 9px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .08em
-}
-
-:where(html[data-style-screen="admin-designs"]) .design-fields .wide {
-  grid-column: 1/-1
-}
-
-:where(html[data-style-screen="admin-designs"]) .design-fields textarea {
-  min-height: 90px;
-  resize: vertical
-}
-
-:where(html[data-style-screen="admin-designs"]) .design-arabic {
-  font-size: 18px;
-  line-height: 1.8;
-  text-align: right
-}
-
-:where(html[data-style-screen="admin-designs"]) .design-preview {
-  width: 100%;
-  max-height: 300px;
-  object-fit: contain;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: #fafbf7
-}
-
-:where(html[data-style-screen="admin-designs"]) .design-assets {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px
-}
-
-@media(max-width:650px) {
-  :where(html[data-style-screen="admin-designs"]) .design-fields {
-    grid-template-columns: 1fr
-  }
-
-  :where(html[data-style-screen="admin-designs"]) .design-fields .wide {
-    grid-column: auto
-  }
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal:not(.modal-confirm)>.design-detail {
@@ -126,24 +67,6 @@
   box-sizing: border-box !important;
 }
 
-:where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern .design-fields {
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 18px 20px !important;
-}
-
-:where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern .design-fields>label {
-  display: grid !important;
-  gap: 7px !important;
-  min-width: 0 !important;
-  font-size: 13px !important;
-  font-weight: 700 !important;
-}
-
-:where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern .design-fields .wide {
-  grid-column: 1/-1 !important
-}
-
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern .control {
   width: 100% !important;
   min-height: 46px !important;
@@ -157,20 +80,6 @@
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern textarea.control {
   min-height: 110px !important;
   resize: vertical !important
-}
-
-:where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern .design-arabic {
-  font-size: 18px !important
-}
-
-:where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern .design-preview {
-  display: block !important;
-  max-width: 320px !important;
-  max-height: 260px !important;
-  margin: 22px 0 !important;
-  border: 1px solid var(--border) !important;
-  border-radius: 8px !important;
-  object-fit: contain !important;
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>section {
@@ -203,25 +112,9 @@
   justify-content: center !important
 }
 
-:where(html[data-style-screen="admin-designs"]) .admin .design-detail .design-fields .control:disabled {
-  opacity: 1 !important;
-  color: var(--text) !important;
-  background: var(--surface-2) !important;
-  -webkit-text-fill-color: var(--text) !important;
-}
-
 @media(max-width:760px) {
   :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern {
     padding: 16px !important
-  }
-
-  :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern .design-fields {
-    grid-template-columns: 1fr !important;
-    gap: 14px !important
-  }
-
-  :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern .design-fields .wide {
-    grid-column: auto !important
   }
 
   :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>.modal-actions:last-child {
@@ -231,58 +124,9 @@
     padding: 12px 16px max(12px, env(safe-area-inset-bottom)) !important;
   }
 }
-:where(html[data-style-screen="admin-designs"]) .admin .design-assets-only .design-upload-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px
-}
-
-:where(html[data-style-screen="admin-designs"]) .admin .design-assets-only .design-dropzone {
-  position: relative;
-  min-height: 210px;
-  border: 1px dashed var(--border);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  text-align: center;
-  padding: 24px;
-  cursor: pointer
-}
-
-:where(html[data-style-screen="admin-designs"]) .admin .design-assets-only .design-dropzone input {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  cursor: pointer
-}
-
-:where(html[data-style-screen="admin-designs"]) .admin .design-assets-only .design-dropzone span,
-:where(html[data-style-screen="admin-designs"]) .admin .design-assets-only .design-url-field span {
-  color: var(--muted);
-  font-size: 12px
-}
-
-:where(html[data-style-screen="admin-designs"]) .admin .design-assets-only .design-url-field {
-  display: flex;
-  flex-direction: column;
-  gap: 8px
-}
-
-:where(html[data-style-screen="admin-designs"]) .admin .design-assets-only .design-url-field textarea {
-  min-height: 150px !important
-}
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-existing {
   margin-top: 24px
-}
-
-@media(max-width:760px) {
-  :where(html[data-style-screen="admin-designs"]) .admin .design-assets-only .design-upload-grid {
-    grid-template-columns: 1fr
-  }
 }
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.design-editor-modern) {
   width: min(900px, calc(100vw - 48px)) !important;

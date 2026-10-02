@@ -1,9 +1,5 @@
 /* admin/inbox: rules are isolated to their route or application area. */
 
-:where(html[data-style-screen="admin-inbox"]) .inbox-admin {
-  max-width: 1180px
-}
-
 :where(html[data-style-screen="admin-inbox"]) .inbox-stats {
   display: grid;
   grid-template-columns: repeat(2, minmax(180px, 260px));
@@ -71,124 +67,12 @@
   font-size: 9px
 }
 
-:where(html[data-style-screen="admin-inbox"]) .inbox-search {
-  width: min(330px, 100%);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0 10px;
-  border: 1px solid var(--border);
-  border-radius: 9px;
-  background: #fff
-}
-
-:where(html[data-style-screen="admin-inbox"]) .inbox-search input {
-  min-width: 0;
-  flex: 1;
-  border: 0;
-  padding: 9px 0;
-  background: transparent;
-  font: inherit;
-  font-size: 12px;
-  outline: 0
-}
-
-:where(html[data-style-screen="admin-inbox"]) .inbox-search button {
-  display: grid;
-  place-items: center;
-  border: 0;
-  background: transparent;
-  cursor: pointer
-}
-
-:where(html[data-style-screen="admin-inbox"]) .inbox-table-wrap {
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: #fff
-}
-
-:where(html[data-style-screen="admin-inbox"]) .inbox-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed
-}
-
-:where(html[data-style-screen="admin-inbox"]) .inbox-table th {
-  padding: 10px 13px;
-  background: #f4f6f0;
-  border-bottom: 1px solid var(--border);
-  text-align: left;
-  font-size: 9px;
-  text-transform: uppercase;
-  letter-spacing: .07em;
-  color: var(--muted)
-}
-
-:where(html[data-style-screen="admin-inbox"]) .inbox-table th:first-child {
-  width: 27%
-}
-
-:where(html[data-style-screen="admin-inbox"]) .inbox-table th:nth-child(3) {
-  width: 190px
-}
-
-:where(html[data-style-screen="admin-inbox"]) .inbox-table th:last-child {
-  width: 80px
-}
-
-:where(html[data-style-screen="admin-inbox"]) .inbox-table td {
-  padding: 12px 13px;
-  border-bottom: 1px solid var(--border);
-  vertical-align: middle;
-  font-size: 11px
-}
-
-:where(html[data-style-screen="admin-inbox"]) .inbox-table tbody tr:last-child td {
-  border-bottom: 0
-}
-
-:where(html[data-style-screen="admin-inbox"]) .inbox-table tbody tr {
-  cursor: pointer
-}
-
-:where(html[data-style-screen="admin-inbox"]) .inbox-table tbody tr:hover {
-  background: #fafbf7
-}
-
-:where(html[data-style-screen="admin-inbox"]) .inbox-table td:first-child strong,
-:where(html[data-style-screen="admin-inbox"]) .inbox-table td:first-child span {
-  display: block
-}
-
-:where(html[data-style-screen="admin-inbox"]) .inbox-table td:first-child span {
-  margin-top: 3px;
-  color: var(--muted);
-  font-size: 10px
-}
-
 :where(html[data-style-screen="admin-inbox"]) .inbox-preview {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   color: #555d51
-}
-
-:where(html[data-style-screen="admin-inbox"]) .inbox-open {
-  padding: 6px 9px !important
-}
-
-:where(html[data-style-screen="admin-inbox"]) .subscriber-table th:first-child {
-  width: 60%
-}
-
-:where(html[data-style-screen="admin-inbox"]) .subscriber-table th:nth-child(2) {
-  width: auto
-}
-
-:where(html[data-style-screen="admin-inbox"]) .subscriber-table tbody tr {
-  cursor: default
 }
 
 :where(html[data-style-screen="admin-inbox"]) .message-detail {
@@ -255,18 +139,6 @@
     /* The shared category toolbar previously supplied this mobile alignment. */
     align-items: center;
     flex-direction: column
-  }
-
-  :where(html[data-style-screen="admin-inbox"]) .inbox-search {
-    width: 100%
-  }
-
-  :where(html[data-style-screen="admin-inbox"]) .inbox-table-wrap {
-    overflow-x: auto
-  }
-
-  :where(html[data-style-screen="admin-inbox"]) .inbox-table {
-    min-width: 720px
   }
 }
 :where(html[data-style-screen="admin-inbox"]) .inbox-message-cell {

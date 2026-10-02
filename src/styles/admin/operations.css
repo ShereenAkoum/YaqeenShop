@@ -57,53 +57,10 @@
   padding: 8px
 }
 
-:where(html[data-style-screen="admin-operations"]) .fulfillment-edit-row td {
-  padding: 0 !important;
-  background: #fafbf7
-}
-
-:where(html[data-style-screen="admin-operations"]) .fulfillment-editor {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(140px, 1fr)) auto;
-  align-items: end;
-  gap: 12px;
-  padding: 18px 22px
-}
-
-:where(html[data-style-screen="admin-operations"]) .fulfillment-editor>div {
-  display: grid;
-  gap: 3px;
-  font-size: 10px
-}
-
-:where(html[data-style-screen="admin-operations"]) .fulfillment-editor label {
-  display: grid;
-  gap: 6px;
-  font-size: 9px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .08em
-}
-
-:where(html[data-style-screen="admin-operations"]) .fulfillment-editor textarea {
-  min-height: 42px;
-  max-height: 90px;
-  resize: vertical
-}
-
 @media(max-width:900px) {
-  :where(html[data-style-screen="admin-operations"]) .fulfillment-editor {
-    grid-template-columns: 1fr 1fr
-  }
 
   :where(html[data-style-screen="admin-operations"]) .production-board {
     grid-template-columns: repeat(9, 220px)
-  }
-}
-
-@media(max-width:600px) {
-  :where(html[data-style-screen="admin-operations"]) .fulfillment-editor {
-    grid-template-columns: 1fr
   }
 }
 
@@ -809,12 +766,6 @@
   min-width: 240px;
   border: 0;
   padding: 8px 0 0;
-}
-
-:where(html[data-style-screen="admin-operations"]) .production-history-title {
-  margin-top: 18px !important;
-  padding-top: 16px;
-  border-top: 1px solid var(--border)
 }
 @media(max-width:560px) {
   :where(html[data-style-screen="admin-operations"]) .production-page {

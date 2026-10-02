@@ -105,25 +105,6 @@
   padding-left: 29px
 }
 
-:where(html[data-style-screen="admin-settings"]) .settings-summary {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  margin: 0 22px;
-  padding: 14px 16px;
-  border-radius: 10px;
-  background: #f3f5ef;
-  color: var(--muted);
-  font-size: 12px
-}
-
-:where(html[data-style-screen="admin-settings"]) .settings-summary strong {
-  color: var(--primary);
-  font-size: 19px;
-  font-weight: 600
-}
-
 :where(html[data-style-screen="admin-settings"]) .settings-actions {
   display: flex;
   align-items: center;
@@ -149,11 +130,6 @@
   margin: 0
 }
 
-:where(html[data-style-screen="admin-settings"]) .settings-loading {
-  padding: 28px;
-  color: var(--muted)
-}
-
 @media(max-width:760px) {
   :where(html[data-style-screen="admin-settings"]) .settings-fields {
     grid-template-columns: 1fr;
@@ -162,10 +138,6 @@
 
   :where(html[data-style-screen="admin-settings"]) .settings-card-head {
     padding: 18px
-  }
-
-  :where(html[data-style-screen="admin-settings"]) .settings-summary {
-    margin: 0 18px
   }
 
   :where(html[data-style-screen="admin-settings"]) .settings-actions {
@@ -382,84 +354,9 @@
     grid-column: auto
   }
 }
-:where(html[data-style-screen="admin-settings"]) .settings-logo-field {
-  display: grid;
-  grid-template-columns: minmax(180px, .7fr) minmax(280px, 1.3fr);
-  gap: 20px;
-  align-items: start;
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--border)
-}
-
-:where(html[data-style-screen="admin-settings"]) .settings-logo-field>div:first-child {
-  display: grid;
-  gap: 6px
-}
-
-:where(html[data-style-screen="admin-settings"]) .settings-logo-control {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap
-}
-
-:where(html[data-style-screen="admin-settings"]) .settings-logo-preview,
-:where(html[data-style-screen="admin-settings"]) .settings-logo-empty {
-  width: 180px;
-  height: 84px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: #fafbf7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden
-}
-
-:where(html[data-style-screen="admin-settings"]) .settings-logo-preview img {
-  max-width: 150px;
-  max-height: 58px;
-  object-fit: contain
-}
-
-:where(html[data-style-screen="admin-settings"]) .settings-logo-empty {
-  gap: 8px;
-  color: var(--muted);
-  font-size: 11px
-}
-
-:where(html[data-style-screen="admin-settings"]) .settings-logo-actions {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap
-}
-
-:where(html[data-style-screen="admin-settings"]) .settings-logo-actions label {
-  display: inline-flex !important;
-  grid-template: none !important;
-  flex-direction: row !important;
-  align-items: center;
-  gap: 7px;
-  cursor: pointer
-}
-
-:where(html[data-style-screen="admin-settings"]) .settings-logo-actions input[type=file] {
-  display: none
-}
-
-:where(html[data-style-screen="admin-settings"]) .settings-logo-actions .disabled {
-  opacity: .5;
-  pointer-events: none
-}
 
 :where(html[data-style-screen="admin-settings"]) .settings-logo-delete {
   color: #8b3d35
-}
-
-@media(max-width:760px) {
-  :where(html[data-style-screen="admin-settings"]) .settings-logo-field {
-    grid-template-columns: 1fr
-  }
 }
 :where(html[data-style-screen="admin-settings"]) .website-media-card .settings-card-head {
   display: grid;

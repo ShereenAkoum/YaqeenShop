@@ -23,10 +23,6 @@
   font-weight: 500
 }
 
-:where(html[data-style-screen="admin-products"]) .detail-stack .table-add {
-  margin-left: auto
-}
-
 @media(max-width:760px) {
 
   :where(html[data-style-screen="admin-products"]) .detail-stack {
@@ -50,11 +46,6 @@
   :where(html[data-style-screen="admin-products"]) .detail-stack .section-head h3 {
     margin: 0;
     font-size: 19px
-  }
-
-  :where(html[data-style-screen="admin-products"]) .detail-stack .table-add {
-    min-height: 38px;
-    padding: 7px 11px
   }
 
   :where(html[data-style-screen="admin-products"]) .modal .detail-stack .table-wrap {

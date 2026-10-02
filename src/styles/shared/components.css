@@ -1,12 +1,5 @@
 /* shared/components: intentionally shared styles. */
 
-
-.serif {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-weight: 400;
-  line-height: 1.13
-}
-
 .arabic {
   font-family: 'Traditional Arabic', 'Noto Naskh Arabic', Tahoma, serif;
   line-height: 1.8
@@ -48,10 +41,6 @@
 .grid {
   display: grid;
   gap: 24px
-}
-
-.grid-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr))
 }
 
 .section {
@@ -158,10 +147,6 @@
     padding: 40px 20px
   }
 
-  .grid-3 {
-    grid-template-columns: 1fr
-  }
-
   .brand {
     font-size: 15px
   }
@@ -169,32 +154,6 @@
   .brand .arabic {
     font-size: 26px
   }
-}
-
-.small-preview {
-  max-height: 240px;
-  margin: 0
-}
-
-.text-button {
-  border: 0;
-  background: transparent;
-  padding: 6px 0;
-  color: var(--text);
-  font: inherit;
-  cursor: pointer
-}
-
-.text-button:hover {
-  text-decoration: underline
-}
-
-.field-caption {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  color: var(--muted);
-  font-weight: 700
 }
 
 .status-pill {
@@ -216,53 +175,6 @@
 .status-pill.inactive {
   background: #f0eeea;
   color: #77736a
-}
-
-.text-button {
-  border: 0;
-  background: transparent;
-  text-decoration: underline;
-  cursor: pointer;
-  color: var(--muted)
-}
-.modern-footer {
-  padding: 0 !important;
-  background: var(--primary) !important;
-  color: #f5f1e8 !important;
-  border-top: 0 !important
-}
-
-.modern-footer .brand {
-  color: #fff !important;
-  margin: 0 0 22px !important
-}
-
-.modern-footer .brand .arabic {
-  color: #dce4d2 !important
-}
-
-.modern-footer .brand small {
-  color: #aeb9a7 !important
-}
-
-@media(max-width:760px) {
-  .modern-footer {
-    margin-top: 55px !important
-  }
-}
-
-.compact-button {
-  padding: 8px 12px
-}
-.refresh-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  white-space: nowrap
-}
-
-.spin {
-  animation: crm-spin .8s linear infinite
 }
 
 .brand>span:not(.arabic) {

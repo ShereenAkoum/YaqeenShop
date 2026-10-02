@@ -1,18 +1,4 @@
 /* admin/orders: rules are isolated to their route or application area. */
-
-
-:where(html[data-style-screen="admin-orders"]) .order-card {
-  align-self: start;
-  position: sticky;
-  top: 20px
-}
-
-@media(max-width:900px) {
-
-  :where(html[data-style-screen="admin-orders"]) .order-card {
-    position: static
-  }
-}
 :where(html[data-style-screen="admin-orders"]) .order-detail {
   display: grid;
   gap: 30px;
@@ -66,12 +52,6 @@
 :where(html[data-style-screen="admin-orders"]) .order-detail h3 {
   margin: 0 0 14px;
   font-size: 14px
-}
-
-:where(html[data-style-screen="admin-orders"]) .order-detail-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px
 }
 
 :where(html[data-style-screen="admin-orders"]) .order-history {
@@ -128,232 +108,13 @@
 
 @media(max-width:760px) {
 
-  :where(html[data-style-screen="admin-orders"]) .order-detail-head,
-:where(html[data-style-screen="admin-orders"]) .order-detail-grid {
+  :where(html[data-style-screen="admin-orders"]) .order-detail-head {
     grid-template-columns: 1fr
   }
 
   :where(html[data-style-screen="admin-orders"]) .order-detail-head {
     gap: 20px
   }
-}
-:where(html[data-style-screen="admin-orders"]) .order-edit-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px
-}
-
-:where(html[data-style-screen="admin-orders"]) .order-edit-form label {
-  display: grid;
-  gap: 6px;
-  font-size: 9px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .08em
-}
-
-:where(html[data-style-screen="admin-orders"]) .order-edit-form .wide {
-  grid-column: 1/-1
-}
-
-:where(html[data-style-screen="admin-orders"]) .order-edit-form textarea {
-  min-height: 80px;
-  resize: vertical
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-items {
-  display: grid;
-  gap: 10px
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-item {
-  display: grid;
-  grid-template-columns: 1fr 90px auto;
-  gap: 8px
-}
-
-@media(max-width:650px) {
-  :where(html[data-style-screen="admin-orders"]) .order-edit-form {
-    grid-template-columns: 1fr
-  }
-
-  :where(html[data-style-screen="admin-orders"]) .order-edit-form .wide {
-    grid-column: auto
-  }
-
-  :where(html[data-style-screen="admin-orders"]) .manual-item {
-    grid-template-columns: 1fr
-  }
-}
-
-:where(html[data-style-screen="admin-orders"]) .modern-order-form {
-  gap: 18px
-}
-
-:where(html[data-style-screen="admin-orders"]) .modern-order-form label {
-  gap: 8px
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-items {
-  margin-top: 2px;
-  padding: 18px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: #fafbf7
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-items-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 12px
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-items-head h3 {
-  margin: 3px 0;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 20px;
-  font-weight: 400
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-items-head span {
-  font-size: 9px;
-  color: var(--muted)
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-item {
-  padding: 10px;
-  border: 1px solid var(--border);
-  border-radius: 9px;
-  background: var(--surface)
-}
-
-:where(html[data-style-screen="admin-orders"]) .order-form-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 9px;
-  padding-top: 4px
-}
-
-:where(html[data-style-screen="admin-orders"]) .order-form-actions .primary-button,
-:where(html[data-style-screen="admin-orders"]) .order-form-actions .secondary-button {
-  min-width: 120px
-}
-
-@media(max-width:600px) {
-
-  :where(html[data-style-screen="admin-orders"]) .manual-items-head {
-    align-items: flex-start;
-    flex-direction: column
-  }
-
-  :where(html[data-style-screen="admin-orders"]) .order-form-actions {
-    flex-direction: column-reverse
-  }
-
-  :where(html[data-style-screen="admin-orders"]) .order-form-actions>* {
-    width: 100%
-  }
-}
-:where(html[data-style-screen="admin-orders"]) .manual-order-form {
-  gap: 14px
-}
-
-:where(html[data-style-screen="admin-orders"]) .order-form-section {
-  padding: 18px 19px;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  background: #fbfcf8
-}
-
-:where(html[data-style-screen="admin-orders"]) .order-form-section-head {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  margin-bottom: 16px
-}
-
-:where(html[data-style-screen="admin-orders"]) .order-form-section-head>span {
-  display: grid;
-  place-items: center;
-  width: 29px;
-  height: 29px;
-  flex: 0 0 29px;
-  border-radius: 50%;
-  background: var(--primary);
-  color: #fff;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 11px
-}
-
-:where(html[data-style-screen="admin-orders"]) .order-form-section-head .eyebrow {
-  margin: 0 0 2px;
-  font-size: 7px
-}
-
-:where(html[data-style-screen="admin-orders"]) .order-form-section-head h3 {
-  margin: 0;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 18px;
-  font-weight: 400
-}
-
-:where(html[data-style-screen="admin-orders"]) .order-form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 13px
-}
-
-:where(html[data-style-screen="admin-orders"]) .order-form-grid .wide {
-  grid-column: 1/-1
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-order-form label small {
-  margin-left: 5px;
-  color: var(--muted);
-  font-size: 8px;
-  font-weight: 500;
-  text-transform: none;
-  letter-spacing: 0
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-items {
-  padding: 18px 19px;
-  border-radius: 14px;
-  background: #fbfcf8
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-items-head {
-  margin-bottom: 15px
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-items-head .eyebrow {
-  margin: 0 0 4px;
-  font-size: 7px
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-items-head h3 {
-  font-size: 18px
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-items-head .secondary-button {
-  min-height: 40px;
-  border-radius: 9px
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-item {
-  grid-template-columns: minmax(0, 1fr) 88px auto;
-  align-items: center;
-  padding: 8px;
-  border-color: #e0e2d8;
-  border-radius: 10px;
-  background: #fff
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-item input[type=number] {
-  text-align: center;
-  font-weight: 700
 }
 
 :where(html[data-style-screen="admin-orders"]) .order-notes-section label {
@@ -362,212 +123,6 @@
 
 :where(html[data-style-screen="admin-orders"]) .order-notes-section textarea {
   min-height: 78px !important
-}
-
-:where(html[data-style-screen="admin-orders"]) .order-form-actions {
-  position: sticky;
-  bottom: -1px;
-  z-index: 2;
-  margin: 2px -2px -2px;
-  padding: 13px 2px 2px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--surface) 28%)
-}
-
-:where(html[data-style-screen="admin-orders"]) .order-form-actions .primary-button,
-:where(html[data-style-screen="admin-orders"]) .order-form-actions .secondary-button {
-  min-height: 44px;
-  border-radius: 9px
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-order-form+.order-form-actions {
-  border: 0
-}
-
-@media(max-width:650px) {
-  :where(html[data-style-screen="admin-orders"]) .order-form-grid {
-    grid-template-columns: 1fr
-  }
-
-  :where(html[data-style-screen="admin-orders"]) .order-form-grid .wide {
-    grid-column: auto
-  }
-
-  :where(html[data-style-screen="admin-orders"]) .order-form-section,
-:where(html[data-style-screen="admin-orders"]) .manual-items {
-    padding: 15px
-  }
-
-  :where(html[data-style-screen="admin-orders"]) .manual-item {
-    grid-template-columns: 1fr 76px
-  }
-
-  :where(html[data-style-screen="admin-orders"]) .manual-item .secondary-button {
-    grid-column: 1/-1
-  }
-
-  :where(html[data-style-screen="admin-orders"]) .order-form-actions {
-    position: static
-  }
-}
-:where(html[data-style-screen="admin-orders"]) .manual-product-items {
-  display: grid;
-  gap: 10px
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-product-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 110px auto;
-  gap: 10px;
-  align-items: end;
-  padding: 12px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--surface)
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-product-row label {
-  display: grid;
-  gap: 6px
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-qty input {
-  text-align: center
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-remove {
-  min-height: 42px
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-add-item {
-  justify-self: start;
-  margin-top: 2px
-}
-
-@media(max-width:650px) {
-  :where(html[data-style-screen="admin-orders"]) .manual-product-row {
-    grid-template-columns: 1fr 90px
-  }
-
-  :where(html[data-style-screen="admin-orders"]) .manual-remove {
-    grid-column: 1/-1
-  }
-
-  :where(html[data-style-screen="admin-orders"]) .manual-add-item {
-    width: 100%
-  }
-}
-:where(html[data-style-screen="admin-orders"]) .manual-items-section-head {
-  align-items: center
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-items-section-head .manual-add-item {
-  margin-left: auto;
-  flex: 0 0 auto
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-items-table {
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--surface)
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-items-table table {
-  width: 100%;
-  border-collapse: collapse
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-items-table th {
-  padding: 10px 12px;
-  background: #f6f6f1;
-  font-size: 8px;
-  font-weight: 800;
-  letter-spacing: .09em;
-  text-transform: uppercase;
-  color: var(--muted);
-  text-align: left
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-items-table th:nth-child(2) {
-  width: 120px
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-items-table th:last-child {
-  width: 70px;
-  text-align: center
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-items-table td {
-  padding: 9px 10px;
-  border-top: 1px solid var(--border)
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-items-table select,
-:where(html[data-style-screen="admin-orders"]) .manual-items-table input {
-  box-sizing: border-box;
-  width: 100%;
-  min-height: 42px;
-  padding: 9px 11px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: #fff;
-  font: inherit;
-  font-size: 11px;
-  color: var(--text)
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-items-table select:focus,
-:where(html[data-style-screen="admin-orders"]) .manual-items-table input:focus {
-  outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(63, 80, 56, .08)
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-items-table .manual-qty-input {
-  text-align: center;
-  font-weight: 700
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-items-table .icon-button:disabled {
-  opacity: .3;
-  cursor: not-allowed
-}
-
-@media(max-width:650px) {
-  :where(html[data-style-screen="admin-orders"]) .manual-items-section-head {
-    align-items: flex-start
-  }
-
-  :where(html[data-style-screen="admin-orders"]) .manual-items-section-head .manual-add-item {
-    margin-left: 0
-  }
-
-  :where(html[data-style-screen="admin-orders"]) .manual-items-table {
-    overflow-x: auto
-  }
-
-  :where(html[data-style-screen="admin-orders"]) .manual-items-table table {
-    min-width: 520px
-  }
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-items-table th:nth-child(2) {
-  width: auto
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-items-table th:nth-child(3) {
-  width: 110px
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-items-table th:nth-child(4) {
-  width: 70px;
-  text-align: center
-}
-
-:where(html[data-style-screen="admin-orders"]) .manual-items-table select:disabled {
-  background: #f3f4ef;
-  color: var(--muted);
-  cursor: not-allowed
 }
 :where(html[data-style-screen="admin-orders"]) .manual-order-items-section {
   padding: 0;
@@ -988,27 +543,11 @@
   overflow: visible
 }
 
-:where(html[data-style-screen="admin-orders"]) .order-detail,
-:where(html[data-style-screen="admin-orders"]) .order-detail-grid,
-:where(html[data-style-screen="admin-orders"]) .order-detail-grid>section {
+:where(html[data-style-screen="admin-orders"]) .order-detail {
   min-width: 0;
   max-width: 100%
 }
 :where(html[data-style-screen="admin-orders"]) .order-detail {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  overflow-x: hidden !important
-}
-
-:where(html[data-style-screen="admin-orders"]) .order-detail .order-detail-grid {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  overflow-x: hidden !important
-}
-
-:where(html[data-style-screen="admin-orders"]) .order-detail .order-detail-grid>section {
   width: 100%;
   max-width: 100%;
   min-width: 0;
@@ -1032,15 +571,6 @@
   max-width: none !important;
   overflow: visible !important
 }
-:where(html[data-style-screen="admin-orders"]) .order-detail .order-detail-grid {
-  grid-template-columns: minmax(0, 1fr) minmax(280px, .95fr) !important;
-  gap: 28px !important;
-  align-items: start !important
-}
-
-:where(html[data-style-screen="admin-orders"]) .order-detail .order-detail-grid>section:first-child {
-  min-width: 0 !important
-}
 
 :where(html[data-style-screen="admin-orders"]) .order-detail .order-history:not(.production-history) {
   display: block !important;
@@ -1063,11 +593,6 @@
   bottom: 0 !important;
   width: 1px !important;
   height: auto !important
-}
-
-:where(html[data-style-screen="admin-orders"]) .order-detail .production-history-title {
-  margin: 8px 0 8px !important;
-  padding-top: 18px !important
 }
 
 :where(html[data-style-screen="admin-orders"]) .order-detail .production-history-scroll {
@@ -1118,10 +643,6 @@
 }
 
 @media(max-width:760px) {
-  :where(html[data-style-screen="admin-orders"]) .order-detail .order-detail-grid {
-    grid-template-columns: 1fr !important;
-    gap: 22px !important
-  }
 
   :where(html[data-style-screen="admin-orders"]) .order-detail .production-history>div {
     flex-basis: 165px !important;

@@ -50,7 +50,6 @@
   border: 1px solid var(--border)
 }
 
-:where(html[data-style-screen="admin-audit"]) .audit-action.insert,
 :where(html[data-style-screen="admin-audit"]) .audit-action.create {
   color: #38603f;
   background: #edf5ec;

@@ -1,36 +1,5 @@
 /* admin/users: rules are isolated to their route or application area. */
 
-:where(html[data-style-screen="admin-users"]) .users-tabs {
-  display: flex;
-  gap: 6px;
-  margin: 0 0 22px;
-  padding: 4px;
-  width: max-content;
-  border: 1px solid var(--border);
-  border-radius: 9px;
-  background: var(--surface-2)
-}
-
-:where(html[data-style-screen="admin-users"]) .users-tabs button {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  min-height: 38px;
-  padding: 8px 14px;
-  border: 0;
-  border-radius: 6px;
-  background: transparent;
-  color: var(--muted);
-  font-weight: 700;
-  cursor: pointer
-}
-
-:where(html[data-style-screen="admin-users"]) .users-tabs button.active {
-  background: var(--surface);
-  color: var(--text);
-  box-shadow: 0 1px 4px #00000012
-}
-
 :where(html[data-style-screen="admin-users"]) .roles-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -77,56 +46,6 @@
   font-size: 10px
 }
 
-:where(html[data-style-screen="admin-users"]) .role-permissions {
-  display: grid;
-  gap: 12px
-}
-
-:where(html[data-style-screen="admin-users"]) .role-permissions p {
-  margin: 3px 0 0
-}
-
-:where(html[data-style-screen="admin-users"]) .permission-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
-  max-height: 390px;
-  overflow: auto;
-  padding: 2px
-}
-
-:where(html[data-style-screen="admin-users"]) .permission-check {
-  display: flex !important;
-  align-items: flex-start !important;
-  gap: 10px;
-  padding: 11px !important;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--surface)
-}
-
-:where(html[data-style-screen="admin-users"]) .permission-check input {
-  width: 17px !important;
-  height: 17px !important;
-  min-height: 0 !important;
-  margin-top: 2px
-}
-
-:where(html[data-style-screen="admin-users"]) .permission-check span {
-  display: grid;
-  gap: 2px
-}
-
-:where(html[data-style-screen="admin-users"]) .permission-check strong {
-  font-size: 11px
-}
-
-:where(html[data-style-screen="admin-users"]) .permission-check small {
-  font-size: 9px;
-  color: var(--muted);
-  font-weight: 400
-}
-
 :where(html[data-style-screen="admin-users"]) .staff-editor .nested-toggle-card {
   margin: 0 !important
 }
@@ -134,19 +53,6 @@
 @media(max-width:760px) {
   :where(html[data-style-screen="admin-users"]) .roles-grid {
     grid-template-columns: 1fr
-  }
-
-  :where(html[data-style-screen="admin-users"]) .permission-grid {
-    grid-template-columns: 1fr
-  }
-
-  :where(html[data-style-screen="admin-users"]) .users-tabs {
-    width: 100%
-  }
-
-  :where(html[data-style-screen="admin-users"]) .users-tabs button {
-    flex: 1;
-    justify-content: center
   }
 
   :where(html[data-style-screen="admin-users"]) .users-roles-page>.table-wrap {
@@ -161,12 +67,6 @@
   width: min(760px, calc(100vw - 32px)) !important;
   height: min(860px, calc(100dvh - 40px)) !important;
   max-height: calc(100dvh - 40px) !important
-}
-
-:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .modal-body {
-  height: calc(100% - 70px);
-  min-height: 0;
-  overflow: hidden
 }
 
 :where(html[data-style-screen="admin-users"]) .role-editor-modern {
@@ -465,16 +365,6 @@
     height: calc(100dvh - 40px) !important
   }
 
-  :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .modal-body {
-    height: calc(100% - 78px) !important;
-    min-height: 0;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior-y: contain;
-    touch-action: pan-y
-  }
-
   :where(html[data-style-screen="admin-users"]) .role-editor-modern {
     display: flex !important;
     flex-direction: column;
@@ -765,18 +655,6 @@
   flex: 0 0 auto !important
 }
 
-:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern)>.modal-body {
-  display: block !important;
-  flex: 1 1 auto !important;
-  height: auto !important;
-  min-height: 0 !important;
-  overflow-y: auto !important;
-  overflow-x: hidden !important;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior-y: contain !important;
-  touch-action: pan-y !important
-}
-
 :where(html[data-style-screen="admin-users"]) .role-editor-modern {
   display: flex !important;
   flex-direction: column !important;
@@ -872,9 +750,6 @@
 }
 
 @media(min-width:761px) {
-  :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern)>.modal-body {
-    padding-bottom: 0 !important
-  }
 
   :where(html[data-style-screen="admin-users"]) .role-editor-modern {
     padding-bottom: 0 !important
@@ -889,10 +764,6 @@
   :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) {
     height: calc(100dvh - 24px) !important;
     max-height: calc(100dvh - 24px) !important
-  }
-
-  :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern)>.modal-body {
-    padding-bottom: 0 !important
   }
 
   :where(html[data-style-screen="admin-users"]) .role-editor-modern {
@@ -925,15 +796,6 @@
 
 :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern)>.modal-head {
   flex: 0 0 auto !important
-}
-
-:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern)>.modal-body {
-  display: flex !important;
-  flex: 1 1 auto !important;
-  min-height: 0 !important;
-  height: auto !important;
-  overflow: hidden !important;
-  padding-bottom: 0 !important
 }
 
 :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .role-editor-modern {
