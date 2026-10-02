@@ -74,7 +74,7 @@
 }
 @media(max-width:760px) {
   :where(html[data-style-screen="admin-products"]) .modal:has(.detail-stack) {
-    overflow-x: hidden !important;
+    overflow-x: hidden;
     max-width: calc(100vw - 20px)
   }
 
@@ -88,20 +88,20 @@
 
   :where(html[data-style-screen="admin-products"]) .modal:has(.detail-stack) .table-wrap {
     display: block;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-x: contain;
     touch-action: pan-x pan-y
   }
 
-  :where(html[data-style-screen="admin-products"]) .modal:has(.detail-stack) .table-wrap table {
-    width: max-content !important;
-    min-width: 760px !important;
-    max-width: none !important
+  :where(html[data-style-screen="admin-products"]) .admin .modal:has(.detail-stack) .table-section>.table-wrap table {
+    width: max-content;
+    min-width: 760px;
+    max-width: none
   }
 
   :where(html[data-style-screen="admin-products"]) .modal:has(.detail-stack) .table-wrap th,
@@ -128,7 +128,7 @@
 }
 
 :where(html[data-style-screen="admin-products"]) .product-toggle-grid>label {
-  display: flex !important;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
@@ -253,14 +253,14 @@
   display: block;
   width: 100%;
   max-width: 100%;
-  overflow-x: auto !important;
+  overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain
 }
 
 :where(html[data-style-screen="admin-products"]) .product-edit-shell .table-section>.table-wrap table {
-  width: max-content !important;
+  width: max-content;
   min-width: 100%
 }
 
@@ -288,7 +288,7 @@
 }
 
 :where(html[data-style-screen="admin-products"]) .product-subsection-head {
-  align-items: flex-end !important;
+  align-items: flex-end;
   margin-bottom: 14px
 }
 
@@ -310,9 +310,9 @@
 }
 
 :where(html[data-style-screen="admin-products"]) .product-subsection .table-wrap {
-  border-radius: 12px !important;
-  border-color: #e4e0d8 !important;
-  box-shadow: none !important
+  border-radius: 12px;
+  border-color: #e4e0d8;
+  box-shadow: none
 }
 
 :where(html[data-style-screen="admin-products"]) .product-subsection .table-thumb {
@@ -343,8 +343,8 @@
 }
 
 @media(max-width:760px) {
-  :where(html[data-style-screen="admin-products"]) .product-subsection-head {
-    align-items: flex-start !important;
+  :where(html[data-style-screen="admin-products"]) .admin .product-details-shell .product-subsection-head {
+    align-items: flex-start;
     gap: 12px
   }
 
@@ -354,31 +354,31 @@
 }
 
 :where(html[data-style-screen="admin-products"]) .modal-backdrop:has(.modal-backdrop)>.modal>.product-edit-shell {
-  width: 100% !important;
-  min-width: 0 !important
+  width: 100%;
+  min-width: 0
 }
 :where(html[data-style-screen="admin-products"]) .product-images-section>.table-wrap {
-  background: transparent !important
+  background: transparent
 }
 
 :where(html[data-style-screen="admin-products"]) .product-images-section>.table-wrap table {
-  background: transparent !important
+  background: transparent
 }
 
 :where(html[data-style-screen="admin-products"]) .product-images-section>.table-wrap thead,
 :where(html[data-style-screen="admin-products"]) .product-images-section>.table-wrap thead tr,
 :where(html[data-style-screen="admin-products"]) .product-images-section>.table-wrap th {
-  background: #f5f3ee !important
+  background: #f5f3ee
 }
 
 :where(html[data-style-screen="admin-products"]) .product-images-section>.table-wrap tbody,
 :where(html[data-style-screen="admin-products"]) .product-images-section>.table-wrap tbody tr,
 :where(html[data-style-screen="admin-products"]) .product-images-section>.table-wrap td {
-  background: var(--yaqeen-paper) !important
+  background: var(--yaqeen-paper)
 }
 
 :where(html[data-style-screen="admin-products"]) .product-images-section>.table-wrap tbody tr:hover td {
-  background: var(--yaqeen-paper) !important
+  background: var(--yaqeen-paper)
 }
 :where(html[data-style-screen="admin-products"]) .product-modern-form .simple-inventory-section .product-form-section-head {
   align-self: start
@@ -394,7 +394,7 @@
 
 :where(html[data-style-screen="admin-products"]) .product-modern-form .simple-inventory-section select,
 :where(html[data-style-screen="admin-products"]) .product-modern-form .simple-inventory-section input {
-  background: var(--yaqeen-paper) !important
+  background: var(--yaqeen-paper)
 }
 
 :where(html[data-style-screen="admin-products"]) .product-modern-form .simple-inventory-section small {
@@ -431,8 +431,8 @@
   min-height: 0;
   max-height: none;
   padding: 0 24px 24px;
-  overflow-y: auto !important;
-  overflow-x: hidden !important;
+  overflow-y: auto;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch
 }
 
@@ -470,14 +470,14 @@
   display: block;
   width: 100%;
   max-width: 100%;
-  overflow-x: auto !important;
+  overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain
 }
 
 :where(html[data-style-screen="admin-products"]) .product-view-shell .table-section>.table-wrap table {
-  width: max-content !important;
+  width: max-content;
   min-width: 100%
 }
 
@@ -504,10 +504,10 @@
     grid-template-columns: 1fr
   }
 }
-:where(html[data-style-screen="admin-products"]) .admin .variant-active-inline {
-  align-self: start !important;
-  min-height: 66px !important;
-  margin: 0 !important
+:where(html[data-style-screen="admin-products"]) .admin .modal .editor-form label.variant-active-inline {
+  align-self: start;
+  min-height: 66px;
+  margin: 0
 }
 
 @media(max-width:760px) {
@@ -517,89 +517,91 @@
 }
 
 :where(html[data-style-screen="admin-products"]) .admin .product-toggle-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 10px !important
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px
 }
 
 :where(html[data-style-screen="admin-products"]) .admin .product-toggle-grid>label {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 16px !important;
-  min-height: 68px !important;
-  padding: 12px 14px !important;
-  text-align: left !important
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 68px;
+  padding: 12px 14px;
+  text-align: left
 }
 
 :where(html[data-style-screen="admin-products"]) .admin .product-toggle-grid>label>div {
-  display: grid !important;
-  gap: 2px !important;
-  text-align: left !important
+  display: grid;
+  gap: 2px;
+  text-align: left
 }
 
 :where(html[data-style-screen="admin-products"]) .admin .product-toggle-grid .form-toggle {
-  position: relative !important;
-  display: inline-block !important;
-  flex: 0 0 44px !important;
-  width: 44px !important;
-  height: 26px !important;
-  min-height: 26px !important;
-  margin: 0 !important;
-  padding: 0 !important
+  position: relative;
+  display: inline-block;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 26px;
+  min-height: 26px;
+  margin: 0;
+  padding: 0
 }
 
 :where(html[data-style-screen="admin-products"]) .admin .product-toggle-grid .form-toggle>input {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  min-width: 1px !important;
-  min-height: 1px !important;
-  opacity: 0 !important
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  min-width: 1px;
+  min-height: 1px;
+  opacity: 0
 }
 
 :where(html[data-style-screen="admin-products"]) .admin .product-toggle-grid .toggle-track {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 44px !important;
-  height: 26px !important
+  position: absolute;
+  inset: 0;
+  width: 44px;
+  height: 26px
 }
 
-:where(html[data-style-screen="admin-products"]) .admin .product-toggle-grid>label::after {
-  display: none !important;
-  content: none !important
+:where(html[data-style-screen="admin-products"]) .admin .modal .editor-form .product-toggle-grid>label::after {
+  display: none;
+  content: none
 }
 
 @media(max-width:760px) {
   :where(html[data-style-screen="admin-products"]) .admin .product-toggle-grid {
-    grid-template-columns: 1fr !important
+    grid-template-columns: 1fr
   }
 }
-:where(html[data-style-screen="admin-products"]) .admin .variant-active-inline {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 14px !important;
-  min-height: 70px !important;
-  padding: 12px 14px !important;
-  text-align: left !important
+:where(html[data-style-screen="admin-products"]) .admin .modal .editor-form label.variant-active-inline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 70px;
+  padding: 12px 14px;
+  text-align: left
 }
 
 :where(html[data-style-screen="admin-products"]) .admin .variant-active-inline>div {
-  display: grid !important;
-  gap: 3px !important;
-  text-align: left !important
+  display: grid;
+  gap: 3px;
+  text-align: left
 }
 
-:where(html[data-style-screen="admin-products"]) .admin .variant-active-inline .form-toggle {
-  flex: 0 0 44px !important;
-  margin: 0 !important
+:where(html[data-style-screen="admin-products"]) .admin .modal .editor-form .variant-active-inline .form-toggle {
+  flex: 0 0 44px;
+  height: 26px;
+  min-height: 26px;
+  margin: 0
 }
 
-:where(html[data-style-screen="admin-products"]) .admin .variant-active-inline::after {
-  display: none !important;
-  content: none !important
+:where(html[data-style-screen="admin-products"]) .admin .modal .editor-form .variant-active-inline::after {
+  display: none;
+  content: none
 }
 
 :where(html[data-style-screen="admin-products"]) .variant-images-empty {
@@ -632,16 +634,16 @@
 }
 
 :where(html[data-style-screen="admin-products"]) .variant-image-order button {
-  position: static !important;
-  display: grid !important;
+  position: static;
+  display: grid;
   place-items: center;
-  width: 28px !important;
-  height: 28px !important;
-  padding: 0 !important;
-  border: 1px solid rgba(255, 255, 255, .8) !important;
-  border-radius: 7px !important;
-  background: rgba(255, 253, 249, .94) !important;
-  color: var(--text) !important;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, .8);
+  border-radius: 7px;
+  background: rgba(255, 253, 249, .94);
+  color: var(--text);
   box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
   cursor: pointer
 }
@@ -652,14 +654,14 @@
 }
 
 :where(html[data-style-screen="admin-products"]) .variant-image-tile>.variant-image-remove {
-  top: 7px !important;
-  right: 7px !important
+  top: 7px;
+  right: 7px
 }
 :where(html[data-style-screen="admin-products"]) .product-subsection>.table-wrap {
-  overflow-x: auto !important;
-  overflow-y: visible !important;
-  padding-bottom: 42px !important;
-  margin-bottom: -42px !important
+  overflow-x: auto;
+  overflow-y: visible;
+  padding-bottom: 42px;
+  margin-bottom: -42px
 }
 
 :where(html[data-style-screen="admin-products"]) .product-subsection>.table-wrap tbody tr:last-child td {
@@ -667,7 +669,7 @@
 }
 
 :where(html[data-style-screen="admin-products"]) .product-subsection>.table-wrap .icon-button[data-tooltip]::after {
-  z-index: 1200 !important
+  z-index: 1200
 }
 :where(html[data-style-screen="admin-products"]) .variant-images-list {
   display: grid;
@@ -726,16 +728,16 @@
 }
 
 :where(html[data-style-screen="admin-products"]) .variant-image-row .variant-image-order button {
-  position: static !important;
-  display: grid !important;
+  position: static;
+  display: grid;
   place-items: center;
-  width: 32px !important;
-  height: 32px !important;
-  padding: 0 !important;
-  border: 1px solid var(--border) !important;
-  border-radius: 8px !important;
-  background: #f8f7f2 !important;
-  color: var(--primary) !important;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #f8f7f2;
+  color: var(--primary);
   box-shadow: none;
   cursor: pointer
 }
@@ -746,17 +748,17 @@
 }
 
 :where(html[data-style-screen="admin-products"]) .variant-image-row .variant-image-remove {
-  position: static !important;
-  display: grid !important;
+  position: static;
+  display: grid;
   place-items: center;
-  width: 32px !important;
-  height: 32px !important;
-  padding: 0 !important;
-  border: 1px solid #ead2d1 !important;
-  border-radius: 8px !important;
-  background: #fff6f5 !important;
-  color: #a62e32 !important;
-  font-size: 17px !important;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid #ead2d1;
+  border-radius: 8px;
+  background: #fff6f5;
+  color: #a62e32;
+  font-size: 17px;
   cursor: pointer
 }
 
@@ -807,151 +809,151 @@
 }
 
 :where(html[data-style-screen="admin-products"]) .admin .modal-backdrop>.modal>.product-edit-shell {
-  box-sizing: border-box !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
-  overflow-x: hidden !important;
-  overscroll-behavior-x: none !important
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+  overscroll-behavior-x: none
 }
 
 :where(html[data-style-screen="admin-products"]) .admin .modal:not(.modal-confirm)>.detail-stack,
 :where(html[data-style-screen="admin-products"]) .admin .modal:not(.modal-confirm)>.product-edit-shell {
-  flex: 1 1 auto !important;
-  min-height: 0 !important;
-  width: 100% !important;
-  overflow-y: auto !important;
-  overflow-x: hidden !important;
-  -webkit-overflow-scrolling: touch !important;
-  overscroll-behavior: contain !important;
-  padding: 24px !important;
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  padding: 24px;
 }
 
 @media(max-width:760px) {
 
   :where(html[data-style-screen="admin-products"]) .admin .modal:not(.modal-confirm)>.detail-stack,
 :where(html[data-style-screen="admin-products"]) .admin .modal:not(.modal-confirm)>.product-edit-shell {
-    padding: 16px !important
+    padding: 16px
   }
 }
 :where(html[data-style-screen="admin-products"]) .admin .modal:not(.modal-confirm)>:not(.modal-head):not(form):not(.editor-form):not(.product-edit-shell) {
-  box-sizing: border-box !important;
-  min-width: 0 !important;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 :where(html[data-style-screen="admin-products"]) .admin .modal:not(.modal-confirm)>.detail-stack {
-  flex: 1 1 auto !important;
-  min-height: 0 !important;
-  width: 100% !important;
-  overflow-y: auto !important;
-  overflow-x: hidden !important;
-  -webkit-overflow-scrolling: touch !important;
-  overscroll-behavior: contain !important;
-  padding: 24px !important;
-  box-sizing: border-box !important;
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  padding: 24px;
+  box-sizing: border-box;
 }
 
 :where(html[data-style-screen="admin-products"]) .admin .modal:not(.modal-confirm)>.detail-stack>.modal-actions:last-child {
-  position: sticky !important;
-  bottom: -24px !important;
-  z-index: 30 !important;
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 12px !important;
-  width: calc(100% + 48px) !important;
-  max-width: none !important;
-  margin: 16px -24px -24px !important;
-  padding: 14px 24px max(14px, env(safe-area-inset-bottom)) !important;
-  box-sizing: border-box !important;
-  background: var(--surface) !important;
-  border-top: 1px solid var(--border) !important;
-  box-shadow: 0 -10px 22px var(--surface) !important;
+  position: sticky;
+  bottom: -24px;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: calc(100% + 48px);
+  max-width: none;
+  margin: 16px -24px -24px;
+  padding: 14px 24px max(14px, env(safe-area-inset-bottom));
+  box-sizing: border-box;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -10px 22px var(--surface);
 }
 
 @media(max-width:760px) {
 
   :where(html[data-style-screen="admin-products"]) .admin .modal:not(.modal-confirm)>.detail-stack {
-    padding: 16px !important
+    padding: 16px
   }
 
   :where(html[data-style-screen="admin-products"]) .admin .modal:not(.modal-confirm)>.detail-stack>.modal-actions:last-child {
-    bottom: -16px !important;
-    width: calc(100% + 32px) !important;
-    margin: 14px -16px -16px !important;
-    padding: 12px 16px max(12px, env(safe-area-inset-bottom)) !important;
+    bottom: -16px;
+    width: calc(100% + 32px);
+    margin: 14px -16px -16px;
+    padding: 12px 16px max(12px, env(safe-area-inset-bottom));
   }
 }
 :where(html[data-style-screen="admin-products"]) .admin .modal:has(.product-edit-shell)>.product-edit-shell {
-  padding-bottom: 0 !important;
+  padding-bottom: 0;
 }
 
 :where(html[data-style-screen="admin-products"]) .admin .product-edit-shell .product-edit-actions {
-  position: sticky !important;
-  bottom: 0 !important;
-  z-index: 40 !important;
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 12px !important;
-  width: calc(100% + 48px) !important;
-  margin: 0 -24px !important;
-  padding: 14px 24px max(14px, env(safe-area-inset-bottom)) !important;
-  border-top: 1px solid var(--border) !important;
-  background: var(--yaqeen-paper) !important;
-  box-shadow: 0 -10px 22px var(--yaqeen-paper) !important;
+  position: sticky;
+  bottom: 0;
+  z-index: 40;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: calc(100% + 48px);
+  margin: 0 -24px;
+  padding: 14px 24px max(14px, env(safe-area-inset-bottom));
+  border-top: 1px solid var(--border);
+  background: var(--yaqeen-paper);
+  box-shadow: 0 -10px 22px var(--yaqeen-paper);
 }
 
 :where(html[data-style-screen="admin-products"]) .admin .product-edit-shell .product-edit-actions>button {
-  width: 100% !important;
-  min-width: 0 !important;
-  min-height: 46px !important;
-  justify-content: center !important;
+  width: 100%;
+  min-width: 0;
+  min-height: 46px;
+  justify-content: center;
 }
 
 @media(max-width:760px) {
   :where(html[data-style-screen="admin-products"]) .admin .product-edit-shell .product-edit-actions {
-    width: calc(100% + 32px) !important;
-    margin: 0 -16px !important;
-    padding: 12px 16px max(12px, env(safe-area-inset-bottom)) !important;
+    width: calc(100% + 32px);
+    margin: 0 -16px;
+    padding: 12px 16px max(12px, env(safe-area-inset-bottom));
   }
 }
 :where(html[data-style-screen="admin-products"]) .admin .modal:has(>.product-edit-shell) {
-  display: flex !important;
-  flex-direction: column !important;
-  overflow: hidden !important;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 :where(html[data-style-screen="admin-products"]) .admin .modal:has(>.product-edit-shell)>.product-edit-shell {
-  flex: 1 1 auto !important;
-  min-height: 0 !important;
-  overflow-y: auto !important;
-  padding: 0 24px 24px !important;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0 24px 24px;
 }
 
 :where(html[data-style-screen="admin-products"]) .admin .modal:has(>.product-edit-shell)>.product-edit-footer {
-  flex: 0 0 auto !important;
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 12px !important;
-  padding: 14px 24px max(14px, env(safe-area-inset-bottom)) !important;
-  border-top: 1px solid var(--border) !important;
-  background: var(--yaqeen-paper) !important;
-  z-index: 50 !important;
-  box-shadow: 0 -8px 20px rgba(34, 40, 28, .06) !important;
+  flex: 0 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 14px 24px max(14px, env(safe-area-inset-bottom));
+  border-top: 1px solid var(--border);
+  background: var(--yaqeen-paper);
+  z-index: 50;
+  box-shadow: 0 -8px 20px rgba(34, 40, 28, .06);
 }
 
 :where(html[data-style-screen="admin-products"]) .admin .modal:has(>.product-edit-shell)>.product-edit-footer>button {
-  width: 100% !important;
-  min-width: 0 !important;
-  min-height: 46px !important;
-  justify-content: center !important;
+  width: 100%;
+  min-width: 0;
+  min-height: 46px;
+  justify-content: center;
 }
 
 @media(max-width:760px) {
   :where(html[data-style-screen="admin-products"]) .admin .modal:has(>.product-edit-shell)>.product-edit-shell {
-    padding: 0 16px 16px !important
+    padding: 0 16px 16px
   }
 
   :where(html[data-style-screen="admin-products"]) .admin .modal:has(>.product-edit-shell)>.product-edit-footer {
-    padding: 12px 16px max(12px, env(safe-area-inset-bottom)) !important
+    padding: 12px 16px max(12px, env(safe-area-inset-bottom))
   }
 }

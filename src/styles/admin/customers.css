@@ -1,26 +1,26 @@
 /* admin/customers: rules are isolated to their route or application area. */
 :where(html[data-style-screen="admin-customers"]) .admin .modal:has(.customer-modern-form) {
-  overflow: hidden !important;
-  display: flex !important;
-  flex-direction: column !important;
-  padding: 0 !important
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0
 }
 
 :where(html[data-style-screen="admin-customers"]) .admin .modal:has(.customer-modern-form)>.modal-head {
-  flex: 0 0 auto !important;
-  margin: 0 !important
+  flex: 0 0 auto;
+  margin: 0
 }
 
 :where(html[data-style-screen="admin-customers"]) .admin .modal:has(.customer-modern-form)>.customer-modern-form {
-  flex: 1 1 auto !important;
-  min-height: 0 !important;
-  overflow-y: auto !important;
-  overflow-x: hidden !important
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden
 }
 
 :where(html[data-style-screen="admin-customers"]) .admin .customer-modern-form .product-form-actions {
-  position: sticky !important;
-  bottom: 0 !important;
-  z-index: 5 !important;
-  background: var(--surface) !important
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+  background: var(--surface)
 }

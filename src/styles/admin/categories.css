@@ -50,9 +50,9 @@
   }
 
   :where(html[data-style-screen="admin-categories"]) .modal .category-editor .category-active {
-    display: grid !important;
+    display: grid;
     grid-template-rows: auto 46px;
-    align-items: start !important;
+    align-items: start;
     align-content: end;
     gap: 6px;
     min-width: 104px;
@@ -83,7 +83,7 @@
   }
 
   :where(html[data-style-screen="admin-categories"]) .modal .category-editor .category-active {
-    display: grid !important;
+    display: grid;
     grid-template-rows: auto auto;
     gap: 6px
   }
@@ -94,13 +94,13 @@
   }
 }
 
-:where(html[data-style-screen="admin-categories"]) .category-editor-modern {
-  grid-template-columns: minmax(0, 1fr) 220px !important;
-  gap: 22px !important
+:where(html[data-style-screen="admin-categories"]) .modal .category-editor.category-editor-modern {
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 22px
 }
 
-:where(html[data-style-screen="admin-categories"]) .category-editor-modern .category-name,
-:where(html[data-style-screen="admin-categories"]) .category-editor-modern .category-active {
+:where(html[data-style-screen="admin-categories"]) .modal .category-editor.category-editor-modern .category-name,
+:where(html[data-style-screen="admin-categories"]) .modal .category-editor.category-editor-modern .category-active {
   align-content: start
 }
 
@@ -113,8 +113,8 @@
   margin-top: -2px
 }
 
-:where(html[data-style-screen="admin-categories"]) .category-editor-modern .category-active {
-  padding: 0 !important
+:where(html[data-style-screen="admin-categories"]) .modal .category-editor.category-editor-modern .category-active {
+  padding: 0
 }
 
 :where(html[data-style-screen="admin-categories"]) .toggle-row {
@@ -130,13 +130,13 @@
   font-weight: 600
 }
 
-:where(html[data-style-screen="admin-categories"]) .category-editor-modern .modal-actions {
+:where(html[data-style-screen="admin-categories"]) .modal .category-editor.category-editor-modern .modal-actions {
   padding-top: 6px;
   border-top: 1px solid #eee9df
 }
 
-:where(html[data-style-screen="admin-categories"]) .category-editor-modern .modal-actions .secondary-button,
-:where(html[data-style-screen="admin-categories"]) .category-editor-modern .modal-actions .primary-button {
+:where(html[data-style-screen="admin-categories"]) .modal .category-editor.category-editor-modern .modal-actions .secondary-button,
+:where(html[data-style-screen="admin-categories"]) .modal .category-editor.category-editor-modern .modal-actions .primary-button {
   min-width: 130px
 }
 
@@ -165,8 +165,8 @@
 
 @media(max-width:760px) {
 
-  :where(html[data-style-screen="admin-categories"]) .category-editor-modern {
-    grid-template-columns: 1fr !important
+  :where(html[data-style-screen="admin-categories"]) .modal .category-editor.category-editor-modern {
+    grid-template-columns: 1fr
   }
 
   :where(html[data-style-screen="admin-categories"]) .category-view-modern {
@@ -178,21 +178,27 @@
   }
 }
 
-:where(html[data-style-screen="admin-categories"]) .category-editor-modern {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
-  column-gap: 18px !important;
-  row-gap: 18px !important;
-  align-items: start
+:where(html[data-style-screen="admin-categories"]) .modal .category-editor.category-editor-modern {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 18px;
+  row-gap: 18px;
+  align-items: end
 }
 
-:where(html[data-style-screen="admin-categories"]) .category-editor-modern>label {
-  display: grid !important;
-  grid-template-rows: 18px 32px 44px !important;
-  gap: 0 !important;
+@media(min-width:761px) {
+  :where(html[data-style-screen="admin-categories"]) .modal .category-editor.category-editor-modern .category-active {
+    align-items: start
+  }
+}
+
+:where(html[data-style-screen="admin-categories"]) .modal .category-editor.category-editor-modern>label {
+  display: grid;
+  grid-template-rows: 18px 32px 44px;
+  gap: 0;
   align-content: start
 }
 
-:where(html[data-style-screen="admin-categories"]) .category-editor-modern .field-help {
+:where(html[data-style-screen="admin-categories"]) .modal .category-editor.category-editor-modern .field-help {
   display: flex;
   align-items: flex-start;
   height: 32px;
@@ -200,16 +206,16 @@
   line-height: 1.35
 }
 
-:where(html[data-style-screen="admin-categories"]) .category-editor-modern input {
-  height: 44px !important
+:where(html[data-style-screen="admin-categories"]) .modal .category-editor.category-editor-modern input {
+  height: 44px
 }
 
-:where(html[data-style-screen="admin-categories"]) .category-editor-modern .toggle-row {
+:where(html[data-style-screen="admin-categories"]) .modal .category-editor.category-editor-modern .toggle-row {
   height: 44px;
   min-height: 44px
 }
 
-:where(html[data-style-screen="admin-categories"]) .category-editor-modern .modal-actions {
+:where(html[data-style-screen="admin-categories"]) .modal .category-editor.category-editor-modern .modal-actions {
   margin-top: 0;
   padding-top: 18px;
   min-height: 63px
@@ -217,17 +223,18 @@
 
 @media(max-width:760px) {
 
-  :where(html[data-style-screen="admin-categories"]) .category-editor-modern {
-    grid-template-columns: 1fr !important;
-    gap: 16px !important
+  :where(html[data-style-screen="admin-categories"]) .modal .category-editor.category-editor-modern {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    align-items: start
   }
 
-  :where(html[data-style-screen="admin-categories"]) .category-editor-modern>label {
-    grid-template-rows: auto auto 44px !important;
-    gap: 5px !important
+  :where(html[data-style-screen="admin-categories"]) .modal .category-editor.category-editor-modern>label {
+    grid-template-rows: auto auto 44px;
+    gap: 5px
   }
 
-  :where(html[data-style-screen="admin-categories"]) .category-editor-modern .field-help {
+  :where(html[data-style-screen="admin-categories"]) .modal .category-editor.category-editor-modern .field-help {
     height: auto;
     min-height: 16px
   }

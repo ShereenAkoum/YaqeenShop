@@ -51,4 +51,20 @@ Set `VISUAL_CHECK_ROUTES=/search` and `VISUAL_CHECK_SEARCH_QUERY` to type a quer
 
 `VISUAL_CHECK_STORE_CHROME=1` clicks the footer groups and opens the mobile navigation drawer at widths up to 760px, comparing their interactive states against the baseline.
 
+For the Inbox Newsletter tab, set `VISUAL_CHECK_ADMIN=1`, `VISUAL_CHECK_ROUTES=inbox`, and `VISUAL_CHECK_INBOX_NEWSLETTER=1`. This clicks the tab in the local admin fixture.
+
+Saved-design dialogs use `VISUAL_CHECK_ADMIN=1`, `VISUAL_CHECK_SAVED_DESIGNS=1`, and `VISUAL_CHECK_ROUTES=designs-edit,designs-view`. Local responses provide a saved design with PDF, image, and URL asset rows; no real records are accessed or saved. Shared table overflow, border-collapse, and desktop modal-height priority excludes the design editor so its screen rules can preserve the layout without `!important`.
+
+Saved-message detail checks use `VISUAL_CHECK_ADMIN=1`, `VISUAL_CHECK_SAVED_MESSAGES=1`, and `VISUAL_CHECK_ROUTES=inbox-view`. Add `VISUAL_CHECK_MESSAGE_LONG=1` for a long multiline message with an unbroken reference to exercise wrapping and scrolling. Only local fixture messages are used; no replies are sent.
+
+Saved inventory checks use `VISUAL_CHECK_ADMIN=1`, `VISUAL_CHECK_SAVED_INVENTORY=1`, and `VISUAL_CHECK_ROUTES=inventory-view,inventory-adjust`. A local record exercises the detail cards and adjustment form without submitting stock changes. The shared mobile modal width gives the inventory view control of its screen-specific width.
+
+Operations checks use `VISUAL_CHECK_ADMIN=1` and `VISUAL_CHECK_OPERATIONS=1` with `VISUAL_CHECK_ROUTES=production,production-list,deliveries,deliveries-view,deliveries-edit,payments,payments-view,payments-edit`. Local fixtures cover populated production stages, payment badges, stock details, and fulfillment view/edit dialogs without moving jobs or saving records. Operations CSS uses scoped selectors instead of `!important`; production overrides stay inside `.production-page`.
+
+Orders checks use `VISUAL_CHECK_ADMIN=1`, `VISUAL_CHECK_ORDERS=1`, and `VISUAL_CHECK_ROUTES=orders,orders-dialog,orders-view,orders-edit`. Local fixtures include order items, totals, status and production histories. Set `VISUAL_CHECK_ORDER_ITEM=1` with `orders-dialog,orders-edit` to open nested Add item dialogs. No orders or notes are saved. Orders CSS uses normal declarations with specific selectors for empty item rows and quantity inputs.
+
+Products checks use `VISUAL_CHECK_ADMIN=1`, `VISUAL_CHECK_PRODUCTS=1`, and `VISUAL_CHECK_ROUTES=products,products-dialog,products-view,products-edit`. A local product and variant exercise visibility toggles and stock tables. Add `VISUAL_CHECK_PRODUCT_VARIANT=1` with `products-edit` to check the nested Add variant form without saving. Shared table minimum-width priority excludes product detail tables, allowing Products CSS to preserve their mobile width without `!important`.
+
+Reports checks use `VISUAL_CHECK_ADMIN=1` and `VISUAL_CHECK_ROUTES=reports`. Add `VISUAL_CHECK_REPORTS=1` for populated metrics and all five report tables, including more than one page of products. Reports CSS has no `!important`; shared mobile font priority excludes report date inputs to preserve their 14px size.
+
 Set `VISUAL_CHECK_ADMIN=1` to mount the actual admin components with empty local API fixtures and exercise add dialogs. Temporary fixture files are removed after the run. Set `VISUAL_CHECK_CART=1` to populate cart and confirmation data only in the test browser, or `VISUAL_CHECK_PRODUCT=1` to include a published product from the shop. No order is submitted. `VISUAL_CHECK_BROWSER` selects `chromium` (default), `firefox`, or `webkit`; `VISUAL_CHECK_ROUTES` optionally limits the routes as a comma-separated list. Authenticated staff flows and saved-record edit/view dialogs require separate checks with an appropriate test account or richer fixtures.

@@ -100,28 +100,28 @@
 }
 @media(max-width:760px) {
   :where(html[data-style-screen="admin-reports"]) .report-date-card {
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 12px !important;
-    align-items: end !important
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    align-items: end
   }
 
   :where(html[data-style-screen="admin-reports"]) .report-date-card label {
-    min-width: 0 !important;
-    width: 100% !important
+    min-width: 0;
+    width: 100%
   }
 
-  :where(html[data-style-screen="admin-reports"]) .report-date-card label input {
-    box-sizing: border-box !important;
-    min-width: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    font-size: 14px !important;
-    padding: 9px 8px !important
+  :where(html[data-style-screen="admin-reports"]) .admin .reports-page .report-date-card label input {
+    box-sizing: border-box;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    font-size: 14px;
+    padding: 9px 8px
   }
 
   :where(html[data-style-screen="admin-reports"]) .report-date-card .primary-button {
-    grid-column: 1/-1 !important;
-    width: 100% !important
+    grid-column: 1/-1;
+    width: 100%
   }
 }

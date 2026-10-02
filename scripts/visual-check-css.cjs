@@ -45,12 +45,13 @@ const fixtureFiles = ['css-visual-fixture.html','scripts/css-visual-fixture.tsx'
 if (adminFixtures) {
   for(const file of fixtureFiles)if(fs.existsSync(file))throw new Error(`Refusing to overwrite existing fixture file: ${file}`);
   const permissions = [...new Set(fs.readdirSync('src/admin').filter(file=>file.endsWith('.tsx')).flatMap(file=>[...fs.readFileSync(`src/admin/${file}`,'utf8').matchAll(/permissions\.includes\('([^']+)'\)/g)].map(match=>match[1])))];
+  permissions.push('deliveries.edit','payments.edit');
   const imports = Object.entries(modules).map(([screen,[file,exportName]])=>`import {${exportName} as ${screen}} from '../src/admin/${file}';`).join('\n');
   const moduleMap = `{${Object.keys(modules).join(',')}}`;
   fs.writeFileSync(fixtureFiles[0], '<html><body><div id="root"></div><script type="module" src="/scripts/css-visual-fixture.tsx"></script></body></html>');
   fs.writeFileSync(fixtureFiles[1], `import React from 'react';import {createRoot} from 'react-dom/client';import {BrowserRouter} from 'react-router-dom';import '../src/styles.css';import {styleScope} from '../src/styles/routeScope';\n${imports}\nconst screen=new URLSearchParams(location.search).get('screen')||'dashboard';const components:any=${moduleMap};const Component=components[screen];const scope=styleScope('/admin/'+(screen==='dashboard'?'':screen));document.documentElement.dataset.styleArea=scope.area;document.documentElement.dataset.styleScreen=scope.screen;createRoot(document.getElementById('root')!).render(<BrowserRouter><div className="admin"><aside className="sidebar"><div className="brand">YAQEEN</div><nav><a href="#">Dashboard</a><a href="#">Products</a></nav></aside><div className="admin-main"><main id="main"><div className="admin-route-content"><Component permissions={${JSON.stringify(permissions)}} kind={screen==='payments'?'payments':'deliveries'}/></div></main></div></div></BrowserRouter>);`);
 }
-const properties = ['display','position','width','height','margin-top','margin-right','margin-bottom','margin-left','padding-top','padding-right','padding-bottom','padding-left','gap','grid-template-columns','flex-direction','align-items','justify-content','font-family','font-size','font-weight','line-height','letter-spacing','color','background-color','border-top-width','border-top-color','border-radius','overflow-x','overflow-y','z-index','object-fit','opacity','transform'];
+const properties = ['display','position','width','min-width','max-width','box-sizing','height','margin-top','margin-right','margin-bottom','margin-left','padding-top','padding-right','padding-bottom','padding-left','gap','grid-template-columns','flex-direction','flex-basis','flex-grow','flex-shrink','align-items','justify-content','font-family','font-size','font-weight','line-height','letter-spacing','color','background-color','border-top-width','border-top-color','border-radius','overflow-x','overflow-y','z-index','object-fit','opacity','transform'];
 let activeBrowser;
 async function capture(page) {
   return page.evaluate(properties => [...document.querySelectorAll('body *')]
@@ -90,9 +91,38 @@ async function capture(page) {
       await page.route('**/*.supabase.co/**',async route=>{
         const url=new URL(route.request().url());
         let data=[];
+        if(process.env.VISUAL_CHECK_PRODUCTS==='1') {
+          const product={id:'fixture-product',title:'Saved product fixture',sku:'PRD-001',price:20,status:'Active',top_pick:true,description:'A custom printed product.',stock_allocation:5,category_id:null,design_id:null,inventory_item_id:null};
+          if(url.pathname.endsWith('/products')) data=url.searchParams.has('id')?product:[product];
+          if(url.pathname.endsWith('/product_variants')) data=[{id:'fixture-variant',product_id:product.id,sku:'VAR-001',color:'Olive',active:true,price_override:22,stock_allocation:3}];
+        }
+        if (process.env.VISUAL_CHECK_ORDERS === '1') {
+          const item={id:'fixture-item',product_id:'fixture-product',variant_id:null,title:'Custom printed item',sku:'ORD-SKU',color:'Olive',quantity:2,unit_price:20};
+          const order={id:'fixture-order',number:'ORD-001',customer_name:'Fixture Customer',phone:'12345678',email:'fixture@example.com',address:'Fixture Street',city:'Beirut',instructions:'Call on arrival',notes:'Private staff notes',subtotal:40,delivery_fee:5,discount:2,total:43,currency:'USD',status:'Preparing',source:'Website',created_at:'2026-01-01T00:00:00Z',order_items:[item],order_status_history:['Order Received','Preparing'].map((status,index)=>({id:`history-${index}`,status,created_at:`2026-01-0${index+1}T00:00:00Z`})),production_jobs:[{id:'job',production_status_history:['New Order','Design','QC'].map((stage,index)=>({id:`stage-${index}`,stage,created_at:`2026-01-0${index+1}T00:00:00Z`}))}]};
+          if(url.pathname.endsWith('/orders')) data=url.searchParams.has('id')?order:[order];
+          if(url.pathname.endsWith('/order_items')) data=[item];
+          if(url.pathname.endsWith('/products')) data=[{id:'fixture-product',title:item.title,sku:item.sku,price:20,status:'Active',product_variants:[]}];
+        }
+        if (process.env.VISUAL_CHECK_OPERATIONS === '1') {
+          if(url.pathname.endsWith('/production_board')) data=['New Order','QC','Completed'].map((stage,index)=>({id:`fixture-job-${index}`,stage,order_number:'OPS-001',title:'Custom printed item',quantity:2,customer_name:'Fixture Customer',payment_status:['Pending','Paid','Failed'][index],sku:'OPS-SKU',inventory_visible:true,inventory_item_id:'fixture-stock',inventory_title:'Printing stock',inventory_sku:'STOCK-001',inventory_quantity:12,created_at:'2026-01-01T00:00:00Z'}));
+          if(/\/(deliveries|payments)$/.test(url.pathname)) data=[{id:'fixture-fulfillment',status:'Pending',amount:42,courier:'Fixture driver',reference:'OPS-REF',notes:'Handle with care.\nDelivery instructions.',created_at:'2026-01-01T00:00:00Z',orders:{number:'OPS-001',customer_name:'Fixture Customer',phone:'12345678',address:'Fixture Street',city:'Beirut'}}];
+        }
         if(url.pathname.endsWith('/dashboard_stats')) data={new_orders:0,to_print:0,ready_to_pack:0,out_for_delivery:0,revenue:0,low_stock:0};
         if(url.pathname.endsWith('/sales_report')) data={summary:{},products:[],designs:[],payments:[],production:[],delivery:[]};
+        if(url.pathname.endsWith('/sales_report') && process.env.VISUAL_CHECK_REPORTS==='1') data={summary:{orders:12,sales:240,average_order:20},products:Array.from({length:12},(_,index)=>({title:`Printed product ${index+1}`,quantity:index+2,sales:40})),designs:[{code:'DES-001',title:'Saved design',quantity:8}],payments:[{status:'Paid',amount:240,records:12}],production:[{stage:'QC',jobs:5}],delivery:[{status:'Delivered',deliveries:9}]};
         if(url.pathname.endsWith('/website_documents')) data=['navigation','footer','homepage','about','contact','faq'].map(key=>({id:key,key,title:key,draft:{},published:{}}));
+        if (process.env.VISUAL_CHECK_SAVED_DESIGNS === '1') {
+          const assets = ['pdf','image','url'].map((asset_type,index)=>({id:`fixture-asset-${index}`,design_id:'fixture-design',title:`Saved ${asset_type} reference`,asset_type,path:null,url:asset_type==='url'?'https://example.com/design-reference':null,created_at:'2026-01-01T00:00:00Z'}));
+          const design = {id:'fixture-design',name:'Saved design fixture',code:'DES-FIXTURE',created_at:'2026-01-01T00:00:00Z',design_assets:assets};
+          if(url.pathname.endsWith('/designs')) data = url.searchParams.has('id') ? design : [design];
+          if(url.pathname.endsWith('/design_assets')) data = assets;
+        }
+        if (process.env.VISUAL_CHECK_SAVED_MESSAGES === '1' && url.pathname.endsWith('/contact_messages')) {
+          data = [{id:'fixture-message',full_name:'Saved message fixture',email:'fixture@example.com',created_at:'2026-01-01T00:00:00Z',message:process.env.VISUAL_CHECK_MESSAGE_LONG==='1' ? ('A longer customer message with paragraphs and a reference: '+ 'long-reference-'.repeat(30)+'\n\n').repeat(12) : 'Please tell me more about this collection.\nThank you.'}];
+        }
+        if (process.env.VISUAL_CHECK_SAVED_INVENTORY === '1' && url.pathname.endsWith('/inventory_items')) {
+          data = [{id:'fixture-inventory',sku:'INV-FIXTURE',title:'Saved inventory fixture',quantity:12,received_quantity:30,low_stock_threshold:5,image_url:null}];
+        }
         await route.fulfill({status:200,contentType:'application/json',headers:{'access-control-allow-origin':'*','content-range':'0-0/0'},body:JSON.stringify(data)});
       });
     }
@@ -101,9 +131,48 @@ async function capture(page) {
       const errors = [];
       const onError = error => errors.push(error.message);
       page.on('pageerror', onError);
-      const target=adminFixtures?new URL(origin).origin+'/css-visual-fixture.html?screen='+route.replace('-dialog',''):origin+route;
+      const target=adminFixtures?new URL(origin).origin+'/css-visual-fixture.html?screen='+route.replace(/-(?:dialog|edit|view|adjust|list)$/,''):origin+route;
       await page.goto(target, {waitUntil:'networkidle', timeout:45000});
       await page.locator('.brand-loader').first().waitFor({state:'hidden',timeout:15000}).catch(()=>{});
+      if(adminFixtures && /^products-(view|edit)$/.test(route)) {
+        await page.locator(`[data-tooltip="${route.endsWith('-edit')?'Edit':'View'}"]`).first().click();
+        await page.locator('.product-details-shell').waitFor({state:'visible'});
+        await page.locator('.brand-loader').first().waitFor({state:'hidden',timeout:15000}).catch(()=>{});
+        if(process.env.VISUAL_CHECK_PRODUCT_VARIANT==='1') {
+          await page.getByRole('button',{name:'Add variant',exact:true}).click();
+          await page.locator('.modern-nested-form').waitFor({state:'visible'});
+        }
+      }
+      if(adminFixtures && /^orders-(view|edit)$/.test(route)) {
+        await page.locator(`[data-tooltip="${route.endsWith('-edit')?'Edit':'View'}"]`).first().click();
+        await page.locator(route.endsWith('-edit')?'.order-edit-modern':'.order-detail').waitFor({state:'visible'});
+      }
+      if(adminFixtures && route==='production-list') await page.getByRole('button',{name:'List',exact:true}).click();
+      if(adminFixtures && /^(deliveries|payments)-(edit|view)$/.test(route)) {
+        await page.locator(`[data-tooltip="${route.endsWith('-edit')?'Edit':'View'}"]`).first().click();
+        await page.locator(route.endsWith('-edit')?'.fulfillment-form':'.fulfillment-detail').waitFor({state:'visible'});
+      }
+      if (adminFixtures && /^inventory-(view|adjust)$/.test(route)) {
+        if(process.env.VISUAL_CHECK_SAVED_INVENTORY !== '1') throw new Error('Inventory detail checks require VISUAL_CHECK_SAVED_INVENTORY=1');
+        await page.locator(`[data-tooltip="${route.endsWith('-view')?'View':'Adjust stock'}"]`).first().click();
+        await page.locator(route.endsWith('-view')?'.inventory-view-modern':'.inventory-adjust-form').waitFor({state:'visible'});
+      }
+      if (adminFixtures && route === 'inbox-view') {
+        if(process.env.VISUAL_CHECK_SAVED_MESSAGES !== '1') throw new Error('Message detail checks require VISUAL_CHECK_SAVED_MESSAGES=1');
+        await page.getByRole('button',{name:'View message from Saved message fixture'}).click();
+        await page.locator('.message-detail').waitFor({state:'visible'});
+      }
+      if (adminFixtures && /^designs-(edit|view)$/.test(route)) {
+        if(process.env.VISUAL_CHECK_SAVED_DESIGNS !== '1') throw new Error('Saved design checks require VISUAL_CHECK_SAVED_DESIGNS=1');
+        await page.locator(`[data-tooltip="${route.endsWith('-edit')?'Edit':'View'}"]`).first().click();
+        await page.locator('.design-editor-modern').waitFor({state:'visible'});
+        await page.locator('.design-editor-modern .design-existing').nth(3).waitFor({state:'visible'});
+      }
+      if (adminFixtures && route === 'inbox' && process.env.VISUAL_CHECK_INBOX_NEWSLETTER === '1') {
+        const tab = page.getByRole('tab', {name:/Newsletter/i});
+        await tab.click();
+        await page.waitForFunction(() => [...document.querySelectorAll('[role="tab"]')].some(tab => tab.textContent?.includes('Newsletter') && tab.getAttribute('aria-selected') === 'true'));
+      }
       if (process.env.VISUAL_CHECK_STORE_CHROME === '1') {
         for (const summary of await page.locator('.yaqeen-footer .footer-group summary').all()) {
           await summary.click();
@@ -154,6 +223,10 @@ async function capture(page) {
         await page.locator('.modal').first().waitFor({state:'visible'});
       }
       await page.evaluate(() => document.fonts.ready);
+      if(adminFixtures && /^orders-(dialog|edit)$/.test(route) && process.env.VISUAL_CHECK_ORDER_ITEM === '1') {
+        await page.getByRole('button',{name:'Add item',exact:true}).click();
+        await page.locator('.modern-nested-form').waitFor({state:'visible'});
+      }
       // Load below-the-fold images before either snapshot so lazy loading cannot skew comparisons.
       await page.evaluate(async () => {
         document.querySelectorAll('img').forEach(image => {image.loading = 'eager';});

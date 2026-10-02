@@ -545,9 +545,13 @@
 :where(html[data-style-area="admin"]) .form-toggle>input {
   position: absolute !important;
   width: 1px !important;
-  height: 1px !important;
+  height: 1px;
   min-height: 0 !important;
   opacity: 0
+}
+
+:where(html[data-style-area="admin"]):where(html:not([data-style-screen="admin-categories"])) .form-toggle>input {
+  height: 1px !important
 }
 
 :where(html[data-style-area="admin"]) .toggle-track {
@@ -996,10 +1000,18 @@
   :where(html[data-style-area="admin"]) .admin .table-wrap {
     width: 100% !important;
     max-width: 100% !important;
+    overflow-x: auto
+  }
+
+  :where(html[data-style-area="admin"]) .admin .table-wrap:not(:where(.design-editor-modern .table-wrap)) {
     overflow-x: auto !important
   }
 
   :where(html[data-style-area="admin"]) .admin .table-wrap table {
+    min-width: 680px
+  }
+
+  :where(html[data-style-area="admin"]) .admin .table-wrap table:not(:where(.product-details-shell table)) {
     min-width: 680px !important
   }
 }
@@ -1499,10 +1511,19 @@
 :where(html[data-style-area="admin"]) .modal input,
 :where(html[data-style-area="admin"]) .modal select,
 :where(html[data-style-area="admin"]) .modal textarea {
-    font-size: 16px !important;
+    font-size: 16px;
     line-height: 1.35 !important;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%
+  }
+
+  :where(html[data-style-area="admin"]) .admin input:not(:where(.report-date-card input)),
+  :where(html[data-style-area="admin"]) .admin select,
+  :where(html[data-style-area="admin"]) .admin textarea,
+  :where(html[data-style-area="admin"]) .modal input,
+  :where(html[data-style-area="admin"]) .modal select,
+  :where(html[data-style-area="admin"]) .modal textarea {
+    font-size: 16px !important;
   }
 
   :where(html[data-style-area="admin"]) .admin select,
@@ -3463,7 +3484,7 @@
   opacity: .5;
   cursor: not-allowed
 }
-:where(html[data-style-area="admin"]) .admin .nested-toggle-card {
+:where(html[data-style-area="admin"]) .admin .nested-toggle-card:not(:where(.variant-active-inline)) {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
@@ -3532,7 +3553,7 @@
   background: transparent !important
 }
 
-:where(html[data-style-area="admin"]) .table-empty-row td {
+:where(html[data-style-area="admin"]):where(html:not([data-style-screen="admin-dashboard"])) .table-empty-row td {
   padding: 0 !important
 }
 
@@ -3770,13 +3791,20 @@
   :where(html[data-style-area="admin"]) .admin-page .table-wrap {
     position: relative !important;
     max-width: 100% !important;
-    overflow-x: auto !important;
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch
+  }
+  :where(html[data-style-area="admin"]) .admin-page .table-wrap:not(:where(.design-editor-modern .table-wrap)) {
+    overflow-x: auto !important
   }
 
   :where(html[data-style-area="admin"]) .admin-page .table-wrap table {
-    border-collapse: separate !important;
+    border-collapse: separate;
     border-spacing: 0 !important
+  }
+
+  :where(html[data-style-area="admin"]) .admin-page .table-wrap table:not(:where(.design-editor-modern table)) {
+    border-collapse: separate !important
   }
 
   :where(html[data-style-area="admin"]) .admin-page .table-wrap th.actions-cell,
@@ -3899,9 +3927,13 @@ html:where(html[data-style-area="admin"]):has(.admin .modal-backdrop),
 
 @media(max-width:760px) {
   :where(html[data-style-area="admin"]) .admin .modal-backdrop>.modal {
-    width: calc(100vw - 16px) !important;
+    width: calc(100vw - 16px);
     max-width: calc(100vw - 16px) !important;
     margin: auto !important
+  }
+
+  :where(html[data-style-area="admin"]) .admin .modal-backdrop>.modal:not(:where(:has(>.inventory-view-modern))) {
+    width: calc(100vw - 16px) !important
   }
 
   :where(html[data-style-area="admin"]) .admin .modal-backdrop>.modal input,
@@ -3923,17 +3955,28 @@ html:where(html[data-style-area="admin"]):has(.admin .modal-backdrop),
     position: relative !important;
     width: 100% !important;
     max-width: 100% !important;
-    overflow-x: auto !important;
+    overflow-x: auto;
     overflow-y: visible !important;
     -webkit-overflow-scrolling: touch !important;
     isolation: isolate !important
   }
+  :where(html[data-style-area="admin"]) .admin-page .table-wrap:not(:where(.design-editor-modern .table-wrap)) {
+    overflow-x: auto !important
+  }
 
   :where(html[data-style-area="admin"]) .admin-page .table-wrap table {
     width: max-content !important;
-    min-width: 100% !important;
-    border-collapse: separate !important;
+    min-width: 100%;
+    border-collapse: separate;
     border-spacing: 0 !important
+  }
+
+  :where(html[data-style-area="admin"]) .admin-page .table-wrap table:not(:where(.product-details-shell table)) {
+    min-width: 100% !important
+  }
+
+  :where(html[data-style-area="admin"]) .admin-page .table-wrap table:not(:where(.design-editor-modern table)) {
+    border-collapse: separate !important
   }
 
   :where(html[data-style-area="admin"]) .admin-page .table-wrap th.actions-cell,
@@ -4004,9 +4047,13 @@ html:where(html[data-style-area="admin"]):has(.admin .modal-backdrop),
 :where(html[data-style-area="admin"]) .admin .modal:not(.modal-confirm) {
   display: flex !important;
   flex-direction: column !important;
-  max-height: calc(100dvh - 40px) !important;
+  max-height: calc(100dvh - 40px);
   overflow: hidden !important;
   padding: 0 !important;
+}
+
+:where(html[data-style-area="admin"]) .admin .modal:not(.modal-confirm):not(:where(:has(>.design-editor-modern))) {
+  max-height: calc(100dvh - 40px) !important
 }
 
 :where(html[data-style-area="admin"]) .admin .modal:not(.modal-confirm)>.modal-head {
@@ -4046,11 +4093,15 @@ html:where(html[data-style-area="admin"]):has(.admin .modal-backdrop),
 
 @media(max-width:760px) {
   :where(html[data-style-area="admin"]) .admin .modal:not(.modal-confirm) {
-    width: calc(100vw - 16px) !important;
+    width: calc(100vw - 16px);
     max-height: calc(100dvh - 16px) !important
   }
 
-  :where(html[data-style-area="admin"]) .admin .modal:not(.modal-confirm)>.modal-head {
+  :where(html[data-style-area="admin"]) .admin .modal:not(.modal-confirm):not(:where(:has(>.inventory-view-modern))) {
+    width: calc(100vw - 16px) !important
+  }
+
+  :where(html[data-style-area="admin"]) .admin .modal:not(.modal-confirm):not(:where(:has(>.design-editor-modern)))>.modal-head {
     padding: 16px !important
   }
 
@@ -4417,11 +4468,15 @@ html:where(html[data-style-area="admin"]):has(.admin .modal-backdrop),
   flex: 0 0 auto
 }
 :where(html[data-style-area="admin"]) .admin .admin-page .table-wrap {
-  overflow-x: auto !important;
+  overflow-x: auto;
   overflow-y: hidden !important;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+
+:where(html[data-style-area="admin"]) .admin .admin-page .table-wrap:not(:where(.design-editor-modern .table-wrap)) {
+  overflow-x: auto !important
 }
 
 :where(html[data-style-area="admin"]) .admin .admin-page .table-wrap::-webkit-scrollbar {
@@ -4430,6 +4485,10 @@ html:where(html[data-style-area="admin"]):has(.admin .modal-backdrop),
 
 :where(html[data-style-area="admin"]) .admin .admin-page .table-wrap>table {
   width: max-content !important;
+  min-width: 100%;
+}
+
+:where(html[data-style-area="admin"]) .admin .admin-page .table-wrap>table:not(:where(.product-details-shell table)) {
   min-width: 100% !important;
 }
 :where(html[data-style-area="admin"]) .admin-route-loader {

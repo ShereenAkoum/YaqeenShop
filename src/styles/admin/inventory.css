@@ -21,19 +21,19 @@
 }
 
 :where(html[data-style-screen="admin-inventory"]) .remove-image-control {
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  font-size: 11px !important;
-  font-weight: 600 !important;
-  color: #8d302b !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #8d302b;
   cursor: pointer
 }
 
 :where(html[data-style-screen="admin-inventory"]) .remove-image-control input {
-  width: 16px !important;
-  height: 16px !important;
-  min-height: 16px !important
+  width: 16px;
+  height: 16px;
+  min-height: 16px
 }
 :where(html[data-style-screen="admin-inventory"]) .inventory-modern-form {
   gap: 20px
@@ -89,7 +89,7 @@
 }
 
 :where(html[data-style-screen="admin-inventory"]) .inventory-adjust-summary>small {
-  margin: 0 !important
+  margin: 0
 }
 
 :where(html[data-style-screen="admin-inventory"]) .inventory-status {
@@ -204,15 +204,15 @@
 }
 
 :where(html[data-style-screen="admin-inventory"]) .inventory-image-editor .remove-image-control {
-  display: flex !important;
-  flex-direction: row !important;
+  display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 8px;
   margin: 0
 }
 
 :where(html[data-style-screen="admin-inventory"]) .inventory-image-editor .remove-image-control::after {
-  display: none !important
+  display: none
 }
 
 :where(html[data-style-screen="admin-inventory"]) .inventory-image-editor .remove-image-control input {
@@ -330,140 +330,140 @@
   }
 }
 :where(html[data-style-screen="admin-inventory"]) .admin .modal:has(>.inventory-view-modern) {
-  width: min(900px, calc(100vw - 48px)) !important;
-  max-width: 900px !important;
-  background: var(--surface) !important;
-  overflow: hidden !important
+  width: min(900px, calc(100vw - 48px));
+  max-width: 900px;
+  background: var(--surface);
+  overflow: hidden
 }
 
 :where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-modern {
-  display: flex !important;
-  flex-direction: column !important;
-  background: var(--surface) !important
+  display: flex;
+  flex-direction: column;
+  background: var(--surface)
 }
 
 :where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-hero {
-  display: flex !important;
-  align-items: center !important;
-  gap: 18px !important;
-  margin: 0 !important;
-  padding: 22px 28px !important;
-  border: 0 !important;
-  border-bottom: 1px solid var(--border) !important;
-  border-radius: 0 !important;
-  background: var(--surface) !important
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0;
+  padding: 22px 28px;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  background: var(--surface)
 }
 
 :where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-hero>img,
 :where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-placeholder {
-  width: 72px !important;
-  height: 72px !important;
-  flex: 0 0 72px !important;
-  border-radius: 10px !important;
-  object-fit: cover !important;
-  border: 1px solid var(--border) !important
+  width: 72px;
+  height: 72px;
+  flex: 0 0 72px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid var(--border)
 }
 
 :where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-heading {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-  gap: 4px !important
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px
 }
 
 :where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-heading .inventory-status {
-  font-size: 10px !important;
-  padding: 4px 8px !important
+  font-size: 10px;
+  padding: 4px 8px
 }
 
 :where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-heading h2 {
-  margin: 0 !important;
-  font-size: 19px !important;
-  line-height: 1.25 !important;
-  font-weight: 600 !important
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.25;
+  font-weight: 600
 }
 
 :where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-heading p {
-  margin: 0 !important;
-  font-size: 12px !important;
-  color: var(--muted) !important
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted)
 }
 
 :where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-stats {
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  gap: 12px !important;
-  padding: 22px 28px !important
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding: 22px 28px
 }
 
 :where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-stats>div {
-  min-height: 104px !important;
-  padding: 15px 16px !important;
-  border: 1px solid var(--border) !important;
-  border-radius: 10px !important;
-  background: var(--surface) !important
+  min-height: 104px;
+  padding: 15px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface)
 }
 
 :where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-stats span {
-  display: block !important;
-  margin-bottom: 8px !important;
-  font-size: 10px !important;
-  line-height: 1.2 !important;
-  font-weight: 800 !important;
-  letter-spacing: .12em !important;
-  text-transform: uppercase !important;
-  color: var(--muted) !important
+  display: block;
+  margin-bottom: 8px;
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted)
 }
 
 :where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-stats strong {
-  display: block !important;
-  font-size: 22px !important;
-  line-height: 1.1 !important;
-  font-weight: 700 !important;
-  color: var(--primary) !important
+  display: block;
+  font-size: 22px;
+  line-height: 1.1;
+  font-weight: 700;
+  color: var(--primary)
 }
 
 :where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-stats small {
-  display: block !important;
-  margin-top: 7px !important;
-  font-size: 10px !important;
-  line-height: 1.35 !important;
-  color: var(--muted) !important
+  display: block;
+  margin-top: 7px;
+  font-size: 10px;
+  line-height: 1.35;
+  color: var(--muted)
 }
 
 :where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-actions {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  gap: 12px !important;
-  margin: 0 !important;
-  padding: 14px 28px !important;
-  border-top: 1px solid var(--border) !important;
-  background: var(--surface) !important
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 0;
+  padding: 14px 28px;
+  border-top: 1px solid var(--border);
+  background: var(--surface)
 }
 
 :where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-actions button {
-  width: 100% !important;
-  min-height: 46px !important;
-  justify-content: center !important;
-  font-size: 13px !important;
-  border-radius: 9px !important
+  width: 100%;
+  min-height: 46px;
+  justify-content: center;
+  font-size: 13px;
+  border-radius: 9px
 }
 
 @media(max-width:760px) {
   :where(html[data-style-screen="admin-inventory"]) .admin .modal:has(>.inventory-view-modern) {
-    width: calc(100vw - 24px) !important
+    width: calc(100vw - 24px)
   }
 
   :where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-hero {
-    padding: 18px 20px !important
+    padding: 18px 20px
   }
 
   :where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-stats {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    padding: 18px 20px !important
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 18px 20px
   }
 
   :where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-actions {
-    padding: 12px 20px !important
+    padding: 12px 20px
   }
 }

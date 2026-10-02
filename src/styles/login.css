@@ -42,8 +42,8 @@
 :where(html[data-style-area="admin"]) .login-card input,
 :where(html[data-style-area="admin"]) .login-wrap select,
 :where(html[data-style-area="admin"]) .login-wrap textarea {
-  font-size: 16px !important;
-  line-height: 1.4 !important
+  font-size: 16px;
+  line-height: 1.4
 }
 
 @media(max-width:760px) {
@@ -54,7 +54,6 @@
   }
 
   :where(html[data-style-area="admin"]) .login-card input {
-    font-size: 16px !important;
     min-height: 48px
   }
 }

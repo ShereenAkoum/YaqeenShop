@@ -14,114 +14,114 @@
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal:not(.modal-confirm)>.design-detail {
-  flex: 1 1 auto !important;
-  min-height: 0 !important;
-  width: 100% !important;
-  overflow-y: auto !important;
-  overflow-x: hidden !important;
-  -webkit-overflow-scrolling: touch !important;
-  overscroll-behavior: contain !important;
-  padding: 24px !important;
-  box-sizing: border-box !important;
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  padding: 24px;
+  box-sizing: border-box;
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal:not(.modal-confirm)>.design-detail>.modal-actions:last-child {
-  position: sticky !important;
-  bottom: -24px !important;
-  z-index: 30 !important;
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 12px !important;
-  width: calc(100% + 48px) !important;
-  max-width: none !important;
-  margin: 16px -24px -24px !important;
-  padding: 14px 24px max(14px, env(safe-area-inset-bottom)) !important;
-  box-sizing: border-box !important;
-  background: var(--surface) !important;
-  border-top: 1px solid var(--border) !important;
-  box-shadow: 0 -10px 22px var(--surface) !important;
+  position: sticky;
+  bottom: -24px;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: calc(100% + 48px);
+  max-width: none;
+  margin: 16px -24px -24px;
+  padding: 14px 24px max(14px, env(safe-area-inset-bottom));
+  box-sizing: border-box;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -10px 22px var(--surface);
 }
 
 @media(max-width:760px) {
 
   :where(html[data-style-screen="admin-designs"]) .admin .modal:not(.modal-confirm)>.design-detail {
-    padding: 16px !important
+    padding: 16px
   }
 
   :where(html[data-style-screen="admin-designs"]) .admin .modal:not(.modal-confirm)>.design-detail>.modal-actions:last-child {
-    bottom: -16px !important;
-    width: calc(100% + 32px) !important;
-    margin: 14px -16px -16px !important;
-    padding: 12px 16px max(12px, env(safe-area-inset-bottom)) !important;
+    bottom: -16px;
+    width: calc(100% + 32px);
+    margin: 14px -16px -16px;
+    padding: 12px 16px max(12px, env(safe-area-inset-bottom));
   }
 }
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern {
-  flex: 1 1 auto !important;
-  min-height: 0 !important;
-  width: 100% !important;
-  overflow-y: auto !important;
-  overflow-x: hidden !important;
-  -webkit-overflow-scrolling: touch !important;
-  overscroll-behavior: contain !important;
-  padding: 24px !important;
-  box-sizing: border-box !important;
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  padding: 24px;
+  box-sizing: border-box;
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern .control {
-  width: 100% !important;
-  min-height: 46px !important;
-  padding: 11px 13px !important;
-  border: 1px solid var(--border) !important;
-  border-radius: 7px !important;
-  background: var(--surface) !important;
-  color: var(--text) !important;
+  width: 100%;
+  min-height: 46px;
+  padding: 11px 13px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--surface);
+  color: var(--text);
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern textarea.control {
-  min-height: 110px !important;
-  resize: vertical !important
+  min-height: 110px;
+  resize: vertical
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>section {
-  margin-top: 24px !important;
-  padding-top: 20px !important;
-  border-top: 1px solid var(--border) !important
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border)
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>.modal-actions:last-child {
-  position: sticky !important;
-  bottom: -24px !important;
-  z-index: 30 !important;
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 12px !important;
-  width: calc(100% + 48px) !important;
-  max-width: none !important;
-  margin: 24px -24px -24px !important;
-  padding: 14px 24px max(14px, env(safe-area-inset-bottom)) !important;
-  background: var(--surface) !important;
-  border-top: 1px solid var(--border) !important;
-  box-shadow: 0 -10px 22px var(--surface) !important;
-  box-sizing: border-box !important;
+  position: sticky;
+  bottom: -24px;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: calc(100% + 48px);
+  max-width: none;
+  margin: 24px -24px -24px;
+  padding: 14px 24px max(14px, env(safe-area-inset-bottom));
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -10px 22px var(--surface);
+  box-sizing: border-box;
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>.modal-actions:last-child>button {
-  width: 100% !important;
-  min-width: 0 !important;
-  margin: 0 !important;
-  justify-content: center !important
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  justify-content: center
 }
 
 @media(max-width:760px) {
   :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern {
-    padding: 16px !important
+    padding: 16px
   }
 
   :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>.modal-actions:last-child {
-    bottom: -16px !important;
-    width: calc(100% + 32px) !important;
-    margin: 20px -16px -16px !important;
-    padding: 12px 16px max(12px, env(safe-area-inset-bottom)) !important;
+    bottom: -16px;
+    width: calc(100% + 32px);
+    margin: 20px -16px -16px;
+    padding: 12px 16px max(12px, env(safe-area-inset-bottom));
   }
 }
 
@@ -129,484 +129,484 @@
   margin-top: 24px
 }
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.design-editor-modern) {
-  width: min(900px, calc(100vw - 48px)) !important;
-  max-width: 900px !important;
-  height: min(760px, calc(100dvh - 48px)) !important;
-  max-height: calc(100dvh - 48px) !important;
+  width: min(900px, calc(100vw - 48px));
+  max-width: 900px;
+  height: min(760px, calc(100dvh - 48px));
+  max-height: calc(100dvh - 48px);
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern {
-  padding: 20px 24px !important
+  padding: 20px 24px
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>section {
-  margin-top: 0 !important;
-  padding: 18px 0 !important;
-  border-top: 1px solid var(--border) !important
+  margin-top: 0;
+  padding: 18px 0;
+  border-top: 1px solid var(--border)
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>section:first-child {
-  border-top: 0 !important;
-  padding-top: 0 !important
+  border-top: 0;
+  padding-top: 0
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-section-heading {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 16px !important;
-  margin-bottom: 12px !important
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-section-heading h3 {
-  margin: 0 !important;
-  font-size: 18px !important
+  margin: 0;
+  font-size: 18px
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-section-heading .primary-button {
-  min-height: 38px !important;
-  padding: 8px 14px !important;
-  font-size: 13px !important
+  min-height: 38px;
+  padding: 8px 14px;
+  font-size: 13px
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern .table-wrap {
-  box-shadow: none !important
+  box-shadow: none
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern table th {
-  padding: 12px 16px !important;
-  font-size: 11px !important
+  padding: 12px 16px;
+  font-size: 11px
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern table td {
-  padding: 12px 16px !important
+  padding: 12px 16px
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern .table-empty-state {
-  min-height: 72px !important;
-  padding: 18px !important
+  min-height: 72px;
+  padding: 18px
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>.modal-actions:last-child {
-  margin-top: 8px !important
+  margin-top: 8px
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>.modal-actions:last-child:has(>button:only-child) {
-  grid-template-columns: 1fr !important
+  grid-template-columns: 1fr
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>.modal-actions:last-child>button:only-child {
-  max-width: none !important
+  max-width: none
 }
 
 @media(max-width:760px) {
   :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.design-editor-modern) {
-    width: calc(100vw - 24px) !important;
-    height: calc(100dvh - 24px) !important;
-    max-height: calc(100dvh - 24px) !important
+    width: calc(100vw - 24px);
+    height: calc(100dvh - 24px);
+    max-height: calc(100dvh - 24px)
   }
 
   :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern {
-    padding: 16px !important
+    padding: 16px
   }
 
   :where(html[data-style-screen="admin-designs"]) .admin .design-section-heading {
-    align-items: flex-start !important
+    align-items: flex-start
   }
 }
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.design-editor-modern) {
-  width: min(1120px, calc(100vw - 48px)) !important;
-  max-width: 1120px !important;
-  height: min(860px, calc(100dvh - 48px)) !important;
+  width: min(1120px, calc(100vw - 48px));
+  max-width: 1120px;
+  height: min(860px, calc(100dvh - 48px));
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern {
-  padding: 22px 24px !important
+  padding: 22px 24px
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>section.design-existing {
-  margin: 0 !important;
-  padding: 22px 0 !important;
-  border-top: 1px solid var(--border) !important;
+  margin: 0;
+  padding: 22px 0;
+  border-top: 1px solid var(--border);
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>section.design-existing:first-child {
-  padding-top: 0 !important;
-  border-top: 0 !important
+  padding-top: 0;
+  border-top: 0
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-section-heading {
-  margin-bottom: 14px !important
+  margin-bottom: 14px
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-section-heading h3 {
-  margin: 0 !important;
-  font-size: 23px !important;
-  line-height: 1.2 !important;
-  font-weight: 500 !important;
+  margin: 0;
+  font-size: 23px;
+  line-height: 1.2;
+  font-weight: 500;
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-section-heading .primary-button {
-  min-height: 46px !important;
-  padding: 9px 16px !important;
-  border-radius: 10px !important;
-  font-size: 14px !important;
-  box-shadow: 0 8px 20px rgba(39, 52, 32, .12) !important;
+  min-height: 46px;
+  padding: 9px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  box-shadow: 0 8px 20px rgba(39, 52, 32, .12);
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern .table-wrap {
-  border: 1px solid var(--border) !important;
-  border-radius: 12px !important;
-  overflow: hidden !important;
-  background: var(--surface) !important;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--surface);
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern table {
-  width: 100% !important;
-  border-collapse: collapse !important
+  width: 100%;
+  border-collapse: collapse
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern table thead {
-  background: var(--surface-2) !important
+  background: var(--surface-2)
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern table th {
-  height: 54px !important;
-  padding: 0 20px !important;
-  font-size: 11px !important;
-  letter-spacing: .14em !important;
-  text-transform: uppercase !important;
-  vertical-align: middle !important;
+  height: 54px;
+  padding: 0 20px;
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  vertical-align: middle;
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern table td {
-  height: 66px !important;
-  padding: 10px 20px !important;
-  vertical-align: middle !important;
-  border-top: 1px solid var(--border) !important;
+  height: 66px;
+  padding: 10px 20px;
+  vertical-align: middle;
+  border-top: 1px solid var(--border);
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern .table-empty-row td {
-  height: 86px !important
+  height: 86px
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern .table-empty-state {
-  min-height: 64px !important;
-  padding: 12px !important
+  min-height: 64px;
+  padding: 12px
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern .table-empty-state strong {
-  font-size: 14px !important
+  font-size: 14px
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern .actions-cell {
-  width: 96px !important;
-  text-align: right !important
+  width: 96px;
+  text-align: right
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>.modal-actions:last-child {
-  margin-top: 0 !important;
-  padding-top: 14px !important;
+  margin-top: 0;
+  padding-top: 14px;
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>.modal-actions:last-child:has(>button:only-child) {
-  grid-template-columns: 1fr !important;
+  grid-template-columns: 1fr;
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>.modal-actions:last-child>button:only-child {
-  width: 100% !important;
-  max-width: none !important;
+  width: 100%;
+  max-width: none;
 }
 :where(html[data-style-screen="admin-designs"]) .admin .modal .form-grid {
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 18px !important;
-  padding: 24px !important;
-  box-sizing: border-box !important;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  padding: 24px;
+  box-sizing: border-box;
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal .form-grid>label {
-  display: grid !important;
-  gap: 8px !important;
-  font-weight: 700 !important;
-  font-size: 13px !important
+  display: grid;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 13px
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal .form-grid+.modal-actions {
-  margin: 0 !important;
-  padding: 14px 24px !important;
-  border-top: 1px solid var(--border) !important;
+  margin: 0;
+  padding: 14px 24px;
+  border-top: 1px solid var(--border);
 }
 
 @media(max-width:760px) {
   :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.design-editor-modern) {
-    width: calc(100vw - 24px) !important;
-    height: calc(100dvh - 24px) !important
+    width: calc(100vw - 24px);
+    height: calc(100dvh - 24px)
   }
 
   :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern {
-    padding: 16px !important
+    padding: 16px
   }
 
   :where(html[data-style-screen="admin-designs"]) .admin .design-section-heading h3 {
-    font-size: 20px !important
+    font-size: 20px
   }
 
   :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern table th,
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern table td {
-    padding-left: 12px !important;
-    padding-right: 12px !important
+    padding-left: 12px;
+    padding-right: 12px
   }
 
   :where(html[data-style-screen="admin-designs"]) .admin .modal .form-grid {
-    grid-template-columns: 1fr !important;
-    padding: 16px !important
+    grid-template-columns: 1fr;
+    padding: 16px
   }
 
   :where(html[data-style-screen="admin-designs"]) .admin .modal .form-grid+.modal-actions {
-    padding: 12px 16px !important
+    padding: 12px 16px
   }
 }
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.form-grid) {
-  width: min(760px, calc(100vw - 40px)) !important;
-  max-width: 760px !important;
-  height: auto !important;
-  min-height: 0 !important;
-  background: var(--surface) !important;
-  border: 1px solid var(--border) !important;
-  border-radius: 16px !important;
-  overflow: hidden !important;
+  width: min(760px, calc(100vw - 40px));
+  max-width: 760px;
+  height: auto;
+  min-height: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.form-grid)>.modal-head {
-  background: var(--surface) !important;
-  padding: 22px 24px !important;
-  border-bottom: 1px solid var(--border) !important;
+  background: var(--surface);
+  padding: 22px 24px;
+  border-bottom: 1px solid var(--border);
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.form-grid)>.modal-head h2,
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.form-grid)>.modal-head h3 {
-  margin: 0 !important;
-  font-size: 27px !important;
-  line-height: 1.15 !important;
+  margin: 0;
+  font-size: 27px;
+  line-height: 1.15;
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.form-grid)>.form-grid {
-  background: var(--surface) !important;
-  padding: 24px !important;
-  gap: 18px !important;
+  background: var(--surface);
+  padding: 24px;
+  gap: 18px;
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.form-grid)>.form-grid>label {
-  display: grid !important;
-  gap: 8px !important;
-  color: var(--text) !important;
-  font-size: 12px !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: .12em !important;
+  display: grid;
+  gap: 8px;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .12em;
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.form-grid) .control {
-  display: block !important;
-  width: 100% !important;
-  height: 46px !important;
-  min-height: 46px !important;
-  margin: 0 !important;
-  padding: 10px 13px !important;
-  box-sizing: border-box !important;
-  border: 1px solid var(--border) !important;
-  border-radius: 8px !important;
-  outline: 0 !important;
-  background: var(--surface) !important;
-  color: var(--text) !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  letter-spacing: 0 !important;
-  text-transform: none !important;
+  display: block;
+  width: 100%;
+  height: 46px;
+  min-height: 46px;
+  margin: 0;
+  padding: 10px 13px;
+  box-sizing: border-box;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  outline: 0;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.form-grid) .control:focus {
-  border-color: var(--primary) !important;
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary) 12%, transparent) !important;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary) 12%, transparent);
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.form-grid) input[type=file].control {
-  padding: 7px 8px !important;
-  line-height: 28px !important;
-  cursor: pointer !important;
+  padding: 7px 8px;
+  line-height: 28px;
+  cursor: pointer;
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.form-grid) input[type=file].control::file-selector-button {
-  height: 30px !important;
-  margin: -1px 10px -1px -1px !important;
-  padding: 4px 12px !important;
-  border: 1px solid var(--border) !important;
-  border-radius: 6px !important;
-  background: var(--surface-2) !important;
-  color: var(--text) !important;
-  font: inherit !important;
-  font-weight: 600 !important;
-  cursor: pointer !important;
+  height: 30px;
+  margin: -1px 10px -1px -1px;
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.form-grid)>.modal-actions {
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 12px !important;
-  margin: 0 !important;
-  padding: 14px 24px !important;
-  background: var(--surface) !important;
-  border-top: 1px solid var(--border) !important;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 14px 24px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.form-grid)>.modal-actions>button {
-  width: 100% !important;
-  min-height: 46px !important;
-  margin: 0 !important;
-  border-radius: 8px !important;
-  justify-content: center !important;
+  width: 100%;
+  min-height: 46px;
+  margin: 0;
+  border-radius: 8px;
+  justify-content: center;
 }
 
 @media(max-width:760px) {
   :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.form-grid) {
-    width: calc(100vw - 24px) !important
+    width: calc(100vw - 24px)
   }
 
   :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.form-grid)>.modal-head {
-    padding: 18px 16px !important
+    padding: 18px 16px
   }
 
   :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.form-grid)>.form-grid {
-    padding: 18px 16px !important
+    padding: 18px 16px
   }
 
   :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.form-grid)>.modal-actions {
-    padding: 12px 16px !important
+    padding: 12px 16px
   }
 }
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.design-editor-modern) {
-  width: min(980px, calc(100vw - 32px)) !important;
-  max-width: 980px !important;
-  height: min(870px, calc(100dvh - 24px)) !important;
-  max-height: calc(100dvh - 24px) !important;
+  width: min(980px, calc(100vw - 32px));
+  max-width: 980px;
+  height: min(870px, calc(100dvh - 24px));
+  max-height: calc(100dvh - 24px);
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>section.design-existing {
-  padding: 25px 0 !important;
+  padding: 25px 0;
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-section-heading h3 {
-  font-size: 19px !important;
-  font-weight: 600 !important;
+  font-size: 19px;
+  font-weight: 600;
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-section-heading .primary-button {
-  min-height: 38px !important;
-  padding: 8px 14px !important;
-  border-radius: 9px !important;
-  font-size: 12px !important;
-  box-shadow: none !important;
+  min-height: 38px;
+  padding: 8px 14px;
+  border-radius: 9px;
+  font-size: 12px;
+  box-shadow: none;
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern table th {
-  height: 44px !important;
-  padding: 0 16px !important;
-  font-size: 10px !important;
-  letter-spacing: .1em !important;
+  height: 44px;
+  padding: 0 16px;
+  font-size: 10px;
+  letter-spacing: .1em;
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern table td {
-  height: 56px !important;
-  padding: 9px 16px !important;
-  font-size: 12px !important;
+  height: 56px;
+  padding: 9px 16px;
+  font-size: 12px;
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern .table-empty-row td {
-  height: 70px !important
+  height: 70px
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern .table-empty-state {
-  min-height: 48px !important;
-  padding: 10px !important;
+  min-height: 48px;
+  padding: 10px;
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern .table-empty-state strong {
-  font-size: 12px !important
+  font-size: 12px
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>.modal-actions:last-child {
-  display: flex !important;
-  justify-content: flex-end !important;
-  width: calc(100% + 48px) !important;
+  display: flex;
+  justify-content: flex-end;
+  width: calc(100% + 48px);
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>.modal-actions:last-child>button,
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>.modal-actions:last-child>button:only-child {
-  width: auto !important;
-  min-width: 128px !important;
-  max-width: none !important;
+  width: auto;
+  min-width: 128px;
+  max-width: none;
 }
 
 @media(max-width:760px) {
   :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.design-editor-modern) {
-    width: calc(100vw - 16px) !important;
-    max-width: calc(100vw - 16px) !important;
-    height: calc(100dvh - 16px) !important;
-    max-height: calc(100dvh - 16px) !important;
+    width: calc(100vw - 16px);
+    max-width: calc(100vw - 16px);
+    height: calc(100dvh - 16px);
+    max-height: calc(100dvh - 16px);
   }
 
   :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>section.design-existing {
-    padding: 20px 0 !important
+    padding: 20px 0
   }
 
   :where(html[data-style-screen="admin-designs"]) .admin .design-section-heading h3 {
-    font-size: 18px !important
+    font-size: 18px
   }
 
   :where(html[data-style-screen="admin-designs"]) .admin .design-section-heading .primary-button {
-    font-size: 12px !important
+    font-size: 12px
   }
 
   :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>.modal-actions:last-child {
-    width: calc(100% + 32px) !important
+    width: calc(100% + 32px)
   }
 
   :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>.modal-actions:last-child>button,
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>.modal-actions:last-child>button:only-child {
-    flex: 1 1 0 !important;
-    min-width: 0 !important;
+    flex: 1 1 0;
+    min-width: 0;
   }
 }
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.design-editor-modern) {
   display: flex;
   flex-direction: column;
-  padding: 0 !important;
-  overflow: hidden !important;
+  padding: 0;
+  overflow: hidden;
   background: var(--yaqeen-paper)
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.design-editor-modern)>.modal-head {
   flex: 0 0 auto;
-  margin: 0 !important;
-  padding: 20px 24px !important;
+  margin: 0;
+  padding: 20px 24px;
   border-bottom: 1px solid var(--border);
   background: var(--yaqeen-paper)
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.design-editor-modern)>.design-editor-modern {
-  display: block !important;
+  display: block;
   flex: 1 1 auto;
   min-height: 0;
   overflow-y: auto;
-  padding: 0 24px !important
+  padding: 0 24px
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>section.design-existing {
-  display: grid !important;
-  grid-template-columns: 180px minmax(0, 1fr) !important;
-  gap: 28px !important;
-  padding: 28px 0 !important;
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 28px;
+  padding: 28px 0;
   border-bottom: 1px solid var(--border);
   min-width: 0
 }
@@ -630,8 +630,8 @@
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-step-heading h3 {
-  margin: 2px 0 4px !important;
-  font: 700 14px Arial, sans-serif !important;
+  margin: 2px 0 4px;
+  font: 700 14px Arial, sans-serif;
   color: var(--text)
 }
 
@@ -648,7 +648,7 @@
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-step-content .design-section-heading {
   min-height: 38px;
-  margin: 0 0 12px !important
+  margin: 0 0 12px
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-step-content .design-section-heading>span {
@@ -656,38 +656,34 @@
   color: var(--muted)
 }
 
-:where(html[data-style-screen="admin-designs"]) .admin .design-step-content .table-wrap {
-  border-radius: 10px
-}
-
 :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>.modal-actions:last-child {
   position: sticky;
   bottom: 0;
   z-index: 3;
-  display: flex !important;
-  justify-content: flex-end !important;
-  width: calc(100% + 48px) !important;
-  margin: 0 -24px !important;
-  padding: 14px 24px !important;
+  display: flex;
+  justify-content: flex-end;
+  width: calc(100% + 48px);
+  margin: 0 -24px;
+  padding: 14px 24px;
   border-top: 1px solid var(--border);
   background: var(--yaqeen-paper)
 }
 
 @media(max-width:760px) {
   :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.design-editor-modern)>.design-editor-modern {
-    padding: 0 16px !important
+    padding: 0 16px
   }
 
   :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>section.design-existing {
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-    padding: 22px 0 !important
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 22px 0
   }
 
   :where(html[data-style-screen="admin-designs"]) .admin .design-editor-modern>.modal-actions:last-child {
-    width: calc(100% + 32px) !important;
-    margin: 0 -16px !important;
-    padding: 12px 16px !important
+    width: calc(100% + 32px);
+    margin: 0 -16px;
+    padding: 12px 16px
   }
 }
 
@@ -742,73 +738,73 @@
   }
 }
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.design-editor-modern) {
-  display: flex !important;
-  flex-direction: column !important;
-  height: min(870px, calc(100dvh - 24px)) !important;
-  max-height: calc(100dvh - 24px) !important;
-  padding: 0 !important;
-  overflow: hidden !important
+  display: flex;
+  flex-direction: column;
+  height: min(870px, calc(100dvh - 24px));
+  max-height: calc(100dvh - 24px);
+  padding: 0;
+  overflow: hidden
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.design-editor-modern)>.modal-head {
-  position: relative !important;
-  flex: 0 0 auto !important;
+  position: relative;
+  flex: 0 0 auto;
   z-index: 2;
-  padding: 20px 24px !important;
-  margin: 0 !important
+  padding: 20px 24px;
+  margin: 0
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.design-editor-modern)>.design-editor-modern {
-  flex: 1 1 auto !important;
-  min-height: 0 !important;
-  overflow-y: auto !important;
-  overflow-x: hidden !important;
-  padding: 28px 24px 36px !important;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 28px 24px 36px;
   overscroll-behavior: contain
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.design-editor-modern)>.design-editor-modern>section.design-existing:first-child {
-  padding-top: 20px !important
+  padding-top: 20px
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.design-editor-modern)>.design-modal-footer {
-  flex: 0 0 auto !important;
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 12px !important;
-  padding: 14px 24px !important;
-  border-top: 1px solid var(--border) !important;
-  background: var(--yaqeen-paper) !important
+  flex: 0 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 14px 24px;
+  border-top: 1px solid var(--border);
+  background: var(--yaqeen-paper)
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.design-editor-modern)>.design-modal-footer:has(>button:only-child) {
-  display: flex !important;
-  justify-content: flex-end !important
+  display: flex;
+  justify-content: flex-end
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-modal-footer>button {
-  width: 100% !important;
-  min-height: 46px !important;
-  justify-content: center !important
+  width: 100%;
+  min-height: 46px;
+  justify-content: center
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .design-modal-footer>button:only-child {
-  width: auto !important;
-  min-width: 150px !important
+  width: auto;
+  min-width: 150px
 }
 
 @media(max-width:760px) {
   :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.design-editor-modern) {
-    height: calc(100dvh - 16px) !important;
-    max-height: calc(100dvh - 16px) !important
+    height: calc(100dvh - 16px);
+    max-height: calc(100dvh - 16px)
   }
 
   :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.design-editor-modern)>.design-editor-modern {
-    padding: 22px 16px 28px !important
+    padding: 22px 16px 28px
   }
 
   :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.design-editor-modern)>.design-modal-footer {
-    padding: 12px 16px !important
+    padding: 12px 16px
   }
 }
 
@@ -834,33 +830,33 @@
   min-height: 180px
 }
 :where(html[data-style-screen="admin-designs"]) .admin .modal.design-create-modal:has(>.design-editor-modern) {
-  height: auto !important;
-  min-height: 0 !important;
-  max-height: calc(100dvh - 32px) !important;
+  height: auto;
+  min-height: 0;
+  max-height: calc(100dvh - 32px);
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal.design-create-modal:has(>.design-editor-modern)>.design-editor-modern {
-  flex: 0 1 auto !important;
-  overflow: visible !important;
-  padding: 18px 24px 22px !important;
+  flex: 0 1 auto;
+  overflow: visible;
+  padding: 18px 24px 22px;
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal.design-create-modal:has(>.design-editor-modern)>.design-editor-modern>section.design-existing:first-child {
-  padding: 12px 0 18px !important;
-  border-bottom: 0 !important;
+  padding: 12px 0 18px;
+  border-bottom: 0;
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal.design-create-modal:has(>.design-editor-modern)>.design-modal-footer {
-  flex: 0 0 auto !important;
+  flex: 0 0 auto;
 }
 
 @media(max-width:760px) {
   :where(html[data-style-screen="admin-designs"]) .admin .modal.design-create-modal:has(>.design-editor-modern) {
-    height: auto !important;
-    max-height: calc(100dvh - 16px) !important;
+    height: auto;
+    max-height: calc(100dvh - 16px);
   }
 
   :where(html[data-style-screen="admin-designs"]) .admin .modal.design-create-modal:has(>.design-editor-modern)>.design-editor-modern {
-    padding: 16px !important;
+    padding: 16px;
   }
 }
