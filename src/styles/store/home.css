@@ -1,4 +1,79 @@
 /* Homepage styles. Every selector is scoped to store-home. */
+:where(html[data-style-screen="store-home"]) .home-redesign .yaqeen-home-hero {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1536 / 535;
+    margin: 0;
+    overflow: hidden;
+    background: #f4eadf;
+}
+
+:where(html[data-style-screen="store-home"]) .home-redesign img.yaqeen-home-hero-image {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+:where(html[data-style-screen="store-home"]) .home-redesign .yaqeen-home-hero-content {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 32px 0 20px 7.55%;
+}
+
+:where(html[data-style-screen="store-home"]) .yaqeen-home-hero-content h1 {
+    max-width: 35%;
+    margin: 0 0 17px;
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    font-size: clamp(36px, 4.36vw, 78px);
+    font-weight: 400;
+    line-height: 1.01;
+    letter-spacing: -.03em;
+    color: var(--yaqeen-hero-heading);
+}
+
+:where(html[data-style-screen="store-home"]) .yaqeen-home-hero-content p {
+    max-width: 32%;
+    margin: 0 0 24px;
+    font-size: clamp(13px, 1.11vw, 19px);
+    line-height: 1.5;
+    color: #161b15;
+}
+
+:where(html[data-style-screen="store-home"]) .yaqeen-home-hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-width: 190px;
+    min-height: 50px;
+    padding: 13px 24px;
+    border-radius: 13px;
+    background: var(--yaqeen-hero-cta);
+    color: var(--yaqeen-pure-white);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    transition: background .2s ease;
+}
+
+:where(html[data-style-screen="store-home"]) .yaqeen-home-hero-button:hover {
+    background: var(--yaqeen-hero-heading);
+}
+
+:where(html[data-style-screen="store-home"]) .yaqeen-home-hero-button:focus-visible {
+    outline: 2px solid var(--yaqeen-hero-heading);
+    outline-offset: 4px;
+}
 :where(html[data-style-screen="store-home"]) .home-redesign {
     font-family: 'DM Sans', Arial, Helvetica, sans-serif;
     background: var(--home-bg);
@@ -134,70 +209,6 @@
     height: 25px
 }
 
-:where(html[data-style-screen="store-home"]) .yaqeen-home-hero {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1536/535;
-    overflow: hidden;
-    background: #f4eadf
-}
-
-:where(html[data-style-screen="store-home"]) .yaqeen-home-hero-image {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center
-}
-
-:where(html[data-style-screen="store-home"]) .yaqeen-home-hero-content {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    padding-left: 7.55vw;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center
-}
-
-:where(html[data-style-screen="store-home"]) .yaqeen-home-hero-content h1 {
-    margin: 0 0 17px;
-    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-    font-size: 67px;
-    font-weight: 400;
-    line-height: 1.01;
-    letter-spacing: -.03em;
-    color: var(--yaqeen-hero-heading)
-}
-
-:where(html[data-style-screen="store-home"]) .yaqeen-home-hero-content p {
-    margin: 0 0 24px;
-    max-width: 430px;
-    font-size: 17px;
-    line-height: 1.5;
-    color: #263126
-}
-
-:where(html[data-style-screen="store-home"]) .yaqeen-home-hero-button {
-    min-width: 190px;
-    min-height: 50px;
-    padding: 13px 24px;
-    border-radius: 11px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 18px;
-    background: var(--yaqeen-hero-cta);
-    color: var(--yaqeen-pure-white);
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 1;
-    text-decoration: none
-}
-
 :where(html[data-style-screen="store-home"]) .home-products {
     padding-block: 72px 86px;
     border-top: 1px solid var(--home-line)
@@ -304,6 +315,7 @@
 }
 
 :where(html[data-style-screen="store-home"]) .home-cms-story>div>p:not(.eyebrow) {
+    font-family: 'DM Sans', Arial, sans-serif;
     font-size: 17px;
     line-height: 1.9;
     color: var(--home-muted)
@@ -388,51 +400,6 @@
     :where(html[data-style-screen="store-home"]) body:has(.home-redesign) .store-nav-icon svg {
         width: 21px;
         height: 21px
-    }
-
-    :where(html[data-style-screen="store-home"]) .yaqeen-home-hero {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        background: var(--home-bg)
-    }
-
-    :where(html[data-style-screen="store-home"]) .yaqeen-home-hero-image {
-        position: relative;
-        inset: auto;
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1.78/1;
-        object-fit: cover;
-        object-position: center
-    }
-
-    :where(html[data-style-screen="store-home"]) .yaqeen-home-hero-content {
-        width: 100%;
-        height: auto;
-        padding: 18px 18px 28px;
-        display: block;
-        background: var(--home-bg)
-    }
-
-    :where(html[data-style-screen="store-home"]) .yaqeen-home-hero-content h1 {
-        margin: 0 0 10px;
-        font-size: 38px;
-        line-height: 1.02
-    }
-
-    :where(html[data-style-screen="store-home"]) .yaqeen-home-hero-content p {
-        max-width: 100%;
-        margin: 0 0 17px;
-        font-size: 14px;
-        line-height: 1.45
-    }
-
-    :where(html[data-style-screen="store-home"]) .yaqeen-home-hero-button {
-        width: 100%;
-        min-height: 48px;
-        border-radius: 11px;
-        font-size: 15px
     }
 
     :where(html[data-style-screen="store-home"]) .home-redesign .container {
@@ -538,45 +505,8 @@
     :where(html[data-style-screen="store-home"]) body:has(.home-redesign) .site-header .brand:not(.brand-has-logo) small {
         display: none
     }
-
-    :where(html[data-style-screen="store-home"]) .yaqeen-home-hero-image {
-        aspect-ratio: auto;
-        height: auto;
-        min-height: 0;
-        object-fit: contain;
-        object-position: center;
-        background: #f4eadf
-    }
-}
-
-@media(max-width:760px) {
-    :where(html[data-style-screen="store-home"]) .home-redesign .yaqeen-home-hero {
-        display: block;
-        height: auto;
-        min-height: 0;
-        overflow: visible
-    }
-
-    :where(html[data-style-screen="store-home"]) .home-redesign img.yaqeen-home-hero-image {
-        display: block;
-        position: static;
-        inset: auto;
-        width: 100%;
-        height: auto;
-        min-height: 0;
-        max-height: none;
-        aspect-ratio: auto;
-        object-fit: contain;
-        opacity: 1;
-        visibility: visible;
-        animation: none;
-        transform: none
-    }
 }
 @media(max-width:760px) {
-    :where(html[data-style-screen="store-home"]) .yaqeen-home-hero-content {
-        padding-bottom: 36px
-    }
 
     :where(html[data-style-screen="store-home"]) .home-redesign .yaqeen-home-hero+.home-cms-section,
 :where(html[data-style-screen="store-home"]) .home-redesign .yaqeen-home-hero+.home-products {
@@ -681,16 +611,6 @@
         transform: none
     }
 
-    :where(html[data-style-screen="store-home"]) .home-redesign .yaqeen-home-hero {
-        z-index: 1;
-        margin: 0
-    }
-
-    :where(html[data-style-screen="store-home"]) .home-redesign .yaqeen-home-hero-content {
-        position: relative;
-        z-index: 2
-    }
-
     :where(html[data-style-screen="store-home"]) .home-redesign .home-products {
         position: relative;
         z-index: 3;
@@ -722,46 +642,6 @@
     :where(html[data-style-screen="store-home"]) .home-redesign {
         display: block;
         overflow: visible
-    }
-
-    :where(html[data-style-screen="store-home"]) .home-redesign .yaqeen-home-hero {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: auto;
-        min-height: 0;
-        aspect-ratio: auto;
-        overflow: visible;
-        margin: 0
-    }
-
-    :where(html[data-style-screen="store-home"]) .home-redesign img.yaqeen-home-hero-image {
-        position: relative;
-        inset: auto;
-        display: block;
-        width: 100%;
-        height: auto;
-        min-height: 0;
-        max-height: none;
-        aspect-ratio: auto;
-        object-fit: contain;
-        object-position: center;
-        flex: none
-    }
-
-    :where(html[data-style-screen="store-home"]) .home-redesign .yaqeen-home-hero-content {
-        position: relative;
-        inset: auto;
-        display: block;
-        width: 100%;
-        height: auto;
-        min-height: 0;
-        padding: 18px 18px 36px;
-        margin: 0;
-        transform: none;
-        flex: none;
-        background: var(--home-bg)
     }
 
     :where(html[data-style-screen="store-home"]) .home-redesign .yaqeen-home-hero+section,
@@ -936,236 +816,157 @@
         direction: ltr;
     }
 }
-:where(html[data-style-screen="store-home"]) .home-story-editorial {
+/* Our Story: desktop editorial composition and a single mobile card. */
+:where(html[data-style-screen="store-home"]) .home-redesign section.home-story-editorial {
     display: grid;
-    grid-template-columns: 1.05fr .95fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
     grid-template-areas: "copy image" "values values";
-    gap: 48px 64px;
+    gap: 34px 48px;
     align-items: center;
-    padding-block: 96px
+    max-width: 1440px;
+    padding: 64px 0 36px 7.2%;
+    background: var(--yaqeen-canvas);
+    color: #26351d;
 }
-
-:where(html[data-style-screen="store-home"]) .home-story-editorial .home-story-image {
+:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-image {
     grid-area: image;
+    max-width: none;
+    width: 100%;
     overflow: hidden;
-    border-radius: 180px 0 0 0
+    border-radius: 180px 0 0 0;
 }
-
-:where(html[data-style-screen="store-home"]) .home-story-editorial .home-story-image img {
+:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-image img {
     display: block;
     width: 100%;
-    height: 520px;
-    object-fit: cover
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
 }
-
-:where(html[data-style-screen="store-home"]) .home-story-editorial .home-story-copy {
+:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-copy {
     grid-area: copy;
-    max-width: 570px
+    max-width: 570px;
+    padding: 0;
 }
-
-:where(html[data-style-screen="store-home"]) .home-story-editorial .eyebrow {
+:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .eyebrow {
     margin: 0 0 14px;
-    letter-spacing: .18em
+    font-size: 16px;
+    letter-spacing: .16em;
+    color: #727b61;
 }
-
-:where(html[data-style-screen="store-home"]) .home-story-editorial h2 {
-    font-family: var(--font-serif, Georgia, serif);
-    font-size: clamp(48px, 5vw, 76px);
-    line-height: .98;
-    color: var(--home-green-dark);
-    margin: 0 0 26px;
-    font-weight: 500
+:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial h2 {
+    margin: 0 0 24px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(38px, 5.3vw, 72px);
+    font-weight: 400;
+    line-height: 1.04;
+    letter-spacing: -.035em;
+    color: #26351d;
 }
-
-:where(html[data-style-screen="store-home"]) .home-story-editorial .home-story-copy>p:not(.eyebrow) {
-    font-size: 18px;
-    line-height: 1.55;
-    margin: 0 0 15px;
-    max-width: 530px
+:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-copy>p:not(.eyebrow) {
+    margin: 0 0 16px;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: clamp(15px, 1.8vw, 20px);
+    line-height: 1.45;
+    max-width: 510px;
 }
-
 :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-button {
     display: inline-flex;
-    margin-top: 12px;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-height: 52px;
+    margin-top: 4px;
+    padding: 14px 32px;
     border-radius: 999px;
-    padding: 14px 25px;
-    gap: 10px;
-    background: var(--yaqeen-footer-green);
-    color: var(--yaqeen-pure-white);
-    text-decoration: none
+    background: #354625;
+    color: #fffdf8;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1;
+    text-decoration: none;
 }
-
-:where(html[data-style-screen="store-home"]) .home-story-values {
+:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-button:hover {
+    background: #26351d;
+}
+:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-button:focus-visible {
+    outline: 2px solid #26351d;
+    outline-offset: 4px;
+}
+:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-values {
     grid-area: values;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    padding-top: 8px
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    padding: 0 7.2% 0 0;
 }
-
-:where(html[data-style-screen="store-home"]) .home-story-values>div {
+:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-values>div {
     display: flex;
     align-items: center;
-    gap: 14px
+    gap: 15px;
+    min-width: 0;
 }
-
-:where(html[data-style-screen="store-home"]) .home-story-values>div>span {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: var(--home-soft);
+:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-values>div>span {
     display: grid;
     place-items: center;
-    color: var(--home-green-dark);
-    font-size: 26px;
-    flex: none
+    flex: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #ecebdd;
+    color: #26351d;
 }
-
-:where(html[data-style-screen="store-home"]) .home-story-values p {
-    margin: 0;
-    line-height: 1.25
+:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-values p {margin: 0; line-height: 1.4; color: #26351d; font-family: 'DM Sans', Arial, sans-serif}
+:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-values strong {display: block; font-size: 16px; font-weight: 500}
+:where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-values small {display: block; margin-top: 3px; font-size: 13px; color: #727b61}
+@media(min-width:761px) {
+    :where(html[data-style-screen="store-home"]) .home-redesign section.home-story-editorial {
+        max-width: 1200px;
+        margin-inline: auto;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 28px 48px;
+        padding: 48px clamp(24px, 4vw, 56px) 32px;
+    }
+    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-image {
+        max-width: 500px;
+        justify-self: end;
+        border-top-left-radius: 140px;
+    }
+    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial h2 {
+        font-size: clamp(36px, 3.8vw, 54px);
+        margin-bottom: 20px;
+    }
+    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .eyebrow {font-size: 13px}
+    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-copy>p:not(.eyebrow) {font-size: 17px}
+    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-button {min-height: 46px; padding: 12px 26px; font-size: 15px}
+    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-values {padding: 0}
 }
-
-:where(html[data-style-screen="store-home"]) .home-story-values strong,
-:where(html[data-style-screen="store-home"]) .home-story-values small {
-    display: block
-}
-
-:where(html[data-style-screen="store-home"]) .home-story-values strong {
-    font-size: 15px
-}
-
-:where(html[data-style-screen="store-home"]) .home-story-values small {
-    font-size: 13px;
-    margin-top: 5px;
-    opacity: .65
-}
-
 @media(max-width:760px) {
-    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial {
-        /* The editorial layout takes precedence over the generic CMS story grid. */
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
+    :where(html[data-style-screen="store-home"]) .home-redesign section.home-story-editorial {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: "image" "copy" "values";
         gap: 0;
-        padding: 56px 20px 64px
+        width: calc(100% - 40px);
+        max-width: 560px;
+        margin: 40px auto;
+        padding: 0;
+        border-radius: 20px;
+        overflow: hidden;
     }
-
-    :where(html[data-style-screen="store-home"]) .home-story-editorial .home-story-image {
-        order: 1;
-        border-radius: 18px 18px 0 0;
-        overflow: hidden
-    }
-
-    :where(html[data-style-screen="store-home"]) .home-story-editorial .home-story-image img {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1.45/1;
-        object-fit: cover
-    }
-
-    :where(html[data-style-screen="store-home"]) .home-story-editorial .home-story-copy {
-        order: 2;
-        padding: 26px 12px 24px;
-        background: var(--yaqeen-pure-white);
-        border-radius: 0 0 18px 18px;
-        max-width: none
-    }
-
-    :where(html[data-style-screen="store-home"]) .home-story-editorial .eyebrow {
-        font-size: 10px;
-        margin-bottom: 9px
-    }
-
-    :where(html[data-style-screen="store-home"]) .home-story-editorial h2 {
-        font-size: 43px;
-        line-height: .98;
-        margin-bottom: 20px
-    }
-
-    :where(html[data-style-screen="store-home"]) .home-story-editorial .home-story-copy>p:not(.eyebrow) {
-        font-size: 15px;
-        line-height: 1.5;
-        margin-bottom: 13px
-    }
-
-    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-button {
-        margin-top: 8px;
-        padding: 12px 21px;
-        color: var(--yaqeen-pure-white);
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 1;
-        text-decoration: none
-    }
-
-    :where(html[data-style-screen="store-home"]) .home-story-values {
-        order: 3;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        padding: 25px 10px 0
-    }
-
-    :where(html[data-style-screen="store-home"]) .home-story-values>div {
-        gap: 13px
-    }
-
-    :where(html[data-style-screen="store-home"]) .home-story-values>div>span {
-        width: 46px;
-        height: 46px
-    }
-
-    :where(html[data-style-screen="store-home"]) .home-story-values strong {
-        font-size: 14px
-    }
-
-    :where(html[data-style-screen="store-home"]) .home-story-values small {
-        font-size: 12px
-    }
+    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-image {border-radius: 0}
+    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-image img {aspect-ratio: 1.65 / 1; object-position: center 65%}
+    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-copy {padding: 24px 24px 20px; max-width: none}
+    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .eyebrow {font-size: 12px; margin-bottom: 10px}
+    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial h2 {font-size: clamp(34px, 8.5vw, 48px); margin-bottom: 18px}
+    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-copy>p:not(.eyebrow) {font-size: 16px; line-height: 1.5; margin-bottom: 14px}
+    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-button {font-size: 16px; padding: 14px 28px; min-height: 50px}
+    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-values {grid-template-columns: minmax(0, 1fr); gap: 15px; padding: 0 24px 28px}
+    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-values>div>span {width: 54px; height: 54px}
+    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-values strong {font-size: 14px}
+    :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-values small {font-size: 13px}
 }
-@media(min-width:761px){
- :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial{
-  max-width:1320px;
-  grid-template-columns:minmax(0,.9fr) minmax(430px,.78fr);
-  column-gap:86px;
-  row-gap:52px;
-  padding-top:76px;
-  padding-bottom:68px;
-  align-items:center
- }
- :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-copy{max-width:500px;padding-left:18px}
- :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .eyebrow{font-size:11px;letter-spacing:.19em;margin-bottom:15px}
- :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial h2{
-  font-size:clamp(46px,3.6vw,58px);
-  line-height:1.02;
-  letter-spacing:-.035em;
-  margin-bottom:22px;
-  max-width:440px
- }
- :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-copy>p:not(.eyebrow){
-  max-width:470px;
-  font-size:16px;
-  line-height:1.6;
-  margin-bottom:13px
- }
- :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-button{margin-top:10px;padding:12px 22px;font-size:13px}
- :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-image{width:100%;max-width:500px;justify-self:end;border-radius:150px 0 0 0}
- :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-image img{height:auto;aspect-ratio:1/1.03;object-fit:cover}
- :where(html[data-style-screen="store-home"]) .home-redesign .home-story-values{gap:46px;padding:0 18px}
- :where(html[data-style-screen="store-home"]) .home-redesign .home-story-values>div{gap:12px}
- :where(html[data-style-screen="store-home"]) .home-redesign .home-story-values>div>span{width:42px;height:42px;font-size:21px}
- :where(html[data-style-screen="store-home"]) .home-redesign .home-story-values strong{font-size:14px}
- :where(html[data-style-screen="store-home"]) .home-redesign .home-story-values small{font-size:12px}
-}
-@media(max-width:760px){
- :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial{padding:44px 20px 50px}
- :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-image img{aspect-ratio:1.55/1}
- :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-copy{padding:22px 12px 21px}
- :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial h2{font-size:38px;line-height:1.02;margin-bottom:17px}
- :where(html[data-style-screen="store-home"]) .home-redesign .home-story-editorial .home-story-copy>p:not(.eyebrow){font-size:14px;line-height:1.55}
- :where(html[data-style-screen="store-home"]) .home-redesign .home-story-values{padding-top:22px;gap:13px}
-}
+
 :where(html[data-style-screen="store-home"]) .home-redesign .store-product-image{aspect-ratio:auto;min-height:0;background:#f4f1e9}
 :where(html[data-style-screen="store-home"]) .home-redesign .store-product-image>img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain;object-position:center;padding:0}
 @media(max-width:760px){
@@ -1410,4 +1211,90 @@
   :where(html[data-style-screen="store-home"]) .newsletter-field input {
     min-height: 44px
   }
+}
+
+/* The hero stacks its artwork and live copy on small screens. */
+@media(max-width:760px) {
+    :where(html[data-style-screen="store-home"]) .home-redesign .yaqeen-home-hero {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        min-height: 0;
+        aspect-ratio: auto;
+        overflow: hidden;
+    }
+
+    :where(html[data-style-screen="store-home"]) .home-redesign img.yaqeen-home-hero-image {
+        position: relative;
+        inset: auto;
+        flex: none;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1.55 / 1;
+        object-fit: cover;
+        object-position: 80% center;
+    }
+
+    :where(html[data-style-screen="store-home"]) .home-redesign .yaqeen-home-hero-content {
+        position: relative;
+        inset: auto;
+        display: block;
+        flex: none;
+        width: 100%;
+        height: auto;
+        padding: 18px 24px 28px;
+        background: var(--yaqeen-canvas);
+    }
+
+    :where(html[data-style-screen="store-home"]) .yaqeen-home-hero-content h1 {
+        max-width: 100%;
+        margin-bottom: 12px;
+        font-size: clamp(32px, 8vw, 48px);
+        line-height: 1.03;
+    }
+
+    :where(html[data-style-screen="store-home"]) .yaqeen-home-hero-content p {
+        max-width: 100%;
+        margin-bottom: 18px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    :where(html[data-style-screen="store-home"]) .yaqeen-home-hero-button {
+        width: 100%;
+        min-height: 48px;
+        font-size: 15px;
+    }
+}
+
+/* Homepage navigation logo matches the hero mockup's taller brand mark. */
+:where(html[data-style-screen="store-home"]) .site-header .store-nav-shell>a.brand.brand-has-logo {
+    width: 104px;
+    height: 68px;
+    max-width: 104px;
+    padding: 0;
+}
+
+:where(html[data-style-screen="store-home"]) .site-header .store-nav-shell>.brand.brand-has-logo>img.brand-logo {
+    width: 104px;
+    height: 64px;
+    max-width: 104px;
+    max-height: 64px;
+    object-fit: contain;
+    margin: 0;
+}
+
+@media(max-width:760px) {
+    :where(html[data-style-screen="store-home"]) .site-header .store-nav-shell>a.brand.brand-has-logo {
+        width: 84px;
+        height: 58px;
+        max-width: 84px;
+    }
+
+    :where(html[data-style-screen="store-home"]) .site-header .store-nav-shell>.brand.brand-has-logo>img.brand-logo {
+        width: 84px;
+        height: 56px;
+        max-width: 84px;
+        max-height: 56px;
+    }
 }

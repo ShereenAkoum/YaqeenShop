@@ -1724,7 +1724,7 @@
   }
 }
 :where(html[data-style-area="admin"]) .admin {
-  background: #f8f7f3;
+  background: var(--yaqeen-canvas);
   grid-template-columns: 248px minmax(0, 1fr)
 }
 
@@ -1775,7 +1775,7 @@
 
 :where(html[data-style-area="admin"]) .admin-main {
   padding: 38px 48px 48px;
-  background: #f8f7f3
+  background: var(--yaqeen-canvas)
 }
 
 :where(html[data-style-area="admin"]) .admin-page {
@@ -1946,11 +1946,11 @@
 
 @media(max-width:760px) {
   :where(html[data-style-area="admin"]) .admin {
-    background: #f8f7f3
+    background: var(--yaqeen-canvas)
   }
 
   :where(html[data-style-area="admin"]) .admin-main {
-    background: #f8f7f3;
+    background: var(--yaqeen-canvas);
     padding-left: 16px;
     padding-right: 16px
   }

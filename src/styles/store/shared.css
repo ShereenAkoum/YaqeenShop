@@ -1061,75 +1061,65 @@
     bottom: calc(92px + env(safe-area-inset-bottom))
   }
 }
-:where(html[data-style-area="store"]) .yaqeen-footer{position:relative;overflow:hidden;background:var(--yaqeen-footer-bg);color:var(--yaqeen-footer-text);border-top:1px solid var(--yaqeen-footer-border)}
-:where(html[data-style-area="store"]) .footer-olive-art{position:absolute;z-index:0;right:-95px;top:-110px;width:min(38vw,590px);height:560px;object-fit:cover;object-position:right center;mix-blend-mode:multiply;opacity:.3;pointer-events:none}
-:where(html[data-style-area="store"]) .yaqeen-footer-main{position:relative;z-index:1;display:grid;grid-template-columns:1.35fr .65fr .65fr .8fr 1.45fr;gap:clamp(28px,4vw,70px);padding-top:70px;padding-bottom:64px}
-:where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column{max-width:300px}:where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column .brand{display:inline-flex}
-:where(html[data-style-area="store"]) .yaqeen-footer .footer-statement{margin:20px 0 0;color:var(--yaqeen-footer-muted);line-height:1.6;font-size:14px}
-:where(html[data-style-area="store"]) .footer-group{border:0}:where(html[data-style-area="store"]) .footer-group summary{list-style:none;cursor:default;font-size:15px;font-weight:700;margin-bottom:17px}:where(html[data-style-area="store"]) .footer-group summary::-webkit-details-marker{display:none}
-:where(html[data-style-area="store"]) .footer-group nav{display:flex;flex-direction:column;gap:10px}:where(html[data-style-area="store"]) .footer-group nav a{font-size:14px;color:var(--yaqeen-footer-link);text-decoration:none}:where(html[data-style-area="store"]) .footer-group nav a:hover{color:var(--yaqeen-footer-hover)}
-:where(html[data-style-area="store"]) .footer-journey h3{font-family:Georgia,serif;font-size:25px;font-weight:400;margin:0 0 14px}:where(html[data-style-area="store"]) .footer-journey>p{font-size:14px;color:var(--yaqeen-footer-muted);line-height:1.55;margin:0 0 17px}
-:where(html[data-style-area="store"]) .footer-journey-cta{display:inline-flex;align-items:center;justify-content:space-between;gap:20px;min-width:190px;padding:12px 17px;border:1px solid #d8d3c8;border-radius:999px;background:rgba(255,255,255,.62);text-decoration:none;font-size:13px;color:var(--yaqeen-footer-text)}
-:where(html[data-style-area="store"]) .footer-journey-cta svg{width:31px;height:31px;padding:7px;border-radius:50%;background:var(--yaqeen-footer-green);color:var(--yaqeen-pure-white)}
-:where(html[data-style-area="store"]) .yaqeen-footer .footer-motto{margin-top:23px;font-family:Georgia,serif;color:#5b6554}
-:where(html[data-style-area="store"]) .yaqeen-footer-bar{position:relative;z-index:2;background:var(--yaqeen-footer-green);color:var(--yaqeen-footer-bg)}
-:where(html[data-style-area="store"]) .yaqeen-footer-bar>.container{min-height:62px;display:flex;align-items:center;justify-content:space-between;gap:24px;font-size:12px}
-:where(html[data-style-area="store"]) .yaqeen-footer-bar .footer-legal-links{display:flex;gap:24px;justify-content: center;}:where(html[data-style-area="store"]) .yaqeen-footer-bar a{color:inherit;text-decoration:none}
-@media(max-width:800px){
- :where(html[data-style-area="store"]) .footer-olive-art{display:none}
- :where(html[data-style-area="store"]) .yaqeen-footer-main{display:flex;flex-direction:column;gap:0;padding:46px 24px 30px;text-align:center}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column{max-width:300px;margin:0 auto 28px}:where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column .brand{justify-content:center}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-statement{margin-top:16px;font-size:13px}
- :where(html[data-style-area="store"]) .footer-group{border-top:1px solid #ded9ce;text-align:left}
- :where(html[data-style-area="store"]) .footer-group:last-of-type{border-bottom:1px solid #ded9ce}
- :where(html[data-style-area="store"]) .footer-group summary{position:relative;margin:0;padding:17px 2px;font-size:14px;cursor:pointer}
- :where(html[data-style-area="store"]) .footer-group summary:after{content:'+';position:absolute;right:2px;font-size:18px;font-weight:400;top:13px}
- :where(html[data-style-area="store"]) .footer-group[open] summary:after{content:'−'}
- :where(html[data-style-area="store"]) .footer-group nav{padding:0 2px 17px;gap:11px}:where(html[data-style-area="store"]) .footer-group nav a{font-size:13px}
- :where(html[data-style-area="store"]) .footer-journey{order:-1;margin:0 0 28px;padding-bottom:27px;border-bottom:1px solid #ded9ce}
- :where(html[data-style-area="store"]) .footer-brand-column+.footer-group{margin-top:0}
- :where(html[data-style-area="store"]) .footer-journey h3{font-size:23px}:where(html[data-style-area="store"]) .footer-journey>p{max-width:310px;margin:0 auto 16px}
- :where(html[data-style-area="store"]) .footer-journey-cta{min-width:220px}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-motto{font-size:13px;margin-top:17px}
- :where(html[data-style-area="store"]) .yaqeen-footer-bar>.container{min-height:0;flex-direction:column;padding:20px 24px;gap:10px;text-align:center}
- :where(html[data-style-area="store"]) .yaqeen-footer-bar .footer-legal-links{gap:18px}
-}
-@media(max-width:800px){
- :where(html[data-style-area="store"]) .yaqeen-footer-main{padding-top:38px}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column{order:1;margin:0 auto 26px}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column .brand{display:flex;width:100%;min-height:86px;align-items:center;justify-content:center}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column .brand-logo{display:block;width:auto;max-width:180px;height:auto;max-height:86px;object-fit:contain}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column .footer-statement{margin-top:12px}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-group{order:2}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-journey{order:3;margin:26px 0 0;padding:26px 0 0;border-top:1px solid #ded9ce;border-bottom:0}
- :where(html[data-style-area="store"]) .yaqeen-footer-bar>.container{padding-bottom:28px}
-}
-@media(min-width:801px){
- :where(html[data-style-area="store"]) .yaqeen-footer{min-height:0;background:var(--yaqeen-footer-bg)}
- :where(html[data-style-area="store"]) .yaqeen-footer-main{width:min(100% - 64px,1440px);max-width:1440px;margin:0 auto;grid-template-columns:1.45fr .72fr .72fr .85fr 1.65fr;gap:48px;padding:72px 0 66px;align-items:start}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column{max-width:330px}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column .brand{display:flex;justify-content:flex-start;width:auto}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column .brand-logo{width:auto;height:auto;max-width:190px;max-height:112px;object-fit:contain}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-statement{max-width:300px;margin-top:20px;font-family:'DM Sans',Arial,sans-serif;font-size:14px;line-height:1.55}
- :where(html[data-style-area="store"]) .footer-socials{display:flex;gap:10px;margin-top:24px}:where(html[data-style-area="store"]) .footer-socials span{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:#efede5;font-family:Arial,sans-serif;font-size:15px;font-weight:600;color:#3d4935}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-group{padding-left:28px;border-left:1px solid #e2ded4}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-group summary{font-family:'DM Sans',Arial,sans-serif;font-size:14px;margin:0 0 18px;color:#35422f}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-group nav{gap:11px}:where(html[data-style-area="store"]) .yaqeen-footer .footer-group nav a{font-family:'DM Sans',Arial,sans-serif;font-size:13px}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-journey{max-width:390px;padding-left:12px}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-journey h3{font-size:27px;line-height:1.1;margin-bottom:16px}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-journey>p{max-width:340px;font-size:13px}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-journey-cta{display:flex;width:100%;max-width:370px;min-height:50px;padding:7px 8px 7px 18px;background:var(--yaqeen-pure-white)}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-journey-cta svg{margin-left:auto;width:36px;height:36px}
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-motto{font-size:14px;margin-top:25px}
- :where(html[data-style-area="store"]) .footer-olive-art{right:-65px;top:-75px;width:390px;height:430px;object-fit:cover;object-position:72% center;opacity:.22}
- :where(html[data-style-area="store"]) .yaqeen-footer-bar>.container{width:min(100% - 64px,1440px);max-width:1440px;margin:0 auto;min-height:64px;padding:0;font-family:'DM Sans',Arial,sans-serif;font-size:12px}
-}
-@media(max-width:800px){:where(html[data-style-area="store"]) .footer-socials{display:flex;justify-content:center;gap:10px;margin-top:18px}:where(html[data-style-area="store"]) .footer-socials span{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#efede5;font-family:Arial,sans-serif;font-size:14px;color:#3d4935}}
-@media(min-width:801px){
- :where(html[data-style-area="store"]) .yaqeen-footer .footer-olive-art{
-  right:0;top:0;width:min(29vw,445px);height:100%;
-  object-fit:contain;object-position:right top;mix-blend-mode:normal;opacity:1
- }
+/* Shared storefront footer: desktop columns and native mobile accordions. */
+:where(html[data-style-area="store"]) .yaqeen-footer {position:relative; overflow:hidden; padding:0; background:var(--yaqeen-canvas); color:var(--yaqeen-footer-text); border-top:1px solid var(--yaqeen-footer-border); font-family:'DM Sans',Arial,sans-serif}
+:where(html[data-style-area="store"]) .yaqeen-footer .footer-olive-art {position:absolute; z-index:0; right:-35px; top:-55px; width:280px; height:370px; object-fit:contain; object-position:right top; pointer-events:none}
+:where(html[data-style-area="store"]) .yaqeen-footer .yaqeen-footer-main {position:relative; z-index:1; width:calc(100% - 96px); max-width:1360px; margin:auto; display:grid; grid-template-columns:minmax(0,1.35fr) repeat(3,minmax(0,.65fr)) minmax(0,1.7fr); gap:28px; padding:50px 0 38px; align-items:start}
+:where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column .brand {display:inline-flex; width:auto; padding:0}
+:where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column .brand-logo {display:block; width:160px; height:125px; max-width:160px; max-height:125px; object-fit:contain; object-position:left center}
+:where(html[data-style-area="store"]) .yaqeen-footer .footer-statement {font-family:'DM Sans',Arial,sans-serif; font-size:14px; line-height:1.55; color:var(--yaqeen-footer-muted); max-width:280px; margin:12px 0 18px}
+:where(html[data-style-area="store"]) .yaqeen-footer .footer-socials {display:flex; flex-wrap:wrap; gap:10px}
+:where(html[data-style-area="store"]) .yaqeen-footer .footer-socials a {display:grid; place-items:center; width:38px; height:38px; border-radius:50%; background:#ece9de; color:#283421}
+:where(html[data-style-area="store"]) .yaqeen-footer .footer-socials a:hover {background:#e1e4d5}
+:where(html[data-style-area="store"]) .yaqeen-footer .footer-group {margin:18px 0 0; padding:0; border:0; min-width:0}
+:where(html[data-style-area="store"]) .yaqeen-footer .footer-group:not(.footer-journey) {border-right:1px solid var(--yaqeen-footer-border); padding-right:12px}
+:where(html[data-style-area="store"]) .yaqeen-footer .footer-group summary {list-style:none; font-size:15px; font-weight:600; margin:0 0 18px; pointer-events:none}
+:where(html[data-style-area="store"]) .yaqeen-footer .footer-group summary::-webkit-details-marker {display:none}
+:where(html[data-style-area="store"]) .yaqeen-footer .footer-group nav {display:flex; flex-direction:column; gap:9px}
+:where(html[data-style-area="store"]) .yaqeen-footer .footer-group nav a {display:block; padding:0; font-size:14px; line-height:1.45; color:var(--yaqeen-footer-link); text-decoration:none}
+:where(html[data-style-area="store"]) .yaqeen-footer .footer-group nav a:hover {color:var(--yaqeen-footer-hover); text-decoration:underline}
+:where(html[data-style-area="store"]) .yaqeen-footer .footer-journey summary {font-family:Georgia,serif; font-size:23px; font-weight:400}
+:where(html[data-style-area="store"]) .yaqeen-footer .footer-journey .footer-group-content>p {margin:0 0 18px; font-size:14px; line-height:1.55; color:var(--yaqeen-footer-muted)}
+:where(html[data-style-area="store"]) .yaqeen-footer .footer-newsletter {margin:0; padding:0; display:block}
+:where(html[data-style-area="store"]) .yaqeen-footer .footer-newsletter>div {display:none}
+:where(html[data-style-area="store"]) .yaqeen-footer .newsletter-field {display:flex; align-items:center; width:100%; border:1px solid var(--yaqeen-footer-border); border-radius:999px; background:#fffdf9; min-height:48px; overflow:hidden}
+:where(html[data-style-area="store"]) .yaqeen-footer .newsletter-field input {flex:1; min-width:0; width:100%; border:0; background:transparent; padding:12px 18px; font-size:14px; color:var(--text); outline:none}
+:where(html[data-style-area="store"]) .yaqeen-footer .newsletter-field:focus-within {outline:2px solid var(--yaqeen-footer-green); outline-offset:3px}
+:where(html[data-style-area="store"]) .yaqeen-footer .newsletter-field .button {display:grid; place-items:center; flex:none; width:68px; min-height:46px; margin:0; padding:10px; border:0; border-radius:999px; background:var(--yaqeen-footer-green); color:#fff; font-size:11px}
+:where(html[data-style-area="store"]) .yaqeen-footer .newsletter-success,
+:where(html[data-style-area="store"]) .yaqeen-footer .newsletter-error {display:block; margin-top:10px; font-size:13px}
+:where(html[data-style-area="store"]) .yaqeen-footer .newsletter-error {color:var(--danger)}
+:where(html[data-style-area="store"]) .yaqeen-footer .footer-journey .footer-group-content>.footer-motto {display:flex; align-items:center; gap:10px; margin:22px 0 0; font-size:13px}
+:where(html[data-style-area="store"]) .yaqeen-footer .footer-motto svg {flex:none}
+:where(html[data-style-area="store"]) .yaqeen-footer .yaqeen-footer-bar {position:relative; z-index:1; background:var(--yaqeen-footer-green); color:var(--yaqeen-canvas)}
+:where(html[data-style-area="store"]) .yaqeen-footer .yaqeen-footer-bar>.container {width:calc(100% - 96px); max-width:1360px; margin:auto; min-height:62px; display:flex; align-items:center; gap:24px; padding:14px 0; font-size:12px}
+:where(html[data-style-area="store"]) .yaqeen-footer .footer-legal-links {order:0; width:auto; display:flex; gap:20px; margin-left:auto}
+:where(html[data-style-area="store"]) .yaqeen-footer .footer-legal-links a+a {border-left:1px solid #ffffff40; padding-left:20px}
+:where(html[data-style-area="store"]) .yaqeen-footer .footer-language {display:flex; align-items:center; gap:8px; border-left:1px solid #ffffff40; padding-left:20px}
+@media(max-width:900px) {
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-olive-art {display:none}
+ :where(html[data-style-area="store"]) .yaqeen-footer .yaqeen-footer-main {width:100%; max-width:560px; display:flex; flex-direction:column; gap:0; padding:32px 24px 0}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column {width:100%; text-align:center; margin-bottom:24px}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column .brand {justify-content:center}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-brand-column .brand-logo {width:140px; height:100px; max-height:100px; object-position:center}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-statement {max-width:300px; margin:12px auto 16px; font-size:13px}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-socials {justify-content:center}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-socials a {width:34px; height:34px}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-group,
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-group:not(.footer-journey) {width:100%; margin:0; border:0; border-top:1px solid var(--yaqeen-footer-border); padding:0}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-group summary {position:relative; margin:0; padding:16px 28px 16px 0; pointer-events:auto; cursor:pointer; font-family:inherit; font-size:14px; font-weight:500}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-group summary::after {content:'+'; position:absolute; right:0; font-size:20px; top:10px}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-group[open] summary::after {content:'−'}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-group-content {padding:0 8px 18px}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-group nav a {display:block; padding:0; font-size:13px}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-journey .footer-group-content {padding-inline:0}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-journey .footer-group-content>p {font-size:13px}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-journey .footer-group-content>.footer-motto {font-size:12px; margin-top:18px}
+ :where(html[data-style-area="store"]) .yaqeen-footer .yaqeen-footer-bar {background:var(--yaqeen-canvas); color:var(--yaqeen-footer-muted)}
+ :where(html[data-style-area="store"]) .yaqeen-footer .yaqeen-footer-bar>.container {width:calc(100% - 48px); max-width:512px; border-top:1px solid var(--yaqeen-footer-border); flex-direction:column; gap:10px; padding:20px 0 28px; font-size:11px; text-align:center}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-legal-links {justify-content:center; margin:0; gap:14px}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-legal-links a+a {border-color:var(--yaqeen-footer-border); padding-left:14px}
+ :where(html[data-style-area="store"]) .yaqeen-footer .footer-language {border:0; padding:0; font-size:12px}
 }
 
 :where(html[data-style-area="store"]) .home-product-info {

@@ -16,7 +16,7 @@
   --yaqeen-peach: #f3d8c5;
 
   /* Existing neutral and editorial shades */
-  --yaqeen-canvas: #faf8f2;
+  --yaqeen-canvas: #f8f5ee;
   --yaqeen-paper: #fffefa;
   --yaqeen-pure-white: #fff;
   --yaqeen-muted: #666052;
@@ -30,7 +30,7 @@
   --yaqeen-hero-cta-hover: #26351d;
 
   /* Existing footer shades */
-  --yaqeen-footer-bg: #f8f5ed;
+  --yaqeen-footer-bg: var(--yaqeen-canvas);
   --yaqeen-footer-green: #405137;
   --yaqeen-footer-text: #394431;
   --yaqeen-footer-muted: #697063;
@@ -39,7 +39,7 @@
   --yaqeen-footer-border: #e5e0d5;
 
   /* Shared UI roles */
-  --bg: var(--yaqeen-ivory);
+  --bg: var(--yaqeen-canvas);
   --surface: var(--yaqeen-white);
   --surface-2: color-mix(in srgb, var(--yaqeen-taupe) 18%, var(--yaqeen-ivory));
   --text: var(--yaqeen-charcoal);
