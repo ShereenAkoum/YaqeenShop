@@ -841,6 +841,7 @@
 
   :where(html[data-style-screen="store-product"]) .product-option-choice {
     width: 100%;
+    min-width: 0;
     min-height: 76px;
     display: grid;
     gap: 4px;
@@ -860,6 +861,11 @@
   }
 
   :where(html[data-style-screen="store-product"]) .product-option-inventory {
+    display: block;
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-align: start;
     font-size: 16px;
     font-weight: 700;
     line-height: 1.3
