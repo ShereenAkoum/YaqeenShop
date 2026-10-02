@@ -9,3 +9,7 @@ The bundled artwork and mockup copy are defaults. Published homepage fields in t
 ## Our Story artwork
 
 `yaqeen-our-story.png` was adapted with the built-in image generation tool from the supplied Meaningful Living story mockup. Prompt: extract only the top-right square photograph; preserve the olive vase, candle, Faith books, clear YAQEEN plaque and lettering, warm curtains and sunlight. Remove UI, copy and device presentations; leave curved clipping to CSS. This is a close reconstruction. The mobile layout follows the image-first card in the reference.
+
+## Footer olive artwork
+
+`yaqeen-footer-olive.png` is a transparent reconstruction of the top-right branch in the supplied Elegant Responsive Footer Mockup, generated with the built-in image tool. The prompt preserves the dark narrow leaves, diagonal woody stems, and soft translucent cast shadows, excludes all text and UI, and tightly frames the foliage. It is a close reconstruction, not a pixel-exact extraction. The footer uses this bundled image for its default and the original stock decoration URL; other custom Website editor image URLs remain supported.
