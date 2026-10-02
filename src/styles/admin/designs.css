@@ -583,7 +583,7 @@
   flex-direction: column;
   padding: 0 !important;
   overflow: hidden !important;
-  background: #fffefa
+  background: var(--yaqeen-paper)
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.design-editor-modern)>.modal-head {
@@ -591,7 +591,7 @@
   margin: 0 !important;
   padding: 20px 24px !important;
   border-bottom: 1px solid var(--border);
-  background: #fffefa
+  background: var(--yaqeen-paper)
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.design-editor-modern)>.design-editor-modern {
@@ -670,7 +670,7 @@
   margin: 0 -24px !important;
   padding: 14px 24px !important;
   border-top: 1px solid var(--border);
-  background: #fffefa
+  background: var(--yaqeen-paper)
 }
 
 @media(max-width:760px) {
@@ -715,7 +715,7 @@
   padding: 10px 12px;
   border: 1px solid var(--border);
   border-radius: 9px;
-  background: #fffefa;
+  background: var(--yaqeen-paper);
   font: inherit;
   font-size: 14px
 }
@@ -778,7 +778,7 @@
   gap: 12px !important;
   padding: 14px 24px !important;
   border-top: 1px solid var(--border) !important;
-  background: #fffefa !important
+  background: var(--yaqeen-paper) !important
 }
 
 :where(html[data-style-screen="admin-designs"]) .admin .modal:has(>.design-editor-modern)>.design-modal-footer:has(>button:only-child) {

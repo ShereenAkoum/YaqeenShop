@@ -1708,7 +1708,7 @@
 }
 
 :where(html[data-style-area="admin"]) .admin .sidebar {
-  background: #fffefa;
+  background: var(--yaqeen-paper);
   border-right: 1px solid #e7e2d8;
   padding: 24px 16px;
   box-shadow: 1px 0 0 #ffffff
@@ -1738,12 +1738,12 @@
 
 :where(html[data-style-area="admin"]) .admin .sidebar nav a[aria-current=page] {
   background: #38452f;
-  color: #fff;
+  color: var(--yaqeen-pure-white);
   box-shadow: 0 4px 12px #38452f20
 }
 
 :where(html[data-style-area="admin"]) .admin .sidebar nav a[aria-current=page] svg {
-  color: #fff
+  color: var(--yaqeen-pure-white)
 }
 
 :where(html[data-style-area="admin"]) .admin .sidebar-account {
@@ -1789,7 +1789,7 @@
 :where(html[data-style-area="admin"]) .admin .secondary-button {
   border-color: #d9d3c8;
   border-radius: 9px;
-  background: #fffefa
+  background: var(--yaqeen-paper)
 }
 
 :where(html[data-style-area="admin"]) .admin .secondary-button:hover {
@@ -1807,7 +1807,7 @@
   height: 44px;
   border: 1px solid #d9d3c8 !important;
   border-radius: 9px !important;
-  background: #fffefa !important;
+  background: var(--yaqeen-paper) !important;
   padding: 0 14px !important;
   box-shadow: 0 1px 2px #25282008
 }
@@ -1821,13 +1821,13 @@
 :where(html[data-style-area="admin"]) .admin .table-wrap {
   border: 1px solid #e1ddd4;
   border-radius: 12px;
-  background: #fffefa;
+  background: var(--yaqeen-paper);
   box-shadow: 0 5px 22px #38342c0b;
   overflow: hidden
 }
 
 :where(html[data-style-area="admin"]) .admin .table-wrap table {
-  background: #fffefa
+  background: var(--yaqeen-paper)
 }
 
 :where(html[data-style-area="admin"]) .admin .table-wrap th {
@@ -1910,7 +1910,7 @@
 :where(html[data-style-area="admin"]) .modal .editor-form textarea {
   border-color: #ddd8ce;
   border-radius: 9px;
-  background: #fffefa
+  background: var(--yaqeen-paper)
 }
 
 @media(max-width:1000px) and (min-width:761px) {
@@ -1951,7 +1951,7 @@
   }
 
   :where(html[data-style-area="admin"]) .admin .sidebar {
-    background: #fffefa
+    background: var(--yaqeen-paper)
   }
 }
 :where(html[data-style-area="admin"]) .admin-main {
@@ -2025,7 +2025,7 @@
   width: 68px !important;
   border: 1px solid #d9d3c8;
   border-radius: 7px;
-  background: #fffefa;
+  background: var(--yaqeen-paper);
   padding: 0 8px;
   font-size: 12px !important;
   color: var(--text)
@@ -2054,7 +2054,7 @@
   height: 34px;
   border: 1px solid #ded9cf;
   border-radius: 8px;
-  background: #fffefa;
+  background: var(--yaqeen-paper);
   color: var(--text)
 }
 
@@ -2172,7 +2172,7 @@
 
 :where(html[data-style-area="admin"]) .modal.modal-confirm .danger-button {
   background: var(--danger);
-  color: #fff;
+  color: var(--yaqeen-pure-white);
   border-color: var(--danger);
   border-radius: 9px
 }
@@ -2239,7 +2239,7 @@
   margin: 0;
   padding: 20px 24px;
   border-bottom: 1px solid #ebe7df;
-  background: #fffefa
+  background: var(--yaqeen-paper)
 }
 
 :where(html[data-style-area="admin"]) .product-modern-form {
@@ -2314,7 +2314,7 @@
 :where(html[data-style-area="admin"]) .product-form-grid textarea {
   border: 1px solid #ddd8ce !important;
   border-radius: 9px !important;
-  background: #fffefa !important;
+  background: var(--yaqeen-paper) !important;
   padding: 10px 12px !important;
   min-height: 44px
 }
@@ -2380,7 +2380,7 @@
     bottom: 0;
     margin: 0 -16px -16px;
     padding: 12px 16px;
-    background: #fffefa;
+    background: var(--yaqeen-paper);
     border-top: 1px solid #ebe7df
   }
 
@@ -2514,7 +2514,7 @@
   min-height: 44px;
   border: 1px solid #ddd8ce !important;
   border-radius: 9px !important;
-  background: #fffefa !important;
+  background: var(--yaqeen-paper) !important;
   padding: 9px 11px !important
 }
 
@@ -2614,7 +2614,7 @@
   height: 78px;
   object-fit: contain;
   border-radius: 8px;
-  background: #fff;
+  background: var(--yaqeen-pure-white);
   border: 1px solid #e4e0d8
 }
 
@@ -2706,7 +2706,7 @@
   padding: 0 !important;
   border: 0 !important;
   border-radius: 50% !important;
-  background: #fff !important;
+  background: var(--yaqeen-pure-white) !important;
   transform: none !important;
   opacity: 1 !important;
   visibility: visible !important
@@ -3044,7 +3044,7 @@
 }
 @media(min-width:761px) {
   :where(html[data-style-area="admin"]) .admin .sidebar {
-    background: linear-gradient(180deg, #fffefa 0%, #faf9f4 100%) !important;
+    background: linear-gradient(180deg, var(--yaqeen-paper) 0%, #faf9f4 100%) !important;
     border-right: 1px solid #e8e4da !important;
     box-shadow: 8px 0 30px rgba(49, 57, 43, .035) !important;
     padding: 18px 12px !important
@@ -3094,7 +3094,7 @@
 
   :where(html[data-style-area="admin"]) .admin .sidebar-account .secondary-button {
     border-radius: 8px !important;
-    background: #fffefa !important;
+    background: var(--yaqeen-paper) !important;
     border-color: #ddd9cf !important
   }
 
@@ -3130,7 +3130,7 @@
 
   :where(html[data-style-area="admin"]) .admin .sidebar nav a[aria-current=page] {
     background: #35432e !important;
-    color: #fff !important;
+    color: var(--yaqeen-pure-white) !important;
     font-weight: 600;
     box-shadow: 0 5px 14px rgba(53, 67, 46, .16) !important
   }
@@ -3147,7 +3147,7 @@
   }
 
   :where(html[data-style-area="admin"]) .admin .sidebar nav a[aria-current=page] svg {
-    color: #fff !important
+    color: var(--yaqeen-pure-white) !important
   }
 
   :where(html[data-style-area="admin"]) .sidebar-toggle {
@@ -3158,7 +3158,7 @@
     top: 28px !important;
     border: 1px solid #ddd9cf !important;
     border-radius: 9px !important;
-    background: #fffefa !important;
+    background: var(--yaqeen-paper) !important;
     box-shadow: 0 4px 12px rgba(43, 48, 38, .08) !important
   }
 
@@ -3205,11 +3205,11 @@
 
 @media(max-width:760px) {
   :where(html[data-style-area="admin"]) .admin .sidebar {
-    background: linear-gradient(180deg, #fffefa, #faf9f4) !important
+    background: linear-gradient(180deg, var(--yaqeen-paper), #faf9f4) !important
   }
 
   :where(html[data-style-area="admin"]) .mobile-sidebar-head {
-    background: #fffefa !important
+    background: var(--yaqeen-paper) !important
   }
 
   :where(html[data-style-area="admin"]) .admin .sidebar nav a {
@@ -3230,7 +3230,7 @@
   padding: 8px 10px !important;
   border: 1px solid #dde2d8 !important;
   border-radius: 8px !important;
-  background: #fffefa !important;
+  background: var(--yaqeen-paper) !important;
   color: #3d4936 !important;
   font-size: 12px !important;
   font-weight: 600 !important;
@@ -3271,7 +3271,7 @@
 }
 
 :where(html[data-style-area="admin"]) .admin .sidebar nav a[aria-current=page] svg {
-  color: #fff !important
+  color: var(--yaqeen-pure-white) !important
 }
 @media(min-width:761px) {
   :where(html[data-style-area="admin"]) .admin .sidebar nav {
@@ -3324,7 +3324,7 @@
     height: 40px;
     border: 1px solid #e2ded4;
     border-radius: 11px;
-    background: #fffefa;
+    background: var(--yaqeen-paper);
     color: var(--primary);
     font-family: Georgia, 'Times New Roman', serif;
     font-size: 21px;
@@ -3351,7 +3351,7 @@
   padding: 6px 9px;
   border-radius: 7px;
   background: #252c21;
-  color: #fff;
+  color: var(--yaqeen-pure-white);
   font-size: 11px;
   font-weight: 500;
   line-height: 1;
@@ -3446,7 +3446,7 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #fff;
+  background: var(--yaqeen-pure-white);
   box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
   transition: .2s
 }
@@ -3516,7 +3516,7 @@
   width: 18px !important;
   height: 18px !important;
   border-radius: 50% !important;
-  background: #fff !important;
+  background: var(--yaqeen-pure-white) !important;
   transform: none !important
 }
 
@@ -3700,7 +3700,7 @@
   border: 0;
   border-radius: 50%;
   background: rgba(145, 36, 40, .92);
-  color: #fff;
+  color: var(--yaqeen-pure-white);
   font-size: 18px;
   line-height: 1;
   cursor: pointer
@@ -3733,7 +3733,7 @@
   }
 }
 :where(html[data-style-area="admin"]) .modal:has(.order-edit-form) {
-  background: #fffefa
+  background: var(--yaqeen-paper)
 }
 
 :where(html[data-style-area="admin"]) .modal:has(.order-edit-form) .modal-head {
@@ -4588,7 +4588,7 @@ html:where(html[data-style-area="admin"]):has(.admin .modal-backdrop),
 
 :where(html[data-style-area="admin"]) .settings-tabs button.is-active {
   color: #34412f;
-  background: #fff;
+  background: var(--yaqeen-pure-white);
   box-shadow: 0 2px 10px rgba(53, 62, 48, .08), inset 0 0 0 1px rgba(63, 80, 56, .08)
 }
 

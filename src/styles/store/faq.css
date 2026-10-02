@@ -42,7 +42,7 @@
 
 :where(html[data-style-screen="store-faq"]) .modern-faq[open] {
   border-color: #c7cebc;
-  background: #fff;
+  background: var(--yaqeen-pure-white);
   box-shadow: 0 12px 32px rgba(42, 52, 37, .06)
 }
 
@@ -89,7 +89,7 @@
 :where(html[data-style-screen="store-faq"]) .modern-faq[open] .faq-chevron {
   transform: rotate(180deg);
   background: var(--primary);
-  color: #fff
+  color: var(--yaqeen-pure-white)
 }
 
 :where(html[data-style-screen="store-faq"]) .faq-answer {

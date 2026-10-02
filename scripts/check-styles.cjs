@@ -6,6 +6,22 @@ const ts = require('typescript');
 const files = fs.readdirSync('src/styles', {recursive:true})
   .filter(file => file.endsWith('.css')).map(file => file.replaceAll('\\', '/'));
 const entry = fs.readFileSync('src/styles.css', 'utf8');
+const palette = postcss.parse(fs.readFileSync('src/styles/shared/tokens.css', 'utf8'));
+const rootVariables = new Map();
+palette.walkRules(rule => {
+  assert.equal(rule.selector, ':root', 'Brand tokens must be global root variables');
+  rule.walkDecls(decl => {
+    if (!decl.prop.startsWith('--')) return;
+    assert.ok(!rootVariables.has(decl.prop), `Duplicate token: ${decl.prop}`);
+    rootVariables.set(decl.prop, decl.value);
+  });
+});
+function checkToken(name, path = []) {
+  assert.ok(rootVariables.has(name), `Missing root token: ${name}`);
+  assert.ok(!path.includes(name), `Circular token reference: ${[...path, name].join(' -> ')}`);
+  for (const match of rootVariables.get(name).matchAll(/var\((--[\w-]+)/g)) checkToken(match[1], [...path, name]);
+}
+for (const name of rootVariables.keys()) checkToken(name);
 const imports = [...entry.matchAll(/@import '\.\/styles\/([^']+)';/g)].map(match => match[1]);
 assert.deepEqual([...imports].sort(), [...files].sort(), 'Import every stylesheet exactly once');
 for (const file of files) {

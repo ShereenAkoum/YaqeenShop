@@ -165,7 +165,7 @@
   padding: 27px;
   border: 1px solid #ddd7ca;
   border-radius: 16px;
-  background: #fffdf9;
+  background: var(--yaqeen-white);
   box-shadow: 0 12px 34px rgba(46, 49, 40, .06)
 }
 
@@ -215,10 +215,10 @@
   min-width: 19px;
   height: 19px;
   padding: 0 4px;
-  border: 2px solid #fffdf9;
+  border: 2px solid var(--yaqeen-white);
   border-radius: 999px;
   background: #3f4b35;
-  color: #fff;
+  color: var(--yaqeen-pure-white);
   font-size: 8px
 }
 

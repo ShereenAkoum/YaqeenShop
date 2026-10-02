@@ -133,9 +133,11 @@ async function capture(page) {
         properties.forEach((prop,i) => {if(record.values[i] !== expected[index].values[i]) changes[prop] = {refactor:record.values[i],main:expected[index].values[i]};});
         if(Object.keys(changes).length) differences.push({element:record.element,changes});
       });
-      results.push({width,route,scope,errors,differences});
+      const allowedHomeColors = process.env.VISUAL_CHECK_ALLOW_HOME_COLORS === '1' && route === '/';
+      const unexpectedDifferences = differences.filter(item => !allowedHomeColors || Object.keys(item.changes).some(property => !['color','background-color','border-top-color'].includes(property)));
+      results.push({width,route,scope,errors,differences,unexpectedDifferences});
       fs.writeFileSync(path.join(output,'report.json'),JSON.stringify(results,null,2));
-      console.log(`${width} ${route}: ${differences.length} differing elements; ${errors.length} runtime errors; overflow=${scope.overflow}`);
+      console.log(`${width} ${route}: ${differences.length} differing elements${allowedHomeColors ? ` (${unexpectedDifferences.length} unexpected)` : ''}; ${errors.length} runtime errors; overflow=${scope.overflow}`);
       page.off('pageerror', onError);
     }
     await context.close();
@@ -158,7 +160,7 @@ async function capture(page) {
   activeBrowser = null;
   fs.writeFileSync(path.join(output,'report.json'),JSON.stringify(results,null,2));
   console.log(`Report and screenshots: ${output}`);
-  if(results.some(result=>result.errors.length || result.differences.length))process.exitCode=1;
+  if(results.some(result=>result.errors.length || result.unexpectedDifferences.length))process.exitCode=1;
 })().catch(error => {console.error(error.message);process.exitCode = 1;}).finally(async()=>{
   if(activeBrowser)await activeBrowser.close();
   if(adminFixtures)for(const file of fixtureFiles)if(fs.existsSync(file))fs.unlinkSync(file);

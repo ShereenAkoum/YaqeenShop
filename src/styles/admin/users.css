@@ -303,7 +303,7 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #fff;
+  background: var(--yaqeen-pure-white);
   transition: left .15s ease
 }
 
@@ -719,7 +719,7 @@
   min-width: 14px !important;
   min-height: 14px !important;
   border-radius: 50% !important;
-  background: #fff !important;
+  background: var(--yaqeen-pure-white) !important;
   transform: none !important;
   transition: left .15s ease !important
 }
@@ -867,7 +867,7 @@
   min-width: 16px !important;
   min-height: 16px !important;
   border-radius: 50% !important;
-  background: #fff !important;
+  background: var(--yaqeen-pure-white) !important;
   transform: none !important
 }
 
@@ -969,7 +969,7 @@
   padding: 0 !important;
   border: 0 !important;
   border-radius: 50% !important;
-  background: #fff !important;
+  background: var(--yaqeen-pure-white) !important;
   transform: none !important;
   transition: left .15s ease !important;
 }
@@ -1219,7 +1219,7 @@
   width: 14px !important;
   height: 14px !important;
   border-radius: 50% !important;
-  background: #fff !important;
+  background: var(--yaqeen-pure-white) !important;
   transform: none !important;
   transition: left .15s ease !important;
 }
@@ -1326,7 +1326,7 @@
 
 :where(html[data-style-screen="admin-users"]) .admin .users-roles-page .users-roles-tabs>button.is-active {
   color: #35432f !important;
-  background: #fff !important;
+  background: var(--yaqeen-pure-white) !important;
   box-shadow: 0 2px 9px rgba(49, 58, 44, .09) !important
 }
 

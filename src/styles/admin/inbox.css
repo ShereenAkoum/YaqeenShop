@@ -57,7 +57,7 @@
 }
 
 :where(html[data-style-screen="admin-inbox"]) .inbox-tabs button.active {
-  background: #fff;
+  background: var(--yaqeen-pure-white);
   color: var(--primary);
   box-shadow: 0 1px 4px rgba(30, 40, 26, .08)
 }
@@ -362,7 +362,7 @@
 
 :where(html[data-style-screen="admin-inbox"]) .admin .inbox-tabs>button.is-active {
   color: #35432f !important;
-  background: #fff !important;
+  background: var(--yaqeen-pure-white) !important;
   box-shadow: 0 2px 9px rgba(49, 58, 44, .09) !important
 }
 

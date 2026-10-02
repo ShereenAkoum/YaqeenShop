@@ -104,7 +104,7 @@
   padding: 8px 17px;
   border-color: #d9d4c8;
   border-radius: 999px;
-  background: #fffdf9;
+  background: var(--yaqeen-white);
   font-size: 11px;
   transition: .18s
 }
@@ -154,7 +154,7 @@
   padding: 12px 12px 14px;
   border: 1px solid #e3e1d7;
   border-radius: 22px;
-  background: #fff;
+  background: var(--yaqeen-pure-white);
   box-shadow: 0 8px 28px rgba(44, 58, 39, .055);
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease
 }

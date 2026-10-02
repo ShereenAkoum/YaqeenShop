@@ -255,7 +255,7 @@
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 8px 10px;
-  background: #fff;
+  background: var(--yaqeen-pure-white);
   font: inherit;
   font-size: 13px
 }
@@ -513,7 +513,7 @@
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: 12px;
-  background: #fff
+  background: var(--yaqeen-pure-white)
 }
 
 :where(html[data-style-screen="admin-website"]) .faq-table {
@@ -622,7 +622,7 @@
   border: 1px solid var(--border);
   border-radius: 9px;
   padding: 11px 12px;
-  background: #fff;
+  background: var(--yaqeen-pure-white);
   font: inherit;
   font-size: 13px;
   line-height: 1.55
@@ -832,7 +832,7 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #fff;
+  background: var(--yaqeen-pure-white);
   transition: .2s
 }
 
@@ -852,7 +852,7 @@
   overflow: hidden;
   border: 1px solid #dedbd2;
   border-radius: 18px;
-  background: #fffdf9;
+  background: var(--yaqeen-white);
   box-shadow: 0 8px 24px rgba(58, 66, 53, .045);
   transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease
 }
@@ -919,7 +919,7 @@
 }
 
 :where(html[data-style-screen="admin-website"]) .admin-page .website-doc-card .icon-button:hover {
-  background: #fff;
+  background: var(--yaqeen-pure-white);
   color: var(--primary)
 }
 
@@ -980,7 +980,7 @@
 }
 
 :where(html[data-style-screen="admin-website"]) .homepage-section-card:nth-child(4n+2) {
-  background: #f7f1ea !important
+  background: var(--yaqeen-ivory) !important
 }
 
 :where(html[data-style-screen="admin-website"]) .homepage-section-card:nth-child(4n+3) {
@@ -998,16 +998,16 @@
 :where(html[data-style-screen="admin-website"]) .admin-page .website-doc-card,
 :where(html[data-style-screen="admin-website"]) .admin-page .website-doc-card:nth-child(n) {
   background: #fafaf6 !important;
-  border-color: #deded3 !important
+  border-color: var(--yaqeen-border-soft) !important
 }
 
 :where(html[data-style-screen="admin-website"]) .admin-page .website-doc-card .section-kicker {
-  background: #f0f1e8 !important;
-  color: #56614d !important
+  background: var(--yaqeen-soft-green) !important;
+  color: var(--yaqeen-muted-green) !important
 }
 
 :where(html[data-style-screen="admin-website"]) .admin-page .website-doc-card h2 {
-  color: #293426 !important
+  color: var(--yaqeen-text-green) !important
 }
 
 :where(html[data-style-screen="admin-website"]) .admin-page .website-doc-card p {
@@ -1016,7 +1016,7 @@
 
 :where(html[data-style-screen="admin-website"]) .admin-page .website-doc-card .icon-button {
   background: #fffdf6 !important;
-  border-color: #deded3 !important;
+  border-color: var(--yaqeen-border-soft) !important;
   color: var(--primary) !important
 }
 
@@ -1030,13 +1030,13 @@
 }
 
 :where(html[data-style-screen="admin-website"]) .website-editor .website-nav-editor-head .section-kicker {
-  color: #56614d !important
+  color: var(--yaqeen-muted-green) !important
 }
 
 :where(html[data-style-screen="admin-website"]) .website-editor-grid>label,
 :where(html[data-style-screen="admin-website"]) .website-editor-grid>.full:not(.website-nav-editor-head):not(.website-contact-note) {
   background: #fafaf6 !important;
-  border-color: #deded3 !important
+  border-color: var(--yaqeen-border-soft) !important
 }
 
 :where(html[data-style-screen="admin-website"]) .website-editor input,
@@ -1044,7 +1044,7 @@
 :where(html[data-style-screen="admin-website"]) .website-editor select {
   background: #fffdf6 !important;
   border-color: #bcc3b1 !important;
-  color: #293426 !important
+  color: var(--yaqeen-text-green) !important
 }
 
 :where(html[data-style-screen="admin-website"]) .website-editor input:focus,
@@ -1055,18 +1055,18 @@
 }
 
 :where(html[data-style-screen="admin-website"]) .website-contact-note {
-  background: #f0f1e8 !important;
+  background: var(--yaqeen-soft-green) !important;
   border-color: #d9ddcf !important
 }
 
 :where(html[data-style-screen="admin-website"]) .homepage-section-card,
 :where(html[data-style-screen="admin-website"]) .homepage-section-card:nth-child(n) {
   background: #fafaf6 !important;
-  border-color: #deded3 !important
+  border-color: var(--yaqeen-border-soft) !important
 }
 
 :where(html[data-style-screen="admin-website"]) .homepage-section-card[open] summary {
-  background: #f0f1e8 !important
+  background: var(--yaqeen-soft-green) !important
 }
 
 :where(html[data-style-screen="admin-website"]) .homepage-section-number {
@@ -1075,7 +1075,7 @@
 }
 
 :where(html[data-style-screen="admin-website"]) .homepage-visible-control {
-  background: #f0f1e8 !important;
+  background: var(--yaqeen-soft-green) !important;
   border-color: #d9ddcf !important
 }
 
@@ -1120,7 +1120,7 @@
 
 :where(html[data-style-screen="admin-website"]) .admin-page .website-doc-grid .website-doc-card .section-kicker {
   background: rgba(255, 255, 255, .62) !important;
-  color: #56614d !important
+  color: var(--yaqeen-muted-green) !important
 }
 
 :where(html[data-style-screen="admin-website"]) .admin-page .website-doc-grid .website-doc-card .icon-button {

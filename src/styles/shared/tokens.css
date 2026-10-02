@@ -1,0 +1,78 @@
+/* Edit the brand palette here. Screen files consume these colors through var(). */
+:root {
+  /* YAQEEN brand palette */
+  --yaqeen-olive: #3b4431;
+  --yaqeen-olive-dark: #2f3927;
+  --yaqeen-ivory: #f7f1ea;
+  --yaqeen-gold: #c8b293;
+  --yaqeen-taupe: #b4a68b;
+  --yaqeen-charcoal: #252820;
+  --yaqeen-white: #fffdf9;
+  --yaqeen-yellow: #f5e6a9;
+  --yaqeen-blush: #f1d1d2;
+  --yaqeen-sage: #d5dfcb;
+  --yaqeen-blue: #d2e3ec;
+  --yaqeen-lavender: #e0d7ed;
+  --yaqeen-peach: #f3d8c5;
+
+  /* Existing neutral and editorial shades */
+  --yaqeen-canvas: #faf8f2;
+  --yaqeen-paper: #fffefa;
+  --yaqeen-pure-white: #fff;
+  --yaqeen-muted: #666052;
+  --yaqeen-error: #a22e31;
+  --yaqeen-text-green: #293426;
+  --yaqeen-muted-green: #56614d;
+  --yaqeen-soft-green: #f0f1e8;
+  --yaqeen-border-soft: #deded3;
+  --yaqeen-hero-heading: #18300f;
+  --yaqeen-hero-cta: #313c19;
+  --yaqeen-hero-cta-hover: #26351d;
+
+  /* Existing footer shades */
+  --yaqeen-footer-bg: #f8f5ed;
+  --yaqeen-footer-green: #405137;
+  --yaqeen-footer-text: #394431;
+  --yaqeen-footer-muted: #697063;
+  --yaqeen-footer-link: #62685d;
+  --yaqeen-footer-hover: #294714;
+  --yaqeen-footer-border: #e5e0d5;
+
+  /* Shared UI roles */
+  --bg: var(--yaqeen-ivory);
+  --surface: var(--yaqeen-white);
+  --surface-2: color-mix(in srgb, var(--yaqeen-taupe) 18%, var(--yaqeen-ivory));
+  --text: var(--yaqeen-charcoal);
+  --muted: var(--yaqeen-muted);
+  --primary: var(--yaqeen-olive);
+  --primary-hover: var(--yaqeen-olive-dark);
+  --on-primary: var(--yaqeen-white);
+  --border: var(--yaqeen-taupe);
+  --accent: var(--yaqeen-gold);
+  --danger: var(--yaqeen-error);
+
+  /* Homepage roles inherit the palette; never redeclare these as themselves. */
+  --home-bg: var(--yaqeen-canvas);
+  --home-surface: var(--yaqeen-pure-white);
+  --home-green: var(--yaqeen-olive);
+  --home-green-dark: var(--yaqeen-olive-dark);
+  --home-text: var(--yaqeen-text-green);
+  --home-muted: var(--yaqeen-muted-green);
+  --home-soft: var(--yaqeen-soft-green);
+  --home-line: var(--yaqeen-border-soft);
+
+  /* Shared CRM sizing and focus treatment */
+  --crm-space-1: 4px;
+  --crm-space-2: 8px;
+  --crm-space-3: 12px;
+  --crm-space-4: 16px;
+  --crm-space-5: 24px;
+  --crm-space-6: 32px;
+  --crm-radius-sm: 6px;
+  --crm-radius-md: 9px;
+  --crm-radius-lg: 12px;
+  --crm-control-h: 44px;
+  --crm-shadow: 0 8px 28px #2f2b2412;
+  --crm-focus: 0 0 0 3px #3b4b3230;
+  color-scheme: light;
+}

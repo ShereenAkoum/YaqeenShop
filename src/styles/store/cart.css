@@ -159,7 +159,7 @@
   height: 38px;
   border: 1px solid #d7d1c5;
   border-radius: 9px;
-  background: #fff
+  background: var(--yaqeen-pure-white)
 }
 
 :where(html[data-style-screen="store-cart"]) .cart-quantity button {
@@ -191,7 +191,7 @@
   padding: 26px;
   border: 1px solid #ddd7ca;
   border-radius: 16px;
-  background: #fffdf9;
+  background: var(--yaqeen-white);
   box-shadow: 0 12px 34px rgba(46, 49, 40, .055)
 }
 

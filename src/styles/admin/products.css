@@ -374,11 +374,11 @@
 :where(html[data-style-screen="admin-products"]) .product-images-section>.table-wrap tbody,
 :where(html[data-style-screen="admin-products"]) .product-images-section>.table-wrap tbody tr,
 :where(html[data-style-screen="admin-products"]) .product-images-section>.table-wrap td {
-  background: #fffefa !important
+  background: var(--yaqeen-paper) !important
 }
 
 :where(html[data-style-screen="admin-products"]) .product-images-section>.table-wrap tbody tr:hover td {
-  background: #fffefa !important
+  background: var(--yaqeen-paper) !important
 }
 :where(html[data-style-screen="admin-products"]) .product-modern-form .simple-inventory-section .product-form-section-head {
   align-self: start
@@ -394,7 +394,7 @@
 
 :where(html[data-style-screen="admin-products"]) .product-modern-form .simple-inventory-section select,
 :where(html[data-style-screen="admin-products"]) .product-modern-form .simple-inventory-section input {
-  background: #fffefa !important
+  background: var(--yaqeen-paper) !important
 }
 
 :where(html[data-style-screen="admin-products"]) .product-modern-form .simple-inventory-section small {
@@ -684,7 +684,7 @@
   padding: 8px 10px;
   border: 1px solid var(--border);
   border-radius: 10px;
-  background: #fffefa
+  background: var(--yaqeen-paper)
 }
 
 :where(html[data-style-screen="admin-products"]) .variant-image-row>img {
@@ -896,8 +896,8 @@
   margin: 0 -24px !important;
   padding: 14px 24px max(14px, env(safe-area-inset-bottom)) !important;
   border-top: 1px solid var(--border) !important;
-  background: #fffefa !important;
-  box-shadow: 0 -10px 22px #fffefa !important;
+  background: var(--yaqeen-paper) !important;
+  box-shadow: 0 -10px 22px var(--yaqeen-paper) !important;
 }
 
 :where(html[data-style-screen="admin-products"]) .admin .product-edit-shell .product-edit-actions>button {
@@ -934,7 +934,7 @@
   gap: 12px !important;
   padding: 14px 24px max(14px, env(safe-area-inset-bottom)) !important;
   border-top: 1px solid var(--border) !important;
-  background: #fffefa !important;
+  background: var(--yaqeen-paper) !important;
   z-index: 50 !important;
   box-shadow: 0 -8px 20px rgba(34, 40, 28, .06) !important;
 }
