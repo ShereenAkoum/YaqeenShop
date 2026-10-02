@@ -1,0 +1,3 @@
+Shop hero asset: yaqeen-shop-hero.png
+Generated with the built-in imagegen tool.
+Prompt: Photorealistic wide ecommerce hero photograph, landscape 2.5:1. Three Islamic acrylic reminder plaques on warm cream travertine pedestals: a clear circular plaque with gold botanical engraving and Alhamdulillah lettering on a wooden base, a muted olive arch with gold botanical sprig and white Subhanallah lettering, and an ivory scalloped plaque with gold botanical twig and brown Tawakkul lettering. Soft afternoon sunlight, beige plaster wall with leaf shadows, and olive branches behind and to the right. Products and bases fully visible. Match the reference shop photograph; no logos, UI, or extra text.
