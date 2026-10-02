@@ -29,10 +29,16 @@ When adding a screen, create its stylesheet, add its import in `src/styles.css`,
 
 Run `node scripts/check-styles.cjs` to check stylesheet imports, route mappings and CSS isolation, then `npm run build` for TypeScript and production CSS compilation.
 
+Homepage layout rules use normal specificity and source order. Keep editorial story rules scoped through `.home-redesign` so generic CMS story rules cannot override the mobile layout. The homepage's remaining `!important` suppresses transitions for reduced-motion accessibility. Shared navigation/footer styles and other screens are separate cleanup work.
+
 Run `node scripts/prune-unused-css.cjs` for a conservative unused-selector audit. It scans source strings, JSX class names, selector queries, conditional fragments and template literals, retaining dynamic class prefixes. It proposes removing a selector only when a required class outside functional pseudo-classes is absent. Negations, alternatives, escaped identifiers, and uncertain runtime cases are retained. Review the report before applying it with `--write`, then run the build and browser comparisons. `--self-test` checks the selector safeguards. This audit does not attempt to remove every overridden declaration or infer usage solely from browser coverage.
 
 For browser comparisons, start the dev server and run `node scripts/visual-check-css.cjs`. It uses an installed Playwright package (including Windows `npx` installations), saves screenshots and a JSON report in the system temporary directory, and compares computed styles against CSS read from `main` without changing branches. Local CSS imports are expanded from that revision. `VISUAL_CHECK_BASE_REF` can select an earlier commit for comparisons after merging. Animations and transitions are disabled for repeatable comparisons.
 
 `VISUAL_CHECK_ALLOW_HOME_COLORS=1` accepts color-only homepage differences when validating the corrected homepage palette aliases. The report still records those differences, and layout differences or changes on other screens still fail.
+
+Set `VISUAL_CHECK_WIDTHS` to comma-separated viewport widths to compare responsive boundaries, for example `375,390,391,700,701,760,761,900,1024,1440`. The default remains `1440,390`.
+
+`VISUAL_CHECK_HOME_VARIANTS=1` adds local browser copies of top-picks products and sample CMS banner/newsletter sections on the home route, comparing their styles against the selected baseline too. It does not modify published CMS data.
 
 Set `VISUAL_CHECK_ADMIN=1` to mount the actual admin components with empty local API fixtures and exercise add dialogs. Temporary fixture files are removed after the run. Set `VISUAL_CHECK_CART=1` to populate cart and confirmation data only in the test browser, or `VISUAL_CHECK_PRODUCT=1` to include a published product from the shop. No order is submitted. `VISUAL_CHECK_BROWSER` selects `chromium` (default), `firefox`, or `webkit`; `VISUAL_CHECK_ROUTES` optionally limits the routes as a comma-separated list. Authenticated staff flows and saved-record edit/view dialogs require separate checks with an appropriate test account or richer fixtures.

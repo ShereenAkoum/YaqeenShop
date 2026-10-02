@@ -13,6 +13,8 @@ const origin = process.env.VISUAL_CHECK_URL || 'http://127.0.0.1:5173/YaqeenShop
 const output = process.env.VISUAL_CHECK_OUTPUT || path.join(require('node:os').tmpdir(), 'yaqeen-css-verification');
 fs.mkdirSync(output, {recursive:true});
 const baselineRef = process.env.VISUAL_CHECK_BASE_REF || 'main';
+const widths = (process.env.VISUAL_CHECK_WIDTHS || '1440,390').split(',').map(Number);
+if (widths.some(width => !Number.isInteger(width) || width <= 0)) throw new Error('VISUAL_CHECK_WIDTHS must contain positive integer widths.');
 function readBaseline(file) {
   return execFileSync('git',['show',`${baselineRef}:${file}`],{encoding:'utf8',maxBuffer:10e6});
 }
@@ -73,7 +75,7 @@ async function capture(page) {
     routes.push(href.replace(new URL(origin).pathname,''));
     await discovery.close();
   }
-  for (const width of [1440,390]) {
+  for (const width of widths) {
     const context = await browser.newContext({viewport:{width,height:900}, deviceScaleFactor:1});
     if(!adminFixtures && process.env.VISUAL_CHECK_CART === '1') {
       await context.addInitScript(()=>{
@@ -102,6 +104,20 @@ async function capture(page) {
       const target=adminFixtures?new URL(origin).origin+'/css-visual-fixture.html?screen='+route.replace('-dialog',''):origin+route;
       await page.goto(target, {waitUntil:'networkidle', timeout:45000});
       await page.locator('.brand-loader').first().waitFor({state:'hidden',timeout:15000}).catch(()=>{});
+      if (route === '/' && process.env.VISUAL_CHECK_HOME_VARIANTS === '1') {
+        // Exercise optional CMS layouts using local DOM copies; no CMS records are changed.
+        await page.evaluate(() => {
+          const home = document.querySelector('.home-redesign');
+          const products = home?.querySelector('.home-products');
+          if (!home || !products) throw new Error('Homepage product fixture is unavailable');
+          const topPicks = products.cloneNode(true);
+          topPicks.classList.add('home-top-picks');
+          home.append(topPicks);
+          const variants = document.createElement('div');
+          variants.innerHTML = '<section class="home-cms-banner"><div class="container"><p class="eyebrow">Banner</p><h2>Meaningful reminders</h2><p>Homepage CMS banner preview.</p><a class="button" href="#">Browse</a></div></section><section class="container home-cms-newsletter"><div><p class="eyebrow">Newsletter</p><h2>Stay connected</h2><p>Homepage newsletter preview.</p></div><form class="newsletter-signup"><div class="newsletter-field"><input type="email" placeholder="Email address"><button class="button" type="button">Subscribe</button></div><span class="newsletter-success">Thank you</span><span class="newsletter-error">Try again</span></form></section>';
+          home.append(...variants.children);
+        });
+      }
       if(adminFixtures && route.endsWith('-dialog')) {
         const button=page.getByRole('button',{name:/add|new|create/i}).first();
         await button.click();
