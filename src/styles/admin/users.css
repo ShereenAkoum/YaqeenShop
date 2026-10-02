@@ -1,0 +1,1500 @@
+/* admin/users: rules are isolated to their route or application area. */
+
+:where(html[data-style-screen="admin-users"]) .users-tabs {
+  display: flex;
+  gap: 6px;
+  margin: 0 0 22px;
+  padding: 4px;
+  width: max-content;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--surface-2)
+}
+
+:where(html[data-style-screen="admin-users"]) .users-tabs button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 38px;
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 700;
+  cursor: pointer
+}
+
+:where(html[data-style-screen="admin-users"]) .users-tabs button.active {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 1px 4px #00000012
+}
+
+:where(html[data-style-screen="admin-users"]) .roles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px
+}
+
+:where(html[data-style-screen="admin-users"]) .role-card {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface)
+}
+
+:where(html[data-style-screen="admin-users"]) .role-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px
+}
+
+:where(html[data-style-screen="admin-users"]) .role-card h3 {
+  margin: 4px 0 5px;
+  font-size: 19px
+}
+
+:where(html[data-style-screen="admin-users"]) .role-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 18px
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-summary>span {
+  padding: 6px 9px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-2);
+  font-size: 10px
+}
+
+:where(html[data-style-screen="admin-users"]) .role-permissions {
+  display: grid;
+  gap: 12px
+}
+
+:where(html[data-style-screen="admin-users"]) .role-permissions p {
+  margin: 3px 0 0
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  max-height: 390px;
+  overflow: auto;
+  padding: 2px
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-check {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 10px;
+  padding: 11px !important;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface)
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-check input {
+  width: 17px !important;
+  height: 17px !important;
+  min-height: 0 !important;
+  margin-top: 2px
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-check span {
+  display: grid;
+  gap: 2px
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-check strong {
+  font-size: 11px
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-check small {
+  font-size: 9px;
+  color: var(--muted);
+  font-weight: 400
+}
+
+:where(html[data-style-screen="admin-users"]) .staff-editor .nested-toggle-card {
+  margin: 0 !important
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-users"]) .roles-grid {
+    grid-template-columns: 1fr
+  }
+
+  :where(html[data-style-screen="admin-users"]) .permission-grid {
+    grid-template-columns: 1fr
+  }
+
+  :where(html[data-style-screen="admin-users"]) .users-tabs {
+    width: 100%
+  }
+
+  :where(html[data-style-screen="admin-users"]) .users-tabs button {
+    flex: 1;
+    justify-content: center
+  }
+
+  :where(html[data-style-screen="admin-users"]) .users-roles-page>.table-wrap {
+    overflow-x: auto
+  }
+
+  :where(html[data-style-screen="admin-users"]) .users-roles-page>.table-wrap table {
+    min-width: 760px
+  }
+}
+:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) {
+  width: min(760px, calc(100vw - 32px)) !important;
+  height: min(860px, calc(100dvh - 40px)) !important;
+  max-height: calc(100dvh - 40px) !important
+}
+
+:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .modal-body {
+  height: calc(100% - 70px);
+  min-height: 0;
+  overflow: hidden
+}
+
+:where(html[data-style-screen="admin-users"]) .role-editor-modern {
+  display: grid !important;
+  grid-template-rows: auto auto minmax(260px, 1fr) auto;
+  height: 100%;
+  min-height: 0;
+  gap: 18px !important;
+  overflow: hidden
+}
+
+:where(html[data-style-screen="admin-users"]) .role-editor-intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-2)
+}
+
+:where(html[data-style-screen="admin-users"]) .role-editor-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--primary);
+  color: var(--on-primary)
+}
+
+:where(html[data-style-screen="admin-users"]) .role-editor-intro h3 {
+  margin: 1px 0 4px;
+  font-size: 15px
+}
+
+:where(html[data-style-screen="admin-users"]) .role-editor-intro p {
+  margin: 0;
+  max-width: 570px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.55
+}
+
+:where(html[data-style-screen="admin-users"]) .role-editor-section {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface)
+}
+
+:where(html[data-style-screen="admin-users"]) .role-editor-section-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px
+}
+
+:where(html[data-style-screen="admin-users"]) .role-editor-section-head>span {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  border-radius: 8px;
+  background: var(--surface-2);
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 800
+}
+
+:where(html[data-style-screen="admin-users"]) .role-editor-section-head>div {
+  display: grid;
+  gap: 2px
+}
+
+:where(html[data-style-screen="admin-users"]) .role-editor-section-head strong {
+  font-size: 12px
+}
+
+:where(html[data-style-screen="admin-users"]) .role-editor-section-head small {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 400
+}
+
+:where(html[data-style-screen="admin-users"]) .role-name-field {
+  margin-left: 38px !important;
+  max-width: 470px
+}
+
+:where(html[data-style-screen="admin-users"]) .role-access-section {
+  display: flex !important;
+  flex-direction: column;
+  min-height: 260px !important;
+  overflow: hidden
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-groups {
+  display: flex !important;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 38px;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1px 4px 8px 1px;
+  overscroll-behavior: contain
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-module {
+  display: block !important;
+  flex: 0 0 auto !important;
+  width: 100%;
+  min-height: 112px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  overflow: hidden
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-module-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 54px;
+  padding: 12px 14px;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border)
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-module-head>div {
+  display: grid;
+  gap: 2px
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-module-head>div>strong {
+  font-size: 12px
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-module-head>div>small {
+  font-size: 9px;
+  color: var(--muted)
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-select-all {
+  display: flex !important;
+  align-items: center !important;
+  flex-direction: row-reverse !important;
+  justify-content: flex-end !important;
+  gap: 7px !important;
+  margin-left: auto !important;
+  padding: 0 !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  white-space: nowrap;
+  cursor: pointer
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-select-all input {
+  width: 16px !important;
+  height: 16px !important;
+  min-height: 0 !important
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-actions {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  min-height: 58px
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-action {
+  position: relative;
+  display: flex !important;
+  align-items: center !important;
+  gap: 9px !important;
+  min-width: 0;
+  min-height: 58px;
+  padding: 12px !important;
+  border-right: 1px solid var(--border);
+  cursor: pointer
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-action:last-child {
+  border-right: 0
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-action input {
+  position: absolute !important;
+  opacity: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  pointer-events: none
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-action>span:last-child {
+  display: grid;
+  min-width: 0;
+  gap: 2px
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-action strong {
+  font-size: 10px
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-action small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--muted);
+  font-size: 8px;
+  font-weight: 400
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-action-toggle {
+  position: relative;
+  display: block !important;
+  flex: 0 0 30px;
+  width: 30px;
+  height: 18px;
+  border-radius: 999px;
+  background: #bbb7ae;
+  transition: background .15s ease
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-action-toggle>span {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  transition: left .15s ease
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-action:has(input:checked) .permission-action-toggle {
+  background: var(--primary)
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-action:has(input:checked) .permission-action-toggle>span {
+  left: 15px
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-action:has(input:checked) {
+  background: color-mix(in srgb, var(--primary) 4%, var(--surface))
+}
+
+:where(html[data-style-screen="admin-users"]) .role-editor-actions {
+  position: relative !important;
+  bottom: auto !important;
+  z-index: 3;
+  margin: 0 !important;
+  padding-top: 14px !important;
+  border-top: 1px solid var(--border);
+  background: var(--surface) !important
+}
+
+:where(html[data-style-screen="admin-users"]) .protected-owner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 7px;
+  padding: 5px 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 800;
+  white-space: nowrap;
+  vertical-align: middle
+}
+
+:where(html[data-style-screen="admin-users"]) .staff-actions {
+  white-space: nowrap !important;
+  min-width: 132px !important
+}
+
+:where(html[data-style-screen="admin-users"]) .staff-actions .icon-button {
+  display: inline-flex !important;
+  vertical-align: middle
+}
+
+:where(html[data-style-screen="admin-users"]) .staff-actions .staff-delete-button {
+  color: var(--danger, #a83f36) !important
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) {
+    width: calc(100vw - 20px) !important;
+    height: calc(100dvh - 40px) !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .modal-body {
+    height: calc(100% - 78px) !important;
+    min-height: 0;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+    touch-action: pan-y
+  }
+
+  :where(html[data-style-screen="admin-users"]) .role-editor-modern {
+    display: flex !important;
+    flex-direction: column;
+    height: auto !important;
+    min-height: max-content !important;
+    overflow: visible !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .role-editor-intro {
+    padding: 14px
+  }
+
+  :where(html[data-style-screen="admin-users"]) .role-editor-section {
+    padding: 14px
+  }
+
+  :where(html[data-style-screen="admin-users"]) .role-name-field {
+    margin-left: 0 !important;
+    max-width: none
+  }
+
+  :where(html[data-style-screen="admin-users"]) .role-access-section {
+    display: block !important;
+    min-height: 0 !important;
+    overflow: visible !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .permission-groups {
+    display: block !important;
+    margin-left: 0;
+    overflow: visible !important;
+    padding: 0
+  }
+
+  :where(html[data-style-screen="admin-users"]) .permission-module {
+    min-height: 0;
+    margin-bottom: 10px
+  }
+
+  :where(html[data-style-screen="admin-users"]) .permission-module-head {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding: 11px 12px
+  }
+
+  :where(html[data-style-screen="admin-users"]) .permission-module-head .permission-select-all {
+    margin-left: 0 !important;
+    justify-self: end !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .permission-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+  }
+
+  :where(html[data-style-screen="admin-users"]) .permission-action {
+    border-bottom: 1px solid var(--border)
+  }
+
+  :where(html[data-style-screen="admin-users"]) .permission-action:nth-child(2n) {
+    border-right: 0
+  }
+
+  :where(html[data-style-screen="admin-users"]) .permission-action:nth-last-child(-n+2) {
+    border-bottom: 0
+  }
+
+  :where(html[data-style-screen="admin-users"]) .role-editor-actions {
+    position: sticky !important;
+    bottom: 0 !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    flex-shrink: 0;
+    margin-top: 8px !important;
+    padding: 14px 0 max(10px, env(safe-area-inset-bottom)) !important;
+    background: var(--surface) !important;
+    box-shadow: 0 -8px 16px var(--surface)
+  }
+
+  :where(html[data-style-screen="admin-users"]) .role-editor-actions button {
+    width: 100%
+  }
+
+  :where(html[data-style-screen="admin-users"]) .users-roles-page>.table-wrap table {
+    min-width: 860px !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .staff-actions {
+    position: sticky;
+    right: 0;
+    z-index: 2;
+    min-width: 190px !important;
+    background: var(--surface);
+    box-shadow: -8px 0 12px #00000008
+  }
+
+  :where(html[data-style-screen="admin-users"]) .users-roles-page thead th:last-child {
+    position: sticky;
+    right: 0;
+    z-index: 3;
+    background: var(--surface-2)
+  }
+
+  :where(html[data-style-screen="admin-users"]) .protected-owner-badge {
+    font-size: 8px;
+    padding: 5px 7px
+  }
+}
+:where(html[data-style-screen="admin-users"]) .modal:has(.staff-editor-modern) {
+  width: min(720px, calc(100vw - 32px)) !important
+}
+
+:where(html[data-style-screen="admin-users"]) .staff-editor-modern {
+  gap: 16px !important
+}
+
+:where(html[data-style-screen="admin-users"]) .staff-editor-intro {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: var(--surface-2)
+}
+
+:where(html[data-style-screen="admin-users"]) .staff-editor-intro>span {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  border-radius: 10px;
+  background: var(--primary);
+  color: var(--on-primary)
+}
+
+:where(html[data-style-screen="admin-users"]) .staff-editor-intro h3 {
+  margin: 0 0 3px;
+  font-size: 14px
+}
+
+:where(html[data-style-screen="admin-users"]) .staff-editor-intro p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px
+}
+
+:where(html[data-style-screen="admin-users"]) .staff-editor-section {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: var(--surface)
+}
+
+:where(html[data-style-screen="admin-users"]) .staff-editor-section-head {
+  display: grid;
+  gap: 2px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border)
+}
+
+:where(html[data-style-screen="admin-users"]) .staff-editor-section-head strong {
+  font-size: 12px
+}
+
+:where(html[data-style-screen="admin-users"]) .staff-editor-section-head small {
+  color: var(--muted);
+  font-size: 9px
+}
+
+:where(html[data-style-screen="admin-users"]) .staff-editor-modern .nested-form-grid,
+:where(html[data-style-screen="admin-users"]) .staff-access-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 16px
+}
+
+:where(html[data-style-screen="admin-users"]) .staff-editor-modern label {
+  min-width: 0
+}
+
+:where(html[data-style-screen="admin-users"]) .staff-editor-modern input,
+:where(html[data-style-screen="admin-users"]) .staff-editor-modern select {
+  width: 100%
+}
+
+:where(html[data-style-screen="admin-users"]) .staff-editor-modern input:disabled,
+:where(html[data-style-screen="admin-users"]) .staff-editor-modern select:disabled {
+  opacity: .68;
+  background: var(--surface-2);
+  cursor: not-allowed
+}
+
+:where(html[data-style-screen="admin-users"]) .staff-access-grid .nested-toggle-card {
+  min-height: 66px;
+  margin: 0 !important
+}
+
+:where(html[data-style-screen="admin-users"]) .staff-access-grid .nested-toggle-card.is-protected {
+  background: var(--surface-2)
+}
+
+:where(html[data-style-screen="admin-users"]) .staff-editor-actions {
+  margin-top: 0 !important;
+  padding-top: 14px;
+  border-top: 1px solid var(--border)
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-users"]) .modal:has(.staff-editor-modern) {
+    width: calc(100vw - 20px) !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .staff-editor-modern .nested-form-grid,
+:where(html[data-style-screen="admin-users"]) .staff-access-grid {
+    grid-template-columns: 1fr
+  }
+
+  :where(html[data-style-screen="admin-users"]) .staff-editor-intro {
+    padding: 13px
+  }
+
+  :where(html[data-style-screen="admin-users"]) .staff-editor-section {
+    padding: 14px
+  }
+
+  :where(html[data-style-screen="admin-users"]) .staff-editor-actions {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr
+  }
+
+  :where(html[data-style-screen="admin-users"]) .staff-editor-actions button {
+    width: 100%
+  }
+}
+
+:where(html[data-style-screen="admin-users"]) .add-staff-editor .optional-label {
+  margin-left: 5px;
+  color: var(--muted);
+  font-size: 8px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .05em
+}
+
+:where(html[data-style-screen="admin-users"]) .add-staff-editor input::placeholder {
+  color: #aaa69d
+}
+:where(html[data-style-screen="admin-users"]) .admin .staff-editor-section label {
+  display: flex;
+  flex-direction: column;
+  min-width: 0
+}
+
+:where(html[data-style-screen="admin-users"]) .admin .staff-editor-section label>small {
+  display: block;
+  min-height: 15px;
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.35
+}
+
+:where(html[data-style-screen="admin-users"]) .admin .staff-editor-section label:not(:has(>small))::after {
+  content: "";
+  display: block;
+  min-height: 15px;
+  margin-top: 6px
+}
+
+@media(max-width:760px) {
+
+  :where(html[data-style-screen="admin-users"]) .admin .staff-editor-section label>small,
+:where(html[data-style-screen="admin-users"]) .admin .staff-editor-section label:not(:has(>small))::after {
+    min-height: 0
+  }
+}
+:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) {
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important
+}
+
+:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern)>.modal-head {
+  flex: 0 0 auto !important
+}
+
+:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern)>.modal-body {
+  display: block !important;
+  flex: 1 1 auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain !important;
+  touch-action: pan-y !important
+}
+
+:where(html[data-style-screen="admin-users"]) .role-editor-modern {
+  display: flex !important;
+  flex-direction: column !important;
+  height: auto !important;
+  min-height: 100% !important;
+  overflow: visible !important
+}
+
+:where(html[data-style-screen="admin-users"]) .role-access-section {
+  display: block !important;
+  min-height: 0 !important;
+  overflow: visible !important
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-groups {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  height: auto !important;
+  max-height: none !important;
+  min-height: 0 !important;
+  overflow: visible !important
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-action input {
+  position: absolute !important;
+  opacity: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  min-width: 1px !important;
+  min-height: 1px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  pointer-events: none !important
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-action-toggle {
+  display: block !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+  flex: 0 0 34px !important;
+  width: 34px !important;
+  height: 20px !important;
+  min-width: 34px !important;
+  min-height: 20px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: #b8b4ab !important;
+  overflow: hidden !important
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-action-toggle>span {
+  display: block !important;
+  position: absolute !important;
+  box-sizing: border-box !important;
+  top: 3px !important;
+  left: 3px !important;
+  width: 14px !important;
+  height: 14px !important;
+  min-width: 14px !important;
+  min-height: 14px !important;
+  border-radius: 50% !important;
+  background: #fff !important;
+  transform: none !important;
+  transition: left .15s ease !important
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-action:has(input:checked) .permission-action-toggle {
+  background: var(--primary) !important
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-action:has(input:checked) .permission-action-toggle>span {
+  left: 17px !important;
+  transform: none !important
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-action {
+  cursor: pointer !important
+}
+
+:where(html[data-style-screen="admin-users"]) .role-editor-actions {
+  position: sticky !important;
+  bottom: 0 !important;
+  z-index: 10 !important;
+  flex: 0 0 auto !important;
+  margin-top: 8px !important;
+  padding-top: 14px !important;
+  padding-bottom: max(10px, env(safe-area-inset-bottom)) !important;
+  background: var(--surface) !important;
+  box-shadow: 0 -8px 16px var(--surface) !important
+}
+
+@media(min-width:761px) {
+  :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern)>.modal-body {
+    padding-bottom: 0 !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .role-editor-modern {
+    padding-bottom: 0 !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .permission-groups {
+    margin-left: 38px !important
+  }
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) {
+    height: calc(100dvh - 24px) !important;
+    max-height: calc(100dvh - 24px) !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern)>.modal-body {
+    padding-bottom: 0 !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .role-editor-modern {
+    padding-bottom: 0 !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .permission-groups {
+    margin-left: 0 !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .permission-actions {
+    grid-template-columns: 1fr !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .permission-action {
+    min-height: 72px !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--border) !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .permission-action:last-child {
+    border-bottom: 0 !important
+  }
+}
+:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) {
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important
+}
+
+:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern)>.modal-head {
+  flex: 0 0 auto !important
+}
+
+:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern)>.modal-body {
+  display: flex !important;
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  height: auto !important;
+  overflow: hidden !important;
+  padding-bottom: 0 !important
+}
+
+:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .role-editor-modern {
+  display: flex !important;
+  flex: 1 1 auto !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior: contain !important;
+  padding-bottom: 0 !important
+}
+
+:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .role-access-section {
+  display: block !important;
+  flex: 0 0 auto !important;
+  min-height: 0 !important;
+  overflow: visible !important
+}
+
+:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .permission-groups {
+  display: flex !important;
+  flex: none !important;
+  flex-direction: column !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important
+}
+
+:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .role-editor-actions {
+  position: sticky !important;
+  bottom: 0 !important;
+  z-index: 30 !important;
+  flex: 0 0 auto !important;
+  margin-top: 16px !important;
+  padding: 14px 0 max(12px, env(safe-area-inset-bottom)) !important;
+  background: var(--surface) !important;
+  border-top: 1px solid var(--border) !important;
+  box-shadow: 0 -10px 18px var(--surface) !important
+}
+
+:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .permission-action {
+  align-items: center !important
+}
+
+:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .permission-action-toggle {
+  display: block !important;
+  position: relative !important;
+  flex: 0 0 36px !important;
+  width: 36px !important;
+  height: 22px !important;
+  min-width: 36px !important;
+  min-height: 22px !important;
+  border-radius: 999px !important;
+  background: #b8b4ab !important;
+  overflow: hidden !important
+}
+
+:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .permission-action-toggle>span {
+  position: absolute !important;
+  display: block !important;
+  top: 3px !important;
+  left: 3px !important;
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  min-height: 16px !important;
+  border-radius: 50% !important;
+  background: #fff !important;
+  transform: none !important
+}
+
+:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .permission-action:has(input:checked) .permission-action-toggle {
+  background: var(--primary) !important
+}
+
+:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .permission-action:has(input:checked) .permission-action-toggle>span {
+  left: 17px !important
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) {
+    height: calc(100dvh - 24px) !important;
+    max-height: calc(100dvh - 24px) !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .role-editor-modern {
+    padding-left: 16px !important;
+    padding-right: 16px !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .role-name-field {
+    margin-left: 0 !important;
+    max-width: none !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .permission-groups {
+    margin-left: 0 !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .permission-actions {
+    grid-template-columns: 1fr !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .permission-action {
+    min-height: 64px !important;
+    padding: 12px !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--border) !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .permission-action:last-child {
+    border-bottom: 0 !important
+  }
+}
+:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .permission-action {
+  display: grid !important;
+  grid-template-columns: 44px minmax(0, 1fr) !important;
+  align-items: center !important;
+  column-gap: 12px !important
+}
+
+:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .permission-action>input {
+  position: absolute !important;
+  opacity: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important
+}
+
+:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .permission-action>.permission-action-toggle {
+  position: relative !important;
+  display: block !important;
+  box-sizing: border-box !important;
+  width: 40px !important;
+  height: 24px !important;
+  min-width: 40px !important;
+  min-height: 24px !important;
+  max-width: 40px !important;
+  max-height: 24px !important;
+  flex: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: #b8b4ab !important;
+  overflow: hidden !important;
+  transform: none !important;
+}
+
+:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .permission-action>.permission-action-toggle>span {
+  position: absolute !important;
+  display: block !important;
+  box-sizing: border-box !important;
+  top: 3px !important;
+  left: 3px !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: 18px !important;
+  height: 18px !important;
+  min-width: 18px !important;
+  min-height: 18px !important;
+  max-width: 18px !important;
+  max-height: 18px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: #fff !important;
+  transform: none !important;
+  transition: left .15s ease !important;
+}
+
+:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .permission-action:has(>input:checked)>.permission-action-toggle {
+  background: var(--primary) !important
+}
+
+:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .permission-action:has(>input:checked)>.permission-action-toggle>span {
+  left: 19px !important
+}
+
+:where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .permission-action>.permission-action-toggle+span {
+  min-width: 0 !important
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .permission-action {
+    grid-template-columns: 44px minmax(0, 1fr) !important
+  }
+}
+
+:where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .editor-form>.staff-editor-actions:last-child,
+:where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .editor-form>.role-editor-actions:last-child {
+  position: sticky !important;
+  bottom: -24px !important;
+  z-index: 30 !important;
+  margin: 16px -24px -24px !important;
+  padding: 14px 24px max(14px, env(safe-area-inset-bottom)) !important;
+  background: var(--surface) !important;
+  border-top: 1px solid var(--border) !important;
+  box-shadow: 0 -10px 22px var(--surface) !important;
+}
+
+:where(html[data-style-screen="admin-users"]) .admin .modal:has(.role-editor-modern)>.role-editor-modern {
+  flex: 1 1 auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding: 24px !important;
+}
+
+:where(html[data-style-screen="admin-users"]) .admin .modal:has(.role-editor-modern) .role-editor-actions {
+  bottom: -24px !important;
+  margin: 16px -24px -24px !important;
+  padding: 14px 24px max(14px, env(safe-area-inset-bottom)) !important;
+}
+
+@media(max-width:760px) {
+
+  :where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .editor-form>.staff-editor-actions:last-child,
+:where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .editor-form>.role-editor-actions:last-child {
+    bottom: -16px !important;
+    margin: 14px -16px -16px !important;
+    padding: 12px 16px max(12px, env(safe-area-inset-bottom)) !important;
+  }
+
+  :where(html[data-style-screen="admin-users"]) .admin .modal:has(.role-editor-modern)>.role-editor-modern {
+    padding: 16px !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .admin .modal:has(.role-editor-modern) .role-editor-actions {
+    bottom: -16px !important;
+    margin: 14px -16px -16px !important;
+    padding: 12px 16px max(12px, env(safe-area-inset-bottom)) !important;
+  }
+}
+:where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .staff-editor-actions,
+:where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .role-editor-actions {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  width: 100% !important;
+  align-items: stretch !important;
+}
+
+:where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .staff-editor-actions>button,
+:where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .staff-editor-actions>a,
+:where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .role-editor-actions>button,
+:where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .role-editor-actions>a {
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  justify-content: center !important;
+}
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .permission-actions {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    min-height: 0 !important;
+  }
+
+  :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .permission-action {
+    display: grid !important;
+    grid-template-columns: 40px minmax(0, 1fr) !important;
+    align-items: center !important;
+    column-gap: 8px !important;
+    min-width: 0 !important;
+    min-height: 82px !important;
+    padding: 10px !important;
+    border-right: 1px solid var(--border) !important;
+    border-bottom: 1px solid var(--border) !important;
+  }
+
+  :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .permission-action:nth-child(2n) {
+    border-right: 0 !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .permission-action:nth-last-child(-n+2) {
+    border-bottom: 0 !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .permission-action>span:last-child {
+    min-width: 0 !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .permission-action strong {
+    display: block !important;
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+  }
+
+  :where(html[data-style-screen="admin-users"]) .modal:has(.role-editor-modern) .permission-action small {
+    display: block !important;
+    margin-top: 4px !important;
+    font-size: 8px !important;
+    line-height: 1.25 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+  }
+}
+@media(max-width:760px) {
+
+  :where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .editor-form>.staff-editor-actions:last-child,
+:where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .editor-form>.role-editor-actions:last-child {
+    box-sizing: border-box !important;
+    width: calc(100% + 48px) !important;
+    max-width: none !important;
+    margin-left: -24px !important;
+    margin-right: -24px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  :where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .staff-editor-actions,
+:where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .role-editor-actions {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  :where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .staff-editor-actions>button,
+:where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .role-editor-actions>button {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+}
+:where(html[data-style-screen="admin-users"]) .permission-select-all {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  cursor: pointer !important;
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-select-all>input[type="checkbox"] {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-select-all>.permission-select-all-toggle {
+  display: inline-flex !important;
+  flex: 0 0 38px !important;
+  width: 38px !important;
+  height: 24px !important;
+  margin: 0 !important;
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-select-all>input[type="checkbox"]:checked+.permission-select-all-toggle {
+  background: var(--primary) !important;
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-select-all>input[type="checkbox"]:checked+.permission-select-all-toggle>span {
+  transform: translateX(14px) !important;
+}
+:where(html[data-style-screen="admin-users"]) .permission-module-head .permission-select-all {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 9px !important;
+  margin-left: auto !important;
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-module-head .permission-select-all>input[type="checkbox"] {
+  position: absolute !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  min-width: 1px !important;
+  min-height: 1px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  pointer-events: none !important;
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-module-head .permission-select-all>.permission-select-all-toggle {
+  display: block !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+  order: 2 !important;
+  flex: 0 0 34px !important;
+  width: 34px !important;
+  height: 20px !important;
+  min-width: 34px !important;
+  min-height: 20px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: #b8b4ab !important;
+  overflow: hidden !important;
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-module-head .permission-select-all>span:first-child {
+  order: 1 !important
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-module-head .permission-select-all>.permission-select-all-toggle>span {
+  position: absolute !important;
+  display: block !important;
+  top: 3px !important;
+  left: 3px !important;
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50% !important;
+  background: #fff !important;
+  transform: none !important;
+  transition: left .15s ease !important;
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-module-head .permission-select-all>input[type="checkbox"]:checked~.permission-select-all-toggle {
+  background: var(--primary) !important;
+}
+
+:where(html[data-style-screen="admin-users"]) .permission-module-head .permission-select-all>input[type="checkbox"]:checked~.permission-select-all-toggle>span {
+  left: 17px !important;
+  transform: none !important;
+}
+:where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .staff-editor-actions,
+:where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .role-editor-actions {
+  box-sizing: border-box !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  width: 100% !important;
+  max-width: none !important;
+  align-self: stretch !important;
+}
+
+:where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .staff-editor-actions>button,
+:where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .staff-editor-actions>a,
+:where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .role-editor-actions>button,
+:where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .role-editor-actions>a {
+  box-sizing: border-box !important;
+  display: flex !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  justify-content: center !important;
+}
+:where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .staff-editor-actions,
+:where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .role-editor-actions {
+  width: auto !important;
+  max-width: none !important;
+  margin-left: -24px !important;
+  margin-right: -24px !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  box-sizing: border-box !important;
+}
+
+@media(max-width:760px) {
+
+  :where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .staff-editor-actions,
+:where(html[data-style-screen="admin-users"]) .admin .modal:not(.modal-confirm) .role-editor-actions {
+    width: auto !important;
+    margin-left: -16px !important;
+    margin-right: -16px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+:where(html[data-style-screen="admin-users"]) .admin .users-roles-page .users-roles-tabs {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  width: 100%;
+  box-sizing: border-box;
+  background: #f2f0e9 !important;
+  border: 1px solid #dedbd1 !important;
+  border-radius: 14px !important;
+  padding: 5px !important;
+  gap: 4px !important;
+  margin-bottom: 18px !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scrollbar-width: none
+}
+
+:where(html[data-style-screen="admin-users"]) .admin .users-roles-page .users-roles-tabs::-webkit-scrollbar {
+  display: none
+}
+
+:where(html[data-style-screen="admin-users"]) .admin .users-roles-page .users-roles-tabs>button {
+  all: unset;
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  height: 42px !important;
+  padding: 0 14px !important;
+  border-radius: 10px !important;
+  color: #6f746a !important;
+  background: transparent !important;
+  font-family: inherit !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  cursor: pointer !important
+}
+
+:where(html[data-style-screen="admin-users"]) .admin .users-roles-page .users-roles-tabs>button svg {
+  width: 16px !important;
+  height: 16px !important;
+  stroke: currentColor !important
+}
+
+:where(html[data-style-screen="admin-users"]) .admin .users-roles-page .users-roles-tabs>button.is-active {
+  color: #35432f !important;
+  background: #fff !important;
+  box-shadow: 0 2px 9px rgba(49, 58, 44, .09) !important
+}
+
+@media(min-width:761px) {
+  :where(html[data-style-screen="admin-users"]) .admin .users-roles-page .users-roles-tabs {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    padding: 6px !important;
+    gap: 6px !important;
+    margin-bottom: 22px !important;
+    overflow: visible !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .admin .users-roles-page .users-roles-tabs>button {
+    width: 100% !important;
+    height: 46px !important;
+    padding: 0 18px !important
+  }
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-users"]) .admin .users-roles-page .users-roles-tabs {
+    margin-bottom: 16px !important
+  }
+
+  :where(html[data-style-screen="admin-users"]) .admin .users-roles-page .users-roles-tabs>button {
+    flex: 0 0 auto !important;
+    min-width: max-content !important;
+    height: 40px !important;
+    padding: 0 12px !important;
+    font-size: 11px !important
+  }
+}

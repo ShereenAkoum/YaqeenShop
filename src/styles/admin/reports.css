@@ -1,0 +1,127 @@
+/* admin/reports: rules are isolated to their route or application area. */
+
+:where(html[data-style-screen="admin-reports"]) .report-date-card {
+  display: flex;
+  align-items: end;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: var(--surface);
+  margin-bottom: 22px
+}
+
+:where(html[data-style-screen="admin-reports"]) .report-date-card label {
+  display: grid;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  min-width: 170px
+}
+
+:where(html[data-style-screen="admin-reports"]) .report-date-card input {
+  min-height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 9px 11px;
+  color: var(--text)
+}
+
+:where(html[data-style-screen="admin-reports"]) .report-date-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--surface-2);
+  color: var(--primary)
+}
+
+:where(html[data-style-screen="admin-reports"]) .report-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 30px
+}
+
+:where(html[data-style-screen="admin-reports"]) .report-metrics>div {
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: var(--surface);
+  display: grid;
+  gap: 5px
+}
+
+:where(html[data-style-screen="admin-reports"]) .report-metrics span {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  font-weight: 700
+}
+
+:where(html[data-style-screen="admin-reports"]) .report-metrics strong {
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: -.03em
+}
+
+:where(html[data-style-screen="admin-reports"]) .report-section {
+  margin: 0 0 30px
+}
+
+:where(html[data-style-screen="admin-reports"]) .report-section .section-head {
+  margin-bottom: 10px
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-reports"]) .report-date-card {
+    display: grid;
+    grid-template-columns: 1fr
+  }
+
+  :where(html[data-style-screen="admin-reports"]) .report-date-icon {
+    display: none
+  }
+
+  :where(html[data-style-screen="admin-reports"]) .report-date-card label {
+    min-width: 0
+  }
+
+  :where(html[data-style-screen="admin-reports"]) .report-date-card .primary-button {
+    width: 100%
+  }
+
+  :where(html[data-style-screen="admin-reports"]) .report-metrics {
+    grid-template-columns: 1fr
+  }
+}
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-reports"]) .report-date-card {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+    align-items: end !important
+  }
+
+  :where(html[data-style-screen="admin-reports"]) .report-date-card label {
+    min-width: 0 !important;
+    width: 100% !important
+  }
+
+  :where(html[data-style-screen="admin-reports"]) .report-date-card label input {
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 14px !important;
+    padding: 9px 8px !important
+  }
+
+  :where(html[data-style-screen="admin-reports"]) .report-date-card .primary-button {
+    grid-column: 1/-1 !important;
+    width: 100% !important
+  }
+}

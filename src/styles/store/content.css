@@ -1,0 +1,13 @@
+/* store/content: rules are isolated to their route or application area. */
+
+
+:where(html[data-style-screen="store-content"]) .store-page.narrow {
+  max-width: 800px
+}
+
+:where(html[data-style-screen="store-content"]) .store-prose {
+  white-space: pre-line;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 24px
+}

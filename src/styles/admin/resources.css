@@ -1,0 +1,375 @@
+/* admin/resources: rules are isolated to their route or application area. */
+
+:where(html[data-style-screen="admin-resources"]) .resources-subtitle {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 12px
+}
+
+:where(html[data-style-screen="admin-resources"]) .resources-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 18px 0 22px
+}
+
+:where(html[data-style-screen="admin-resources"]) .resource-summary-card {
+  min-height: 118px;
+  box-sizing: border-box;
+  padding: 20px;
+  border: 1px solid rgba(62, 72, 54, .1);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  box-shadow: 0 8px 28px rgba(48, 53, 43, .035)
+}
+
+:where(html[data-style-screen="admin-resources"]) .resource-summary-card.peach {
+  background: #fbefe7
+}
+
+:where(html[data-style-screen="admin-resources"]) .resource-summary-card.mint {
+  background: #edf4e9
+}
+
+:where(html[data-style-screen="admin-resources"]) .resource-summary-card.lavender {
+  background: #f2eef7
+}
+
+:where(html[data-style-screen="admin-resources"]) .resource-summary-card>span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: #5f6659
+}
+
+:where(html[data-style-screen="admin-resources"]) .resource-summary-card>strong {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: var(--primary)
+}
+
+:where(html[data-style-screen="admin-resources"]) .resource-summary-card>small {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.45
+}
+
+:where(html[data-style-screen="admin-resources"]) .resource-summary-card>svg {
+  margin-bottom: 3px;
+  color: var(--primary)
+}
+
+:where(html[data-style-screen="admin-resources"]) .resource-note {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-weight: 400
+}
+
+:where(html[data-style-screen="admin-resources"]) .resource-total-pill {
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #edf4e9;
+  color: var(--primary);
+  font-weight: 700
+}
+
+:where(html[data-style-screen="admin-resources"]) .resource-editor {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px
+}
+
+:where(html[data-style-screen="admin-resources"]) .resource-editor .full {
+  grid-column: 1/-1
+}
+
+:where(html[data-style-screen="admin-resources"]) .resource-view h3 {
+  margin: 5px 0 20px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 28px;
+  font-weight: 400
+}
+
+:where(html[data-style-screen="admin-resources"]) .resource-view-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px
+}
+
+:where(html[data-style-screen="admin-resources"]) .resource-view-grid>div {
+  padding: 15px;
+  border-radius: 14px;
+  background: #f7f3ec
+}
+
+:where(html[data-style-screen="admin-resources"]) .resource-view-grid span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .08em
+}
+
+:where(html[data-style-screen="admin-resources"]) .resource-view-grid strong {
+  font-size: 13px
+}
+
+:where(html[data-style-screen="admin-resources"]) .resource-view-grid .resource-view-total {
+  background: #edf4e9
+}
+
+:where(html[data-style-screen="admin-resources"]) .resource-view-grid .resource-view-total strong {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 21px;
+  font-weight: 400
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-resources"]) .resources-summary {
+    grid-template-columns: 1fr
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resource-summary-card {
+    min-height: 100px
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resource-editor,
+:where(html[data-style-screen="admin-resources"]) .resource-view-grid {
+    grid-template-columns: 1fr
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resources-table {
+    overflow-x: auto
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resources-table table {
+    min-width: 650px
+  }
+}
+:where(html[data-style-screen="admin-resources"]) .resources-page .resources-summary {
+  grid-template-columns: repeat(2, minmax(0, 1fr))
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-resources"]) .resources-page .resources-summary {
+    grid-template-columns: 1fr
+  }
+}
+:where(html[data-style-screen="admin-resources"]) .resource-view-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr))
+}
+
+:where(html[data-style-screen="admin-resources"]) .resource-view-grid>div {
+  box-sizing: border-box;
+  min-width: 0
+}
+
+:where(html[data-style-screen="admin-resources"]) .resource-view-grid .resource-view-total,
+:where(html[data-style-screen="admin-resources"]) .resource-view-grid>div:last-child {
+  grid-column: 1/-1
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-resources"]) .resource-view h3 {
+    margin: 4px 0 16px;
+    font-size: 25px;
+    line-height: 1.1
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resource-view-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resource-view-grid>div {
+    padding: 14px 15px;
+    border-radius: 13px
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resource-view-grid>div:first-child,
+:where(html[data-style-screen="admin-resources"]) .resource-view-grid>div:nth-child(2) {
+    grid-column: auto
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resource-view-grid .resource-view-total,
+:where(html[data-style-screen="admin-resources"]) .resource-view-grid>div:last-child {
+    grid-column: 1/-1
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resource-view-grid span {
+    margin-bottom: 6px;
+    font-size: 9px
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resource-view-grid strong {
+    font-size: 13px;
+    overflow-wrap: anywhere
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resource-view-grid .resource-view-total strong {
+    font-size: 20px
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resource-view .modal-actions {
+    margin-top: 12px
+  }
+}
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-resources"]) .resources-page {
+    padding-left: 14px !important;
+    padding-right: 14px !important
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resources-page .page-title {
+    gap: 12px
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resources-page .resources-summary {
+    margin: 14px 0 18px
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resources-page .resource-summary-card {
+    padding: 16px 18px;
+    border-radius: 16px
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resources-page .resource-editor {
+    gap: 12px
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resources-page .resource-view-grid {
+    gap: 8px
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resources-page .resource-view-grid>div {
+    padding: 12px 13px
+  }
+}
+:where(html[data-style-screen="admin-resources"]) .resource-details-modal {
+  width: min(720px, calc(100vw - 40px));
+  padding: 0;
+  overflow: hidden;
+  border-radius: 20px
+}
+
+:where(html[data-style-screen="admin-resources"]) .resource-details-modal .modal-head {
+  margin: 0;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--border)
+}
+
+:where(html[data-style-screen="admin-resources"]) .resource-details-modal .resource-view {
+  padding: 18px 24px 0
+}
+
+:where(html[data-style-screen="admin-resources"]) .resource-details-modal .resource-view .modal-actions {
+  margin-left: -24px;
+  margin-right: -24px;
+  padding: 16px 24px 20px
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-resources"]) .modal-backdrop:has(.resource-details-modal) {
+    padding: 16px
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resource-details-modal {
+    width: calc(100vw - 32px);
+    max-height: calc(100dvh - 48px);
+    border-radius: 18px
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resource-details-modal .modal-head {
+    padding: 16px 18px 14px
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resource-details-modal .modal-head h2 {
+    font-size: 26px;
+    line-height: 1.1
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resource-details-modal .resource-view {
+    padding: 16px 18px 0
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resource-details-modal .resource-view h3 {
+    margin: 5px 0 16px
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resource-details-modal .resource-view .modal-actions {
+    margin: 12px -18px 0;
+    padding: 14px 18px 16px
+  }
+}
+:where(html[data-style-screen="admin-resources"]) .resources-page .resources-summary {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 520px
+}
+
+:where(html[data-style-screen="admin-resources"]) .resources-table-tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 18px 0 10px
+}
+
+:where(html[data-style-screen="admin-resources"]) .resources-table-tools>span {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap
+}
+
+:where(html[data-style-screen="admin-resources"]) .resources-search {
+  min-width: 260px;
+  max-width: 420px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 13px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface)
+}
+
+:where(html[data-style-screen="admin-resources"]) .resources-search svg {
+  flex: 0 0 auto;
+  color: var(--muted)
+}
+
+:where(html[data-style-screen="admin-resources"]) .resources-search input {
+  width: 100%;
+  min-height: 42px;
+  border: 0 !important;
+  outline: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-resources"]) .resources-page .resources-summary {
+    max-width: none
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resources-table-tools {
+    margin-top: 16px
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resources-search {
+    min-width: 0
+  }
+
+  :where(html[data-style-screen="admin-resources"]) .resources-table-tools>span {
+    display: none
+  }
+}

@@ -1,0 +1,293 @@
+/* admin/audit: rules are isolated to their route or application area. */
+
+:where(html[data-style-screen="admin-audit"]) .audit-filters {
+  display: grid;
+  grid-template-columns: minmax(260px, 1.5fr) minmax(150px, .7fr) minmax(150px, .7fr) auto auto;
+  gap: 10px;
+  align-items: end;
+  margin-bottom: 12px
+}
+
+:where(html[data-style-screen="admin-audit"]) .audit-filters>select,
+:where(html[data-style-screen="admin-audit"]) .audit-filters>input,
+:where(html[data-style-screen="admin-audit"]) .audit-filters label input {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--surface);
+  padding: 9px 12px;
+  color: var(--text)
+}
+
+:where(html[data-style-screen="admin-audit"]) .audit-filters label {
+  display: grid;
+  gap: 4px;
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .06em
+}
+
+:where(html[data-style-screen="admin-audit"]) .audit-count {
+  margin: 0 0 10px
+}
+
+:where(html[data-style-screen="admin-audit"]) .audit-id {
+  max-width: 210px;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+:where(html[data-style-screen="admin-audit"]) .audit-action {
+  display: inline-flex;
+  padding: 4px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 650;
+  text-transform: capitalize;
+  background: var(--surface-2);
+  border: 1px solid var(--border)
+}
+
+:where(html[data-style-screen="admin-audit"]) .audit-action.insert,
+:where(html[data-style-screen="admin-audit"]) .audit-action.create {
+  color: #38603f;
+  background: #edf5ec;
+  border-color: #d7e8d4
+}
+
+:where(html[data-style-screen="admin-audit"]) .audit-action.update {
+  color: #84621f;
+  background: #fbf3dc;
+  border-color: #eadcae
+}
+
+:where(html[data-style-screen="admin-audit"]) .audit-action.delete {
+  color: #a33b3b;
+  background: #fff0ee;
+  border-color: #f2d2cd
+}
+
+:where(html[data-style-screen="admin-audit"]) .audit-detail {
+  display: grid;
+  gap: 18px
+}
+
+:where(html[data-style-screen="admin-audit"]) .audit-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px
+}
+
+:where(html[data-style-screen="admin-audit"]) .audit-detail-grid>div {
+  display: grid;
+  gap: 3px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 9px
+}
+
+:where(html[data-style-screen="admin-audit"]) .audit-detail-grid .full {
+  grid-column: 1/-1
+}
+
+:where(html[data-style-screen="admin-audit"]) .audit-detail-grid span,
+:where(html[data-style-screen="admin-audit"]) .audit-metadata>span {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .07em
+}
+
+:where(html[data-style-screen="admin-audit"]) .audit-detail-grid strong {
+  font-size: 13px;
+  overflow-wrap: anywhere
+}
+
+:where(html[data-style-screen="admin-audit"]) .audit-metadata {
+  display: grid;
+  gap: 7px
+}
+
+:where(html[data-style-screen="admin-audit"]) .audit-metadata pre {
+  max-height: 360px;
+  overflow: auto;
+  margin: 0;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--surface-2);
+  font-size: 11px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere
+}
+
+@media(max-width:1000px) {
+  :where(html[data-style-screen="admin-audit"]) .audit-filters {
+    grid-template-columns: 1fr 1fr
+  }
+
+  :where(html[data-style-screen="admin-audit"]) .audit-filters .category-search {
+    grid-column: 1/-1
+  }
+}
+
+@media(max-width:600px) {
+  :where(html[data-style-screen="admin-audit"]) .audit-filters {
+    grid-template-columns: 1fr
+  }
+
+  :where(html[data-style-screen="admin-audit"]) .audit-filters .category-search {
+    grid-column: auto
+  }
+
+  :where(html[data-style-screen="admin-audit"]) .audit-detail-grid {
+    grid-template-columns: 1fr
+  }
+
+  :where(html[data-style-screen="admin-audit"]) .audit-detail-grid .full {
+    grid-column: auto
+  }
+}
+@media(max-width:600px) {
+  :where(html[data-style-screen="admin-audit"]) .audit-page {
+    min-width: 0 !important;
+    overflow-x: hidden !important
+  }
+
+  :where(html[data-style-screen="admin-audit"]) .audit-page .page-title {
+    margin-bottom: 22px !important
+  }
+
+  :where(html[data-style-screen="admin-audit"]) .audit-filters {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 10px !important;
+    width: 100% !important;
+    min-width: 0 !important
+  }
+
+  :where(html[data-style-screen="admin-audit"]) .audit-filters .category-search,
+:where(html[data-style-screen="admin-audit"]) .audit-filters>select,
+:where(html[data-style-screen="admin-audit"]) .audit-filters>input {
+    grid-column: 1/-1 !important;
+    min-width: 0 !important
+  }
+
+  :where(html[data-style-screen="admin-audit"]) .audit-filters label {
+    min-width: 0 !important
+  }
+
+  :where(html[data-style-screen="admin-audit"]) .audit-filters label input {
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+    width: 100% !important
+  }
+
+  :where(html[data-style-screen="admin-audit"]) .audit-count {
+    margin: 18px 0 10px !important
+  }
+
+  :where(html[data-style-screen="admin-audit"]) .audit-page>.table-wrap {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain
+  }
+
+  :where(html[data-style-screen="admin-audit"]) .audit-page>.table-wrap>table {
+    width: max-content !important;
+    min-width: 760px !important;
+    table-layout: auto !important
+  }
+
+  :where(html[data-style-screen="admin-audit"]) .audit-page>.table-wrap th,
+:where(html[data-style-screen="admin-audit"]) .audit-page>.table-wrap td {
+    white-space: nowrap !important
+  }
+
+  :where(html[data-style-screen="admin-audit"]) .audit-page>.table-wrap th:first-child,
+:where(html[data-style-screen="admin-audit"]) .audit-page>.table-wrap td:first-child {
+    min-width: 190px !important
+  }
+
+  :where(html[data-style-screen="admin-audit"]) .audit-page>.table-wrap th:nth-child(2),
+:where(html[data-style-screen="admin-audit"]) .audit-page>.table-wrap td:nth-child(2) {
+    min-width: 155px !important
+  }
+
+  :where(html[data-style-screen="admin-audit"]) .audit-page>.table-wrap tfoot td {
+    white-space: normal !important
+  }
+
+  :where(html[data-style-screen="admin-audit"]) .audit-page .category-pagination {
+    min-width: 700px !important
+  }
+}
+:where(html[data-style-screen="admin-audit"]) .audit-filters>select,
+:where(html[data-style-screen="admin-audit"]) .audit-filters>input {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: none !important
+}
+
+:where(html[data-style-screen="admin-audit"]) .audit-date-filter {
+  min-width: 0 !important
+}
+
+:where(html[data-style-screen="admin-audit"]) .audit-date-control {
+  position: relative;
+  width: 100%;
+  min-width: 0
+}
+
+:where(html[data-style-screen="admin-audit"]) .audit-date-control input {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  padding-right: 38px !important
+}
+
+:where(html[data-style-screen="admin-audit"]) .audit-date-control>svg {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--muted)
+}
+
+:where(html[data-style-screen="admin-audit"]) .audit-date-control input::-webkit-calendar-picker-indicator {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer
+}
+
+@media(max-width:600px) {
+
+  :where(html[data-style-screen="admin-audit"]) .audit-filters>select,
+:where(html[data-style-screen="admin-audit"]) .audit-filters>input {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    box-sizing: border-box !important
+  }
+
+  :where(html[data-style-screen="admin-audit"]) .audit-date-filter {
+    width: 100% !important
+  }
+
+  :where(html[data-style-screen="admin-audit"]) .audit-date-control,
+:where(html[data-style-screen="admin-audit"]) .audit-date-control input {
+    width: 100% !important;
+    max-width: 100% !important
+  }
+}

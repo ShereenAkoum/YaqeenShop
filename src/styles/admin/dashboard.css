@@ -1,0 +1,603 @@
+/* admin/dashboard: rules are isolated to their route or application area. */
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-page {
+  display: grid;
+  gap: 30px
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-welcome {
+  padding: 8px 0 2px
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-welcome h1 {
+  margin: 6px 0 8px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 34px;
+  font-weight: 400
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-metric-card {
+  display: grid;
+  grid-template-columns: 38px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  text-decoration: none;
+  color: inherit;
+  transition: transform .15s ease, box-shadow .15s ease
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-metric-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(38, 48, 30, .06)
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-metric-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f1f3ea
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-metric-card p {
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: .08em
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-metric-card strong {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 24px;
+  font-weight: 400
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-metric-card>span {
+  font-size: 9px;
+  color: var(--muted)
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-section {
+  display: grid;
+  gap: 14px
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-stock-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-stock-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fafbf7;
+  color: inherit;
+  text-decoration: none
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-stock-card div {
+  display: grid;
+  gap: 3px
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-stock-card strong {
+  font-size: 11px
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-stock-card div span {
+  font-size: 9px;
+  color: var(--muted)
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-clear {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fafbf7
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-clear div {
+  display: grid;
+  gap: 3px
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-clear strong {
+  font-size: 11px
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-clear span {
+  font-size: 9px;
+  color: var(--muted)
+}
+
+@media(max-width:900px) {
+  :where(html[data-style-screen="admin-dashboard"]) .dashboard-metrics {
+    grid-template-columns: repeat(2, 1fr)
+  }
+}
+
+@media(max-width:600px) {
+
+  :where(html[data-style-screen="admin-dashboard"]) .dashboard-metrics,
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-stock-grid {
+    grid-template-columns: 1fr
+  }
+
+  :where(html[data-style-screen="admin-dashboard"]) .dashboard-welcome h1 {
+    font-size: 28px
+  }
+}
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-page {
+  --dash-lilac: #f2eef8;
+  --dash-blue: #edf4f8;
+  --dash-mint: #edf6ef;
+  --dash-peach: #fbf1e8;
+  --dash-yellow: #faf6df;
+  --dash-rose: #f9eeee
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-welcome {
+  position: relative;
+  margin-bottom: 24px;
+  padding: 26px 28px 25px 82px;
+  border: 1px solid #e4e0d7;
+  border-radius: 18px;
+  background: linear-gradient(115deg, #fbfaf6 0%, #f1f5ec 100%);
+  overflow: hidden
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-welcome:after {
+  content: "";
+  position: absolute;
+  right: -45px;
+  top: -70px;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: rgba(226, 235, 218, .55)
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-welcome-icon {
+  position: absolute;
+  left: 27px;
+  top: 28px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #e5eddf;
+  color: var(--primary)
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-welcome .eyebrow {
+  margin: 0 0 7px
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-welcome h1 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 6px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 400;
+  line-height: 1.08
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-welcome>.muted {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: 11px
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-metrics {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  margin-bottom: 26px !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-metric-card {
+  position: relative;
+  display: grid !important;
+  grid-template-columns: 46px minmax(0, 1fr) auto !important;
+  align-items: center !important;
+  gap: 13px !important;
+  min-height: 92px !important;
+  padding: 16px !important;
+  border: 1px solid rgba(70, 75, 60, .08) !important;
+  border-radius: 16px !important;
+  color: var(--text) !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  overflow: hidden;
+  transition: transform .15s ease, box-shadow .15s ease !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 22px rgba(45, 49, 39, .06) !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-tone-orders {
+  background: var(--dash-blue) !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-tone-print {
+  background: var(--dash-lilac) !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-tone-pack {
+  background: var(--dash-yellow) !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-tone-delivery {
+  background: var(--dash-peach) !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-tone-revenue {
+  background: var(--dash-mint) !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-tone-stock {
+  background: var(--dash-rose) !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-metric-icon {
+  display: grid !important;
+  place-items: center !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 13px !important;
+  background: rgba(255, 255, 255, .68) !important;
+  color: var(--primary) !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-metric-copy {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-metric-copy p {
+  order: 2 !important;
+  margin: 0 !important;
+  color: var(--muted) !important;
+  font-size: 9px !important;
+  font-weight: 800 !important;
+  letter-spacing: .06em !important;
+  text-transform: uppercase !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-metric-copy strong {
+  order: 1 !important;
+  font-family: Georgia, 'Times New Roman', serif !important;
+  font-size: 23px !important;
+  font-weight: 400 !important;
+  line-height: 1 !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-metric-link {
+  display: flex !important;
+  align-items: center !important;
+  gap: 3px !important;
+  align-self: start !important;
+  padding: 5px 7px !important;
+  border-radius: 8px !important;
+  background: rgba(255, 255, 255, .55) !important;
+  color: var(--muted) !important;
+  font-size: 8px !important;
+  font-weight: 800 !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-section {
+  margin-top: 18px !important;
+  padding: 20px !important;
+  border: 1px solid #e3dfd6 !important;
+  border-radius: 17px !important;
+  background: #fffefa !important;
+  box-shadow: 0 8px 25px rgba(45, 49, 39, .035) !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-section .section-head {
+  margin-bottom: 15px !important;
+  padding: 0 2px !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-section .section-head h2 {
+  margin: 0 0 3px !important;
+  font-family: Georgia, 'Times New Roman', serif !important;
+  font-size: 20px !important;
+  font-weight: 400 !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-section .section-head a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 31px;
+  padding: 0 10px;
+  border: 1px solid #dedbd2;
+  border-radius: 9px;
+  background: #faf9f5;
+  color: var(--text);
+  font-size: 9px;
+  font-weight: 800;
+  text-decoration: none
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-section .table-wrap {
+  margin: 0 !important;
+  border: 1px solid #e5e1d8 !important;
+  border-radius: 12px !important;
+  box-shadow: none !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-section table thead {
+  background: #f6f5f0
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-section table th {
+  font-size: 8px !important;
+  letter-spacing: .09em !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-section table td {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-order-status {
+  display: inline-flex !important;
+  width: auto !important;
+  padding: 5px 8px !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: #eef1e9 !important;
+  font-size: 8px !important;
+  font-weight: 800 !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-order-status.status-order-received,
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-order-status.status-new {
+  background: #eaf2f7 !important;
+  color: #416476 !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-order-status.status-completed {
+  background: #e7f2e8 !important;
+  color: #3f6944 !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-order-status.status-cancelled {
+  background: #f7e9e8 !important;
+  color: #914843 !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-stock-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 9px !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-stock-card {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  padding: 13px 14px !important;
+  border: 1px solid #eadfda !important;
+  border-radius: 12px !important;
+  background: #fcf4f1 !important;
+  text-decoration: none !important;
+  color: var(--text) !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-stock-card>div {
+  display: grid;
+  gap: 3px
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-stock-card>div strong {
+  font-size: 10px
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-stock-card>div span {
+  color: var(--muted);
+  font-size: 8px
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-stock-card>.badge {
+  border: 0 !important;
+  background: #fff !important;
+  color: #8b5148 !important;
+  font-size: 8px !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-clear {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 16px !important;
+  border: 1px solid #dce8db !important;
+  border-radius: 12px !important;
+  background: var(--dash-mint) !important
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-clear>svg {
+  padding: 9px;
+  box-sizing: content-box;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .7);
+  color: #4d7350
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-clear>div {
+  display: grid;
+  gap: 3px
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-clear strong {
+  font-size: 10px
+}
+
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-clear span {
+  font-size: 9px;
+  color: var(--muted)
+}
+
+@media(max-width:980px) {
+  :where(html[data-style-screen="admin-dashboard"]) .dashboard-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important
+  }
+}
+
+@media(max-width:650px) {
+  :where(html[data-style-screen="admin-dashboard"]) .dashboard-welcome {
+    padding: 22px 20px 22px 68px
+  }
+
+  :where(html[data-style-screen="admin-dashboard"]) .dashboard-welcome-icon {
+    left: 18px;
+    top: 22px;
+    width: 38px;
+    height: 38px
+  }
+
+  :where(html[data-style-screen="admin-dashboard"]) .dashboard-welcome h1 {
+    font-size: 27px
+  }
+
+  :where(html[data-style-screen="admin-dashboard"]) .dashboard-metrics {
+    grid-template-columns: 1fr !important
+  }
+
+  :where(html[data-style-screen="admin-dashboard"]) .dashboard-metric-card {
+    min-height: 82px !important
+  }
+
+  :where(html[data-style-screen="admin-dashboard"]) .dashboard-stock-grid {
+    grid-template-columns: 1fr !important
+  }
+
+  :where(html[data-style-screen="admin-dashboard"]) .dashboard-section {
+    padding: 14px !important;
+    border-radius: 14px !important
+  }
+
+  :where(html[data-style-screen="admin-dashboard"]) .dashboard-section .section-head {
+    align-items: flex-start !important;
+    gap: 10px !important
+  }
+
+  :where(html[data-style-screen="admin-dashboard"]) .dashboard-section .table-wrap {
+    overflow-x: auto !important
+  }
+}
+:where(html[data-style-screen="admin-dashboard"]) .dashboard-order-status {
+  font-size: 10px !important
+}
+@media(max-width:650px) {
+  :where(html[data-style-screen="admin-dashboard"]) .dashboard-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important
+  }
+
+  :where(html[data-style-screen="admin-dashboard"]) .dashboard-metric-card {
+    grid-template-columns: 38px minmax(0, 1fr) !important;
+    grid-template-rows: auto auto !important;
+    gap: 8px 10px !important;
+    min-width: 0 !important;
+    min-height: 118px !important;
+    padding: 12px !important
+  }
+
+  :where(html[data-style-screen="admin-dashboard"]) .dashboard-metric-icon {
+    grid-row: 1 / span 2 !important;
+    width: 38px !important;
+    height: 38px !important
+  }
+
+  :where(html[data-style-screen="admin-dashboard"]) .dashboard-metric-card>div {
+    min-width: 0 !important
+  }
+
+  :where(html[data-style-screen="admin-dashboard"]) .dashboard-metric-card strong {
+    font-size: 24px !important
+  }
+
+  :where(html[data-style-screen="admin-dashboard"]) .dashboard-metric-card .eyebrow {
+    font-size: 8px !important;
+    line-height: 1.25 !important;
+    overflow-wrap: anywhere
+  }
+
+  :where(html[data-style-screen="admin-dashboard"]) .dashboard-metric-link {
+    grid-column: 2 !important;
+    justify-self: start !important;
+    padding: 5px 7px !important;
+    font-size: 8px !important
+  }
+}
+@media(max-width:650px) {
+  :where(html[data-style-screen="admin-dashboard"]) .dashboard-metric-card {
+    position: relative !important;
+    padding: 14px !important;
+    padding-right: 58px !important
+  }
+
+  :where(html[data-style-screen="admin-dashboard"]) .dashboard-metric-link {
+    position: absolute !important;
+    top: 12px !important;
+    right: 12px !important;
+    grid-column: auto !important;
+    justify-self: auto !important;
+    margin: 0 !important;
+    padding: 5px 7px !important
+  }
+}
+@media(max-width:650px) {
+  :where(html[data-style-screen="admin-dashboard"]) .dashboard-metric-card {
+    position: relative !important;
+    display: grid !important;
+    grid-template-columns: 52px minmax(0, 1fr) !important;
+    grid-template-rows: 1fr !important;
+    align-items: center !important;
+    padding: 14px 12px !important;
+    padding-top: 46px !important
+  }
+
+  :where(html[data-style-screen="admin-dashboard"]) .dashboard-metric-link {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    grid-column: auto !important;
+    margin: 0 !important;
+    justify-self: auto !important
+  }
+
+  :where(html[data-style-screen="admin-dashboard"]) .dashboard-metric-icon {
+    grid-row: auto !important
+  }
+}

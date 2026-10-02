@@ -1,0 +1,475 @@
+/* admin/inventory: rules are isolated to their route or application area. */
+
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-history h2 {
+  margin: 0;
+  /* Preserve the shared admin heading font that won in the original cascade. */
+  font: 400 21px Arial, Helvetica, sans-serif
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-history {
+  margin-top: 30px;
+  display: grid;
+  gap: 14px
+}
+
+@media(max-width:760px) {
+
+  :where(html[data-style-screen="admin-inventory"]) .inventory-history .table-wrap table {
+    min-width: 820px
+  }
+}
+
+:where(html[data-style-screen="admin-inventory"]) .remove-image-control {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: #8d302b !important;
+  cursor: pointer
+}
+
+:where(html[data-style-screen="admin-inventory"]) .remove-image-control input {
+  width: 16px !important;
+  height: 16px !important;
+  min-height: 16px !important
+}
+:where(html[data-style-screen="admin-inventory"]) .inventory-modern-form {
+  gap: 20px
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-modern-form .nested-form-intro {
+  margin-bottom: 2px
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-modern-form .nested-form-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-modern-form .nested-form-grid .full {
+  grid-column: 1/-1
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-modern-form label small {
+  display: block;
+  margin-top: 6px;
+  line-height: 1.45
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-inventory"]) .inventory-modern-form .nested-form-grid {
+    grid-template-columns: 1fr
+  }
+
+  :where(html[data-style-screen="admin-inventory"]) .inventory-modern-form .nested-form-grid .full {
+    grid-column: auto
+  }
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-adjust-summary {
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-soft, #faf9f5);
+  display: grid;
+  gap: 3px
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-adjust-summary>span {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--muted)
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-adjust-summary>strong {
+  font-size: 15px
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-adjust-summary>small {
+  margin: 0 !important
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 25px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1;
+  border: 1px solid transparent;
+  white-space: nowrap
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-status.available {
+  color: #38603f;
+  background: #edf5ec;
+  border-color: #d7e8d4
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-status.low {
+  color: #a33b3b;
+  background: #fff0ee;
+  border-color: #f2d2cd
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-status.allocated {
+  color: #84621f;
+  background: #fbf3dc;
+  border-color: #eadcae
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-adjust-form {
+  max-width: 720px
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-adjust-form .nested-form-intro {
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border)
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-adjust-form .inventory-adjust-summary {
+  margin: 0;
+  padding: 16px 18px
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-adjust-fields {
+  margin-top: 0
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-adjust-form .product-form-actions {
+  margin-top: 2px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border)
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-inventory"]) .inventory-adjust-form {
+    max-width: none
+  }
+
+  :where(html[data-style-screen="admin-inventory"]) .inventory-adjust-form .inventory-adjust-summary {
+    padding: 14px
+  }
+
+  :where(html[data-style-screen="admin-inventory"]) .inventory-adjust-form .product-form-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr
+  }
+
+  :where(html[data-style-screen="admin-inventory"]) .inventory-adjust-form .product-form-actions button {
+    width: 100%
+  }
+}
+:where(html[data-style-screen="admin-inventory"]) .modal:has(.inventory-adjust-form),
+:where(html[data-style-screen="admin-inventory"]) .modal-card:has(.inventory-adjust-form),
+:where(html[data-style-screen="admin-inventory"]) .modal-content:has(.inventory-adjust-form) {
+  width: min(680px, calc(100vw - 32px));
+  max-width: 680px
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-adjust-form {
+  width: 100%;
+  max-width: none
+}
+
+@media(max-width:760px) {
+
+  :where(html[data-style-screen="admin-inventory"]) .modal:has(.inventory-adjust-form),
+:where(html[data-style-screen="admin-inventory"]) .modal-card:has(.inventory-adjust-form),
+:where(html[data-style-screen="admin-inventory"]) .modal-content:has(.inventory-adjust-form) {
+    width: calc(100vw - 24px);
+    max-width: none
+  }
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-image-empty {
+  color: var(--muted)
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-view-image,
+:where(html[data-style-screen="admin-inventory"]) .inventory-image-editor {
+  display: flex;
+  align-items: center;
+  gap: 14px
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-view-image img,
+:where(html[data-style-screen="admin-inventory"]) .inventory-image-editor img {
+  width: 110px;
+  height: 86px;
+  object-fit: contain;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-2)
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-image-editor .remove-image-control {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 8px;
+  margin: 0
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-image-editor .remove-image-control::after {
+  display: none !important
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-image-editor .remove-image-control input {
+  width: 18px;
+  min-height: 18px
+}
+:where(html[data-style-screen="admin-inventory"]) .inventory-view-modern {
+  display: grid;
+  gap: 18px
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-view-hero {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fafbf7
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-view-hero>img,
+:where(html[data-style-screen="admin-inventory"]) .inventory-view-placeholder {
+  width: 82px;
+  height: 82px;
+  flex: 0 0 82px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  background: #f0f1eb
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-view-placeholder {
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .06em
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-view-heading {
+  min-width: 0
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-view-heading h2 {
+  margin: 7px 0 3px;
+  font-size: 21px
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-view-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-view-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-view-stats>div {
+  display: grid;
+  gap: 4px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: var(--surface)
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-view-stats span {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--muted)
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-view-stats strong {
+  font-size: 22px;
+  color: var(--primary)
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-view-stats small {
+  font-size: 9px;
+  color: var(--muted)
+}
+
+:where(html[data-style-screen="admin-inventory"]) .inventory-view-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border)
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-inventory"]) .inventory-view-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+  }
+
+  :where(html[data-style-screen="admin-inventory"]) .inventory-view-hero {
+    align-items: flex-start
+  }
+
+  :where(html[data-style-screen="admin-inventory"]) .inventory-view-actions>* {
+    flex: 1
+  }
+}
+
+@media(max-width:420px) {
+  :where(html[data-style-screen="admin-inventory"]) .inventory-view-stats {
+    grid-template-columns: 1fr
+  }
+}
+:where(html[data-style-screen="admin-inventory"]) .admin .modal:has(>.inventory-view-modern) {
+  width: min(900px, calc(100vw - 48px)) !important;
+  max-width: 900px !important;
+  background: var(--surface) !important;
+  overflow: hidden !important
+}
+
+:where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-modern {
+  display: flex !important;
+  flex-direction: column !important;
+  background: var(--surface) !important
+}
+
+:where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-hero {
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+  margin: 0 !important;
+  padding: 22px 28px !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--border) !important;
+  border-radius: 0 !important;
+  background: var(--surface) !important
+}
+
+:where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-hero>img,
+:where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-placeholder {
+  width: 72px !important;
+  height: 72px !important;
+  flex: 0 0 72px !important;
+  border-radius: 10px !important;
+  object-fit: cover !important;
+  border: 1px solid var(--border) !important
+}
+
+:where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-heading {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 4px !important
+}
+
+:where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-heading .inventory-status {
+  font-size: 10px !important;
+  padding: 4px 8px !important
+}
+
+:where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-heading h2 {
+  margin: 0 !important;
+  font-size: 19px !important;
+  line-height: 1.25 !important;
+  font-weight: 600 !important
+}
+
+:where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-heading p {
+  margin: 0 !important;
+  font-size: 12px !important;
+  color: var(--muted) !important
+}
+
+:where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-stats {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  padding: 22px 28px !important
+}
+
+:where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-stats>div {
+  min-height: 104px !important;
+  padding: 15px 16px !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 10px !important;
+  background: var(--surface) !important
+}
+
+:where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-stats span {
+  display: block !important;
+  margin-bottom: 8px !important;
+  font-size: 10px !important;
+  line-height: 1.2 !important;
+  font-weight: 800 !important;
+  letter-spacing: .12em !important;
+  text-transform: uppercase !important;
+  color: var(--muted) !important
+}
+
+:where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-stats strong {
+  display: block !important;
+  font-size: 22px !important;
+  line-height: 1.1 !important;
+  font-weight: 700 !important;
+  color: var(--primary) !important
+}
+
+:where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-stats small {
+  display: block !important;
+  margin-top: 7px !important;
+  font-size: 10px !important;
+  line-height: 1.35 !important;
+  color: var(--muted) !important
+}
+
+:where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-actions {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+  margin: 0 !important;
+  padding: 14px 28px !important;
+  border-top: 1px solid var(--border) !important;
+  background: var(--surface) !important
+}
+
+:where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-actions button {
+  width: 100% !important;
+  min-height: 46px !important;
+  justify-content: center !important;
+  font-size: 13px !important;
+  border-radius: 9px !important
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-inventory"]) .admin .modal:has(>.inventory-view-modern) {
+    width: calc(100vw - 24px) !important
+  }
+
+  :where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-hero {
+    padding: 18px 20px !important
+  }
+
+  :where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    padding: 18px 20px !important
+  }
+
+  :where(html[data-style-screen="admin-inventory"]) .admin .inventory-view-actions {
+    padding: 12px 20px !important
+  }
+}

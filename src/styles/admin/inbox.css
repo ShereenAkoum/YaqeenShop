@@ -1,0 +1,522 @@
+/* admin/inbox: rules are isolated to their route or application area. */
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-admin {
+  max-width: 1180px
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 260px));
+  gap: 12px;
+  margin: 24px 0
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-stats>div {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  align-items: center;
+  gap: 7px;
+  padding: 15px 17px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fafbf7;
+  color: var(--primary)
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-stats span {
+  font-size: 11px;
+  color: var(--muted)
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-stats strong {
+  font-size: 20px
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 13px
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-tabs {
+  display: flex;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #f4f6f0
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-tabs button {
+  border: 0;
+  background: transparent;
+  border-radius: 7px;
+  padding: 8px 13px;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 650;
+  cursor: pointer;
+  color: var(--muted)
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-tabs button.active {
+  background: #fff;
+  color: var(--primary);
+  box-shadow: 0 1px 4px rgba(30, 40, 26, .08)
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-tabs span {
+  margin-left: 5px;
+  font-size: 9px
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-search {
+  width: min(330px, 100%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: #fff
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-search input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  padding: 9px 0;
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+  outline: 0
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-search button {
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  cursor: pointer
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-table-wrap {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-table th {
+  padding: 10px 13px;
+  background: #f4f6f0;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--muted)
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-table th:first-child {
+  width: 27%
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-table th:nth-child(3) {
+  width: 190px
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-table th:last-child {
+  width: 80px
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-table td {
+  padding: 12px 13px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+  font-size: 11px
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-table tbody tr:last-child td {
+  border-bottom: 0
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-table tbody tr {
+  cursor: pointer
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-table tbody tr:hover {
+  background: #fafbf7
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-table td:first-child strong,
+:where(html[data-style-screen="admin-inbox"]) .inbox-table td:first-child span {
+  display: block
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-table td:first-child span {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 10px
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-preview {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #555d51
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-open {
+  padding: 6px 9px !important
+}
+
+:where(html[data-style-screen="admin-inbox"]) .subscriber-table th:first-child {
+  width: 60%
+}
+
+:where(html[data-style-screen="admin-inbox"]) .subscriber-table th:nth-child(2) {
+  width: auto
+}
+
+:where(html[data-style-screen="admin-inbox"]) .subscriber-table tbody tr {
+  cursor: default
+}
+
+:where(html[data-style-screen="admin-inbox"]) .message-detail {
+  display: grid;
+  gap: 22px
+}
+
+:where(html[data-style-screen="admin-inbox"]) .message-sender {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid var(--border)
+}
+
+:where(html[data-style-screen="admin-inbox"]) .message-avatar {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #eef1e9;
+  color: var(--primary);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 18px
+}
+
+:where(html[data-style-screen="admin-inbox"]) .message-sender>div:last-child {
+  display: grid;
+  gap: 2px
+}
+
+:where(html[data-style-screen="admin-inbox"]) .message-sender a {
+  color: var(--primary);
+  font-size: 11px
+}
+
+:where(html[data-style-screen="admin-inbox"]) .message-sender span {
+  color: var(--muted);
+  font-size: 10px
+}
+
+:where(html[data-style-screen="admin-inbox"]) .message-body {
+  min-height: 130px;
+  padding: 18px;
+  border-radius: 10px;
+  background: #fafbf7;
+  color: #333a30;
+  font-size: 13px;
+  line-height: 1.8;
+  white-space: pre-line
+}
+
+:where(html[data-style-screen="admin-inbox"]) .message-detail .primary-button {
+  text-decoration: none
+}
+
+@media(max-width:700px) {
+  :where(html[data-style-screen="admin-inbox"]) .inbox-stats {
+    grid-template-columns: 1fr 1fr
+  }
+
+  :where(html[data-style-screen="admin-inbox"]) .inbox-toolbar {
+    /* The shared category toolbar previously supplied this mobile alignment. */
+    align-items: center;
+    flex-direction: column
+  }
+
+  :where(html[data-style-screen="admin-inbox"]) .inbox-search {
+    width: 100%
+  }
+
+  :where(html[data-style-screen="admin-inbox"]) .inbox-table-wrap {
+    overflow-x: auto
+  }
+
+  :where(html[data-style-screen="admin-inbox"]) .inbox-table {
+    min-width: 720px
+  }
+}
+:where(html[data-style-screen="admin-inbox"]) .inbox-message-cell {
+  max-width: 420px
+}
+
+:where(html[data-style-screen="admin-inbox"]) .inbox-message-cell .inbox-preview {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  white-space: normal;
+  max-width: 420px;
+  line-height: 1.45;
+  color: #555d51
+}
+:where(html[data-style-screen="admin-inbox"]) .message-detail {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden
+}
+
+:where(html[data-style-screen="admin-inbox"]) .message-sender {
+  min-width: 0
+}
+
+:where(html[data-style-screen="admin-inbox"]) .message-sender>div:last-child {
+  min-width: 0
+}
+
+:where(html[data-style-screen="admin-inbox"]) .message-sender strong,
+:where(html[data-style-screen="admin-inbox"]) .message-sender a,
+:where(html[data-style-screen="admin-inbox"]) .message-sender span {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word
+}
+
+:where(html[data-style-screen="admin-inbox"]) .message-body {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 150px;
+  max-height: min(48vh, 420px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px 22px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word
+}
+
+:where(html[data-style-screen="admin-inbox"]) .message-detail .modal-actions {
+  padding-top: 2px
+}
+
+@media(max-width:700px) {
+  :where(html[data-style-screen="admin-inbox"]) .message-body {
+    min-height: 120px;
+    max-height: 42vh;
+    padding: 16px
+  }
+
+  :where(html[data-style-screen="admin-inbox"]) .message-sender {
+    align-items: flex-start
+  }
+
+  :where(html[data-style-screen="admin-inbox"]) .message-detail .modal-actions {
+    flex-wrap: wrap
+  }
+
+  :where(html[data-style-screen="admin-inbox"]) .message-detail .modal-actions>* {
+    flex: 1;
+    justify-content: center;
+    white-space: nowrap
+  }
+}
+:where(html[data-style-screen="admin-inbox"]) .admin .modal:has(>.message-detail) {
+  width: min(900px, calc(100vw - 32px)) !important;
+  max-width: 900px !important;
+}
+
+:where(html[data-style-screen="admin-inbox"]) .admin .modal:not(.modal-confirm)>.message-detail {
+  display: grid !important;
+  flex: 1 1 auto !important;
+  align-content: start !important;
+  gap: 18px !important;
+  min-height: 0 !important;
+  width: 100% !important;
+  padding: 24px !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+:where(html[data-style-screen="admin-inbox"]) .admin .message-detail>.message-sender {
+  gap: 14px;
+  min-width: 0;
+  margin: 0;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-2);
+}
+
+:where(html[data-style-screen="admin-inbox"]) .admin .message-detail .message-avatar {
+  flex: 0 0 42px
+}
+
+:where(html[data-style-screen="admin-inbox"]) .admin .message-detail>.message-body {
+  width: 100%;
+  max-height: min(48vh, 420px);
+  min-height: 100px;
+  margin: 0;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+:where(html[data-style-screen="admin-inbox"]) .admin .message-detail>.modal-actions:last-child {
+  position: sticky !important;
+  bottom: -24px !important;
+  z-index: 30 !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  width: calc(100% + 48px) !important;
+  margin: 16px -24px -24px !important;
+  padding: 14px 24px max(14px, env(safe-area-inset-bottom)) !important;
+  border-top: 1px solid var(--border) !important;
+  background: var(--surface) !important;
+  box-shadow: 0 -10px 22px var(--surface) !important;
+}
+
+:where(html[data-style-screen="admin-inbox"]) .admin .message-detail>.modal-actions:last-child>* {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 44px !important;
+  justify-content: center !important;
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-inbox"]) .admin .modal:has(>.message-detail) {
+    width: calc(100vw - 16px) !important
+  }
+
+  :where(html[data-style-screen="admin-inbox"]) .admin .modal:not(.modal-confirm)>.message-detail {
+    padding: 16px !important
+  }
+
+  :where(html[data-style-screen="admin-inbox"]) .admin .message-detail>.message-sender {
+    padding: 15px
+  }
+
+  :where(html[data-style-screen="admin-inbox"]) .admin .message-detail>.message-body {
+    padding: 16px;
+    min-height: 100px
+  }
+
+  :where(html[data-style-screen="admin-inbox"]) .admin .message-detail>.modal-actions:last-child {
+    bottom: -16px !important;
+    width: calc(100% + 32px) !important;
+    margin: 14px -16px -16px !important;
+    padding: 12px 16px max(12px, env(safe-area-inset-bottom)) !important;
+  }
+}
+:where(html[data-style-screen="admin-inbox"]) .admin .inbox-tabs {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  width: 100% !important;
+  box-sizing: border-box;
+  background: #f2f0e9 !important;
+  border: 1px solid #dedbd1 !important;
+  border-radius: 14px !important;
+  padding: 6px !important;
+  gap: 6px !important;
+  margin: 18px 0 !important;
+  overflow: visible !important
+}
+
+:where(html[data-style-screen="admin-inbox"]) .admin .inbox-tabs>button {
+  all: unset;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  height: 46px !important;
+  padding: 0 18px !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  color: #6f746a !important;
+  background: transparent !important;
+  font-family: inherit !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  cursor: pointer !important
+}
+
+:where(html[data-style-screen="admin-inbox"]) .admin .inbox-tabs>button svg {
+  width: 16px !important;
+  height: 16px !important;
+  stroke: currentColor !important
+}
+
+:where(html[data-style-screen="admin-inbox"]) .admin .inbox-tabs>button strong {
+  min-width: 20px;
+  padding: 4px 6px;
+  border-radius: 999px;
+  background: rgba(74, 84, 67, .08);
+  font-size: 9px;
+  text-align: center
+}
+
+:where(html[data-style-screen="admin-inbox"]) .admin .inbox-tabs>button.is-active {
+  color: #35432f !important;
+  background: #fff !important;
+  box-shadow: 0 2px 9px rgba(49, 58, 44, .09) !important
+}
+
+:where(html[data-style-screen="admin-inbox"]) .admin .inbox-tabs>button.is-active strong {
+  background: #edf2e9
+}
+
+:where(html[data-style-screen="admin-inbox"]) .admin .inbox-toolbar {
+  margin-top: 0 !important
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-inbox"]) .admin .inbox-tabs {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    padding: 5px !important;
+    gap: 4px !important;
+    margin: 14px 0 !important;
+    overflow-x: auto !important
+  }
+
+  :where(html[data-style-screen="admin-inbox"]) .admin .inbox-tabs>button {
+    flex: 1 0 auto !important;
+    min-width: max-content !important;
+    height: 40px !important;
+    padding: 0 12px !important;
+    font-size: 11px !important
+  }
+}

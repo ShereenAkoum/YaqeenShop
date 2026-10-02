@@ -1,0 +1,275 @@
+/* store/shop: rules are isolated to their route or application area. */
+
+:where(html[data-style-screen="store-shop"]) .store-catalog {
+  padding-top: 54px;
+  padding-bottom: 72px
+}
+
+:where(html[data-style-screen="store-shop"]) .store-title {
+  margin-bottom: 24px
+}
+
+:where(html[data-style-screen="store-shop"]) .store-title h1 {
+  margin: 7px 0 0;
+  font-family: Georgia, serif;
+  font-size: clamp(34px, 4vw, 54px);
+  font-weight: 400;
+  letter-spacing: -.035em
+}
+
+:where(html[data-style-screen="store-shop"]) .store-category-nav {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+  margin-bottom: 22px
+}
+
+:where(html[data-style-screen="store-shop"]) .store-category-nav button {
+  min-height: 40px;
+  padding: 9px 16px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text);
+  font: 600 12px Arial, sans-serif;
+  cursor: pointer
+}
+
+:where(html[data-style-screen="store-shop"]) .store-category-nav button.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--on-primary)
+}
+
+:where(html[data-style-screen="store-shop"]) .store-search-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="store-shop"]) .store-catalog {
+    padding-top: 32px
+  }
+
+  :where(html[data-style-screen="store-shop"]) .store-search-row {
+    align-items: flex-start;
+    flex-direction: column
+  }
+
+  :where(html[data-style-screen="store-shop"]) .store-title h1 {
+    font-size: 36px
+  }
+
+  :where(html[data-style-screen="store-shop"]) .store-category-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px
+  }
+
+  :where(html[data-style-screen="store-shop"]) .store-category-nav button {
+    flex: 0 0 auto
+  }
+}
+:where(html[data-style-screen="store-shop"]) .store-catalog {
+  padding-top: 64px;
+  padding-bottom: 96px
+}
+
+:where(html[data-style-screen="store-shop"]) .store-title {
+  max-width: 720px;
+  margin: 0 0 32px
+}
+
+:where(html[data-style-screen="store-shop"]) .store-title .eyebrow {
+  color: var(--primary)
+}
+
+:where(html[data-style-screen="store-shop"]) .store-title h1 {
+  margin-top: 10px;
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.02
+}
+
+:where(html[data-style-screen="store-shop"]) .store-category-nav {
+  gap: 8px;
+  margin-bottom: 20px;
+  padding-bottom: 2px
+}
+
+:where(html[data-style-screen="store-shop"]) .store-category-nav button {
+  min-height: 38px;
+  padding: 8px 17px;
+  border-color: #d9d4c8;
+  border-radius: 999px;
+  background: #fffdf9;
+  font-size: 11px;
+  transition: .18s
+}
+
+:where(html[data-style-screen="store-shop"]) .store-category-nav button:hover {
+  border-color: var(--primary);
+  transform: translateY(-1px)
+}
+
+:where(html[data-style-screen="store-shop"]) .store-category-nav button.active {
+  box-shadow: 0 5px 16px rgba(48, 59, 41, .12)
+}
+
+:where(html[data-style-screen="store-shop"]) .store-search-row {
+  justify-content: space-between;
+  margin-bottom: 38px;
+  padding: 13px 0;
+  border-top: 1px solid #e3ded3;
+  border-bottom: 1px solid #e3ded3
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="store-shop"]) .store-catalog {
+    padding-top: 36px;
+    padding-bottom: 64px
+  }
+
+  :where(html[data-style-screen="store-shop"]) .store-title {
+    margin-bottom: 24px
+  }
+
+  :where(html[data-style-screen="store-shop"]) .store-title h1 {
+    font-size: 40px
+  }
+
+  :where(html[data-style-screen="store-shop"]) .store-search-row {
+    gap: 10px;
+    margin-bottom: 26px;
+    padding: 10px 0
+  }
+}
+:where(html[data-style-screen="store-shop"]) .store-catalog .store-product-grid {
+  gap: 36px 22px
+}
+
+:where(html[data-style-screen="store-shop"]) .store-catalog .store-product-card {
+  padding: 12px 12px 14px;
+  border: 1px solid #e3e1d7;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(44, 58, 39, .055);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease
+}
+
+:where(html[data-style-screen="store-shop"]) .store-catalog .store-product-card:hover {
+  transform: translateY(-5px);
+  border-color: #cfd6c6;
+  box-shadow: 0 18px 44px rgba(44, 58, 39, .11)
+}
+
+:where(html[data-style-screen="store-shop"]) .store-catalog .store-product-image {
+  aspect-ratio: 1/1;
+  border-radius: 14px;
+  background: #f1efe7
+}
+
+:where(html[data-style-screen="store-shop"]) .store-catalog .store-product-image>img,
+:where(html[data-style-screen="store-shop"]) .store-catalog .card-variant-strip img {
+  object-fit: contain;
+  padding: 12px
+}
+
+:where(html[data-style-screen="store-shop"]) .store-catalog .store-product-image .badge {
+  top: 16px;
+  left: 16px;
+  padding: 7px 12px;
+  border: 1px solid rgba(52, 69, 46, .08);
+  background: rgba(255, 253, 246, .94);
+  box-shadow: 0 4px 12px rgba(52, 69, 46, .08);
+  font-size: 10px;
+  letter-spacing: .035em;
+  text-transform: uppercase
+}
+
+:where(html[data-style-screen="store-shop"]) .store-catalog .home-product-info {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: 'title price';
+  align-items: start;
+  gap: 10px 18px;
+  margin-top: 15px;
+  padding: 0 4px
+}
+
+:where(html[data-style-screen="store-shop"]) .store-catalog .home-product-info h3 {
+  grid-area: auto;
+  margin: 0;
+  font: 600 16px/1.45 Arial, sans-serif;
+  color: #263225
+}
+
+:where(html[data-style-screen="store-shop"]) .store-catalog .home-product-info>strong {
+  padding: 1px 0;
+  border: 0;
+  background: transparent;
+  color: var(--primary);
+  font-size: 14px;
+  white-space: nowrap
+}
+
+:where(html[data-style-screen="store-shop"]) .store-catalog .home-product-meta {
+  font-size: 11px;
+  color: #85897f
+}
+
+:where(html[data-style-screen="store-shop"]) .store-catalog .home-product-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 14px 4px 0;
+  padding-top: 12px;
+  border-top: 1px solid #eceae1;
+  color: #566747;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: .035em;
+  text-transform: uppercase
+}
+
+:where(html[data-style-screen="store-shop"]) .store-catalog .home-product-action svg {
+  transition: transform .2s ease
+}
+
+:where(html[data-style-screen="store-shop"]) .store-catalog .store-product-card:hover .home-product-action svg {
+  transform: translateX(3px)
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="store-shop"]) .store-catalog .store-product-grid {
+    gap: 24px 12px
+  }
+
+  :where(html[data-style-screen="store-shop"]) .store-catalog .store-product-card {
+    padding: 8px 8px 11px;
+    border-radius: 16px
+  }
+
+  :where(html[data-style-screen="store-shop"]) .store-catalog .store-product-image {
+    border-radius: 11px
+  }
+
+  :where(html[data-style-screen="store-shop"]) .store-catalog .home-product-info {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'title' 'price';
+    gap: 8px;
+    padding: 0 2px
+  }
+
+  :where(html[data-style-screen="store-shop"]) .store-catalog .home-product-info h3 {
+    font-size: 14px
+  }
+
+  :where(html[data-style-screen="store-shop"]) .store-catalog .home-product-action {
+    margin: 11px 2px 0;
+    padding-top: 10px;
+    font-size: 10px
+  }
+}

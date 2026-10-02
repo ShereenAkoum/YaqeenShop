@@ -1,0 +1,921 @@
+/* admin/operations: rules are isolated to their route or application area. */
+
+:where(html[data-style-screen="admin-operations"]) .production-board {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(230px, 1fr));
+  gap: 12px;
+  overflow-x: auto;
+  padding: 4px 2px 18px
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane {
+  min-height: 340px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #f8f9f4
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 11px
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-card {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding: 13px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: 0 4px 14px rgba(38, 48, 30, .04)
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 7px
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-card strong {
+  font-size: 12px
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-card small,
+:where(html[data-style-screen="admin-operations"]) .production-card>span:not(.badge):not(.eyebrow) {
+  font-size: 9px;
+  color: var(--muted)
+}
+
+:where(html[data-style-screen="admin-operations"]) .compact-control {
+  min-width: 120px;
+  padding: 8px
+}
+
+:where(html[data-style-screen="admin-operations"]) .fulfillment-edit-row td {
+  padding: 0 !important;
+  background: #fafbf7
+}
+
+:where(html[data-style-screen="admin-operations"]) .fulfillment-editor {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(140px, 1fr)) auto;
+  align-items: end;
+  gap: 12px;
+  padding: 18px 22px
+}
+
+:where(html[data-style-screen="admin-operations"]) .fulfillment-editor>div {
+  display: grid;
+  gap: 3px;
+  font-size: 10px
+}
+
+:where(html[data-style-screen="admin-operations"]) .fulfillment-editor label {
+  display: grid;
+  gap: 6px;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em
+}
+
+:where(html[data-style-screen="admin-operations"]) .fulfillment-editor textarea {
+  min-height: 42px;
+  max-height: 90px;
+  resize: vertical
+}
+
+@media(max-width:900px) {
+  :where(html[data-style-screen="admin-operations"]) .fulfillment-editor {
+    grid-template-columns: 1fr 1fr
+  }
+
+  :where(html[data-style-screen="admin-operations"]) .production-board {
+    grid-template-columns: repeat(9, 220px)
+  }
+}
+
+@media(max-width:600px) {
+  :where(html[data-style-screen="admin-operations"]) .fulfillment-editor {
+    grid-template-columns: 1fr
+  }
+}
+
+:where(html[data-style-screen="admin-operations"]) .view-switch {
+  display: inline-flex;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #f6f7f2
+}
+
+:where(html[data-style-screen="admin-operations"]) .view-switch button {
+  padding: 9px 15px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer
+}
+
+:where(html[data-style-screen="admin-operations"]) .view-switch button.active {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 2px 8px rgba(38, 48, 30, .08)
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-page {
+  gap: 22px
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-summary>div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: var(--surface)
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-summary strong {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 23px;
+  font-weight: 400
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-summary span {
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--muted)
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-board {
+  gap: 14px;
+  padding-top: 2px
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane {
+  min-height: 390px;
+  padding: 10px;
+  border-radius: 14px;
+  background: #f5f6f1
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane-head {
+  padding: 3px 4px 8px
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane-head strong {
+  font-size: 10px;
+  letter-spacing: .03em
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-card {
+  gap: 9px;
+  padding: 12px;
+  border-radius: 11px;
+  box-shadow: none;
+  transition: box-shadow .15s ease, transform .15s ease
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(38, 48, 30, .07)
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-card img {
+  height: 135px;
+  border-radius: 8px
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-card .eyebrow {
+  font-size: 7px
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-move {
+  width: 100%;
+  min-height: 38px;
+  border-radius: 8px;
+  font-size: 10px
+}
+
+@media(max-width:800px) {
+  :where(html[data-style-screen="admin-operations"]) .production-summary {
+    grid-template-columns: 1fr 1fr
+  }
+}
+
+@media(max-width:600px) {
+  :where(html[data-style-screen="admin-operations"]) .production-summary {
+    grid-template-columns: 1fr
+  }
+}
+:where(html[data-style-screen="admin-operations"]) .production-page {
+  --prod-lilac: #f2eef8;
+  --prod-blue: #edf4f8;
+  --prod-mint: #edf6ef;
+  --prod-peach: #fbf1e8;
+  --prod-yellow: #faf6df;
+  --prod-rose: #f9eeee
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-page .page-title {
+  align-items: flex-end;
+  margin-bottom: 24px
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-head-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-refresh {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 0 13px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-refresh:hover {
+  background: #f7f6f1
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-view-switch {
+  display: flex !important;
+  gap: 3px !important;
+  padding: 3px !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 11px !important;
+  background: #f2f1eb !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-view-switch button {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  min-height: 44px !important;
+  padding: 0 11px !important;
+  border-radius: 8px !important;
+  font-size: 15px !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-view-switch button.active {
+  background: var(--surface) !important;
+  box-shadow: 0 1px 5px rgba(45, 49, 39, .08) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-summary {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 20px !important;
+  margin-bottom: 22px !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-stat {
+  display: flex !important;
+  align-items: center !important;
+  gap: 20px !important;
+  min-height: 96px !important;
+  padding: 20px !important;
+  border: 1px solid rgba(70, 75, 60, .08) !important;
+  border-radius: 15px !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-stat.stat-active {
+  background: var(--prod-lilac) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-stat.stat-new {
+  background: var(--prod-blue) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-stat.stat-qc {
+  background: var(--prod-yellow) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-stat.stat-completed {
+  background: var(--prod-mint) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-stat-icon {
+  display: grid !important;
+  place-items: center !important;
+  width: 38px !important;
+  height: 38px !important;
+  flex: 0 0 38px !important;
+  border-radius: 11px !important;
+  background: rgba(255, 255, 255, .65) !important;
+  color: var(--primary) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-stat>span:last-child {
+  display: grid !important;
+  gap: 2px !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-stat strong {
+  font-family: Georgia, 'Times New Roman', serif !important;
+  font-size: 30px !important;
+  font-weight: 400 !important;
+  line-height: 1 !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-stat small {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: var(--muted) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-board {
+  display: grid !important;
+  grid-template-columns: repeat(9, minmax(300px, 1fr)) !important;
+  gap: 20px !important;
+  padding: 4px 2px 18px !important;
+  overflow-x: auto !important;
+  scroll-snap-type: x proximity
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane {
+  scroll-snap-align: start;
+  min-height: 430px !important;
+  padding: 16px !important;
+  border: 1px solid rgba(70, 75, 60, .09) !important;
+  border-radius: 16px !important;
+  background: #f7f6f2 !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane:nth-child(1) {
+  background: var(--prod-blue) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane:nth-child(2) {
+  background: var(--prod-lilac) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane:nth-child(3) {
+  background: var(--prod-yellow) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane:nth-child(4) {
+  background: var(--prod-peach) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane:nth-child(5) {
+  background: #f4efe9 !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane:nth-child(6) {
+  background: #eef3f5 !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane:nth-child(7) {
+  background: #f4f0f5 !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane:nth-child(8) {
+  background: var(--prod-rose) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane:nth-child(9) {
+  background: var(--prod-mint) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane-head {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  min-height: 40px !important;
+  padding: 4px 4px 10px !important;
+  border: 0 !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane-head>div {
+  display: flex;
+  align-items: center;
+  gap: 7px
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-stage-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--primary);
+  opacity: .7
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane-head strong {
+  font-size: 15px !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane-count {
+  display: grid;
+  place-items: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .7);
+  font-size: 14px;
+  font-weight: 800
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane-empty {
+  display: grid;
+  place-items: center;
+  min-height: 100px;
+  border: 1px dashed rgba(70, 75, 60, .16);
+  border-radius: 12px;
+  color: var(--muted);
+  font-size: 14px
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-card {
+  display: grid !important;
+  gap: 12px !important;
+  margin-bottom: 16px !important;
+  padding: 18px !important;
+  border: 1px solid rgba(70, 75, 60, .1) !important;
+  border-radius: 13px !important;
+  background: rgba(255, 255, 255, .9) !important;
+  box-shadow: 0 5px 16px rgba(45, 49, 39, .04) !important;
+  transition: transform .15s ease, box-shadow .15s ease !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(45, 49, 39, .07) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-card img {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16/10 !important;
+  object-fit: cover !important;
+  border-radius: 9px !important;
+  margin-bottom: 2px !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-card>.eyebrow {
+  margin: 0 !important;
+  font-size: 12px !important;
+  color: var(--muted) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-card>strong {
+  font-size: 17px !important;
+  line-height: 1.35 !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-card>small {
+  font-size: 14px !important;
+  color: var(--muted) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-card>span:not(.eyebrow):not(.badge) {
+  font-size: 14px !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-card>.badge {
+  justify-self: start !important;
+  background: #f1f3ed !important;
+  border: 0 !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-move {
+  width: 100% !important;
+  min-height: 44px !important;
+  margin-top: 3px !important;
+  border-radius: 8px !important;
+  background: #fbfbf8 !important;
+  font-size: 14px !important
+}
+
+@media(max-width:900px) {
+  :where(html[data-style-screen="admin-operations"]) .production-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important
+  }
+
+  :where(html[data-style-screen="admin-operations"]) .production-page .page-title {
+    align-items: flex-start
+  }
+
+  :where(html[data-style-screen="admin-operations"]) .production-head-actions {
+    width: 100%;
+    justify-content: space-between
+  }
+}
+
+@media(max-width:560px) {
+  :where(html[data-style-screen="admin-operations"]) .production-summary {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important
+  }
+
+  :where(html[data-style-screen="admin-operations"]) .production-stat {
+    min-height: 88px !important;
+    padding: 11px !important;
+    gap: 9px !important
+  }
+
+  :where(html[data-style-screen="admin-operations"]) .production-stat-icon {
+    width: 32px !important;
+    height: 32px !important;
+    flex-basis: 32px !important
+  }
+
+  :where(html[data-style-screen="admin-operations"]) .production-stat strong {
+    font-size: 26px !important
+  }
+
+  :where(html[data-style-screen="admin-operations"]) .production-refresh span {
+    display: none
+  }
+
+  :where(html[data-style-screen="admin-operations"]) .production-board {
+    grid-template-columns: repeat(9, minmax(82vw, 1fr)) !important
+  }
+
+  :where(html[data-style-screen="admin-operations"]) .production-lane {
+    min-height: 360px !important
+  }
+}
+:where(html[data-style-screen="admin-operations"]) .production-card>.production-payment-status {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  justify-self: start !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: max-content !important;
+  margin: 1px 0 !important;
+  padding: 5px 9px !important;
+  border: 1px solid transparent !important;
+  border-radius: 999px !important;
+  font-family: inherit !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  letter-spacing: .03em !important;
+  text-transform: uppercase !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-payment-status.status-pending {
+  background: #fff4d8 !important;
+  border-color: #ead9a7 !important;
+  color: #80601b !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-payment-status.status-paid {
+  background: #e8f3e8 !important;
+  border-color: #c9dfc9 !important;
+  color: #38633b !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-payment-status.status-failed {
+  background: #fae8e7 !important;
+  border-color: #ecc7c4 !important;
+  color: #9a3d38 !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-payment-status.status-refunded,
+:where(html[data-style-screen="admin-operations"]) .production-payment-status.status-partially-refunded {
+  background: #eeeaf7 !important;
+  border-color: #d8d0e9 !important;
+  color: #665383 !important
+}
+:where(html[data-style-screen="admin-operations"]) .production-page {
+  --stage-new: #edf4f8;
+  --stage-design: #f2eef8;
+  --stage-approved: #faf6df;
+  --stage-uv: #fbf1e8;
+  --stage-applied: #f4efe9;
+  --stage-qc: #faf6df;
+  --stage-packed: #f2eef8;
+  --stage-delivery: #f9eeee;
+  --stage-completed: #edf6ef
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane.production-stage-new-order {
+  background: var(--stage-new) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane.production-stage-design {
+  background: var(--stage-design) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane.production-stage-approved {
+  background: var(--stage-approved) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane.production-stage-uv-dtf {
+  background: var(--stage-uv) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane.production-stage-applied {
+  background: var(--stage-applied) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane.production-stage-qc {
+  background: var(--stage-qc) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane.production-stage-packed {
+  background: var(--stage-packed) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane.production-stage-out-for-delivery {
+  background: var(--stage-delivery) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-lane.production-stage-completed {
+  background: var(--stage-completed) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-stat.stat-new {
+  background: var(--stage-new) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-stat.stat-qc {
+  background: var(--stage-qc) !important
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-stat.stat-completed {
+  background: var(--stage-completed) !important
+}
+:where(html[data-style-screen="admin-operations"]) .production-page {
+  min-width: 0;
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-page .page-title {
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-page .page-title h1 {
+  font-size: 36px;
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-page .page-title .muted {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 560px;
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-page .production-summary {
+  margin-bottom: 28px !important;
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-page .production-stat {
+  justify-content: flex-start;
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-page .production-stat small {
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.5;
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-board-help {
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-page .production-board {
+  max-width: 100%;
+  scrollbar-width: auto;
+  scroll-padding-inline: 2px;
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-page .production-card {
+  min-width: 0;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-page .production-lane-head {
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-page .production-lane-count {
+  font-size: 14px;
+  min-width: 30px;
+  height: 30px;
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-page .production-move {
+  margin-top: 8px !important;
+  padding: 10px 12px;
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-page :is(button, select, .production-board):focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-page .table-wrap :is(th, td) {
+  font-size: 15px;
+  padding: 18px 20px;
+  line-height: 1.5;
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-page .table-wrap .badge {
+  font-size: 13px;
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-page .compact-control {
+  font-size: 16px;
+  min-height: 44px;
+}
+
+@media (max-width: 560px) {
+  :where(html[data-style-screen="admin-operations"]) .production-page .page-title h1 {
+    font-size: 30px;
+  }
+
+  :where(html[data-style-screen="admin-operations"]) .production-page .production-stat {
+    flex-wrap: wrap;
+  }
+
+  :where(html[data-style-screen="admin-operations"]) .production-page .production-board {
+    grid-template-columns: repeat(9, minmax(0, 82vw)) !important;
+    gap: 14px !important;
+  }
+
+  :where(html[data-style-screen="admin-operations"]) .production-page .production-move {
+    font-size: 16px !important;
+  }
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-stock-details {
+  display: grid;
+  gap: 8px;
+  margin: 4px 0;
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-stock-details>div {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  gap: 10px;
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-stock-details dt {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-stock-details dd {
+  margin: 0;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-page .table-wrap .production-stock-details {
+  min-width: 240px;
+  border: 0;
+  padding: 8px 0 0;
+}
+
+:where(html[data-style-screen="admin-operations"]) .production-history-title {
+  margin-top: 18px !important;
+  padding-top: 16px;
+  border-top: 1px solid var(--border)
+}
+@media(max-width:560px) {
+  :where(html[data-style-screen="admin-operations"]) .production-page {
+    min-width: 0 !important;
+    overflow-x: hidden !important
+  }
+
+  :where(html[data-style-screen="admin-operations"]) .production-board-help {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    margin: 18px 0 12px !important
+  }
+
+  :where(html[data-style-screen="admin-operations"]) .production-board {
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 2px 2px 14px !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain
+  }
+
+  :where(html[data-style-screen="admin-operations"]) .production-board>.production-lane {
+    display: block !important;
+    flex: 0 0 min(84vw, 340px) !important;
+    width: min(84vw, 340px) !important;
+    min-width: min(84vw, 340px) !important;
+    max-width: min(84vw, 340px) !important;
+    min-height: 360px !important;
+    box-sizing: border-box !important;
+    scroll-snap-align: start
+  }
+
+  :where(html[data-style-screen="admin-operations"]) .production-lane-head {
+    width: 100% !important;
+    box-sizing: border-box !important
+  }
+
+  :where(html[data-style-screen="admin-operations"]) .production-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important
+  }
+}
+:where(html[data-style-screen="admin-operations"]) .admin .fulfillment-detail .category-view-head h3 {
+  overflow-wrap: anywhere;
+}
+
+:where(html[data-style-screen="admin-operations"]) .admin .fulfillment-detail .category-view-details strong,
+:where(html[data-style-screen="admin-operations"]) .admin .fulfillment-detail-card strong,
+:where(html[data-style-screen="admin-operations"]) .admin .fulfillment-detail-card p {
+  overflow-wrap: anywhere;
+}
+
+:where(html[data-style-screen="admin-operations"]) .admin .fulfillment-detail-card {
+  display: grid;
+  gap: 6px;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+:where(html[data-style-screen="admin-operations"]) .admin .fulfillment-detail-card span {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+:where(html[data-style-screen="admin-operations"]) .admin .fulfillment-detail-card strong {
+  font-size: 13px
+}
+
+:where(html[data-style-screen="admin-operations"]) .admin .fulfillment-detail-card small {
+  color: var(--muted)
+}
+
+:where(html[data-style-screen="admin-operations"]) .admin .fulfillment-detail-card p {
+  margin: 0;
+  white-space: pre-wrap;
+  line-height: 1.6
+}
+
+:where(html[data-style-screen="admin-operations"]) .admin .modal:has(>.fulfillment-form) {
+  width: min(980px, calc(100vw - 32px)) !important;
+}
+
+:where(html[data-style-screen="admin-operations"]) .admin .fulfillment-form .product-form-section:last-of-type {
+  border-bottom: 0
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-operations"]) .admin .modal:has(>.fulfillment-form) {
+    width: calc(100vw - 16px) !important
+  }
+}

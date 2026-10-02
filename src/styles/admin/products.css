@@ -1,0 +1,966 @@
+/* admin/products: rules are isolated to their route or application area. */
+
+
+:where(html[data-style-screen="admin-products"]) .detail-stack {
+  display: grid;
+  gap: 30px
+}
+
+:where(html[data-style-screen="admin-products"]) .table-section {
+  position: relative
+}
+
+:where(html[data-style-screen="admin-products"]) .detail-stack .table-wrap {
+  border-radius: 8px
+}
+
+:where(html[data-style-screen="admin-products"]) .detail-stack .section-head {
+  min-height: 44px
+}
+
+:where(html[data-style-screen="admin-products"]) .detail-stack .section-head h3 {
+  font-size: 22px;
+  font-weight: 500
+}
+
+:where(html[data-style-screen="admin-products"]) .detail-stack .table-add {
+  margin-left: auto
+}
+
+@media(max-width:760px) {
+
+  :where(html[data-style-screen="admin-products"]) .detail-stack {
+    gap: 22px
+  }
+}
+
+@media(max-width:760px) {
+
+  :where(html[data-style-screen="admin-products"]) .detail-stack {
+    gap: 28px
+  }
+
+  :where(html[data-style-screen="admin-products"]) .detail-stack .section-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px
+  }
+
+  :where(html[data-style-screen="admin-products"]) .detail-stack .section-head h3 {
+    margin: 0;
+    font-size: 19px
+  }
+
+  :where(html[data-style-screen="admin-products"]) .detail-stack .table-add {
+    min-height: 38px;
+    padding: 7px 11px
+  }
+
+  :where(html[data-style-screen="admin-products"]) .modal .detail-stack .table-wrap {
+    margin-top: 4px
+  }
+
+  :where(html[data-style-screen="admin-products"]) .modal .detail-stack table th,
+:where(html[data-style-screen="admin-products"]) .modal .detail-stack table td {
+    padding: 11px 13px
+  }
+}
+
+@media(max-width:430px) {
+
+  :where(html[data-style-screen="admin-products"]) .detail-stack {
+    gap: 22px
+  }
+
+  :where(html[data-style-screen="admin-products"]) .detail-stack .section-head {
+    align-items: flex-start
+  }
+
+  :where(html[data-style-screen="admin-products"]) .detail-stack .section-head h3 {
+    font-size: 18px
+  }
+}
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-products"]) .modal:has(.detail-stack) {
+    overflow-x: hidden !important;
+    max-width: calc(100vw - 20px)
+  }
+
+  :where(html[data-style-screen="admin-products"]) .modal:has(.detail-stack) .detail-stack,
+:where(html[data-style-screen="admin-products"]) .modal:has(.detail-stack) .table-section {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    overflow: visible
+  }
+
+  :where(html[data-style-screen="admin-products"]) .modal:has(.detail-stack) .table-wrap {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    touch-action: pan-x pan-y
+  }
+
+  :where(html[data-style-screen="admin-products"]) .modal:has(.detail-stack) .table-wrap table {
+    width: max-content !important;
+    min-width: 760px !important;
+    max-width: none !important
+  }
+
+  :where(html[data-style-screen="admin-products"]) .modal:has(.detail-stack) .table-wrap th,
+:where(html[data-style-screen="admin-products"]) .modal:has(.detail-stack) .table-wrap td {
+    white-space: nowrap
+  }
+}
+
+@media(max-width:430px) {
+  :where(html[data-style-screen="admin-products"]) .modal:has(.detail-stack) {
+    max-width: calc(100vw - 12px)
+  }
+}
+
+:where(html[data-style-screen="admin-products"]) .modal:has(.product-modern-form)>.detail-stack {
+  padding: 0 24px 24px;
+  overflow: auto
+}
+
+:where(html[data-style-screen="admin-products"]) .product-toggle-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px
+}
+
+:where(html[data-style-screen="admin-products"]) .product-toggle-grid>label {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 68px;
+  padding: 12px 14px;
+  border: 1px solid #e4e0d8;
+  border-radius: 11px;
+  background: #faf9f5
+}
+
+:where(html[data-style-screen="admin-products"]) .product-toggle-grid>label>div {
+  display: grid;
+  gap: 2px
+}
+
+:where(html[data-style-screen="admin-products"]) .product-toggle-grid strong {
+  font-size: 12px
+}
+
+:where(html[data-style-screen="admin-products"]) .product-toggle-grid small {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--muted)
+}
+
+:where(html[data-style-screen="admin-products"]) .product-base-section+.table-section {
+  margin-top: 4px
+}
+
+@media(max-width:760px) {
+
+  :where(html[data-style-screen="admin-products"]) .modal:has(.product-modern-form)>.detail-stack {
+    padding-left: 16px;
+    padding-right: 16px
+  }
+
+  :where(html[data-style-screen="admin-products"]) .product-toggle-grid {
+    grid-template-columns: 1fr
+  }
+}
+:where(html[data-style-screen="admin-products"]) .modal:has(.product-edit-shell) {
+  width: min(980px, calc(100vw - 32px));
+  height: min(870px, calc(100dvh - 24px));
+  max-height: calc(100dvh - 24px);
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column
+}
+
+:where(html[data-style-screen="admin-products"]) .modal:has(.product-edit-shell) .modal-head {
+  flex: 0 0 auto
+}
+
+:where(html[data-style-screen="admin-products"]) .modal:has(.product-edit-shell)>.product-edit-shell {
+  display: block;
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: none;
+  padding: 0 24px 24px;
+  overflow-y: auto;
+  overflow-x: hidden
+}
+
+:where(html[data-style-screen="admin-products"]) .modal:has(.product-edit-shell) .product-base-section {
+  padding: 0
+}
+
+:where(html[data-style-screen="admin-products"]) .modal:has(.product-edit-shell) .product-modern-form {
+  overflow: visible
+}
+
+:where(html[data-style-screen="admin-products"]) .modal:has(.product-edit-shell) .product-form-section {
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 28px;
+  padding: 25px 0
+}
+
+:where(html[data-style-screen="admin-products"]) .modal:has(.product-edit-shell) .product-form-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px
+}
+
+:where(html[data-style-screen="admin-products"]) .modal:has(.product-edit-shell) .product-toggle-grid,
+:where(html[data-style-screen="admin-products"]) .modal:has(> .product-modern-form) .product-toggle-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px
+}
+
+@media(max-width:760px) {
+
+  :where(html[data-style-screen="admin-products"]) .modal:has(.product-edit-shell) {
+    width: calc(100vw - 16px);
+    height: calc(100dvh - 16px);
+    max-height: calc(100dvh - 16px)
+  }
+
+  :where(html[data-style-screen="admin-products"]) .modal:has(.product-edit-shell)>.product-edit-shell {
+    padding-left: 16px;
+    padding-right: 16px
+  }
+
+  :where(html[data-style-screen="admin-products"]) .modal:has(.product-edit-shell) .product-form-section {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 20px 0
+  }
+
+  :where(html[data-style-screen="admin-products"]) .modal:has(.product-edit-shell) .product-form-grid,
+:where(html[data-style-screen="admin-products"]) .modal:has(.product-edit-shell) .product-toggle-grid,
+:where(html[data-style-screen="admin-products"]) .modal:has(> .product-modern-form) .product-toggle-grid {
+    grid-template-columns: 1fr
+  }
+}
+:where(html[data-style-screen="admin-products"]) .product-edit-shell .table-section {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden
+}
+
+:where(html[data-style-screen="admin-products"]) .product-edit-shell .table-section>.table-wrap {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto !important;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain
+}
+
+:where(html[data-style-screen="admin-products"]) .product-edit-shell .table-section>.table-wrap table {
+  width: max-content !important;
+  min-width: 100%
+}
+
+:where(html[data-style-screen="admin-products"]) .product-edit-shell .table-section:first-of-type>.table-wrap table {
+  min-width: 980px
+}
+
+:where(html[data-style-screen="admin-products"]) .product-edit-shell .table-section>.table-wrap::-webkit-scrollbar {
+  height: 9px
+}
+
+:where(html[data-style-screen="admin-products"]) .product-edit-shell .table-section>.table-wrap::-webkit-scrollbar-thumb {
+  background: #cbc6bb;
+  border-radius: 999px;
+  border: 2px solid #f8f6f1
+}
+
+:where(html[data-style-screen="admin-products"]) .product-edit-shell .table-section>.table-wrap::-webkit-scrollbar-track {
+  background: #f4f2ed
+}
+:where(html[data-style-screen="admin-products"]) .product-subsection {
+  padding-top: 26px;
+  margin-top: 8px;
+  border-top: 1px solid #ebe7df
+}
+
+:where(html[data-style-screen="admin-products"]) .product-subsection-head {
+  align-items: flex-end !important;
+  margin-bottom: 14px
+}
+
+:where(html[data-style-screen="admin-products"]) .product-subsection-head>div:first-child {
+  display: grid;
+  gap: 4px
+}
+
+:where(html[data-style-screen="admin-products"]) .product-subsection-head h3 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 600
+}
+
+:where(html[data-style-screen="admin-products"]) .product-subsection-head p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px
+}
+
+:where(html[data-style-screen="admin-products"]) .product-subsection .table-wrap {
+  border-radius: 12px !important;
+  border-color: #e4e0d8 !important;
+  box-shadow: none !important
+}
+
+:where(html[data-style-screen="admin-products"]) .product-subsection .table-thumb {
+  width: 64px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 7px;
+  border: 1px solid #e5e0d7;
+  background: #f4f2ed
+}
+
+:where(html[data-style-screen="admin-products"]) .image-editor-preview {
+  display: grid;
+  place-items: center;
+  min-height: 150px;
+  padding: 12px;
+  border: 1px solid #e5e0d7;
+  border-radius: 11px;
+  background: #f7f5f0
+}
+
+:where(html[data-style-screen="admin-products"]) .image-editor-preview img {
+  display: block;
+  max-width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+  border-radius: 8px
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-products"]) .product-subsection-head {
+    align-items: flex-start !important;
+    gap: 12px
+  }
+
+  :where(html[data-style-screen="admin-products"]) .product-subsection-head .add-record-button {
+    width: auto
+  }
+}
+
+:where(html[data-style-screen="admin-products"]) .modal-backdrop:has(.modal-backdrop)>.modal>.product-edit-shell {
+  width: 100% !important;
+  min-width: 0 !important
+}
+:where(html[data-style-screen="admin-products"]) .product-images-section>.table-wrap {
+  background: transparent !important
+}
+
+:where(html[data-style-screen="admin-products"]) .product-images-section>.table-wrap table {
+  background: transparent !important
+}
+
+:where(html[data-style-screen="admin-products"]) .product-images-section>.table-wrap thead,
+:where(html[data-style-screen="admin-products"]) .product-images-section>.table-wrap thead tr,
+:where(html[data-style-screen="admin-products"]) .product-images-section>.table-wrap th {
+  background: #f5f3ee !important
+}
+
+:where(html[data-style-screen="admin-products"]) .product-images-section>.table-wrap tbody,
+:where(html[data-style-screen="admin-products"]) .product-images-section>.table-wrap tbody tr,
+:where(html[data-style-screen="admin-products"]) .product-images-section>.table-wrap td {
+  background: #fffefa !important
+}
+
+:where(html[data-style-screen="admin-products"]) .product-images-section>.table-wrap tbody tr:hover td {
+  background: #fffefa !important
+}
+:where(html[data-style-screen="admin-products"]) .product-modern-form .simple-inventory-section .product-form-section-head {
+  align-self: start
+}
+
+:where(html[data-style-screen="admin-products"]) .product-modern-form .simple-inventory-section .product-form-grid {
+  align-items: start
+}
+
+:where(html[data-style-screen="admin-products"]) .product-modern-form .simple-inventory-section label {
+  min-width: 0
+}
+
+:where(html[data-style-screen="admin-products"]) .product-modern-form .simple-inventory-section select,
+:where(html[data-style-screen="admin-products"]) .product-modern-form .simple-inventory-section input {
+  background: #fffefa !important
+}
+
+:where(html[data-style-screen="admin-products"]) .product-modern-form .simple-inventory-section small {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.4
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-products"]) .product-modern-form .simple-inventory-section {
+    padding: 16px
+  }
+}
+:where(html[data-style-screen="admin-products"]) .modal:has(.product-view-shell) {
+  width: min(980px, calc(100vw - 32px));
+  height: min(870px, calc(100dvh - 24px));
+  max-height: calc(100dvh - 24px);
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column
+}
+
+:where(html[data-style-screen="admin-products"]) .modal:has(.product-view-shell) .modal-head {
+  flex: 0 0 auto
+}
+
+:where(html[data-style-screen="admin-products"]) .modal:has(.product-view-shell)>.product-view-shell {
+  display: block;
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: none;
+  padding: 0 24px 24px;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch
+}
+
+:where(html[data-style-screen="admin-products"]) .modal:has(.product-view-shell) .product-base-section {
+  padding: 0
+}
+
+:where(html[data-style-screen="admin-products"]) .modal:has(.product-view-shell) .product-modern-form {
+  overflow: visible
+}
+
+:where(html[data-style-screen="admin-products"]) .modal:has(.product-view-shell) .product-form-section {
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 28px;
+  padding: 25px 0
+}
+
+:where(html[data-style-screen="admin-products"]) .modal:has(.product-view-shell) .product-form-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px
+}
+
+:where(html[data-style-screen="admin-products"]) .modal:has(.product-view-shell) .product-toggle-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px
+}
+
+:where(html[data-style-screen="admin-products"]) .product-view-shell .table-section {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden
+}
+
+:where(html[data-style-screen="admin-products"]) .product-view-shell .table-section>.table-wrap {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto !important;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain
+}
+
+:where(html[data-style-screen="admin-products"]) .product-view-shell .table-section>.table-wrap table {
+  width: max-content !important;
+  min-width: 100%
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-products"]) .modal:has(.product-view-shell) {
+    width: calc(100vw - 16px);
+    height: calc(100dvh - 16px);
+    max-height: calc(100dvh - 16px)
+  }
+
+  :where(html[data-style-screen="admin-products"]) .modal:has(.product-view-shell)>.product-view-shell {
+    padding-left: 16px;
+    padding-right: 16px
+  }
+
+  :where(html[data-style-screen="admin-products"]) .modal:has(.product-view-shell) .product-form-section {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 20px 0
+  }
+
+  :where(html[data-style-screen="admin-products"]) .modal:has(.product-view-shell) .product-form-grid,
+:where(html[data-style-screen="admin-products"]) .modal:has(.product-view-shell) .product-toggle-grid {
+    grid-template-columns: 1fr
+  }
+}
+:where(html[data-style-screen="admin-products"]) .admin .variant-active-inline {
+  align-self: start !important;
+  min-height: 66px !important;
+  margin: 0 !important
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-products"]) .admin .variant-active-inline {
+    grid-column: 1/-1
+  }
+}
+
+:where(html[data-style-screen="admin-products"]) .admin .product-toggle-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 10px !important
+}
+
+:where(html[data-style-screen="admin-products"]) .admin .product-toggle-grid>label {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  min-height: 68px !important;
+  padding: 12px 14px !important;
+  text-align: left !important
+}
+
+:where(html[data-style-screen="admin-products"]) .admin .product-toggle-grid>label>div {
+  display: grid !important;
+  gap: 2px !important;
+  text-align: left !important
+}
+
+:where(html[data-style-screen="admin-products"]) .admin .product-toggle-grid .form-toggle {
+  position: relative !important;
+  display: inline-block !important;
+  flex: 0 0 44px !important;
+  width: 44px !important;
+  height: 26px !important;
+  min-height: 26px !important;
+  margin: 0 !important;
+  padding: 0 !important
+}
+
+:where(html[data-style-screen="admin-products"]) .admin .product-toggle-grid .form-toggle>input {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  min-width: 1px !important;
+  min-height: 1px !important;
+  opacity: 0 !important
+}
+
+:where(html[data-style-screen="admin-products"]) .admin .product-toggle-grid .toggle-track {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 44px !important;
+  height: 26px !important
+}
+
+:where(html[data-style-screen="admin-products"]) .admin .product-toggle-grid>label::after {
+  display: none !important;
+  content: none !important
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-products"]) .admin .product-toggle-grid {
+    grid-template-columns: 1fr !important
+  }
+}
+:where(html[data-style-screen="admin-products"]) .admin .variant-active-inline {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 14px !important;
+  min-height: 70px !important;
+  padding: 12px 14px !important;
+  text-align: left !important
+}
+
+:where(html[data-style-screen="admin-products"]) .admin .variant-active-inline>div {
+  display: grid !important;
+  gap: 3px !important;
+  text-align: left !important
+}
+
+:where(html[data-style-screen="admin-products"]) .admin .variant-active-inline .form-toggle {
+  flex: 0 0 44px !important;
+  margin: 0 !important
+}
+
+:where(html[data-style-screen="admin-products"]) .admin .variant-active-inline::after {
+  display: none !important;
+  content: none !important
+}
+
+:where(html[data-style-screen="admin-products"]) .variant-images-empty {
+  grid-column: 1/-1;
+  padding: 24px;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 11px
+}
+:where(html[data-style-screen="admin-products"]) .order-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px
+}
+
+:where(html[data-style-screen="admin-products"]) .order-controls .icon-button:disabled {
+  opacity: .25;
+  cursor: not-allowed
+}
+
+:where(html[data-style-screen="admin-products"]) .variant-image-order {
+  position: absolute;
+  left: 7px;
+  bottom: 7px;
+  display: flex;
+  gap: 4px;
+  z-index: 2
+}
+
+:where(html[data-style-screen="admin-products"]) .variant-image-order button {
+  position: static !important;
+  display: grid !important;
+  place-items: center;
+  width: 28px !important;
+  height: 28px !important;
+  padding: 0 !important;
+  border: 1px solid rgba(255, 255, 255, .8) !important;
+  border-radius: 7px !important;
+  background: rgba(255, 253, 249, .94) !important;
+  color: var(--text) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+  cursor: pointer
+}
+
+:where(html[data-style-screen="admin-products"]) .variant-image-order button:disabled {
+  opacity: .35;
+  cursor: not-allowed
+}
+
+:where(html[data-style-screen="admin-products"]) .variant-image-tile>.variant-image-remove {
+  top: 7px !important;
+  right: 7px !important
+}
+:where(html[data-style-screen="admin-products"]) .product-subsection>.table-wrap {
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+  padding-bottom: 42px !important;
+  margin-bottom: -42px !important
+}
+
+:where(html[data-style-screen="admin-products"]) .product-subsection>.table-wrap tbody tr:last-child td {
+  position: relative
+}
+
+:where(html[data-style-screen="admin-products"]) .product-subsection>.table-wrap .icon-button[data-tooltip]::after {
+  z-index: 1200 !important
+}
+:where(html[data-style-screen="admin-products"]) .variant-images-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px
+}
+
+:where(html[data-style-screen="admin-products"]) .variant-image-row {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 13px;
+  min-height: 82px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fffefa
+}
+
+:where(html[data-style-screen="admin-products"]) .variant-image-row>img {
+  width: 72px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 7px;
+  background: #f2efe8
+}
+
+:where(html[data-style-screen="admin-products"]) .variant-image-row-info {
+  display: grid;
+  gap: 4px;
+  min-width: 0
+}
+
+:where(html[data-style-screen="admin-products"]) .variant-image-row-info strong {
+  font-size: 11px
+}
+
+:where(html[data-style-screen="admin-products"]) .variant-image-row-info small {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+:where(html[data-style-screen="admin-products"]) .variant-image-row-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px
+}
+
+:where(html[data-style-screen="admin-products"]) .variant-image-row .variant-image-order {
+  position: static;
+  display: flex;
+  gap: 5px
+}
+
+:where(html[data-style-screen="admin-products"]) .variant-image-row .variant-image-order button {
+  position: static !important;
+  display: grid !important;
+  place-items: center;
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0 !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+  background: #f8f7f2 !important;
+  color: var(--primary) !important;
+  box-shadow: none;
+  cursor: pointer
+}
+
+:where(html[data-style-screen="admin-products"]) .variant-image-row .variant-image-order button:disabled {
+  opacity: .25;
+  cursor: not-allowed
+}
+
+:where(html[data-style-screen="admin-products"]) .variant-image-row .variant-image-remove {
+  position: static !important;
+  display: grid !important;
+  place-items: center;
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0 !important;
+  border: 1px solid #ead2d1 !important;
+  border-radius: 8px !important;
+  background: #fff6f5 !important;
+  color: #a62e32 !important;
+  font-size: 17px !important;
+  cursor: pointer
+}
+
+:where(html[data-style-screen="admin-products"]) .variant-new-badge {
+  justify-self: end;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: #edf1e8;
+  color: var(--primary);
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase
+}
+
+@media(max-width:560px) {
+  :where(html[data-style-screen="admin-products"]) .variant-image-row {
+    grid-template-columns: 60px minmax(0, 1fr);
+  }
+
+  :where(html[data-style-screen="admin-products"]) .variant-image-row>img {
+    width: 60px;
+    height: 56px
+  }
+
+  :where(html[data-style-screen="admin-products"]) .variant-image-row-actions,
+:where(html[data-style-screen="admin-products"]) .variant-new-badge {
+    grid-column: 2;
+    justify-self: start
+  }
+}
+:where(html[data-style-screen="admin-products"]) .product-images-section th.order-cell,
+:where(html[data-style-screen="admin-products"]) .product-images-section td.order-cell {
+  width: 96px;
+  text-align: right
+}
+
+:where(html[data-style-screen="admin-products"]) .product-images-section td.order-cell .order-controls {
+  justify-content: flex-end
+}
+:where(html[data-style-screen="admin-products"]) .product-images-section th.order-cell,
+:where(html[data-style-screen="admin-products"]) .product-images-section td.order-cell {
+  width: 96px;
+  text-align: left
+}
+
+:where(html[data-style-screen="admin-products"]) .product-images-section td.order-cell .order-controls {
+  justify-content: flex-start
+}
+
+:where(html[data-style-screen="admin-products"]) .admin .modal-backdrop>.modal>.product-edit-shell {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow-x: hidden !important;
+  overscroll-behavior-x: none !important
+}
+
+:where(html[data-style-screen="admin-products"]) .admin .modal:not(.modal-confirm)>.detail-stack,
+:where(html[data-style-screen="admin-products"]) .admin .modal:not(.modal-confirm)>.product-edit-shell {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  width: 100% !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior: contain !important;
+  padding: 24px !important;
+}
+
+@media(max-width:760px) {
+
+  :where(html[data-style-screen="admin-products"]) .admin .modal:not(.modal-confirm)>.detail-stack,
+:where(html[data-style-screen="admin-products"]) .admin .modal:not(.modal-confirm)>.product-edit-shell {
+    padding: 16px !important
+  }
+}
+:where(html[data-style-screen="admin-products"]) .admin .modal:not(.modal-confirm)>:not(.modal-head):not(form):not(.editor-form):not(.product-edit-shell) {
+  box-sizing: border-box !important;
+  min-width: 0 !important;
+}
+
+:where(html[data-style-screen="admin-products"]) .admin .modal:not(.modal-confirm)>.detail-stack {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  width: 100% !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior: contain !important;
+  padding: 24px !important;
+  box-sizing: border-box !important;
+}
+
+:where(html[data-style-screen="admin-products"]) .admin .modal:not(.modal-confirm)>.detail-stack>.modal-actions:last-child {
+  position: sticky !important;
+  bottom: -24px !important;
+  z-index: 30 !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  width: calc(100% + 48px) !important;
+  max-width: none !important;
+  margin: 16px -24px -24px !important;
+  padding: 14px 24px max(14px, env(safe-area-inset-bottom)) !important;
+  box-sizing: border-box !important;
+  background: var(--surface) !important;
+  border-top: 1px solid var(--border) !important;
+  box-shadow: 0 -10px 22px var(--surface) !important;
+}
+
+@media(max-width:760px) {
+
+  :where(html[data-style-screen="admin-products"]) .admin .modal:not(.modal-confirm)>.detail-stack {
+    padding: 16px !important
+  }
+
+  :where(html[data-style-screen="admin-products"]) .admin .modal:not(.modal-confirm)>.detail-stack>.modal-actions:last-child {
+    bottom: -16px !important;
+    width: calc(100% + 32px) !important;
+    margin: 14px -16px -16px !important;
+    padding: 12px 16px max(12px, env(safe-area-inset-bottom)) !important;
+  }
+}
+:where(html[data-style-screen="admin-products"]) .admin .modal:has(.product-edit-shell)>.product-edit-shell {
+  padding-bottom: 0 !important;
+}
+
+:where(html[data-style-screen="admin-products"]) .admin .product-edit-shell .product-edit-actions {
+  position: sticky !important;
+  bottom: 0 !important;
+  z-index: 40 !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  width: calc(100% + 48px) !important;
+  margin: 0 -24px !important;
+  padding: 14px 24px max(14px, env(safe-area-inset-bottom)) !important;
+  border-top: 1px solid var(--border) !important;
+  background: #fffefa !important;
+  box-shadow: 0 -10px 22px #fffefa !important;
+}
+
+:where(html[data-style-screen="admin-products"]) .admin .product-edit-shell .product-edit-actions>button {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 46px !important;
+  justify-content: center !important;
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-products"]) .admin .product-edit-shell .product-edit-actions {
+    width: calc(100% + 32px) !important;
+    margin: 0 -16px !important;
+    padding: 12px 16px max(12px, env(safe-area-inset-bottom)) !important;
+  }
+}
+:where(html[data-style-screen="admin-products"]) .admin .modal:has(>.product-edit-shell) {
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+:where(html[data-style-screen="admin-products"]) .admin .modal:has(>.product-edit-shell)>.product-edit-shell {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+  padding: 0 24px 24px !important;
+}
+
+:where(html[data-style-screen="admin-products"]) .admin .modal:has(>.product-edit-shell)>.product-edit-footer {
+  flex: 0 0 auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  padding: 14px 24px max(14px, env(safe-area-inset-bottom)) !important;
+  border-top: 1px solid var(--border) !important;
+  background: #fffefa !important;
+  z-index: 50 !important;
+  box-shadow: 0 -8px 20px rgba(34, 40, 28, .06) !important;
+}
+
+:where(html[data-style-screen="admin-products"]) .admin .modal:has(>.product-edit-shell)>.product-edit-footer>button {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 46px !important;
+  justify-content: center !important;
+}
+
+@media(max-width:760px) {
+  :where(html[data-style-screen="admin-products"]) .admin .modal:has(>.product-edit-shell)>.product-edit-shell {
+    padding: 0 16px 16px !important
+  }
+
+  :where(html[data-style-screen="admin-products"]) .admin .modal:has(>.product-edit-shell)>.product-edit-footer {
+    padding: 12px 16px max(12px, env(safe-area-inset-bottom)) !important
+  }
+}

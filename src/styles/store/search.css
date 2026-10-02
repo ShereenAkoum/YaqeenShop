@@ -1,0 +1,35 @@
+/* store/search: rules are isolated to their route or application area. */
+
+
+:where(html[data-style-screen="store-search"]) .store-result-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px
+}
+
+:where(html[data-style-screen="store-search"]) .standalone {
+  max-width: 620px;
+  margin-bottom: 28px
+}
+
+:where(html[data-style-screen="store-search"]) .standalone input {
+  width: 100%
+}
+
+@media(max-width:900px) {
+
+  :where(html[data-style-screen="store-search"]) .store-result-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px
+  }
+}
+
+@media(max-width:760px) {
+
+  :where(html[data-style-screen="store-search"]) .store-result-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px
+  }
+}
