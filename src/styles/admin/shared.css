@@ -242,9 +242,8 @@
   gap: 18px
 }
 
-:where(html[data-style-area="admin"]) .admin-loading {
-  padding: 64px;
-  text-align: center
+:where(html[data-style-area="admin"]) .admin-route-content[data-loading] .brand-loader {
+  visibility: hidden !important
 }
 
 @media(max-width:1000px) {
