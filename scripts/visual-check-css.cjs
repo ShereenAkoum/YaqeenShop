@@ -54,11 +54,14 @@ if (adminFixtures) {
 const properties = ['display','position','width','min-width','max-width','box-sizing','height','margin-top','margin-right','margin-bottom','margin-left','padding-top','padding-right','padding-bottom','padding-left','gap','grid-template-columns','flex-direction','flex-basis','flex-grow','flex-shrink','align-items','justify-content','font-family','font-size','font-weight','line-height','letter-spacing','color','background-color','border-top-width','border-top-color','border-radius','overflow-x','overflow-y','z-index','object-fit','opacity','transform'];
 let activeBrowser;
 async function capture(page) {
+  // Flush layout so auto margins reflect the current React state and stylesheet.
+  await page.evaluate(()=>document.body.getBoundingClientRect());
   return page.evaluate(properties => [...document.querySelectorAll('body *')]
     .filter(element => !['SCRIPT','STYLE','LINK'].includes(element.tagName))
     .map(element => {
       const style = getComputedStyle(element);
-      return {element:element.tagName.toLowerCase() + (element.className && typeof element.className === 'string' ? '.' + element.className.trim().replace(/\s+/g,'.') : ''), values:properties.map(prop => style.getPropertyValue(prop))};
+      const bounds=element.getBoundingClientRect();
+      return {element:element.tagName.toLowerCase() + (element.className && typeof element.className === 'string' ? '.' + element.className.trim().replace(/\s+/g,'.') : ''), bounds:[bounds.x,bounds.y,bounds.width,bounds.height], values:properties.map(prop => style.getPropertyValue(prop))};
     }), properties);
 }
 (async () => {
@@ -91,6 +94,20 @@ async function capture(page) {
       await page.route('**/*.supabase.co/**',async route=>{
         const url=new URL(route.request().url());
         let data=[];
+        if(process.env.VISUAL_CHECK_USERS==='1') {
+          if(url.pathname.endsWith('/profiles')) data=[{id:'fixture-staff',full_name:'Fixture Staff',username:'fixture.staff',email:'fixture@example.com',phone:'+96112345678',active:true}];
+          if(url.pathname.endsWith('/roles')) data=[{id:'fixture-role',name:'Order manager',is_owner:false,role_permissions:[{permission_key:'orders.view'},{permission_key:'orders.edit'}]}];
+          if(url.pathname.endsWith('/permissions')) data=['products','inventory','orders','production','designs','customers','deliveries','payments','website','media','users','reports','audit','settings'].flatMap(module=>['view','edit'].map(action=>({key:module+'.'+action,label:action==='view'?'View':'Edit'})));
+          if(url.pathname.endsWith('/user_roles')) data=[{user_id:'fixture-staff',role_id:'fixture-role'}];
+        }
+        if(process.env.VISUAL_CHECK_SETTINGS==='1') {
+          if(url.pathname.endsWith('/site_settings')) data=[{key:'website',value:{site_name:'YAQEEN',site_tagline:'A more meaningful life',email:'fixture@example.com',phone:'+96112345678',whatsapp:'+96112345678',shipping_payment:'Delivery and pickup are available.'}},{key:'commerce',value:{delivery_fee:5,cod_enabled:true,whish_enabled:true,pickup_enabled:true}},{key:'merchandising',value:{top_picks_limit:4}}];
+          if(url.pathname.includes('/storage/v1/object/list/website-media')) data=[{id:'fixture-media',name:'media-1-homepage.png',metadata:{mimetype:'image/png'},user_metadata:{label:'Homepage image'}}];
+          if(url.pathname.includes('/storage/v1/object/public/website-media/')) {
+            await route.fulfill({status:200,contentType:'image/svg+xml',body:'<svg xmlns="http://www.w3.org/2000/svg" width="92" height="78"><rect width="92" height="78" fill="#637052"/></svg>'});return;
+          }
+        }
+        if(process.env.VISUAL_CHECK_RESOURCES==='1' && url.pathname.endsWith('/business_resources')) data=[{id:'fixture-resource',name:'Acrylic printing materials',quantity:12,unit_price:4.5,notes:'Shared materials for custom products.',created_at:'2026-01-01T00:00:00Z'}];
         if(process.env.VISUAL_CHECK_PRODUCTS==='1') {
           const product={id:'fixture-product',title:'Saved product fixture',sku:'PRD-001',price:20,status:'Active',top_pick:true,description:'A custom printed product.',stock_allocation:5,category_id:null,design_id:null,inventory_item_id:null};
           if(url.pathname.endsWith('/products')) data=url.searchParams.has('id')?product:[product];
@@ -101,7 +118,7 @@ async function capture(page) {
           const order={id:'fixture-order',number:'ORD-001',customer_name:'Fixture Customer',phone:'12345678',email:'fixture@example.com',address:'Fixture Street',city:'Beirut',instructions:'Call on arrival',notes:'Private staff notes',subtotal:40,delivery_fee:5,discount:2,total:43,currency:'USD',status:'Preparing',source:'Website',created_at:'2026-01-01T00:00:00Z',order_items:[item],order_status_history:['Order Received','Preparing'].map((status,index)=>({id:`history-${index}`,status,created_at:`2026-01-0${index+1}T00:00:00Z`})),production_jobs:[{id:'job',production_status_history:['New Order','Design','QC'].map((stage,index)=>({id:`stage-${index}`,stage,created_at:`2026-01-0${index+1}T00:00:00Z`}))}]};
           if(url.pathname.endsWith('/orders')) data=url.searchParams.has('id')?order:[order];
           if(url.pathname.endsWith('/order_items')) data=[item];
-          if(url.pathname.endsWith('/products')) data=[{id:'fixture-product',title:item.title,sku:item.sku,price:20,status:'Active',product_variants:[]}];
+          if(url.pathname.endsWith('/products') && process.env.VISUAL_CHECK_PRODUCTS!=='1') data=[{id:'fixture-product',title:item.title,sku:item.sku,price:20,status:'Active',product_variants:[]}];
         }
         if (process.env.VISUAL_CHECK_OPERATIONS === '1') {
           if(url.pathname.endsWith('/production_board')) data=['New Order','QC','Completed'].map((stage,index)=>({id:`fixture-job-${index}`,stage,order_number:'OPS-001',title:'Custom printed item',quantity:2,customer_name:'Fixture Customer',payment_status:['Pending','Paid','Failed'][index],sku:'OPS-SKU',inventory_visible:true,inventory_item_id:'fixture-stock',inventory_title:'Printing stock',inventory_sku:'STOCK-001',inventory_quantity:12,created_at:'2026-01-01T00:00:00Z'}));
@@ -111,6 +128,7 @@ async function capture(page) {
         if(url.pathname.endsWith('/sales_report')) data={summary:{},products:[],designs:[],payments:[],production:[],delivery:[]};
         if(url.pathname.endsWith('/sales_report') && process.env.VISUAL_CHECK_REPORTS==='1') data={summary:{orders:12,sales:240,average_order:20},products:Array.from({length:12},(_,index)=>({title:`Printed product ${index+1}`,quantity:index+2,sales:40})),designs:[{code:'DES-001',title:'Saved design',quantity:8}],payments:[{status:'Paid',amount:240,records:12}],production:[{stage:'QC',jobs:5}],delivery:[{status:'Delivered',deliveries:9}]};
         if(url.pathname.endsWith('/website_documents')) data=['navigation','footer','homepage','about','contact','faq'].map(key=>({id:key,key,title:key,draft:{},published:{}}));
+        if(url.pathname.endsWith('/website_documents') && process.env.VISUAL_CHECK_WEBSITE==='1') data=['navigation','footer','homepage','about','contact','faq','privacy','terms'].map(key=>({id:key,key,title:key,draft:{heading:'Website content fixture',body:'Meaningful pieces for everyday life.',links:[{label:'Shop',url:'/shop'},{label:'About',url:'/about'}],faqs:[{question:'How can I order?',answer:'Choose a product and continue to checkout.'}],values:[{number:'01',title:'Faith and meaning',description:'Thoughtful designs for everyday life.'}]},published:{},published_at:'2026-01-01T00:00:00Z'}));
         if (process.env.VISUAL_CHECK_SAVED_DESIGNS === '1') {
           const assets = ['pdf','image','url'].map((asset_type,index)=>({id:`fixture-asset-${index}`,design_id:'fixture-design',title:`Saved ${asset_type} reference`,asset_type,path:null,url:asset_type==='url'?'https://example.com/design-reference':null,created_at:'2026-01-01T00:00:00Z'}));
           const design = {id:'fixture-design',name:'Saved design fixture',code:'DES-FIXTURE',created_at:'2026-01-01T00:00:00Z',design_assets:assets};
@@ -131,9 +149,40 @@ async function capture(page) {
       const errors = [];
       const onError = error => errors.push(error.message);
       page.on('pageerror', onError);
-      const target=adminFixtures?new URL(origin).origin+'/css-visual-fixture.html?screen='+route.replace(/-(?:dialog|edit|view|adjust|list)$/,''):origin+route;
+      const screen=route.startsWith('website-')?'website':route.replace(/-(?:dialog|edit|view|adjust|list|delete|commerce|media|mediaadd|roles|roleadd|roleedit)$/,'');
+      const target=adminFixtures?new URL(origin).origin+'/css-visual-fixture.html?screen='+screen:origin+route;
       await page.goto(target, {waitUntil:'networkidle', timeout:45000});
       await page.locator('.brand-loader').first().waitFor({state:'hidden',timeout:15000}).catch(()=>{});
+      if(adminFixtures && route.startsWith('website-')) {
+        const key=route.slice('website-'.length);
+        await page.locator('.website-doc-card').filter({has:page.getByRole('heading',{name:key==='navigation'?'Nav Bar':key,exact:true})}).locator('[data-tooltip="Edit"]').click();
+        await page.locator('.website-editor').waitFor({state:'visible'});
+        if(process.env.VISUAL_CHECK_WEBSITE_NESTED==='1' && ['faq','about','homepage'].includes(key)) {
+          if(key==='homepage') await page.locator('.homepage-section-card').last().evaluate(el=>el.open=true);
+          if(process.env.VISUAL_CHECK_WEBSITE_NESTED_EDIT==='1') await page.locator('.faq-row-actions [data-tooltip="Edit"]').first().click();
+          else await page.getByRole('button',{name:key==='faq'?'Add question':'Add value',exact:true}).click();
+          await page.locator('.faq-popup-form').waitFor({state:'visible'});
+        }
+      }
+      if(adminFixtures && /^users-(roles|roleadd|roleedit)$/.test(route)) {
+        await page.getByRole('tab',{name:'Roles & permissions',exact:true}).click();
+        if(route==='users-roleadd') await page.getByRole('button',{name:'Add role',exact:true}).click();
+        if(route==='users-roleedit') await page.locator('.role-card .icon-button').first().click();
+        if(route!=='users-roles' && process.env.VISUAL_CHECK_USER_PERMISSIONS==='1') {
+          await page.locator('.permission-select-all').first().click();
+          await page.waitForFunction(()=>document.querySelector('.permission-select-all input')?.checked);
+          await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+        }
+      }
+      if(adminFixtures && route==='users-edit') await page.getByRole('button',{name:'Edit staff',exact:true}).click();
+      if(adminFixtures && /^settings-(commerce|media|mediaadd)$/.test(route)) {
+        await page.getByRole('tab',{name:route==='settings-commerce'?'Commerce':'Media',exact:true}).click();
+        if(route==='settings-mediaadd') await page.getByRole('button',{name:'+ Add',exact:true}).click();
+      }
+      if(adminFixtures && /^resources-(view|edit|delete)$/.test(route)) {
+        await page.locator(`[data-tooltip="${route.endsWith('-edit')?'Edit':route.endsWith('-delete')?'Delete':'View'}"]`).first().click();
+        await page.locator('.modal').first().waitFor({state:'visible'});
+      }
       if(adminFixtures && /^products-(view|edit)$/.test(route)) {
         await page.locator(`[data-tooltip="${route.endsWith('-edit')?'Edit':'View'}"]`).first().click();
         await page.locator('.product-details-shell').waitFor({state:'visible'});
@@ -249,7 +298,9 @@ async function capture(page) {
       actual.forEach((record,index) => {
         if (!expected[index]) return;
         const changes = {};
-        properties.forEach((prop,i) => {if(record.values[i] !== expected[index].values[i]) changes[prop] = {refactor:record.values[i],main:expected[index].values[i]};});
+        const sameBounds=record.bounds.every((value,i)=>value===expected[index].bounds[i]);
+        properties.forEach((prop,i) => {if(record.values[i] !== expected[index].values[i] && !(prop.startsWith('margin-') && sameBounds)) changes[prop] = {refactor:record.values[i],main:expected[index].values[i]};});
+        if(!sameBounds) changes.bounds={refactor:record.bounds,main:expected[index].bounds};
         if(Object.keys(changes).length) differences.push({element:record.element,changes});
       });
       const allowedHomeColors = process.env.VISUAL_CHECK_ALLOW_HOME_COLORS === '1' && route === '/';

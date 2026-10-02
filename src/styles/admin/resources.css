@@ -215,8 +215,8 @@
 }
 @media(max-width:760px) {
   :where(html[data-style-screen="admin-resources"]) .resources-page {
-    padding-left: 14px !important;
-    padding-right: 14px !important
+    padding-left: 14px;
+    padding-right: 14px
   }
 
   :where(html[data-style-screen="admin-resources"]) .resources-page .page-title {
@@ -341,11 +341,11 @@
 :where(html[data-style-screen="admin-resources"]) .resources-search input {
   width: 100%;
   min-height: 42px;
-  border: 0 !important;
+  border: 0;
   outline: 0;
-  background: transparent !important;
-  box-shadow: none !important;
-  padding: 0 !important
+  background: transparent;
+  box-shadow: none;
+  padding: 0
 }
 
 @media(max-width:760px) {

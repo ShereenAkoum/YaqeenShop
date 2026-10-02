@@ -206,7 +206,7 @@
 }
 
 :where(html[data-style-screen="admin-settings"]) .settings-page-actions {
-  position: static !important;
+  position: static;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -279,14 +279,14 @@
   }
 }
 :where(html[data-style-screen="admin-settings"]) .admin .settings-page {
-  max-width: 100% !important;
+  max-width: 100%;
   width: 100%;
-  margin: 0 !important
+  margin: 0
 }
 
 :where(html[data-style-screen="admin-settings"]) .admin .settings-page .settings-stack {
   width: 100%;
-  max-width: none !important;
+  max-width: none;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px
 }
@@ -297,7 +297,7 @@
 
 :where(html[data-style-screen="admin-settings"]) .admin .settings-page .settings-page-actions {
   width: 100%;
-  max-width: none !important;
+  max-width: none;
   grid-column: 1/-1
 }
 
@@ -750,149 +750,149 @@
   }
 }
 :where(html[data-style-screen="admin-settings"]) .admin .settings-page .settings-tabs {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-  align-items: center !important;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
   width: 100%;
   box-sizing: border-box;
-  background: #f2f0e9 !important;
-  border: 1px solid #dedbd1 !important;
-  border-radius: 14px !important;
-  padding: 5px !important;
-  gap: 4px !important;
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
+  background: #f2f0e9;
+  border: 1px solid #dedbd1;
+  border-radius: 14px;
+  padding: 5px;
+  gap: 4px;
+  overflow-x: auto;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch
 }
 
 :where(html[data-style-screen="admin-settings"]) .admin .settings-page .settings-tabs>button {
   all: unset;
-  box-sizing: border-box !important;
-  flex: 1 0 auto !important;
-  min-width: 0 !important;
-  height: 42px !important;
-  padding: 0 14px !important;
-  border-radius: 10px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 7px !important;
-  color: #6f746a !important;
-  background: transparent !important;
-  font-family: inherit !important;
-  font-size: 12px !important;
-  font-weight: 700 !important;
-  line-height: 1 !important;
-  white-space: nowrap !important;
-  cursor: pointer !important;
+  box-sizing: border-box;
+  flex: 1 0 auto;
+  min-width: 0;
+  height: 42px;
+  padding: 0 14px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: #6f746a;
+  background: transparent;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
   -webkit-tap-highlight-color: transparent
 }
 
 :where(html[data-style-screen="admin-settings"]) .admin .settings-page .settings-tabs>button svg {
-  width: 16px !important;
-  height: 16px !important;
-  stroke: currentColor !important;
-  flex: 0 0 auto !important
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  flex: 0 0 auto
 }
 
 :where(html[data-style-screen="admin-settings"]) .admin .settings-page .settings-tabs>button.is-active {
-  color: #35432f !important;
-  background: var(--yaqeen-pure-white) !important;
-  box-shadow: 0 2px 9px rgba(49, 58, 44, .09) !important
+  color: #35432f;
+  background: var(--yaqeen-pure-white);
+  box-shadow: 0 2px 9px rgba(49, 58, 44, .09)
 }
 
 :where(html[data-style-screen="admin-settings"]) .admin .settings-page .settings-tabs>button:not(.is-active):hover {
-  color: #35432f !important;
-  background: rgba(255, 255, 255, .5) !important
+  color: #35432f;
+  background: rgba(255, 255, 255, .5)
 }
 
 @media(max-width:760px) {
   :where(html[data-style-screen="admin-settings"]) .admin .settings-page .settings-tabs {
-    position: relative !important;
-    top: auto !important;
-    margin: 0 0 16px !important
+    position: relative;
+    top: auto;
+    margin: 0 0 16px
   }
 
   :where(html[data-style-screen="admin-settings"]) .admin .settings-page .settings-tabs>button {
-    flex: 0 0 auto !important;
-    min-width: max-content !important;
-    height: 40px !important;
-    padding: 0 12px !important;
-    font-size: 11px !important
+    flex: 0 0 auto;
+    min-width: max-content;
+    height: 40px;
+    padding: 0 12px;
+    font-size: 11px
   }
 }
 @media(min-width:761px) {
   :where(html[data-style-screen="admin-settings"]) .admin .settings-page .settings-tabs {
-    display: grid !important;
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    width: 100% !important;
-    max-width: none !important;
-    overflow: visible !important;
-    padding: 6px !important;
-    gap: 6px !important;
-    margin-bottom: 22px !important
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    max-width: none;
+    overflow: visible;
+    padding: 6px;
+    gap: 6px;
+    margin-bottom: 22px
   }
 
   :where(html[data-style-screen="admin-settings"]) .admin .settings-page .settings-tabs>button {
-    width: 100% !important;
-    min-width: 0 !important;
-    height: 46px !important;
-    flex: none !important;
-    padding: 0 18px !important;
-    font-size: 12px !important
+    width: 100%;
+    min-width: 0;
+    height: 46px;
+    flex: none;
+    padding: 0 18px;
+    font-size: 12px
   }
 }
 :where(html[data-style-screen="admin-settings"]) .admin .settings-page .settings-stack {
-  display: grid !important;
-  grid-template-columns: minmax(0, 1fr) !important;
-  gap: 18px !important
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px
 }
 
 :where(html[data-style-screen="admin-settings"]) .admin .settings-page .settings-tabs,
 :where(html[data-style-screen="admin-settings"]) .admin .settings-page .settings-tab-panel,
 :where(html[data-style-screen="admin-settings"]) .admin .settings-page .settings-page-actions {
-  grid-column: 1/-1 !important;
-  width: 100% !important;
-  min-width: 0 !important
+  grid-column: 1/-1;
+  width: 100%;
+  min-width: 0
 }
 
 :where(html[data-style-screen="admin-settings"]) .admin .settings-page .settings-tab-panel.is-active {
-  display: block !important
+  display: block
 }
 
 @media(min-width:981px) {
   :where(html[data-style-screen="admin-settings"]) .admin .settings-page .settings-stack {
-    grid-template-columns: minmax(0, 1fr) !important
+    grid-template-columns: minmax(0, 1fr)
   }
 
   :where(html[data-style-screen="admin-settings"]) .admin .settings-page .settings-tab-panel>.settings-card {
-    width: 100% !important;
-    max-width: none !important
+    width: 100%;
+    max-width: none
   }
 }
 :where(html[data-style-screen="admin-settings"]) .admin .settings-page .settings-favicon-field select.control {
-  width: 100% !important;
-  min-height: 43px !important;
-  height: 43px !important;
-  padding: 0 42px 0 13px !important;
-  border: 1px solid var(--line) !important;
-  border-radius: 10px !important;
-  background-color: var(--yaqeen-pure-white) !important;
-  color: var(--ink) !important;
-  font: inherit !important;
-  font-size: 13px !important;
-  font-weight: 600 !important;
-  box-sizing: border-box !important;
-  cursor: pointer !important
+  width: 100%;
+  min-height: 43px;
+  height: 43px;
+  padding: 0 42px 0 13px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background-color: var(--yaqeen-pure-white);
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  box-sizing: border-box;
+  cursor: pointer
 }
 
 :where(html[data-style-screen="admin-settings"]) .admin .settings-page .settings-favicon-field select.control:focus {
-  outline: none !important;
-  border-color: var(--primary) !important;
-  box-shadow: 0 0 0 3px rgba(63, 80, 56, .09) !important
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(63, 80, 56, .09)
 }
 
 :where(html[data-style-screen="admin-settings"]) .admin .settings-page .settings-favicon-field select.control:disabled {
-  cursor: not-allowed !important;
-  opacity: .65 !important
+  cursor: not-allowed;
+  opacity: .65
 }
