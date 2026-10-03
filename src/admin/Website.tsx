@@ -1,3 +1,4 @@
+import { homepageCollections } from '../lib/homepageCollections';
 import { BrandLoader } from '../BrandLoader';
 import { useEffect, useState } from 'react';
 import { ArrowDown, ArrowUp, Eye, Pencil, Plus, Trash2 } from 'lucide-react';
@@ -30,8 +31,7 @@ function FaqEditor({value,setValue}:{value:any[];setValue:(v:any[])=>void}){cons
 function JsonList({title,value,setValue,fields}:{title:string;value:any[];setValue:(v:any[])=>void;fields:string[]}){return <section className="website-editor-block"><div className="section-head"><h3>{title}</h3><button className="secondary-button" onClick={()=>setValue([...value,Object.fromEntries(fields.map(f=>[f,'']))])}><Plus size={14}/> Add</button></div>{value.map((row,i)=><div className="website-list-row" key={i}>{fields.map(f=><label key={f}>{f}<input value={row[f]||''} onChange={e=>setValue(value.map((x,n)=>n===i?{...x,[f]:e.target.value}:x))}/></label>)}<button className="secondary-button" onClick={()=>setValue(value.filter((_,n)=>n!==i))}>Remove</button></div>)}</section>}
 const homepageDefaults:any[]=[
  {id:'hero',type:'hero',enabled:true,heading:'Little reminders.\nSpecial times.',body:'A collection of Islamic acrylic reminders for a more peaceful and purposeful life.',image:'',cta_text:'Shop now',cta_url:'/shop'},
- {id:'collection',type:'products',selection:'collection',enabled:true,heading:'Explore the collection',subheading:'THE COLLECTION',body:'Meaningful reminders for your everyday.',cta_text:'Shop all products',cta_url:'/shop'},
- {id:'bestsellers',type:'products',selection:'bestseller',enabled:true,heading:'Bestsellers',subheading:'CUSTOMER FAVOURITES',body:'The pieces people come back to.',cta_text:'Discover favourites',cta_url:'/shop'},
+ ...homepageCollections,
 ];
 function normalizeHomepageSections(value:any[]){
  const source=Array.isArray(value)?value:[];
@@ -44,9 +44,9 @@ function normalizeHomepageSections(value:any[]){
 function Sections({value,setValue}:{value:any[];setValue:(v:any[])=>void}){
  const sections=normalizeHomepageSections(value);
  function patch(i:number,p:any){setValue(sections.map((x,n)=>n===i?{...x,...p}:x))}
- const labels:Record<string,string>={hero:'Hero',collection:'Explore the collection',bestseller:'Bestsellers',story:'Our story',banner:'Banner',newsletter:'Newsletter'};
+ const labels:Record<string,string>={hero:'Hero',new_arrival:'New arrivals',collection:'Explore the collection',bestseller:'Bestsellers',story:'Our story',banner:'Banner',newsletter:'Newsletter'};
  return <section className="website-editor-block homepage-editor">
-  <div className="website-nav-editor-head"><span className="section-kicker">HOMEPAGE</span><h3>Storefront homepage</h3><p>Edit the hero and two product collections customers see on the homepage. Product groups are populated automatically from your product catalogue.</p></div>
+  <div className="website-nav-editor-head"><span className="section-kicker">HOMEPAGE</span><h3>Storefront homepage</h3><p>Edit the hero and product collections customers see on the homepage. Empty product collections are hidden automatically. Product groups are populated automatically from your product catalogue.</p></div>
   <div className="homepage-section-list">{sections.map((s,i)=>{const title=s.type==='products'?labels[s.selection]:labels[s.type];return <details className="website-section-editor homepage-section-card" key={s.id} open={i===0}>
    <summary><span className="homepage-section-number">{String(i+1).padStart(2,'0')}</span><span><strong>{title}</strong><small>{s.type==='products'?'Automatic product collection':'First section customers see'}</small></span><span className={'homepage-visibility '+(s.enabled!==false?'is-visible':'')}>{s.enabled!==false?'Visible':'Hidden'}</span></summary>
    <div className="website-editor-grid homepage-section-fields">
@@ -57,7 +57,7 @@ function Sections({value,setValue}:{value:any[];setValue:(v:any[])=>void}){
      {<label className="full">Description<textarea rows={4} value={s.body||''} onChange={e=>patch(i,{body:e.target.value})}/></label>}
      {s.type!=='products'&&<label className="full">Image URL <span className="muted">(optional)</span><input value={s.image||''} onChange={e=>patch(i,{image:e.target.value})}/></label>}
      <label>Button text<input value={s.cta_text||''} onChange={e=>patch(i,{cta_text:e.target.value})}/></label><label className="full">Button destination<input value={s.cta_url||''} onChange={e=>patch(i,{cta_url:e.target.value})}/></label>
-     {s.type==='products'&&<p className="homepage-auto-note full">{s.selection==='collection'?<>Shows active products without the Bestseller toggle, so the two collections do not repeat products.</>:<>Shows active products marked <strong>Bestseller</strong> in Products.</>}</p>}
+     {s.type==='products'&&<p className="homepage-auto-note full">{s.selection==='new_arrival'?<>Shows active products marked <strong>New arrival</strong>. Hidden when no products qualify.</>:s.selection==='collection'?<>Shows active <strong>Featured</strong> products not already shown in New arrivals or Bestsellers.</>:<>Shows active products marked <strong>Bestseller</strong>, excluding products shown in New arrivals. Hidden when no products qualify.</>}</p>}
     </>
    </div></details>})}</div>
  </section>

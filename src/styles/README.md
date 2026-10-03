@@ -39,7 +39,7 @@ For browser comparisons, start the dev server and run `node scripts/visual-check
 
 Set `VISUAL_CHECK_WIDTHS` to comma-separated viewport widths to compare responsive boundaries, for example `375,390,391,700,701,760,761,900,1024,1440`. The default remains `1440,390`.
 
-`VISUAL_CHECK_HOME_VARIANTS=1` adds local browser copies of top-picks products and sample CMS banner/newsletter sections on the home route, comparing their styles against the selected baseline too. It does not modify published CMS data.
+`VISUAL_CHECK_HOME_VARIANTS=1` adds local browser copies of new-arrival products and sample CMS banner/newsletter sections on the home route, comparing their styles against the selected baseline too. It does not modify published CMS data.
 
 For contact validation styles, set `VISUAL_CHECK_ROUTES=/contact` and `VISUAL_CHECK_CONTACT_FIELD=input` or `textarea`. The check marks the selected field invalid and focuses it locally, without submitting the form.
 

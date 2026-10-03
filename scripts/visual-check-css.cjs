@@ -101,7 +101,7 @@ async function capture(page) {
           if(url.pathname.endsWith('/user_roles')) data=[{user_id:'fixture-staff',role_id:'fixture-role'}];
         }
         if(process.env.VISUAL_CHECK_SETTINGS==='1') {
-          if(url.pathname.endsWith('/site_settings')) data=[{key:'website',value:{site_name:'YAQEEN',site_tagline:'A more meaningful life',email:'fixture@example.com',phone:'+96112345678',whatsapp:'+96112345678',shipping_payment:'Delivery and pickup are available.'}},{key:'commerce',value:{delivery_fee:5,cod_enabled:true,whish_enabled:true,pickup_enabled:true}},{key:'merchandising',value:{top_picks_limit:4}}];
+          if(url.pathname.endsWith('/site_settings')) data=[{key:'website',value:{site_name:'YAQEEN',site_tagline:'A more meaningful life',email:'fixture@example.com',phone:'+96112345678',whatsapp:'+96112345678',shipping_payment:'Delivery and pickup are available.'}},{key:'commerce',value:{delivery_fee:5,cod_enabled:true,whish_enabled:true,pickup_enabled:true}}];
           if(url.pathname.includes('/storage/v1/object/list/website-media')) data=[{id:'fixture-media',name:'media-1-homepage.png',metadata:{mimetype:'image/png'},user_metadata:{label:'Homepage image'}}];
           if(url.pathname.includes('/storage/v1/object/public/website-media/')) {
             await route.fulfill({status:200,contentType:'image/svg+xml',body:'<svg xmlns="http://www.w3.org/2000/svg" width="92" height="78"><rect width="92" height="78" fill="#637052"/></svg>'});return;
@@ -109,7 +109,7 @@ async function capture(page) {
         }
         if(process.env.VISUAL_CHECK_RESOURCES==='1' && url.pathname.endsWith('/business_resources')) data=[{id:'fixture-resource',name:'Acrylic printing materials',quantity:12,unit_price:4.5,notes:'Shared materials for custom products.',created_at:'2026-01-01T00:00:00Z'}];
         if(process.env.VISUAL_CHECK_PRODUCTS==='1') {
-          const product={id:'fixture-product',title:'Saved product fixture',sku:'PRD-001',price:20,status:'Active',top_pick:true,description:'A custom printed product.',stock_allocation:5,category_id:null,design_id:null,inventory_item_id:null};
+          const product={id:'fixture-product',title:'Saved product fixture',sku:'PRD-001',price:20,status:'Active',featured:true,bestseller:false,new_arrival:false,description:'A custom printed product.',stock_allocation:5,category_id:null,design_id:null,inventory_item_id:null};
           if(url.pathname.endsWith('/products')) data=url.searchParams.has('id')?product:[product];
           if(url.pathname.endsWith('/product_variants')) data=[{id:'fixture-variant',product_id:product.id,sku:'VAR-001',color:'Olive',active:true,price_override:22,stock_allocation:3}];
         }
@@ -258,9 +258,9 @@ async function capture(page) {
           const home = document.querySelector('.home-redesign');
           const products = home?.querySelector('.home-products');
           if (!home || !products) throw new Error('Homepage product fixture is unavailable');
-          const topPicks = products.cloneNode(true);
-          topPicks.classList.add('home-top-picks');
-          home.append(topPicks);
+          const newArrivals = products.cloneNode(true);
+          newArrivals.classList.add('home-new-arrivals');
+          home.append(newArrivals);
           const variants = document.createElement('div');
           variants.innerHTML = '<section class="home-cms-banner"><div class="container"><p class="eyebrow">Banner</p><h2>Meaningful reminders</h2><p>Homepage CMS banner preview.</p><a class="button" href="#">Browse</a></div></section><section class="container home-cms-newsletter"><div><p class="eyebrow">Newsletter</p><h2>Stay connected</h2><p>Homepage newsletter preview.</p></div><form class="newsletter-signup"><div class="newsletter-field"><input type="email" placeholder="Email address"><button class="button" type="button">Subscribe</button></div><span class="newsletter-success">Thank you</span><span class="newsletter-error">Try again</span></form></section>';
           home.append(...variants.children);
