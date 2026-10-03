@@ -28,6 +28,7 @@ const SOCIAL_SHARE_IMAGE='https://zjppxaoexrmfocebctht.supabase.co/storage/v1/ob
 // Replace the original corner artwork while preserving custom admin uploads.
 const DEFAULT_FOOTER_OLIVE=import.meta.env.BASE_URL+'images/yaqeen-footer-olive.webp';
 const DEFAULT_FOOTER_Logo=import.meta.env.BASE_URL+'images/Logo.webp';
+const DEFAULT_OURSTORY_IMAGE=import.meta.env.BASE_URL+'images/yaqeen-our-story.webp';
 
 function footerOliveImage(image?:string){
  return !image||image.includes('/media-1790882585568-realolivebranch.png')?DEFAULT_FOOTER_OLIVE:image;
@@ -191,9 +192,10 @@ function HomeSection({section}:{section:any}){
  if(section.type==='products')return <HomeProductSection section={section}/>;
  if(section.type==='hero')return <HomeHero section={section}/>;
  if(section.type==='banner')return <section className="home-cms-banner"><div className="container"><p className="eyebrow">{section.subheading||'A THOUGHTFUL PAUSE'}</p><h2>{section.heading}</h2>{section.body&&<p>{section.body}</p>}{section.cta_text&&<Link className="button" to={section.cta_url||'/shop'}>{section.cta_text} <ChevronRight size={18}/></Link>}</div></section>;
+ if(section.type==='story'){const storyLines=String(section.heading||'A More\nMeaningful Life').split(/\n/);const values=section.values?.length?section.values:[{title:'Faith-inspired designs',description:'Rooted in Islamic values'},{title:'Meaningful everyday reminders',description:'To bring more peace and intention'},{title:'Thoughtful gifts for loved ones',description:'For every special moment'}];return <section className="container home-cms-story home-story-editorial"><div className="home-story-image"><StoreImageView className="home-section-image" src={DEFAULT_OURSTORY_IMAGE} srcSet={`${import.meta.env.BASE_URL}images/yaqeen-our-story-mobile.webp 640w, ${DEFAULT_OURSTORY_IMAGE} 1024w`} alt="The story of YAQEEN" sizes="(max-width: 800px) 92vw, 50vw"/></div><div className="home-story-copy"><p className="eyebrow">{section.subheading||'OUR STORY'}</p><h2>{storyLines.map((line:string,i:number)=><span key={i}>{line}{i<storyLines.length-1&&<br/>}</span>)}</h2><p>{section.body||'YAQEEN was born from a simple belief — that everyday reminders can bring more faith, peace, and intention into our lives.'}</p><p>{section.body_secondary||'We create meaningful pieces inspired by Islamic values, designed to brighten your space and keep what matters close to your heart.'}</p></div><div className="home-story-values">{values.slice(0,3).map((v:any,i:number)=><div key={i}><span aria-hidden="true">{i===0?<Sprout size={30} strokeWidth={1.5}/>:i===1?<Heart size={30} strokeWidth={1.5}/>:<Gift size={30} strokeWidth={1.5}/>}</span><p><strong>{v.title}</strong><small>{v.description}</small></p></div>)}</div></section>};
  if(section.type==='newsletter')return <NewsletterSection section={section}/>;return null
 }
-const defaultHomeSections=[{id:'hero',type:'hero',heading:'A More\nMeaningful Life',body:'Islamic products, inspiration and resources to help you live with greater purpose, peace and faith.',cta_text:'Shop Now',cta_url:'/shop'},{id:'products',type:'products',heading:'Find your everyday reminder.',subheading:'THE COLLECTION',cta_text:'Shop all reminders',cta_url:'/shop'}];
+const defaultHomeSections=[{id:'hero',type:'hero',heading:'A More\nMeaningful Life',body:'Islamic products, inspiration and resources to help you live with greater purpose, peace and faith.',cta_text:'Shop Now',cta_url:'/shop'},{id:'products',type:'products',heading:'Find your everyday reminder.',subheading:'THE COLLECTION',cta_text:'Shop all reminders',cta_url:'/shop'},{id:'story',type:'story',subheading:'OUR STORY',heading:'A More\nMeaningful Life',body:'YAQEEN was born from a simple belief — that everyday reminders can bring more faith, peace, and intention into our lives.',cta_text:'Our story',cta_url:'/about'}];
 function homeShoppingSections(sections:any[]){
  const groups=[
   {id:'top-products',selection:'top',heading:'Top Picks',subheading:'JUST ADDED'},
@@ -201,6 +203,11 @@ function homeShoppingSections(sections:any[]){
   {id:'bestsellers',selection:'bestseller',heading:'Bestsellers',subheading:'CUSTOMER FAVOURITES'}
  ].map(group=>({type:'products',cta_text:'Shop all products',cta_url:'/shop',...sections.find(s=>s.type==='products'&&s.selection===group.selection),...group}));
  const other=sections.filter(s=>s.type!=='products');
+ if(!other.some(s=>s.type==='story')){
+  const story=defaultHomeSections.find(s=>s.type==='story')!;
+  const newsletterIndex=other.findIndex(s=>s.type==='newsletter');
+  other.splice(newsletterIndex<0?other.length:newsletterIndex,0,story);
+ }
  const heroIndex=other.findIndex(s=>s.type==='hero');
  other.splice(heroIndex+1,0,...groups);
  return other;

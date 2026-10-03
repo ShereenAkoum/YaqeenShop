@@ -1,562 +1,106 @@
-/* store/confirmation: rules are isolated to their route or application area. */
-:where(html[data-style-screen="store-confirmation"]) .confirmation-page {
-  display: grid;
-  place-items: center;
-  min-height: calc(100vh - 210px);
-  padding-top: 72px;
-  padding-bottom: 96px
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-modern {
-  width: min(680px, 100%);
-  box-sizing: border-box;
-  padding: 54px 58px;
-  border: 1px solid #ddd7ca;
-  border-radius: 20px;
-  background: var(--yaqeen-white);
-  text-align: center;
-  box-shadow: 0 18px 50px rgba(45, 49, 39, .07)
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-success-icon {
-  display: grid;
-  place-items: center;
-  width: 62px;
-  height: 62px;
-  margin: 0 auto 22px;
-  border-radius: 50%;
-  background: #e9f2e5;
-  color: #3d7140
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-success-icon.neutral {
-  background: #eef0e9;
-  color: var(--primary)
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-modern>.eyebrow {
-  margin: 0 0 12px
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-modern h1 {
-  max-width: 570px;
-  margin: 0 auto;
-  font-family: var(--font-heading);
-  font-size: clamp(36px, 5vw, 52px);
-  font-weight: 400;
-  line-height: 1.05
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-lead {
-  max-width: 500px;
-  margin: 18px auto 28px;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.7
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-order-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin: 0 0 16px;
-  border: 1px solid #ded9cf;
-  border-radius: 12px;
-  background: #faf9f5;
-  text-align: left;
-  overflow: hidden
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-order-card>div {
-  display: grid;
-  gap: 5px;
-  padding: 17px 19px
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-order-card>div+div {
-  border-left: 1px solid #ded9cf
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-order-card small {
-  color: var(--muted);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-order-card strong {
-  font-size: 14px
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-next {
-  display: grid;
-  grid-template-columns: 42px 1fr;
-  gap: 13px;
-  align-items: start;
-  margin: 0 0 24px;
-  padding: 16px 18px;
-  border-radius: 12px;
-  background: #f3f5ef;
-  text-align: left
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-next>span {
-  display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
-  background: #e5ebdf;
-  color: var(--primary)
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-next>div {
-  display: grid;
-  gap: 4px
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-next strong {
-  font-size: 12px
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-next p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 11px;
-  line-height: 1.55
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-shop-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-  min-height: 52px;
-  border-radius: 10px
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-home-link {
-  display: inline-block;
-  margin-top: 17px;
-  color: var(--muted);
-  font-size: 10px;
-  font-weight: 700
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-missing {
-  max-width: 600px
-}
-
-@media(max-width:600px) {
-  :where(html[data-style-screen="store-confirmation"]) .confirmation-page {
-    min-height: auto;
-    padding-top: 36px;
-    padding-bottom: 64px
-  }
-
-  :where(html[data-style-screen="store-confirmation"]) .confirmation-modern {
-    padding: 36px 22px;
-    border-radius: 15px
-  }
-
-  :where(html[data-style-screen="store-confirmation"]) .confirmation-success-icon {
-    width: 56px;
-    height: 56px;
-    margin-bottom: 18px
-  }
-
-  :where(html[data-style-screen="store-confirmation"]) .confirmation-modern h1 {
-    font-size: 36px
-  }
-
-  :where(html[data-style-screen="store-confirmation"]) .confirmation-lead {
-    font-size: 13px;
-    margin: 15px auto 24px
-  }
-
-  :where(html[data-style-screen="store-confirmation"]) .confirmation-order-card {
-    grid-template-columns: 1fr
-  }
-
-  :where(html[data-style-screen="store-confirmation"]) .confirmation-order-card>div+div {
-    border-left: 0;
-    border-top: 1px solid #ded9cf
-  }
-
-  :where(html[data-style-screen="store-confirmation"]) .confirmation-next {
-    grid-template-columns: 38px 1fr;
-    padding: 14px
-  }
-
-  :where(html[data-style-screen="store-confirmation"]) .confirmation-next>span {
-    width: 38px;
-    height: 38px
-  }
-}
-:where(html[data-style-screen="store-confirmation"]) .confirmation-page {
-  display: block;
-  max-width: 1180px
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 360px;
-  gap: 28px;
-  align-items: start;
-  width: 100%
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-layout .confirmation-modern {
-  width: 100%
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-summary {
-  position: sticky;
-  top: 28px;
-  padding: 28px;
-  border: 1px solid #ddd7ca;
-  border-radius: 18px;
-  background: var(--yaqeen-white);
-  box-shadow: 0 14px 38px rgba(45, 49, 39, .06)
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-summary>.eyebrow {
-  text-align: left;
-  margin: 0 0 20px
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-summary-items {
-  display: grid;
-  gap: 14px
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-summary-item {
-  display: grid;
-  grid-template-columns: 52px minmax(0, 1fr) auto;
-  gap: 12px;
-  align-items: center
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-summary-image {
-  position: relative;
-  width: 52px;
-  height: 52px;
-  display: grid;
-  place-items: center;
-  border-radius: 9px;
-  background: #f0eee6;
-  overflow: visible
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-summary-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 9px
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-summary-image b {
-  position: absolute;
-  right: -6px;
-  top: -7px;
-  display: grid;
-  place-items: center;
-  min-width: 18px;
-  height: 18px;
-  padding: 0 4px;
-  border-radius: 20px;
-  background: var(--primary);
-  color: var(--yaqeen-pure-white);
-  font-size: 8px
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-summary-item>div:nth-child(2) {
-  display: grid;
-  gap: 3px
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-summary-item strong {
-  font-size: 11px
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-summary-item small {
-  font-size: 9px;
-  color: var(--muted)
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-summary-item>span {
-  font-size: 11px
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-summary-totals {
-  display: grid;
-  gap: 11px;
-  margin-top: 20px;
-  padding-top: 18px;
-  border-top: 1px solid #ded9cf
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-summary-totals>div {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  font-size: 11px
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-summary-totals .total {
-  margin-top: 4px;
-  padding-top: 14px;
-  border-top: 1px solid #ded9cf;
-  align-items: center
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-summary-totals .total strong {
-  font-family: var(--font-heading);
-  font-size: 22px;
-  font-weight: 400
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-summary-payment {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  margin-top: 16px;
-  padding: 13px;
-  border-radius: 9px;
-  background: #f3f5ef;
-  font-size: 10px
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-summary-payment small {
-  color: var(--muted)
-}
-
+﻿/* Order confirmation reference design; isolated from other storefront pages. */
+:where(html[data-style-screen="store-confirmation"]) .order-confirmation {background:#faf8f3;color:#20251e;font-family:var(--font-body)}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-stage {position:relative;overflow:hidden;background:radial-gradient(ellipse at 30% 18%,#fffdf8aa,transparent 65%),#f4f1e9;padding:56px 5.4% 30px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-layout {position:relative;max-width:1200px;margin:auto;display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);gap:34px;align-items:start}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-olive {position:absolute;width:210px;pointer-events:none;opacity:.85}
+:where(html[data-style-screen="store-confirmation"]) .olive-left {top:-45px;left:-95px;transform:rotate(175deg)}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-intro {position:relative;text-align:center;padding:8px 0 26px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-intro:before {content:'';position:absolute;inset:-18px 8% 0;border:1px solid #c5a06d1a;border-radius:48% 48% 0 0;pointer-events:none}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-check {display:grid;place-items:center;width:58px;height:58px;margin:0 auto 26px;border-radius:50%;background:linear-gradient(135deg,#66805b,#34492e);color:white;box-shadow:0 3px 7px #34492e25;border:2px solid #faf8f3}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-kicker {display:flex;justify-content:center;align-items:center;gap:10px;letter-spacing:.3em;font-size:11px;color:#7a5b36;margin:0 0 20px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-kicker:before,:where(html[data-style-screen="store-confirmation"]) .confirmation-kicker:after {content:'';width:22px;height:1px;background:#c5a06d66}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-intro h1 {font-family:var(--font-heading);font-weight:400;font-size:clamp(32px,4.1vw,55px);letter-spacing:-.045em;line-height:1.15;margin:0 0 5px;color:#11150f}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-arabic {display:flex;align-items:center;justify-content:center;gap:16px;color:#9a743b;font-family:Georgia,serif;font-size:25px;font-weight:600;margin:5px 0}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-arabic:before,:where(html[data-style-screen="store-confirmation"]) .confirmation-arabic:after {content:'';height:1px;width:60px;background:#c5a06d66}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-intro h2 {font-family:var(--font-heading);font-size:25px;font-weight:400;margin:0 0 9px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-intro>p:last-child {font-size:13px;color:#817d72;line-height:1.6;margin:0}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-spark {position:absolute;color:#bd945b;font-size:25px}
+:where(html[data-style-screen="store-confirmation"]) .spark-one {left:20%;top:20px;font-size:16px}
+:where(html[data-style-screen="store-confirmation"]) .spark-two {right:10%;top:22px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-facts {display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-facts>div {display:flex;align-items:center;gap:18px;padding:17px 20px;border:1px solid #e5dfd3;border-radius:14px;background:#fffdfa99}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-facts>div>span {display:grid;place-items:center;background:#f0ece2;color:#80531f;border-radius:12px;width:46px;height:46px;flex-shrink:0}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-facts small {display:block;color:#79664c;font-size:12px;margin-bottom:4px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-facts strong {font-size:17px;overflow-wrap:anywhere}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-timeline {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));list-style:none;margin:0 0 17px;padding:20px 7px;border:1px solid #e5dfd3;border-radius:14px;background:#fffdfa99}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-timeline li {position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:5px;padding:0 4px}
+:where(html[data-style-screen="store-confirmation"]) .timeline-icon {position:relative;z-index:1;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;border:1px solid #dbd7cb;background:#faf8f3;color:#90918a;margin-bottom:8px}
+:where(html[data-style-screen="store-confirmation"]) .is-current .timeline-icon {background:#3e5536;color:white;border-color:#3e5536}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-timeline strong {font-size:11px;font-weight:500}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-timeline small {font-size:10px;color:#85847d;line-height:1.4}
+:where(html[data-style-screen="store-confirmation"]) .timeline-line {position:absolute;top:19px;left:calc(50% + 25px);width:calc(100% - 50px);height:1px;background:#dcd7cc}
+:where(html[data-style-screen="store-confirmation"]) .is-current .timeline-line {background:#3e5536}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-next-card {display:flex;gap:20px;align-items:center;border:1px solid #e5dfd3;border-radius:14px;padding:17px 20px;background:#fffdfa55;margin-bottom:16px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-next-card>span,:where(html[data-style-screen="store-confirmation"]) .confirmation-help>span {display:grid;place-items:center;width:56px;height:56px;border-radius:14px;flex-shrink:0;background:#ecebdf;color:#30432a}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-next-card h3,:where(html[data-style-screen="store-confirmation"]) .confirmation-help h3 {font-size:14px;font-weight:500;margin:0 0 5px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-next-card p,:where(html[data-style-screen="store-confirmation"]) .confirmation-help p {font-size:12px;line-height:1.6;color:#797971;margin:0}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-buttons {display:grid;gap:10px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-primary,:where(html[data-style-screen="store-confirmation"]) .confirmation-outline {display:flex;align-items:center;justify-content:center;gap:12px;min-height:44px;padding:10px 20px;border-radius:17px;text-decoration:none;font-size:13px;transition:background .2s}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-primary {background:#35462f;color:white;border:1px solid #35462f}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-primary:hover {background:#263720}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-outline {border:1px solid #bcbda9;color:#22261f;background:transparent}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-outline:hover {background:#efeee5}
+:where(html[data-style-screen="store-confirmation"]) .order-confirmation a:focus-visible {outline:2px solid #7a8c67;outline-offset:4px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-aside {display:grid;gap:17px;min-width:0}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-receipt {padding:24px;border:1px solid #e5dfd3;border-radius:14px;background:#fffdfacc;box-shadow:0 10px 35px #45432b05}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-receipt>h2 {font-size:11px;font-weight:600;letter-spacing:.3em;margin:0 0 22px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-items {display:grid;gap:18px;padding-bottom:26px;border-bottom:1px solid #e9e5db}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-item {display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:12px;align-items:center}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-item-image {width:64px;height:68px;display:grid;place-items:center;background:#efe8d8;border-radius:9px;overflow:hidden}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-item-image img {height:100%;width:100%;object-fit:cover}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-item strong {display:block;font-size:13px;overflow-wrap:anywhere;font-weight:500}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-item small {display:block;font-size:12px;color:#99978f;margin-top:5px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-item>div:last-child {text-align:right;font-size:13px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-costs {margin:20px 0 16px;display:grid;gap:12px;font-size:14px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-costs>div {display:flex;align-items:center;justify-content:space-between;gap:15px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-costs dd {margin:0}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-total {background:#f4f2e9;border-radius:10px;padding:15px 12px;margin-top:5px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-total dd {font-family:var(--font-heading);font-size:24px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-payment {background:#f0f3eb;padding:14px;border-radius:10px;margin-bottom:15px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-payment p {margin:0 0 12px;font-size:12px;color:#555a50}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-payment>div {display:flex;align-items:center;gap:14px;padding:12px 8px;background:#e7eee0;border-radius:10px;font-size:12px;flex-wrap:wrap}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-payment small {margin-left:auto;font-size:9px;background:#d1e2c7;color:#365b30;border-radius:6px;padding:5px 7px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-placed {display:flex;gap:15px;background:#edf2e6;padding:17px;border-radius:11px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-placed>span {display:grid;place-items:center;flex-shrink:0;width:35px;height:35px;background:#47653b;color:white;border-radius:50%}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-placed strong {font-size:13px;font-weight:500}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-placed p {font-size:11px;line-height:1.5;color:#757b6b;margin:5px 0 0}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-help {display:flex;gap:17px;padding:17px 20px;border:1px solid #e5dfd3;border-radius:14px;background:#fffdfa77}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-help>span {width:44px;height:44px;border-radius:50%;color:#80531f;background:#f0ebdf}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-help .confirmation-outline {margin:12px 0 0;border-color:#d6c6ae;border-radius:30px;min-height:40px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-recommendations {max-width:1310px;margin:auto;padding:30px 4.7%}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-recommendations header {display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:20px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-recommendations h2 {font-family:var(--font-heading);font-size:32px;letter-spacing:-.035em;font-weight:400;margin:0 0 3px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-recommendations h2 span {font-size:15px;color:#ba9155;margin-left:20px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-recommendations header p {font-size:12px;color:#918e84;margin:0;line-height:1.6}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-recommendations header>a {font-size:11px;border-radius:30px;border-color:#cbb99f;white-space:nowrap}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-product-grid {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-product {display:block;background:#f5f2e9;border-radius:12px;overflow:hidden;color:inherit;text-decoration:none}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-product-image {aspect-ratio:1.4;display:grid;place-items:center;background:#ede6d7;overflow:hidden}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-product-image img {width:100%;height:100%;object-fit:cover;transition:transform .3s}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-product:hover img {transform:scale(1.04)}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-product-copy {display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-product-copy h3 {font-size:12px;font-weight:500;margin:0 0 5px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-product-copy strong {font-size:13px;font-weight:500}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-product-copy>span {display:grid;place-items:center;width:31px;height:31px;border-radius:50%;background:#35462f;color:white;flex-shrink:0}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-empty {max-width:600px;margin:70px auto;text-align:center;padding:30px}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-empty h1 {font-family:var(--font-heading);font-size:36px;font-weight:400}
+:where(html[data-style-screen="store-confirmation"]) .confirmation-empty p {color:#797971}
 @media(max-width:850px) {
-  :where(html[data-style-screen="store-confirmation"]) .confirmation-layout {
-    grid-template-columns: 1fr
-  }
-
-  :where(html[data-style-screen="store-confirmation"]) .confirmation-summary {
-    position: static;
-    order: -1
-  }
-
-  :where(html[data-style-screen="store-confirmation"]) .confirmation-page {
-    padding-left: 18px;
-    padding-right: 18px
-  }
+ :where(html[data-style-screen="store-confirmation"]) .confirmation-stage {padding:35px 5%}
+ :where(html[data-style-screen="store-confirmation"]) .confirmation-layout {grid-template-columns:1fr;max-width:650px;gap:24px}
+ :where(html[data-style-screen="store-confirmation"]) .confirmation-recommendations header {align-items:start;flex-direction:column}
+ :where(html[data-style-screen="store-confirmation"]) .confirmation-product-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-:where(html[data-style-screen="store-confirmation"]) .confirmation-page {
-  position: relative;
-  overflow: hidden
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-page:before {
-  content: 'يقين';
-  position: absolute;
-  z-index: -1;
-  right: -.12em;
-  top: .04em;
-  font-family: var(--font-heading);
-  font-size: clamp(10rem, 23vw, 20rem);
-  line-height: 1;
-  color: rgba(62, 76, 54, .025);
-  pointer-events: none
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-celebration {
-  position: absolute;
-  inset: 30px 0 auto;
-  z-index: -1;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 8%;
-  color: #b59b72;
-  font-size: 16px;
-  opacity: .65
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-celebration span:nth-child(2) {
-  margin-top: 75px;
-  font-size: 10px
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-celebration span:nth-child(3) {
-  margin-top: 18px
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-layout .confirmation-modern {
-  position: relative;
-  background: linear-gradient(155deg, var(--yaqeen-white), #fbf8f1);
-  border-color: #ddd5c7
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-success-icon {
-  position: relative;
-  box-shadow: 0 0 0 8px rgba(89, 118, 77, .06)
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-success-icon:after {
-  content: '';
-  position: absolute;
-  inset: -15px;
-  border: 1px solid rgba(89, 118, 77, .11);
-  border-radius: 50%
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-journey {
-  margin: 18px 0;
-  padding: 19px;
-  border: 1px solid #e4dfd5;
-  border-radius: 13px;
-  background: rgba(255, 255, 255, .58);
-  text-align: left
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-journey>.eyebrow {
-  margin: 0 0 16px;
-  font-size: 8px
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-steps {
-  display: grid;
-  grid-template-columns: 1fr 24px 1fr 24px 1fr;
-  align-items: center
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-steps>div {
-  display: flex;
-  align-items: center;
-  gap: 9px
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-steps>div>span {
-  display: grid;
-  place-items: center;
-  flex: 0 0 31px;
-  width: 31px;
-  height: 31px;
-  border: 1px solid #d9d8cf;
-  border-radius: 50%;
-  color: #85887d;
-  background: #f8f7f2
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-steps>div.active>span {
-  border-color: #bfd0b8;
-  background: #e8f1e4;
-  color: #3d7140
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-steps>div>div {
-  display: grid;
-  gap: 2px
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-steps strong {
-  font-size: 9px;
-  white-space: nowrap
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-steps small {
-  font-size: 8px;
-  line-height: 1.35;
-  color: var(--muted)
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-steps>i {
-  height: 1px;
-  background: #dcdad1
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-actions {
-  display: grid;
-  gap: 0
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-signoff {
-  margin: 31px 0 0;
-  padding-top: 22px;
-  border-top: 1px solid #e5e0d6;
-  color: #898579;
-  font-family: var(--font-heading);
-  font-size: 12px;
-  font-style: italic
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-signoff span {
-  display: inline-block;
-  margin-left: 4px;
-  color: var(--primary);
-  font-size: 18px;
-  font-style: normal
-}
-
-:where(html[data-style-screen="store-confirmation"]) .confirmation-summary-safe {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  margin-top: 15px;
-  color: #55704e;
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: .04em
-}
-
-@media(max-width:600px) {
-  :where(html[data-style-screen="store-confirmation"]) .confirmation-page:before {
-    top: .2em;
-    right: -.28em;
-    font-size: 12rem
-  }
-
-  :where(html[data-style-screen="store-confirmation"]) .confirmation-celebration {
-    display: none
-  }
-
-  :where(html[data-style-screen="store-confirmation"]) .confirmation-layout {
-    gap: 16px
-  }
-
-  :where(html[data-style-screen="store-confirmation"]) .confirmation-summary {
-    padding: 20px;
-    border-radius: 14px
-  }
-
-  :where(html[data-style-screen="store-confirmation"]) .confirmation-layout .confirmation-modern {
-    padding: 38px 20px
-  }
-
-  :where(html[data-style-screen="store-confirmation"]) .confirmation-steps {
-    grid-template-columns: 1fr
-  }
-
-  :where(html[data-style-screen="store-confirmation"]) .confirmation-steps>i {
-    width: 1px;
-    height: 15px;
-    margin-left: 15px
-  }
-
-  :where(html[data-style-screen="store-confirmation"]) .confirmation-steps>div>span {
-    width: 30px;
-    height: 30px
-  }
-
-  :where(html[data-style-screen="store-confirmation"]) .confirmation-steps strong {
-    font-size: 10px
-  }
-
-  :where(html[data-style-screen="store-confirmation"]) .confirmation-steps small {
-    font-size: 9px
-  }
-
-  :where(html[data-style-screen="store-confirmation"]) .confirmation-journey {
-    padding: 16px
-  }
-
-  :where(html[data-style-screen="store-confirmation"]) .confirmation-signoff {
-    margin-top: 25px
-  }
+@media(max-width:480px) {
+ :where(html[data-style-screen="store-confirmation"]) .confirmation-facts>div {gap:10px;padding:12px}
+ :where(html[data-style-screen="store-confirmation"]) .confirmation-facts>div>span {width:34px;height:38px}
+ :where(html[data-style-screen="store-confirmation"]) .confirmation-facts small {font-size:10px}
+ :where(html[data-style-screen="store-confirmation"]) .confirmation-facts strong {font-size:14px}
+ :where(html[data-style-screen="store-confirmation"]) .confirmation-timeline {grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 8px}
+ :where(html[data-style-screen="store-confirmation"]) .confirmation-timeline li:nth-child(2) .timeline-line {display:none}
+ :where(html[data-style-screen="store-confirmation"]) .confirmation-next-card {padding:16px;gap:12px}
+ :where(html[data-style-screen="store-confirmation"]) .confirmation-next-card>span {width:42px;height:48px}
+ :where(html[data-style-screen="store-confirmation"]) .confirmation-receipt {padding:20px}
+ :where(html[data-style-screen="store-confirmation"]) .confirmation-product-copy {padding:12px;gap:8px}
+ :where(html[data-style-screen="store-confirmation"]) .confirmation-recommendations h2 {font-size:29px}
 }
