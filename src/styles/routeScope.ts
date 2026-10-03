@@ -8,7 +8,7 @@ export function styleScope(pathname: string) {
     return { area: 'admin', screen: `admin-${screen}` };
   }
   const screens: Record<string, string> = {
-    '/': 'home', '/shop': 'shop', '/cart': 'cart', '/checkout': 'checkout',
+    '/': 'home', '/shop': 'shop', '/wishlist': 'shop', '/cart': 'cart', '/checkout': 'checkout',
     '/order-confirmation': 'confirmation', '/search': 'search',
     '/contact': 'contact', '/faq': 'faq', '/privacy': 'legal', '/terms': 'legal',
     '/under-construction': 'construction',

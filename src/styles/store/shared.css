@@ -539,7 +539,7 @@
   height: 17px;
   padding: 0 4px;
   border-radius: 999px;
-  background: #b3262d;
+  background: var(--yaqeen-olive);
   color: var(--yaqeen-pure-white);
   border: 2px solid var(--surface);
   font-size: 8px;
@@ -550,7 +550,7 @@
 :where(html[data-style-area="store"]) .bag-total {
   font-size: 8px;
   line-height: 1;
-  color: #b3262d;
+  color: var(--yaqeen-olive);
   font-weight: 800;
   letter-spacing: 0
 }
