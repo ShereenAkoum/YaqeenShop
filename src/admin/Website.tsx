@@ -30,23 +30,23 @@ function FaqEditor({value,setValue}:{value:any[];setValue:(v:any[])=>void}){cons
 function JsonList({title,value,setValue,fields}:{title:string;value:any[];setValue:(v:any[])=>void;fields:string[]}){return <section className="website-editor-block"><div className="section-head"><h3>{title}</h3><button className="secondary-button" onClick={()=>setValue([...value,Object.fromEntries(fields.map(f=>[f,'']))])}><Plus size={14}/> Add</button></div>{value.map((row,i)=><div className="website-list-row" key={i}>{fields.map(f=><label key={f}>{f}<input value={row[f]||''} onChange={e=>setValue(value.map((x,n)=>n===i?{...x,[f]:e.target.value}:x))}/></label>)}<button className="secondary-button" onClick={()=>setValue(value.filter((_,n)=>n!==i))}>Remove</button></div>)}</section>}
 const homepageDefaults:any[]=[
  {id:'hero',type:'hero',enabled:true,heading:'Little reminders.\nSpecial times.',body:'A collection of Islamic acrylic reminders for a more peaceful and purposeful life.',image:'',cta_text:'Shop now',cta_url:'/shop'},
- {id:'top-products',type:'products',selection:'top',enabled:true,heading:'Top picks',subheading:'FIND YOUR EVERYDAY REMINDER',cta_text:'Shop all products',cta_url:'/shop'},
- {id:'new-arrivals',type:'products',selection:'new_arrival',enabled:true,heading:'New arrivals',subheading:'JUST ADDED',cta_text:'Shop all products',cta_url:'/shop'},
- {id:'bestsellers',type:'products',selection:'bestseller',enabled:true,heading:'Bestsellers',subheading:'CUSTOMER FAVOURITES',cta_text:'Shop all products',cta_url:'/shop'},
+ {id:'collection',type:'products',selection:'collection',enabled:true,heading:'Explore the collection',subheading:'THE COLLECTION',body:'Meaningful reminders for your everyday.',cta_text:'Shop all products',cta_url:'/shop'},
+ {id:'bestsellers',type:'products',selection:'bestseller',enabled:true,heading:'Bestsellers',subheading:'CUSTOMER FAVOURITES',body:'The pieces people come back to.',cta_text:'Discover favourites',cta_url:'/shop'},
 ];
 function normalizeHomepageSections(value:any[]){
  const source=Array.isArray(value)?value:[];
- return homepageDefaults.map(base=>{
+ const normalized=homepageDefaults.map(base=>{
   const match=base.type==='products'?source.find(s=>s.type==='products'&&s.selection===base.selection):source.find(s=>s.type===base.type);
   return {...base,...(match||{}),id:base.id,type:base.type,...(base.selection?{selection:base.selection}:{})};
  });
+ return [...normalized,...source.filter(s=>s.type!=='products'&&s.type!=='hero')];
 }
 function Sections({value,setValue}:{value:any[];setValue:(v:any[])=>void}){
  const sections=normalizeHomepageSections(value);
  function patch(i:number,p:any){setValue(sections.map((x,n)=>n===i?{...x,...p}:x))}
- const labels:Record<string,string>={hero:'Hero',top:'Top picks',new_arrival:'New arrivals',bestseller:'Bestsellers'};
+ const labels:Record<string,string>={hero:'Hero',collection:'Explore the collection',bestseller:'Bestsellers',story:'Our story',banner:'Banner',newsletter:'Newsletter'};
  return <section className="website-editor-block homepage-editor">
-  <div className="website-nav-editor-head"><span className="section-kicker">HOMEPAGE</span><h3>Storefront homepage</h3><p>Edit the same four sections customers see on the homepage. Product groups are populated automatically from your product catalogue.</p></div>
+  <div className="website-nav-editor-head"><span className="section-kicker">HOMEPAGE</span><h3>Storefront homepage</h3><p>Edit the hero and two product collections customers see on the homepage. Product groups are populated automatically from your product catalogue.</p></div>
   <div className="homepage-section-list">{sections.map((s,i)=>{const title=s.type==='products'?labels[s.selection]:labels[s.type];return <details className="website-section-editor homepage-section-card" key={s.id} open={i===0}>
    <summary><span className="homepage-section-number">{String(i+1).padStart(2,'0')}</span><span><strong>{title}</strong><small>{s.type==='products'?'Automatic product collection':'First section customers see'}</small></span><span className={'homepage-visibility '+(s.enabled!==false?'is-visible':'')}>{s.enabled!==false?'Visible':'Hidden'}</span></summary>
    <div className="website-editor-grid homepage-section-fields">
@@ -54,10 +54,10 @@ function Sections({value,setValue}:{value:any[];setValue:(v:any[])=>void}){
     <>
      {s.type!=='hero'&&<label>Eyebrow<input value={s.subheading||''} onChange={e=>patch(i,{subheading:e.target.value})}/></label>}
      <label className={s.type==='hero'?'full':''}>Heading{s.type==='hero'?<><textarea rows={3} value={s.heading||''} onChange={e=>patch(i,{heading:e.target.value})}/><small className="muted">Press Enter where you want the headline to break onto a new line.</small></>:<input value={s.heading||''} onChange={e=>patch(i,{heading:e.target.value})}/>}</label>
-     {s.type!=='products'&&<label className="full">Description<textarea rows={4} value={s.body||''} onChange={e=>patch(i,{body:e.target.value})}/></label>}
+     {<label className="full">Description<textarea rows={4} value={s.body||''} onChange={e=>patch(i,{body:e.target.value})}/></label>}
      {s.type!=='products'&&<label className="full">Image URL <span className="muted">(optional)</span><input value={s.image||''} onChange={e=>patch(i,{image:e.target.value})}/></label>}
      <label>Button text<input value={s.cta_text||''} onChange={e=>patch(i,{cta_text:e.target.value})}/></label><label className="full">Button destination<input value={s.cta_url||''} onChange={e=>patch(i,{cta_url:e.target.value})}/></label>
-     {s.type==='products'&&<p className="homepage-auto-note full">{s.selection==='top'?<>Top Picks are managed from <strong>Products</strong>. Mark up to 4 products as Top Pick there.</>:<>Products in this section are selected automatically from the <strong>{title}</strong> catalogue group.</>}</p>}
+     {s.type==='products'&&<p className="homepage-auto-note full">{s.selection==='collection'?<>Shows active products without the Bestseller toggle, so the two collections do not repeat products.</>:<>Shows active products marked <strong>Bestseller</strong> in Products.</>}</p>}
     </>
    </div></details>})}</div>
  </section>

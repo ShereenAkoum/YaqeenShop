@@ -1198,3 +1198,22 @@
 :where(html[data-style-area="store"]) .site-header .store-nav-icon:hover,:where(html[data-style-area="store"]) .site-header .mobile-menu-button:hover {background:transparent;border:0;color:#111;transform:none}
 :where(html[data-style-area="store"]) .site-header .store-nav-icon svg,:where(html[data-style-area="store"]) .site-header .mobile-menu-button svg {display:block;width:25px;height:25px;margin:auto}
 @media(max-width:760px){:where(html[data-style-area="store"]) .site-header{height:64px}:where(html[data-style-area="store"]) .store-nav-shell{height:64px;min-height:64px;padding-inline:14px;grid-template-columns:auto 1fr auto;gap:12px}:where(html[data-style-area="store"]) .desktop-nav{display:none}:where(html[data-style-area="store"]) .site-header .brand{min-width:78px}:where(html[data-style-area="store"]) .site-header .store-nav-shell>.brand.brand-has-logo{width:84px;height:58px;max-width:84px;padding:0;border-radius:0}:where(html[data-style-area="store"]) .site-header .store-nav-shell>.brand.brand-has-logo>.brand-logo{width:84px;height:56px;max-width:84px;max-height:56px}:where(html[data-style-area="store"]) .header-actions{gap:16px}:where(html[data-style-area="store"]) .site-header .store-nav-icon svg,:where(html[data-style-area="store"]) .site-header .mobile-menu-button svg{width:21px;height:21px}}
+
+/* Reserve content space without blocking the storefront shell. */
+:where(html[data-style-area="store"]) .skeleton-block {background:linear-gradient(100deg,#e9e4dc 20%,#f3efe8 45%,#e9e4dc 70%);background-size:250% 100%;animation:store-skeleton-shimmer 2.6s ease-in-out infinite;border-radius:6px}
+:where(html[data-style-area="store"]) .skeleton-grid {padding-block:12px;min-height:280px}
+:where(html[data-style-area="store"]) .skeleton-grid .store-product-image {aspect-ratio:1/1;width:100%}
+:where(html[data-style-area="store"]) .skeleton-line {height:16px;width:82%;margin:18px 0}
+:where(html[data-style-area="store"]) .skeleton-line.short {width:30%}
+:where(html[data-style-area="store"]) .skeleton-line.heading {height:38px;width:75%;margin-bottom:32px}
+:where(html[data-style-area="store"]) .skeleton-copy {padding-block:24px;min-height:300px}
+:where(html[data-style-area="store"]) img.loading-image {background-color:#e9e4dc;opacity:0;transition:opacity .35s ease}
+:where(html[data-style-area="store"]) img.loading-image.is-loaded {opacity:1}
+:where(html[data-style-area="store"]) .product-card-image-load img.loading-image {opacity:0}
+:where(html[data-style-area="store"]) .product-card-image-load img.loading-image.is-loaded {opacity:1}
+@keyframes store-skeleton-shimmer {0%{background-position:100% 0}100%{background-position:-100% 0}}
+@media(prefers-reduced-motion:reduce){:where(html[data-style-area="store"]) .skeleton-block {animation:none}:where(html[data-style-area="store"]) img.loading-image {transition:none}}
+
+:where(html[data-style-area="store"]) .skeleton-grid {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+:where(html[data-style-area="store"]) .store-product-image,:where(html[data-style-area="store"]) .gallery-image-open {background-color:#e9e4dc}
+@media(max-width:760px){:where(html[data-style-area="store"]) .skeleton-grid {grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}}
